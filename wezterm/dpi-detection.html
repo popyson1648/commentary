@@ -151,25 +151,49 @@
 <p>前回は手動でフォントサイズの切り替えを行いましたが、今回はこれを<code>dpi</code>の変更を検知して自動で切り替わるようにします。</p>
 <h2 id="まず前置き"><a class="header" href="#まず前置き">まず前置き</a></h2>
 <p>さて、これまでにも何度か出てきていた<code>wezterm.on</code>ですが、以下のような説明がありました。</p>
-<pre><code class="language-admonish note title=&quot;[wezterm.on(event_name  callback)](https://wezfurlong.org/wezterm/config/lua/wezterm/on.html)&quot;">wezterm.on can register multiple callbacks for the same event; internally an ordered list of callbacks is maintained for each event.
-When the event is emitted, each of the registered callbacks is called in the order that they were registered.
-
-wezterm.on は、同じイベントに対して複数のコールバックを登録することができます; 内部的には、各イベントに対してコールバックの順序付きリストが維持されます。
-イベントが発信されると、登録された各コールバックは、登録された順に呼び出されます。
-</code></pre>
+<div id="admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/wezterm/on.html">wezterm.on(event_name, callback)</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml"></a></p>
+</div>
+<div>
+<p>wezterm.on can register multiple callbacks for the same event; internally an ordered list of callbacks is maintained for each event.
+When the event is emitted, each of the registered callbacks is called in the order that they were registered.</p>
+<p>wezterm.on は、同じイベントに対して複数のコールバックを登録することができます; 内部的には、各イベントに対してコールバックの順序付きリストが維持されます。
+イベントが発信されると、登録された各コールバックは、登録された順に呼び出されます。</p>
+</div>
+</div>
 <p>これを踏まえた上で、<code>update-status</code>をもう一個作ります。<sup class="footnote-reference"><a href="#a">1</a></sup></p>
-<pre><code class="language-admonish note title=&quot;[update-status](https://wezfurlong.org/wezterm/config/lua/window-events/update-status.html)&quot;">There is no defined return value for the event, but its purpose is to allow you the chance to carry out some activity and then ultimately call window:set_right_status or window:set_left_status.
-
-このイベントの戻り値は定義されていませんが、その目的は、何らかの活動を行い、最終的に window:set_right_status または window:set_left_status を呼び出す機会を提供することです。
-</code></pre>
+<div id="admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/update-status.html">update-status</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml"></a></p>
+</div>
+<div>
+<p>There is no defined return value for the event, but its purpose is to allow you the chance to carry out some activity and then ultimately call window:set_right_status or window:set_left_status.</p>
+<p>このイベントの戻り値は定義されていませんが、その目的は、何らかの活動を行い、最終的に window:set_right_status または window:set_left_status を呼び出す機会を提供することです。</p>
+</div>
+</div>
 <p>説明にもある通り、「最終的に<code>window:set_right_status</code>または<code>window:set_left_status</code>を呼び出す目的」のものであるため、
 なんかコレじゃないとは思っていますが、他に方法が見つけられませんでした😢</p>
-<pre><code class="language-admonish info">今後の仕様追加・変更によって、より自然に実現できるかもしれませんね。
-</code></pre>
+<div id="admonition-info" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info"></a></p>
+</div>
+<div>
+<p>今後の仕様追加・変更によって、より自然に実現できるかもしれませんね。</p>
+</div>
+</div>
 <h2 id="では実装"><a class="header" href="#では実装">では実装</a></h2>
 <p><code>event.lua</code>に追記していきます。</p>
-<pre><code class="language-admonish example title=&quot;event.lua&quot;">```lua
-local DPI_CHANGE_NUM = 140
+<div id="admonition-eventlua" class="admonition example">
+<div class="admonition-title">
+<p>event.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-eventlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local DPI_CHANGE_NUM = 140
 local DPI_CHANGE_FONT_SIZE = 10.0
 
 local prev_dpi = 0
@@ -192,20 +216,33 @@ wezterm.on('update-status', function(window, pane)
 
   prev_dpi = dpi
 end)
-```
 </code></pre>
+</div>
+</div>
 <p><code>dpi</code>と<code>font_size</code>周辺の値はわたしの環境にあわせてぼや〜っと決め打ちにしてるので適宜調整してください。</p>
 <p>動作としては、<code>dpi</code>に変更があったらカスタムイベントの<code>trigger-dpi</code>を呼んでフォントサイズを切り替えます。
 <code>trigger-dpi</code>自体は手動でフォントサイズを切り替える処理とほぼ同じですね。</p>
-<pre><code class="language-admonish info">理由はちょっとよくわからなかったのですが、
-
-カスタムイベントに渡した`window`に対しての`get_config_overrides().dpi`が上手くいかなかったので、
-`wezterm.emit('trigger-dpi', window, dpi)`として`dpi`も渡しています。これであれば動くみたいです。
-</code></pre>
-<pre><code class="language-admonish success">なんか、すごい簡単でしたね😆
-
-既に用意されているロジックをつなぐだけ☺️
-</code></pre>
+<div id="admonition-info-1" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info-1"></a></p>
+</div>
+<div>
+<p>理由はちょっとよくわからなかったのですが、</p>
+<p>カスタムイベントに渡した<code>window</code>に対しての<code>get_config_overrides().dpi</code>が上手くいかなかったので、
+<code>wezterm.emit('trigger-dpi', window, dpi)</code>として<code>dpi</code>も渡しています。これであれば動くみたいです。</p>
+</div>
+</div>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>なんか、すごい簡単でしたね😆</p>
+<p>既に用意されているロジックをつなぐだけ☺️</p>
+</div>
+</div>
 <div class="footnote-definition" id="a"><sup class="footnote-definition-label">1</sup>
 <p>ステータスバーの飾り付けの際にも使用しましたね。</p>
 </div>

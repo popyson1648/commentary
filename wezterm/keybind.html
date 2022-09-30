@@ -154,62 +154,122 @@
 <code>WezTerm</code>に対して<code>tmux</code>と同じキーバインドを与えてしまえば、これは不要になるわけです。<sup class="footnote-reference"><a href="#a">1</a></sup></p>
 <p>と言ってもわたしがローカルでしか使っていないから大丈夫なだけで、ネットワークを介して使う場合は困る事もあるかもしれません。</p>
 <p>実際、デフォルトでは徹底的に他のソフトウェアとの衝突を避けています。</p>
-<pre><code class="language-admonish note title=&quot;[Default Shortcut / Key Binding Assignments](https://wezfurlong.org/wezterm/config/default-keys.html)&quot;">The default key assignments are shown in the table.
-
-デフォルトのキー割り当ては、表のとおりです。
-</code></pre>
+<div id="admonition-default-shortcut--key-binding-assignmentshttpswezfurlongorgweztermconfigdefault-keyshtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/default-keys.html">Default Shortcut / Key Binding Assignments</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-default-shortcut--key-binding-assignmentshttpswezfurlongorgweztermconfigdefault-keyshtml"></a></p>
+</div>
+<div>
+<p>The default key assignments are shown in the table.</p>
+<p>デフォルトのキー割り当ては、表のとおりです。</p>
+</div>
+</div>
 <h2 id="現在のキーバインド確認"><a class="header" href="#現在のキーバインド確認">現在のキーバインド確認</a></h2>
 <p>まずは現在のキーバインドがどうなっているのかを確認します。</p>
-<pre><code class="language-admonish note title=&quot;[show-keys](https://wezfurlong.org/wezterm/cli/show-keys.html#wezterm-show-keys)&quot;">Prints the complete set of key assignments based on your config file.
-
-設定ファイルに基づいたキー割り当ての完全なセットを表示します。
-</code></pre>
+<div id="admonition-show-keyshttpswezfurlongorgweztermclishow-keyshtmlwezterm-show-keys" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/cli/show-keys.html#wezterm-show-keys">show-keys</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-show-keyshttpswezfurlongorgweztermclishow-keyshtmlwezterm-show-keys"></a></p>
+</div>
+<div>
+<p>Prints the complete set of key assignments based on your config file.</p>
+<p>設定ファイルに基づいたキー割り当ての完全なセットを表示します。</p>
+</div>
+</div>
 <p>実行してみましょう。そのまま<code>WezTerm</code>で<code>wezterm</code>コマンドを使えば良いです。</p>
-<pre><code class="language-admonish quote title=&quot;Command&quot;">```sh
-wezterm show-keys
-```
+<div id="admonition-command" class="admonition quote">
+<div class="admonition-title">
+<p>Command</p>
+<p><a class="admonition-anchor-link" href="#admonition-command"></a></p>
+</div>
+<div>
+<pre><code class="language-sh">wezterm show-keys
 </code></pre>
+</div>
+</div>
 <p><img src="img/key-now.png" alt="key-now.png" /></p>
 <p>そう、これが現在のキーバインドですね。</p>
 <h2 id="設定を落とし込む"><a class="header" href="#設定を落とし込む">設定を落とし込む</a></h2>
 <p>で、ここで提案なんですが、キーバインドを自分の設定ファイルに落とし込んじゃったらどうかな？と思うわけです。</p>
 <p>それをやるにはどうすれば簡単かな〜っていう話になるんですけど、方法はすでにありました。</p>
-<pre><code class="language-admonish quote title=&quot;Command&quot;">```sh
-wezterm show-keys --lua
-```
+<div id="admonition-command-1" class="admonition quote">
+<div class="admonition-title">
+<p>Command</p>
+<p><a class="admonition-anchor-link" href="#admonition-command-1"></a></p>
+</div>
+<div>
+<pre><code class="language-sh">wezterm show-keys --lua
 </code></pre>
+</div>
+</div>
 <p><img src="img/key-now-lua.png" alt="key-now-lua.png" /></p>
 <p>さすがですね☺️ もはやレールは存在していました。これを<code>keybinds.lua</code>に持っていけば良いだけです。</p>
 <p>これはもうプロっぽく片付けましょう。シェル芸というやつです✨</p>
-<pre><code class="language-admonish quote title=&quot;Command&quot;">```sh
-wezterm show-keys --lua &gt; keybinds.lua
-```
+<div id="admonition-command-2" class="admonition quote">
+<div class="admonition-title">
+<p>Command</p>
+<p><a class="admonition-anchor-link" href="#admonition-command-2"></a></p>
+</div>
+<div>
+<pre><code class="language-sh">wezterm show-keys --lua &gt; keybinds.lua
 </code></pre>
-<pre><code class="language-admonish warning">上記コマンドのファイル出力先は現在のディレクトリです。
-
-`~/.config/wezterm`に移動するか、出力先を`~/.config/wezterm/keybinds.lua`に指定してください。
-</code></pre>
+</div>
+</div>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>上記コマンドのファイル出力先は現在のディレクトリです。</p>
+<p><code>~/.config/wezterm</code>に移動するか、出力先を<code>~/.config/wezterm/keybinds.lua</code>に指定してください。</p>
+</div>
+</div>
 <p>これだけでもう直接流し込めちゃうんですね。簡単〜😆</p>
 <h2 id="読み込み先を切り替える"><a class="header" href="#読み込み先を切り替える">読み込み先を切り替える</a></h2>
 <p>ここまでは暗黙的にデフォルト設定が適用されていましたが、これからは自分で作った<code>keybinds.lua</code>を使っていきましょう。</p>
-<pre><code class="language-admonish example title=&quot;wezterm.lua&quot;">```lua
-keys = require(“keybinds”).keys,
-```
+<div id="admonition-weztermlua" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">keys = require(“keybinds”).keys,
 </code></pre>
+</div>
+</div>
 <p>冒頭のリンクを再掲しますが、一番下にこのようにあります。</p>
-<pre><code class="language-admonish note title=&quot;[Default Key Assignments](https://wezfurlong.org/wezterm/config/default-keys.html)&quot;">If you don't want the default assignments to be registered, you can disable all of them with this configuration; if you chose to do this, you must explicitly register every binding.
-
-デフォルトの割り当てを登録したくない場合は、この設定ですべての割り当てを無効にできます。これを選択した場合は、すべてのバインディングを明示的に登録しなければなりません。
-</code></pre>
+<div id="admonition-default-key-assignmentshttpswezfurlongorgweztermconfigdefault-keyshtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/default-keys.html">Default Key Assignments</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-default-key-assignmentshttpswezfurlongorgweztermconfigdefault-keyshtml"></a></p>
+</div>
+<div>
+<p>If you don't want the default assignments to be registered, you can disable all of them with this configuration; if you chose to do this, you must explicitly register every binding.</p>
+<p>デフォルトの割り当てを登録したくない場合は、この設定ですべての割り当てを無効にできます。これを選択した場合は、すべてのバインディングを明示的に登録しなければなりません。</p>
+</div>
+</div>
 <p>デフォルト設定は以下で完全に無効化されます。不安に感じるようであればスキップしても大丈夫です。</p>
-<pre><code class="language-admonish example title=&quot;wezterm.lua&quot;">```lua
-disable_default_key_bindings = true,
-```
+<div id="admonition-weztermlua-1" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">disable_default_key_bindings = true,
 </code></pre>
-<pre><code class="language-admonish success">これでキーバインドの移行が完了しました。まあ、まだ中身は同じなんですけどね。
-
-さて、もう一つのポイントとして leader キーというものがあります。これについてはまた次回。
-</code></pre>
+</div>
+</div>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>これでキーバインドの移行が完了しました。まあ、まだ中身は同じなんですけどね。</p>
+<p>さて、もう一つのポイントとして leader キーというものがあります。これについてはまた次回。</p>
+</div>
+</div>
 <div class="footnote-definition" id="a"><sup class="footnote-definition-label">1</sup>
 <p>実際、わたしも<code>WezTerm</code>を使う前は<code>iTerm2</code>の上で<code>tmux</code>を動かしていました。</p>
 </div>

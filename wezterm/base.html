@@ -151,48 +151,79 @@
 <p>特に難しいことを考えずに ホームフォルダに <code>.wezterm.lua</code> を置いても良いのですが、
 後々ファイルを複数配置していくので、<code>$HOME/.config/wezterm</code>というディレクトリを作って、そこに <code>wezterm.lua</code> を置くほうがおすすめです。</p>
 <p>以下のようにしてみましょう。</p>
-<pre><code class="language-admonish example title=&quot;$HOME/.config/wezterm/wezterm.lua&quot;">```lua
-return {
+<div id="admonition-homeconfigweztermweztermlua" class="admonition example">
+<div class="admonition-title">
+<p>$HOME/.config/wezterm/wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-homeconfigweztermweztermlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">return {
 
 }
-```
 </code></pre>
-<pre><code class="language-admonish success">最初はこんなものです。できたら次のページへ進みましょう。
-</code></pre>
+</div>
+</div>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>最初はこんなものです。できたら次のページへ進みましょう。</p>
+</div>
+</div>
 <p>もし、手順が必要なら下へ。</p>
 <h2 id="手順"><a class="header" href="#手順">手順</a></h2>
 <p>以下のコマンドを順に実行してください。</p>
-<pre><code class="language-admonish quote title=&quot;ディレクトリを作る&quot;">```sh
-mkdir -p ~/.config/wezterm
-```
+<div id="admonition-ディレクトリを作る" class="admonition quote">
+<div class="admonition-title">
+<p>ディレクトリを作る</p>
+<p><a class="admonition-anchor-link" href="#admonition-ディレクトリを作る"></a></p>
+</div>
+<div>
+<pre><code class="language-sh">mkdir -p ~/.config/wezterm
 </code></pre>
-<pre><code class="language-admonish quote title=&quot;テキストを編集する(以下の例では`vim`を使用)&quot;">```sh
-vim ~/.config/wezterm/wezterm.lua
-```
+</div>
+</div>
+<div id="admonition-テキストを編集する以下の例ではvimを使用" class="admonition quote">
+<div class="admonition-title">
+<p>テキストを編集する(以下の例では<code>vim</code>を使用)</p>
+<p><a class="admonition-anchor-link" href="#admonition-テキストを編集する以下の例ではvimを使用"></a></p>
+</div>
+<div>
+<pre><code class="language-sh">vim ~/.config/wezterm/wezterm.lua
 </code></pre>
-<pre><code class="language-admonish info title=&quot;GUI のエディタを使う場合&quot;">GUI のエディタを使用したい場合は以下で出来ます。`lua`ファイルに関連付けられたアプリケーションが起動するはずです。
-
-ファイルを作る:
-```sh
-touch ~/.config/wezterm/wezterm.lua
-```
-
-ファイルを開く:
-```
-open ~/.config/wezterm/wezterm.lua
-```
-
-もし、こんなのが出てきたら
-
-![no-app.png](img/no-app.png)
-
-普段使っているエディタを選びましょう。
-
-`Xcode`や`Visual Studio Code`などでもいけるはずです。
-![select-app.png](img/select-app.png)
+</div>
+</div>
+<div id="admonition-gui-のエディタを使う場合" class="admonition info">
+<div class="admonition-title">
+<p>GUI のエディタを使う場合</p>
+<p><a class="admonition-anchor-link" href="#admonition-gui-のエディタを使う場合"></a></p>
+</div>
+<div>
+<p>GUI のエディタを使用したい場合は以下で出来ます。<code>lua</code>ファイルに関連付けられたアプリケーションが起動するはずです。</p>
+<p>ファイルを作る:</p>
+<pre><code class="language-sh">touch ~/.config/wezterm/wezterm.lua
 </code></pre>
-<pre><code class="language-admonish success">できましたね!! それでは次のページへ進みましょう。
+<p>ファイルを開く:</p>
+<pre><code>open ~/.config/wezterm/wezterm.lua
 </code></pre>
+<p>もし、こんなのが出てきたら</p>
+<p><img src="img/no-app.png" alt="no-app.png" /></p>
+<p>普段使っているエディタを選びましょう。</p>
+<p><code>Xcode</code>や<code>Visual Studio Code</code>などでもいけるはずです。
+<img src="img/select-app.png" alt="select-app.png" /></p>
+</div>
+</div>
+<div id="admonition-success-1" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success-1"></a></p>
+</div>
+<div>
+<p>できましたね!! それでは次のページへ進みましょう。</p>
+</div>
+</div>
 
                     </main>
 

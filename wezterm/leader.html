@@ -149,39 +149,84 @@
                     <main>
                         <h1 id="leader-key"><a class="header" href="#leader-key">Leader Key</a></h1>
 <p>さて、前回はキーバインドを落とし込んだわけですが、今回は<code>Leader</code>キーです。</p>
-<pre><code class="language-admonish note title=&quot;[Key Binding - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/keys.html#leader-key)&quot;">A leader key is a a modal modifier key. If leader is specified in the configuration then pressing that key combination will enable a virtual LEADER modifier.
-
-Leaderキーは、モーダルモディファイアキーです。Leaderキーが設定されている場合、そのキーの組み合わせを押すと、仮想的なリーダーモディファイアが有効になります。
-</code></pre>
+<div id="admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/keys.html#leader-key">Key Binding - Wez's Terminal Emulator</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key"></a></p>
+</div>
+<div>
+<p>A leader key is a a modal modifier key. If leader is specified in the configuration then pressing that key combination will enable a virtual LEADER modifier.</p>
+<p>Leaderキーは、モーダルモディファイアキーです。Leaderキーが設定されている場合、そのキーの組み合わせを押すと、仮想的なリーダーモディファイアが有効になります。</p>
+</div>
+</div>
 <p><code>Leader</code>キーという概念は WezTerm 特有のものではく、<code>tmux</code>や<code>vim</code>など古参のソフトウェアでも用いられています。</p>
 <p>WezTerm でのデフォルトは<code>CTRL-a</code>です。<sup class="footnote-reference"><a href="#other">1</a></sup></p>
-<pre><code class="language-admonish info">`CTRL-a` という表記は`control`キーと`a`キーを同時押しすることを示しています。
-</code></pre>
+<div id="admonition-info" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info"></a></p>
+</div>
+<div>
+<p><code>CTRL-a</code> という表記は<code>control</code>キーと<code>a</code>キーを同時押しすることを示しています。</p>
+</div>
+</div>
 <p>ということで、わたしはもうそのまま<code>CTRL-a</code>で設定しています。
 デフォルトのままでいいやー、って場合は書かなくてもOKです。</p>
-<pre><code class="language-admonish example title=&quot;wezterm.lua&quot;">```lua
-leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 },
-```
+<div id="admonition-weztermlua" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 },
 </code></pre>
-<pre><code class="language-admonish info">`timeout_milliseconds`のパラメータを変えていますが、これは後で触れます。
-</code></pre>
+</div>
+</div>
+<div id="admonition-info-1" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info-1"></a></p>
+</div>
+<div>
+<p><code>timeout_milliseconds</code>のパラメータを変えていますが、これは後で触れます。</p>
+</div>
+</div>
 <p><code>vim</code>や<code>tmux</code>等を使用する場合は、これとバッティングしていないかチェックしときましょう。</p>
-<pre><code class="language-admonish warning">macOSでUS配列なのに日本語IME使うような環境[^minority]では`CTRL-Space`が入力ソースの切り替えに割り当てられています。
-OSのショートカットキー等も含め、あらかじめ確認しておきましょう。
-
-他のと被っちゃうと困っちゃいます。
-</code></pre>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>macOSでUS配列なのに日本語IME使うような環境<sup class="footnote-reference"><a href="#minority">2</a></sup>では<code>CTRL-Space</code>が入力ソースの切り替えに割り当てられています。
+OSのショートカットキー等も含め、あらかじめ確認しておきましょう。</p>
+<p>他のと被っちゃうと困っちゃいます。</p>
+</div>
+</div>
 <h2 id="timeout_milliseconds"><a class="header" href="#timeout_milliseconds">timeout_milliseconds</a></h2>
 <p>これは前項で挙げたマニュアルの文章を引用しますが、</p>
-<pre><code class="language-admonish note">`LEADER` stays active until a keypress is registered (whether it matches a key binding or not),
-or until it has been active for the duration specified by `timeout_milliseconds`, at which point it will automatically cancel itself.
-</code></pre>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p><code>LEADER</code> stays active until a keypress is registered (whether it matches a key binding or not),
+or until it has been active for the duration specified by <code>timeout_milliseconds</code>, at which point it will automatically cancel itself.</p>
+</div>
+</div>
 <p><code>Leader</code>キーが一回押されたら、とりあえず何か次のキーが押されるか、指定ミリ秒経過するまでは待つよ〜。ってことですね。</p>
 <p>例えば、</p>
-<pre><code class="language-admonish example title=&quot;wezterm.lua&quot;">```lua
-{ key = 'u', mods = 'LEADER', action = act.CharSelect },
-```
+<div id="admonition-weztermlua-1" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">{ key = 'u', mods = 'LEADER', action = act.CharSelect },
 </code></pre>
+</div>
+</div>
 <p>...と、やる場合、<code>CTRL-a</code> → <code>space</code>と順番にキーを押す必要があるわけですが、
 デフォルトでは、<code>CTRL-a</code>から<code>space</code>を押すまでが 1000ミリ秒( = 1秒)以内で完結しないといけないわけです。</p>
 <p>1秒を長いと見るか短いと見るかは人それぞれなので、これをお好みに調整できるのが、前項の<code>timeout_milliseconds</code>です。</p>
@@ -189,43 +234,77 @@ or until it has been active for the duration specified by `timeout_milliseconds`
 <p>さて、皆さんはお気づきだろうか…。</p>
 <p>デフォルトのキー設定では<code>Leader</code>キーなんて一切使われていないことに…😨</p>
 <p>例えばこれ。</p>
-<pre><code class="language-admonish info title=&quot;Default KeyBinds&quot;">```lua
-{ key = '&quot;', mods = 'ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+<div id="admonition-default-keybinds" class="admonition info">
+<div class="admonition-title">
+<p>Default KeyBinds</p>
+<p><a class="admonition-anchor-link" href="#admonition-default-keybinds"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">{ key = '&quot;', mods = 'ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
 { key = '%', mods = 'ALT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
-```
 </code></pre>
-<pre><code class="language-admonish note">`ALT|CTRL`は`Alt`キーと`Ctrl`キーを同時押しです。
-
-さらに`&quot;`を押せと言われれば`Shift`キーを押しながら`'`です。[^key]
-</code></pre>
-<p>…なんか、難しくないですか？</p>
+</div>
+</div>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p><code>ALT|CTRL</code>は<code>Alt</code>キーと<code>Ctrl</code>キーを同時押しです。</p>
+<p>さらに<code>&quot;</code>を押せと言われれば<code>Shift</code>キーを押しながら<code>'</code>です。<sup class="footnote-reference"><a href="#key">3</a></sup></p>
+</div>
+</div>
+…なんか、難しくないですか？
 <p>それだったら、下のようにしたほうが楽じゃないですか？</p>
-<pre><code class="language-admonish example title=&quot;keybinds.lua&quot;">```lua
-{ key = '&quot;', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+<div id="admonition-keybindslua" class="admonition example">
+<div class="admonition-title">
+<p>keybinds.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-keybindslua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">{ key = '&quot;', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
 { key = '%', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-```
 </code></pre>
+</div>
+</div>
 <p><code>tmux</code>と同じキーバインドですね。ペイン操作も<code>WezTerm</code>に一任しちゃいます。</p>
 <p><code>tmux</code>使ってないのに同等の機能が実現できちゃうんですよ？すごくないです！？</p>
 <p>もしどこかで<code>tmux</code>を使うことがあっても同一操作なので迷わず使えます、たぶん！</p>
-<pre><code class="language-admonish info">さらにタイムリーなことに、`Copy Mode`の各種`jump`機能も実装されてました。(9/22時点では`nightly build`だけです。)
-
-[update docs for new copy-mode functions](https://github.com/wez/wezterm/commit/8458b2b62d90cbf3326c39ed5a72ef256588ebe3)
-
-`tmux`のキーバインドを完全に真似るのであれば、`CopyMode`に入るキーバインドはこれですね。
-```lua
-  { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
-```
-
-`jump`機能はデフォルトのままで`tmux`と同じキーバインドが割り当てられているようなので、そのままいけます。[^copy-mode]
+<div id="admonition-info-2" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info-2"></a></p>
+</div>
+<div>
+<p>さらにタイムリーなことに、<code>Copy Mode</code>の各種<code>jump</code>機能も実装されてました。(9/22時点では<code>nightly build</code>だけです。)</p>
+<p><a href="https://github.com/wez/wezterm/commit/8458b2b62d90cbf3326c39ed5a72ef256588ebe3">update docs for new copy-mode functions</a></p>
+<p><code>tmux</code>のキーバインドを完全に真似るのであれば、<code>CopyMode</code>に入るキーバインドはこれですね。</p>
+<pre><code class="language-lua">  { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
 </code></pre>
+<p><code>jump</code>機能はデフォルトのままで<code>tmux</code>と同じキーバインドが割り当てられているようなので、そのままいけます。<sup class="footnote-reference"><a href="#copy-mode">4</a></sup></p>
+</div>
+</div>
 <p>ということで、キーバインドは色々試してみてほしいです。</p>
-<pre><code class="language-admonish info title=&quot;[enum: KeyAssignment - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html)&quot;">A KeyAssignment represents a pre-defined function that can be applied to control the Window, Tab, Pane state typically when a key or mouse event is triggered.
-
-KeyAssignment は、キーまたはマウス イベントがトリガーされたときに、通常 Window、Tab、Pane の状態を制御するために適用できる事前定義された関数を表します。
-</code></pre>
-<pre><code class="language-admonish success">キーバインドについてはこのくらいでしょうか。次からは外観を変えていきたいと思います。
-</code></pre>
+<div id="admonition-enum-keyassignment---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigluakeyassignmentindexhtml" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html">enum: KeyAssignment - Wez's Terminal Emulator</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-enum-keyassignment---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigluakeyassignmentindexhtml"></a></p>
+</div>
+<div>
+<p>A KeyAssignment represents a pre-defined function that can be applied to control the Window, Tab, Pane state typically when a key or mouse event is triggered.</p>
+<p>KeyAssignment は、キーまたはマウス イベントがトリガーされたときに、通常 Window、Tab、Pane の状態を制御するために適用できる事前定義された関数を表します。</p>
+</div>
+</div>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>キーバインドについてはこのくらいでしょうか。次からは外観を変えていきたいと思います。</p>
+</div>
+</div>
 <div class="footnote-definition" id="other"><sup class="footnote-definition-label">1</sup>
 <p>tmux のデフォルトは <code>CTRL-b</code>、vimのデフォルトは<code>CTRL-\</code>です。
 ちょっと遠い位置に置かれていて大変なので、 Leaderキーのカスタマイズは一般的に行われているみたいです。

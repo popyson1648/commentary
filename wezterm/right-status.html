@@ -149,17 +149,35 @@
                     <main>
                         <h1 id="right-status"><a class="header" href="#right-status">Right Status</a></h1>
 <p>これはもう手厚いサンプルが既に用意されているので、この通りに書けばバッチリです。やったね！</p>
-<pre><code class="language-admonish note title=&quot;[window:set_right_status(string)](https://wezfurlong.org/wezterm/config/lua/window/set_right_status.html)&quot;">This method can be used to change the content that is displayed in the tab bar, to the right of the tabs and new tab button. 
-
-このメソッドを使用すると、タブバー内のタブと新規タブボタンの右側に表示される内容を変更することができます。
-</code></pre>
-<p>ただ、わたしの設定例にお付き合いいただける方のために、もうちょっとだけ続きます。</p>
+<div id="admonition-windowset_right_statusstringhttpswezfurlongorgweztermconfigluawindowset_right_statushtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/window/set_right_status.html">window:set_right_status(string)</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-windowset_right_statusstringhttpswezfurlongorgweztermconfigluawindowset_right_statushtml"></a></p>
+</div>
+<div>
+<p>This method can be used to change the content that is displayed in the tab bar, to the right of the tabs and new tab button. </p>
+<p>このメソッドを使用すると、タブバー内のタブと新規タブボタンの右側に表示される内容を変更することができます。</p>
+</div>
+</div>
+ただ、わたしの設定例にお付き合いいただける方のために、もうちょっとだけ続きます。
 <h2 id="my-customize"><a class="header" href="#my-customize">My Customize</a></h2>
 <p>まずは wez さんのサンプルコードをほぼ丸写しですが、一つずつ機能を分けます。</p>
-<pre><code class="language-admonish warning">先に下記のコードを載せていますが、いくつか未定義なものがあるので、これだけだとエラーになっちゃいます。
-</code></pre>
-<pre><code class="language-admonish example title=&quot;status.lua&quot;">```lua
-local function GetHostAndCwd(elems, pane)
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>先に下記のコードを載せていますが、いくつか未定義なものがあるので、これだけだとエラーになっちゃいます。</p>
+</div>
+</div>
+<div id="admonition-statuslua" class="admonition example">
+<div class="admonition-title">
+<p>status.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-statuslua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local function GetHostAndCwd(elems, pane)
   local uri = pane:get_current_working_dir()
 
   if not uri then
@@ -197,27 +215,43 @@ local function GetBattery(elems, window)
     AddElement(elems, HEADER_BATTERY, string.format('%.0f%%', b.state_of_charge * 100))
   end
 end
-```
 </code></pre>
+</div>
+</div>
 <p>wez さんのサンプルでは一度に取得していた date と time も分けちゃってます。</p>
 <p>程度は分かりませんが、非効率ではあると思われるのでお好みで。</p>
 <p>バッテリー表示については、わたしの場合はフルスクリーンの時だけ出しています。スクリーン状態は下記で取得できます。</p>
-<pre><code class="language-admonish note title=&quot;[window:get_dimensions()](https://wezfurlong.org/wezterm/config/lua/window/get_dimensions.html)&quot;">The table has the following fields:
-
-テーブルには以下のフィールドがあります:
-
-pixel_width, pixel_height, dpi, is_full_screen
-</code></pre>
+<div id="admonition-windowget_dimensionshttpswezfurlongorgweztermconfigluawindowget_dimensionshtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/window/get_dimensions.html">window:get_dimensions()</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-windowget_dimensionshttpswezfurlongorgweztermconfigluawindowget_dimensionshtml"></a></p>
+</div>
+<div>
+<p>The table has the following fields:</p>
+<p>テーブルには以下のフィールドがあります:</p>
+<p>pixel_width, pixel_height, dpi, is_full_screen</p>
+</div>
+</div>
 <p>ここでは<code>is_full_screen</code>を使います。フルスクリーン時は true が返ります。</p>
-<pre><code class="language-admonish warning">`WezTerm`の[ToggleFullScreen](https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html)を使用してフルスクリーンにしている場合は反応してくれないようです。
-
-OSからフルスクリーン化した時はちゃんと反応します。
-
-![fullscreen](img/fullscreen.png)
-</code></pre>
+<div id="admonition-warning-1" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning-1"></a></p>
+</div>
+<div>
+<p><code>WezTerm</code>の<a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html">ToggleFullScreen</a>を使用してフルスクリーンにしている場合は反応してくれないようです。</p>
+<p>OSからフルスクリーン化した時はちゃんと反応します。</p>
+<p><img src="img/fullscreen.png" alt="fullscreen" /></p>
+</div>
+</div>
 <p>で、以下が足りていなかった定義です。</p>
-<pre><code class="language-admonish example title=&quot;status.lua&quot;">```lua
--- ここもやっぱりアイコン入れてます
+<div id="admonition-statuslua-1" class="admonition example">
+<div class="admonition-title">
+<p>status.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-statuslua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">-- ここもやっぱりアイコン入れてます
 local HEADER_HOST = { Foreground = { Color = '#75b1a9' }, Text = '' }
 local HEADER_CWD = { Foreground = { Color = '#92aac7' }, Text = '' }
 local HEADER_DATE = { Foreground = { Color = '#ffccac' }, Text = '' }
@@ -235,11 +269,17 @@ local function AddElement(elems, header, str)
   table.insert(elems, { Foreground = DEFAULT_COLOR })
   table.insert(elems, { Text = str .. SPACE_3 })
 end
-```
 </code></pre>
+</div>
+</div>
 <p>引っ張った割には特に説明するところもないですね...。そのまま完成させちゃいましょう😆</p>
-<pre><code class="language-admonish example title=&quot;status.lua&quot;">```lua
-local function RightUpdate(window, pane)
+<div id="admonition-statuslua-2" class="admonition example">
+<div class="admonition-title">
+<p>status.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-statuslua-2"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local function RightUpdate(window, pane)
   local elems = {}
 
   GetHostAndCwd(elems, pane)
@@ -254,18 +294,24 @@ wezterm.on('update-status', function(window, pane)
   -- 冗長に見えるかもしれませんが、Left Status の設定を後で入れるのでこうなってます。
   RightUpdate(window, pane)
 end)
-```
 </code></pre>
+</div>
+</div>
 <p>さて、これでこんな感じになったはずなんですがどうでしょうか？右上です。</p>
 <p><img src="img/right-status.png" alt="right-status" /></p>
 <p>フルスクリーン時にバッテリー表示もされているでしょうか？
 <img src="img/right-status-full.png" alt="right-status" /></p>
-<pre><code class="language-admonish success">華やかになりましたね。
-
-(ぶっちゃけそんな見ないんだけど) サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界ですよね〜。
-
-ほわほわ〜☺️
-</code></pre>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>華やかになりましたね。</p>
+<p>(ぶっちゃけそんな見ないんだけど) サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界ですよね〜。</p>
+<p>ほわほわ〜☺️</p>
+</div>
+</div>
 
                     </main>
 

@@ -152,46 +152,96 @@
 <h2 id="color-schemes"><a class="header" href="#color-schemes">Color Schemes</a></h2>
 <p>Wezterm では数多くのカラースキームを内蔵しているため、簡単に設定が可能です。</p>
 <p>以下から好きなカラースキームを選んで指定します。</p>
-<pre><code class="language-admonish note title=&quot;[Color Schemes](https://wezfurlong.org/wezterm/colorschemes/index.html)&quot;">735 Color schemes listed by first letter
-
-735[^a]種類のカラースキーム一覧
-</code></pre>
+<div id="admonition-color-schemeshttpswezfurlongorgweztermcolorschemesindexhtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/colorschemes/index.html">Color Schemes</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-color-schemeshttpswezfurlongorgweztermcolorschemesindexhtml"></a></p>
+</div>
+<div>
+<p>735 Color schemes listed by first letter</p>
+<p>735<sup class="footnote-reference"><a href="#a">1</a></sup>種類のカラースキーム一覧</p>
+</div>
+</div>
 <p>お気に入りのカラースキームは見つかりましたか？</p>
 <p>わたしは<code>Catppuccin Mocha</code>を愛用しているので、以下のようになりました。</p>
-<pre><code class="language-admonish example title=&quot;wezterm.lua&quot;">```lua
-color_scheme = 'Catppuccin Mocha',
-```
+<div id="admonition-weztermlua" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">color_scheme = 'Catppuccin Mocha',
 </code></pre>
-<pre><code class="language-admonish info">ちなみに、このWebページのカラースキームも`Catppuccin`を使ってたりします。
-左上のブラシマークから4種類のテーマを変えられるのでお好みで切り替えてみてください。
-</code></pre>
+</div>
+</div>
+<div id="admonition-info" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info"></a></p>
+</div>
+<div>
+<p>ちなみに、このWebページのカラースキームも<code>Catppuccin</code>を使ってたりします。
+左上のブラシマークから4種類のテーマを変えられるのでお好みで切り替えてみてください。</p>
+</div>
+</div>
 <h2 id="window_background_opacity"><a class="header" href="#window_background_opacity">window_background_opacity</a></h2>
-<pre><code class="language-admonish note title=&quot;[Colors &amp; Appearance - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/appearance.html#window-background-opacity)&quot;">If your Operating System provides Compositing support then WezTerm is able to specify the alpha channel value for the background content
-
-オペレーティングシステムがコンポジットをサポートしている場合、WezTerm は背景コンテンツのアルファチャンネル値を指定することができます。
-</code></pre>
-<p>アルファチャンネル値には 0.0 から 1.0 までの値を用います。</p>
+<div id="admonition-colors--appearance---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigappearancehtmlwindow-background-opacity" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/appearance.html#window-background-opacity">Colors &amp; Appearance - Wez's Terminal Emulator</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-colors--appearance---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigappearancehtmlwindow-background-opacity"></a></p>
+</div>
+<div>
+<p>If your Operating System provides Compositing support then WezTerm is able to specify the alpha channel value for the background content</p>
+<p>オペレーティングシステムがコンポジットをサポートしている場合、WezTerm は背景コンテンツのアルファチャンネル値を指定することができます。</p>
+</div>
+</div>
+アルファチャンネル値には 0.0 から 1.0 までの値を用います。
 <p>透過値はお好みで。わたしはこんな感じで。</p>
-<pre><code class="language-admonish example title=&quot;wezterm.lua&quot;">```lua
-window_background_opacity = 0.93,
-```
+<div id="admonition-weztermlua-1" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">window_background_opacity = 0.93,
 </code></pre>
+</div>
+</div>
 <h2 id="一旦確認"><a class="header" href="#一旦確認">一旦確認…</a></h2>
 <p>さて、ここまでで wezterm.lua は以下のようになりました。</p>
-<pre><code class="language-admonish example title=&quot;wezterm.lua&quot;">```lua
-return {
+<div id="admonition-weztermlua-2" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-weztermlua-2"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">return {
 	color_scheme = &quot;Catppuccin Mocha&quot;,
 	window_background_opacity = 0.93,
 }
-```
 </code></pre>
-<pre><code class="language-admonish warning">return {} の中に記述します。
-</code></pre>
+</div>
+</div>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>return {} の中に記述します。</p>
+</div>
+</div>
 <p><img src="img/opacity.png" alt="opacity.png" /></p>
-<pre><code class="language-admonish success">カラースキームは白文字しかない状態だと「ちょっと何言ってるかわかんない」ですが、透過については確認できましたね。
-
-次は、せっかく設定したカラースキームを見たいので、少し脇に逸れてプロンプトを変えてみましょう。
-</code></pre>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>カラースキームは白文字しかない状態だと「ちょっと何言ってるかわかんない」ですが、透過については確認できましたね。</p>
+<p>次は、せっかく設定したカラースキームを見たいので、少し脇に逸れてプロンプトを変えてみましょう。</p>
+</div>
+</div>
 <div class="footnote-definition" id="a"><sup class="footnote-definition-label">1</sup>
 <p>2022/09/23時点</p>
 </div>

@@ -151,8 +151,13 @@
 <p>まずはステータスバーの左側を活用していきましょう。</p>
 <h2 id="キーボード状態"><a class="header" href="#キーボード状態">キーボード状態</a></h2>
 <p>わたしが使っているのはキーボード状態です。ひとまずコードはこんな感じ。</p>
-<pre><code class="language-admonish example title=&quot;status.lua&quot;">```lua
-local DEFAULT_COLOR = { Color = '#9a9eab' }
+<div id="admonition-statuslua" class="admonition example">
+<div class="admonition-title">
+<p>status.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-statuslua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local DEFAULT_COLOR = { Color = '#9a9eab' }
 
 local SPACE_1 = ' '
 local SPACE_3 = '   '
@@ -174,8 +179,9 @@ local function GetKeyboard(elems, window)
 
   AddIcon(elems, window:composition_status() and HEADER_IME or HEADER_KEY_NORMAL)
 end
-```
 </code></pre>
+</div>
+</div>
 <p><code>SPACE_3</code>とかは自分でもちょっとマヌケだとは思ってますが、なんかごめんなさい...。</p>
 <p>まだ<code>update-status</code>と繋いでないので動きませんが、ここで一旦区切って補足します。</p>
 <p>ここでは以下の状態を可視化します。</p>
@@ -185,35 +191,53 @@ end
 </ul>
 <h2 id="leaderキーアクティブ"><a class="header" href="#leaderキーアクティブ">Leaderキーアクティブ</a></h2>
 <p>まずは<code>leader</code>キーの状態を以下で取得します。</p>
-<pre><code class="language-admonish note title=&quot;[window:leader_is_active](https://wezfurlong.org/wezterm/config/lua/window/leader_is_active.html)&quot;">Returns true if the Leader Key is active in the window, or false otherwise.
-
-リーダーキーがウィンドウ内でアクティブな場合はtrueを、そうでない場合はfalseを返します。
-</code></pre>
+<div id="admonition-windowleader_is_activehttpswezfurlongorgweztermconfigluawindowleader_is_activehtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/window/leader_is_active.html">window:leader_is_active</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-windowleader_is_activehttpswezfurlongorgweztermconfigluawindowleader_is_activehtml"></a></p>
+</div>
+<div>
+<p>Returns true if the Leader Key is active in the window, or false otherwise.</p>
+<p>リーダーキーがウィンドウ内でアクティブな場合はtrueを、そうでない場合はfalseを返します。</p>
+</div>
+</div>
 <p>リーダーキーがアクティブである場合はIMEよりも優先して表示します。</p>
 <h2 id="ime状態"><a class="header" href="#ime状態">IME状態</a></h2>
 <p>次にIME状態です。</p>
-<pre><code class="language-admonish note title=&quot;[window:composition_status()](https://wezfurlong.org/wezterm/config/lua/window/composition_status.html)&quot;">Returns a string holding the current dead key or IME composition text, or nil if the input layer is not in a composition state.
-
-This is the same text that is shown at the cursor position when composing.
-
-現在のデッドキーまたはIMEのコンポジションテキストを保持する文字列、または入力レイヤーがコンポジション状態でない場合はnilを返します。
-
-これは、コンポジション時にカーソル位置に表示されるテキストと同じものです。
-</code></pre>
-<p><code>GetKeyboard()</code>では、<code>window:composition_status()</code>の結果が<code>nil</code>か否かでアイコンの色を変えてます。</p>
-<pre><code class="language-admonish info">コンポジションって何だ？と思われるかもしれませんが、わたしも思ってます。
-
-でも、この状態を指すようです。
-
-![composition](img/composition.png)
-
-ちょっとフライングしてますが、左上に`あ`と出てるのが`composition_status()`で`nil以外`が返ってきている状態です。
-
-(`nil`でない場合は文字列が入りますが、この例では使用していません。)
-</code></pre>
+<div id="admonition-windowcomposition_statushttpswezfurlongorgweztermconfigluawindowcomposition_statushtml" class="admonition note">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/window/composition_status.html">window:composition_status()</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-windowcomposition_statushttpswezfurlongorgweztermconfigluawindowcomposition_statushtml"></a></p>
+</div>
+<div>
+<p>Returns a string holding the current dead key or IME composition text, or nil if the input layer is not in a composition state.</p>
+<p>This is the same text that is shown at the cursor position when composing.</p>
+<p>現在のデッドキーまたはIMEのコンポジションテキストを保持する文字列、または入力レイヤーがコンポジション状態でない場合はnilを返します。</p>
+<p>これは、コンポジション時にカーソル位置に表示されるテキストと同じものです。</p>
+</div>
+</div>
+`GetKeyboard()`では、`window:composition_status()`の結果が`nil`か否かでアイコンの色を変えてます。
+<div id="admonition-info" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info"></a></p>
+</div>
+<div>
+<p>コンポジションって何だ？と思われるかもしれませんが、わたしも思ってます。</p>
+<p>でも、この状態を指すようです。</p>
+<p><img src="img/composition.png" alt="composition" /></p>
+<p>ちょっとフライングしてますが、左上に<code>あ</code>と出てるのが<code>composition_status()</code>で<code>nil以外</code>が返ってきている状態です。</p>
+<p>(<code>nil</code>でない場合は文字列が入りますが、この例では使用していません。)</p>
+</div>
+</div>
 <p>さて、それでは<code>update-status</code>に繋ぎ込みましょう。</p>
-<pre><code class="language-admonish example title=&quot;status.lua&quot;">```lua
-local function LeftUpdate(window, pane)
+<div id="admonition-statuslua-1" class="admonition example">
+<div class="admonition-title">
+<p>status.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-statuslua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local function LeftUpdate(window, pane)
   local elems = {}
 
   GetKeyboard(elems, window)
@@ -224,16 +248,24 @@ end
 wezterm.on('update-status', function(window, pane)
   LeftUpdate(window, pane)
 end)
-```
 </code></pre>
+</div>
+</div>
 <p>normal:</p>
 <p><img src="img/key-normal.png" alt="key-normal" /></p>
 <p>leader key is active:</p>
 <p><img src="img/key-leader.png" alt="key-leader" /></p>
 <p>composition:</p>
 <p><img src="img/key-ime.png" alt="key-ime" /></p>
-<pre><code class="language-admonish success">こんなもんですね。動きが出て楽しいですね😆 ...ね❗️ね❗️
-</code></pre>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>こんなもんですね。動きが出て楽しいですね😆 ...ね❗️ね❗️</p>
+</div>
+</div>
 
                     </main>
 
