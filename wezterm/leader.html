@@ -149,7 +149,7 @@
                     <main>
                         <h1 id="leader-key"><a class="header" href="#leader-key">Leader Key</a></h1>
 <p>さて、前回はキーバインドを落とし込んだわけですが、今回は<code>Leader</code>キーです。</p>
-<div id="admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition note">
+<div id="admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/keys.html#leader-key">Key Binding - Wez's Terminal Emulator</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key"></a></p>
@@ -161,10 +161,10 @@
 </div>
 <p><code>Leader</code>キーという概念は WezTerm 特有のものではく、<code>tmux</code>や<code>vim</code>など古参のソフトウェアでも用いられています。</p>
 <p>WezTerm でのデフォルトは<code>CTRL-a</code>です。<sup class="footnote-reference"><a href="#other">1</a></sup></p>
-<div id="admonition-info" class="admonition info">
+<div id="admonition-note" class="admonition note">
 <div class="admonition-title">
-<p>Info</p>
-<p><a class="admonition-anchor-link" href="#admonition-info"></a></p>
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
 <p><code>CTRL-a</code> という表記は<code>control</code>キーと<code>a</code>キーを同時押しすることを示しています。</p>
@@ -182,10 +182,10 @@
 </code></pre>
 </div>
 </div>
-<div id="admonition-info-1" class="admonition info">
+<div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
-<p>Info</p>
-<p><a class="admonition-anchor-link" href="#admonition-info-1"></a></p>
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
 <p><code>timeout_milliseconds</code>のパラメータを変えていますが、これは後で触れます。</p>
@@ -205,10 +205,10 @@ OSのショートカットキー等も含め、あらかじめ確認しておき
 </div>
 <h2 id="timeout_milliseconds"><a class="header" href="#timeout_milliseconds">timeout_milliseconds</a></h2>
 <p>これは前項で挙げたマニュアルの文章を引用しますが、</p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
 </div>
 <div>
 <p><code>LEADER</code> stays active until a keypress is registered (whether it matches a key binding or not),
@@ -234,7 +234,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p>さて、皆さんはお気づきだろうか…。</p>
 <p>デフォルトのキー設定では<code>Leader</code>キーなんて一切使われていないことに…😨</p>
 <p>例えばこれ。</p>
-<div id="admonition-default-keybinds" class="admonition info">
+<div id="admonition-default-keybinds" class="admonition quote">
 <div class="admonition-title">
 <p>Default KeyBinds</p>
 <p><a class="admonition-anchor-link" href="#admonition-default-keybinds"></a></p>
@@ -245,10 +245,10 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
 <p><code>ALT|CTRL</code>は<code>Alt</code>キーと<code>Ctrl</code>キーを同時押しです。</p>
@@ -271,10 +271,10 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p><code>tmux</code>と同じキーバインドですね。ペイン操作も<code>WezTerm</code>に一任しちゃいます。</p>
 <p><code>tmux</code>使ってないのに同等の機能が実現できちゃうんですよ？すごくないです！？</p>
 <p>もしどこかで<code>tmux</code>を使うことがあっても同一操作なので迷わず使えます、たぶん！</p>
-<div id="admonition-info-2" class="admonition info">
+<div id="admonition-note-4" class="admonition note">
 <div class="admonition-title">
-<p>Info</p>
-<p><a class="admonition-anchor-link" href="#admonition-info-2"></a></p>
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
 </div>
 <div>
 <p>さらにタイムリーなことに、<code>Copy Mode</code>の各種<code>jump</code>機能も実装されてました。(9/22時点では<code>nightly build</code>だけです。)</p>

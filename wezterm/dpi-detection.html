@@ -151,7 +151,7 @@
 <p>前回は手動でフォントサイズの切り替えを行いましたが、今回はこれを<code>dpi</code>の変更を検知して自動で切り替わるようにします。</p>
 <h2 id="まず前置き"><a class="header" href="#まず前置き">まず前置き</a></h2>
 <p>さて、これまでにも何度か出てきていた<code>wezterm.on</code>ですが、以下のような説明がありました。</p>
-<div id="admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml" class="admonition note">
+<div id="admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/wezterm/on.html">wezterm.on(event_name, callback)</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml"></a></p>
@@ -164,7 +164,7 @@ When the event is emitted, each of the registered callbacks is called in the ord
 </div>
 </div>
 <p>これを踏まえた上で、<code>update-status</code>をもう一個作ります。<sup class="footnote-reference"><a href="#a">1</a></sup></p>
-<div id="admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml" class="admonition note">
+<div id="admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/update-status.html">update-status</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml"></a></p>
@@ -176,10 +176,10 @@ When the event is emitted, each of the registered callbacks is called in the ord
 </div>
 <p>説明にもある通り、「最終的に<code>window:set_right_status</code>または<code>window:set_left_status</code>を呼び出す目的」のものであるため、
 なんかコレじゃないとは思っていますが、他に方法が見つけられませんでした😢</p>
-<div id="admonition-info" class="admonition info">
+<div id="admonition-note" class="admonition note">
 <div class="admonition-title">
-<p>Info</p>
-<p><a class="admonition-anchor-link" href="#admonition-info"></a></p>
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
 <p>今後の仕様追加・変更によって、より自然に実現できるかもしれませんね。</p>
@@ -222,10 +222,10 @@ end)
 <p><code>dpi</code>と<code>font_size</code>周辺の値はわたしの環境にあわせてぼや〜っと決め打ちにしてるので適宜調整してください。</p>
 <p>動作としては、<code>dpi</code>に変更があったらカスタムイベントの<code>trigger-dpi</code>を呼んでフォントサイズを切り替えます。
 <code>trigger-dpi</code>自体は手動でフォントサイズを切り替える処理とほぼ同じですね。</p>
-<div id="admonition-info-1" class="admonition info">
+<div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
-<p>Info</p>
-<p><a class="admonition-anchor-link" href="#admonition-info-1"></a></p>
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
 <p>理由はちょっとよくわからなかったのですが、</p>
