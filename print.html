@@ -418,7 +418,7 @@
 - A Nerd Font installed and enabled in your terminal.
 
 前提条件
-- Nerd Fontがインストールされ、端末で有効になっていること。
+- Nerd Fontがインストールされ、ターミナルで有効になっていること。
 </code></pre>
 <p>と書いてありますね。</p>
 <p>本来なら「なんかめんどくさそうだな〜」となるところですが...、</p>
@@ -494,23 +494,22 @@ special symbols are available even without requiring you to use a patched font.<
 </div>
 </div>
 <h3 id="step-3"><a class="header" href="#step-3">Step 3.</a></h3>
-<p>コンフィグファイルは、また別の機会に。</p>
-<p><code>WezTerm</code>を一旦終了して再度起動し直しましょう。</p>
+<p>コンフィグファイルについては、また別の機会に。</p>
+<p><code>WezTerm</code>を一旦終了して再度起動しましょう。</p>
 <p><img src="wezterm/img/starship.png" alt="starship.png" /></p>
 <p><code>3.1 Window</code>で設定したカラースキームが適用されているのを確認できましたね。</p>
-<p>あと、月が綺麗ですね。(<code>wezterm</code>ディレクトリに行くと手っ取り早く見られます。)</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="wezterm/shell.html#admonition-success"></a></p>
 </div>
 <div>
-<p>満足💕
-それでは<code>WezTerm</code>に戻りましょう。</p>
+<p>月も綺麗ですね💕 (<code>wezterm</code>ディレクトリに行くと手っ取り早く見られます。)</p>
+<p>それでは<code>WezTerm</code>のお話に戻りましょう。</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="font"><a class="header" href="#font">Font</a></h1>
-<p>これはもう、ほんとにお好きなフォントを使ってもらえれば良いです。</p>
+<p>これはもう、ほんとにお好きなフォントでいいです。</p>
 <p>以下に再掲しますが、<code>starship</code>を使用する場合も<code>WezTerm</code>であれば<code>Nerd Font</code>を考慮する必要がありません😆</p>
 <div id="admonition-weztermnerdfontshttpswezfurlongorgweztermconfigluaweztermnerdfontshtml" class="admonition info">
 <div class="admonition-title">
@@ -538,15 +537,14 @@ special symbols are available even without requiring you to use a patched font.<
 <p>Fira Mono と源真ゴシックを合成したプログラミングフォント Firge (ファージ)</p>
 </div>
 </div>
-<p>「ダウンロードはこちら」というリンクから、お言葉に甘えて<code>FirgeNerd_v0.2.0.zip</code>をダウンロードしましょう。感謝❤️</p>
+<p>「ダウンロードはこちら」というリンクから、お言葉に甘えて<code>FirgeNerd_v0.2.0.zip</code>をダウンロードします。ありがとー💕</p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-note"></a></p>
 </div>
 <div>
-<p><code>Nerd Font</code>いらないって言いながら<code>Nerd</code>なの❗️❓ってなっちゃうんですが、なんかごめんなさい、色々ありました。</p>
-<p>取り急ぎ直したので内容は間違ってないと思います。...多分。</p>
+<p><code>Nerd Font</code>いらないって言いながら<code>Nerd</code>とか言ってんの何なの❗️❓ってなっちゃうんですが、なんかごめんなさい。</p>
 </div>
 </div>
 <h2 id="インストール-1"><a class="header" href="#インストール-1">インストール</a></h2>
@@ -559,39 +557,59 @@ special symbols are available even without requiring you to use a patched font.<
 <p>ほらできた🤗</p>
 <h2 id="wezterm-設定"><a class="header" href="#wezterm-設定">WezTerm 設定</a></h2>
 <p>で、このフォントを<code>WezTerm</code>に設定すれば良さそう。</p>
-<div id="admonition-weztermfonthttpswezfurlongorgweztermconfigluaweztermfonthtml" class="admonition info">
-<div class="admonition-title">
-<p><a href="https://wezfurlong.org/wezterm/config/lua/wezterm/font.html">wezterm.font</a></p>
-<p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-weztermfonthttpswezfurlongorgweztermconfigluaweztermfonthtml"></a></p>
-</div>
-<div>
-<p>This function constructs a lua table that corresponds to the internal FontAttributes struct that is used to select a single named font.</p>
-<p>この関数は、単一の名前付きフォントを選択するために使用される内部 FontAttributes 構造体に対応する lua テーブルを構築します。</p>
-</div>
-</div>
 <div id="admonition-weztermlua" class="admonition example">
 <div class="admonition-title">
 <p>wezterm.lua</p>
 <p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-weztermlua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">-- 説明簡略のためサンプルとは少し記述を変えてますが、どちらでも構いません。
-font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
+<pre><code class="language-lua">font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 </code></pre>
 </div>
 </div>
-<p>わたしは<code>Firge35NerdConsole-Regular.ttf</code>をインストールして、<code>WezTerm</code>にファミリー名の<code>Firge35Nerd Console</code>を指定しています。</p>
+<div id="admonition-weztermfonthttpswezfurlongorgweztermconfigluaweztermfonthtml" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/wezterm/font.html">wezterm.font</a></p>
+<p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-weztermfonthttpswezfurlongorgweztermconfigluaweztermfonthtml"></a></p>
+</div>
+<div>
+<p>The first parameter is the name of the font; the name can be one of the following types of names:</p>
+<ul>
+<li>The font family name, eg: &quot;JetBrains Mono&quot;. The family name doesn't include any style information (such as weight, stretch or italic), which can be specified via the attributes parameter. This is the recommended name to use for the font, as it the most compatible way to resolve an installed font.</li>
+<li>The computed full name, which is the family name with the sub-family (which incorporates style information) appended, eg: &quot;JetBrains Mono Regular”.</li>
+<li>(Since 20210502-154244-3f7122cb) The postscript name, which is an ostensibly unique name identifying a given font and style that is encoded into the font by the font designer.</li>
+</ul>
+<p>最初のパラメータはフォントの名前です。この名前は、以下のタイプの名前のいずれかになります。</p>
+<ul>
+<li>フォントファミリ名、例：&quot;JetBrains Mono 「JetBrains Mono&quot; のようなフォントファミリーの名前です。このファミリー名にはスタイル情報（ウェイト、ストレッチ、イタリックなど）は含まれませんが、これは属性パラメータで指定できます。これは、インストールされているフォントを解決するための最も互換性のある方法であるため、フォントに使用する推奨される名前です。</li>
+<li>計算されたフルネームは、ファミリー名にサブファミリー（スタイル情報を含む）を追加したもので、例．例えば、「JetBrains Mono Regular」です。</li>
+<li>(20210502-154244-3f7122cb 以降) ポストスクリプト名。これは、フォントデザイナーがフォントにエンコードした、与えられたフォントとスタイルを識別する表向きユニークな名前です。</li>
+</ul>
+</div>
+</div>
+<p>わたしは<code>Firge35NerdConsole-Regular.ttf</code>をインストールして、ファミリー名の<code>Firge35Nerd Console</code>で指定しています。</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-note-1"></a></p>
 </div>
 <div>
-<p>ファミリー名は Font Book 等で確認できます。「情報を確認する(<code>command + i</code>)」ですね。
-<img src="wezterm/img/font-info.png" alt="font-info.png" /></p>
+<p>ファミリー名は<code>Font Book</code>アプリケーションで確認できます。「識別子」項目の中ですね。</p>
+<p>出ていない場合は「情報を確認する(<code>command + i</code>)」をポチッと。</p>
+<p><img src="wezterm/img/font-info.png" alt="font-info.png" /></p>
 </div>
 </div>
-<p>フォントサイズも指定できるので一緒に入れておきましょう。</p>
+<p>フォントサイズも指定できるので、一緒に入れておきましょう。</p>
+<div id="admonition-weztermlua-1" class="admonition example">
+<div class="admonition-title">
+<p>wezterm.lua</p>
+<p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-weztermlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">font_size = 12.0,
+</code></pre>
+</div>
+</div>
 <div id="admonition-font_sizehttpswezfurlongorgweztermconfigluaconfigfont_sizehtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/config/font_size.html">font_size</a></p>
@@ -604,16 +622,6 @@ font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 <p>13.3 のような小数点のサイズを使用して、サイズを微調整することができます。</p>
 </div>
 </div>
-<div id="admonition-weztermlua-1" class="admonition example">
-<div class="admonition-title">
-<p>wezterm.lua</p>
-<p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-weztermlua-1"></a></p>
-</div>
-<div>
-<pre><code class="language-lua">font_size = 12.0,
-</code></pre>
-</div>
-</div>
 <p>上の例はデフォルト値そのままですが、お好みで調整してください。</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
@@ -621,7 +629,7 @@ font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 <p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-success"></a></p>
 </div>
 <div>
-<p>どうでしょう？明らかに日本語が綺麗になりましたね❗️</p>
+<p>どうでしょう？明らかに日本語が綺麗になりました❗️</p>
 <p><img src="wezterm/img/font-firge.png" alt="font-firge.png" /></p>
 <p>やったね🤗</p>
 </div>
@@ -704,7 +712,7 @@ font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 <p><a class="admonition-anchor-link" href="wezterm/frame.html#admonition-success"></a></p>
 </div>
 <div>
-<p>ごめんなさい。全然中身ありませんでしたね😅 まあ、小休止ってことで。</p>
+<p>全然中身ありませんでしたね😅 まあ、小休止ってことで。</p>
 <p>次はキーバインドを変えてみましょう。</p>
 </div>
 </div>
@@ -713,8 +721,8 @@ font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 <p>例えば<code>tmux</code>。</p>
 <p><code>WezTerm</code>自体が<code>tmux</code>と同等かそれ以上の機能を持っているので、
 <code>WezTerm</code>に対して<code>tmux</code>と同じキーバインドを与えてしまえば、これは不要になるわけです。<sup class="footnote-reference"><a href="#a">1</a></sup></p>
-<p>と言ってもわたしがローカルでしか使っていないから大丈夫なだけで、ネットワークを介して使う場合は困る事もあるかもしれません。</p>
-<p>実際、デフォルトでは徹底的に他のソフトウェアとの衝突を避けています。</p>
+<p>と言ってもわたしがローカルでしか使っていないから大丈夫なだけで、ネットワークを介して使う場合は困る事もあるかもしれませんし、
+実際にデフォルトでは徹底的に他のソフトウェアとの衝突を避けています。</p>
 <div id="admonition-default-shortcut--key-binding-assignmentshttpswezfurlongorgweztermconfigdefault-keyshtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/default-keys.html">Default Shortcut / Key Binding Assignments</a></p>
@@ -764,8 +772,9 @@ font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 </div>
 </div>
 <p><img src="wezterm/img/key-now-lua.png" alt="key-now-lua.png" /></p>
-<p>さすがですね☺️ もはやレールは存在していました。これを<code>keybinds.lua</code>に持っていけば良いだけです。</p>
-<p>これはもうプロっぽく片付けましょう。シェル芸というやつです✨</p>
+<p>さすがですね☺️ もはやレールは存在していました。これを自分の設定に持っていけば良いだけです。</p>
+<p>ということで、<code>keybinds.lua</code>とでもしてここに設定を落とし込みます。</p>
+<p>これはもうプロっぽく片付けちゃいましょう。シェル芸というやつです✨</p>
 <div id="admonition-command-2" class="admonition quote">
 <div class="admonition-title">
 <p>Command</p>
@@ -776,6 +785,7 @@ font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 </code></pre>
 </div>
 </div>
+<p><code>&gt;</code>を使って出力先をファイルにすると、もうこれだけで流し込めちゃうんですね。簡単😆</p>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
@@ -786,7 +796,6 @@ font = require(&quot;wezterm&quot;).font(&quot;Firge35Nerd Console&quot;),
 <p><code>~/.config/wezterm</code>に移動するか、出力先を<code>~/.config/wezterm/keybinds.lua</code>に指定してください。</p>
 </div>
 </div>
-<p>これだけでもう直接流し込めちゃうんですね。簡単〜😆</p>
 <h2 id="読み込み先を切り替える"><a class="header" href="#読み込み先を切り替える">読み込み先を切り替える</a></h2>
 <p>ここまでは暗黙的にデフォルト設定が適用されていましたが、これからは自分で作った<code>keybinds.lua</code>を使っていきましょう。</p>
 <div id="admonition-weztermlua" class="admonition example">
@@ -993,7 +1002,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </div>
 </div>
 <div class="footnote-definition" id="other"><sup class="footnote-definition-label">1</sup>
-<p>tmux のデフォルトは <code>CTRL-b</code>、vimのデフォルトは<code>CTRL-\</code>です。
+<p>tmux のデフォルトは <code>CTRL-b</code>、vimのデフォルトは<code>\</code>です。
 ちょっと遠い位置に置かれていて大変なので、 Leaderキーのカスタマイズは一般的に行われているみたいです。
 メジャーなカスタマイズ先は<code>CTRL-a</code>や、<code>CTRL-j</code>、<code>CTRL-,(カンマ)</code>、<code>CTRL-Space</code>あたりでしょうか？</p>
 </div>
@@ -1055,7 +1064,7 @@ return {
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="window-title"><a class="header" href="#window-title">Window Title</a></h1>
-<p><code>format.lua</code>に、以下のコードを追記していきましょう。<sup class="footnote-reference"><a href="#code">1</a></sup></p>
+<p><code>format.lua</code>に、以下のコードを追記していきましょう。<sup class="footnote-reference"><a href="#a">1</a></sup></p>
 <div id="admonition-formatlua" class="admonition example">
 <div class="admonition-title">
 <p>format.lua</p>
@@ -1120,7 +1129,9 @@ end
 <p>まあ、これも各自お好みで調整してもらえればOKです。</p>
 </div>
 </div>
-[^code]: なんか偉そうでした。wez さんのサンプル、丸パクリです...。
+<div class="footnote-definition" id="a"><sup class="footnote-definition-label">1</sup>
+<p>なんか偉そうでした。wez さんのサンプル、丸パクリです...。</p>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tab"><a class="header" href="#tab">Tab</a></h1>
 <p>さて、引き続き<code>format.lua</code>に追記していきましょう。今回はタブタイトルです。</p>
 <div id="admonition-formatlua" class="admonition example">
@@ -1683,7 +1694,7 @@ end)
 </div>
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/DecreaseFontSize.html">DecreaseFontSize</a>・
 <a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/IncreaseFontSize.html">IncreaseFontSize</a>
-を使ってサイズを上下するのもいいんですが、ちょっとコレじゃない...。</p>
+を使ってサイズを上げ下げしてもいいんですが、ちょっとコレじゃない...。</p>
 <p>わたしはこれが結構ストレスになっていたので、 この問題の解消に有用なのが次のフォント切り替え機能です。</p>
 <h2 id="フォント切り替え"><a class="header" href="#フォント切り替え">フォント切り替え</a></h2>
 <p>この例では<code>toggle-font-size</code>というイベントを独自に作っています。</p>
@@ -1870,8 +1881,8 @@ end)
 <p><a class="admonition-anchor-link" href="wezterm/dpi-detection.html#admonition-success"></a></p>
 </div>
 <div>
-<p>なんか、すごい簡単でしたね😆</p>
-<p>既に用意されているロジックをつなぐだけ☺️</p>
+<p>なんか、すごい簡単😆</p>
+<p>既に用意されているロジックをつなぐだけ❗️</p>
 </div>
 </div>
 <div class="footnote-definition" id="a"><sup class="footnote-definition-label">1</sup>

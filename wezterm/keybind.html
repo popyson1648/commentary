@@ -152,8 +152,8 @@
 <p>例えば<code>tmux</code>。</p>
 <p><code>WezTerm</code>自体が<code>tmux</code>と同等かそれ以上の機能を持っているので、
 <code>WezTerm</code>に対して<code>tmux</code>と同じキーバインドを与えてしまえば、これは不要になるわけです。<sup class="footnote-reference"><a href="#a">1</a></sup></p>
-<p>と言ってもわたしがローカルでしか使っていないから大丈夫なだけで、ネットワークを介して使う場合は困る事もあるかもしれません。</p>
-<p>実際、デフォルトでは徹底的に他のソフトウェアとの衝突を避けています。</p>
+<p>と言ってもわたしがローカルでしか使っていないから大丈夫なだけで、ネットワークを介して使う場合は困る事もあるかもしれませんし、
+実際にデフォルトでは徹底的に他のソフトウェアとの衝突を避けています。</p>
 <div id="admonition-default-shortcut--key-binding-assignmentshttpswezfurlongorgweztermconfigdefault-keyshtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/default-keys.html">Default Shortcut / Key Binding Assignments</a></p>
@@ -203,8 +203,9 @@
 </div>
 </div>
 <p><img src="img/key-now-lua.png" alt="key-now-lua.png" /></p>
-<p>さすがですね☺️ もはやレールは存在していました。これを<code>keybinds.lua</code>に持っていけば良いだけです。</p>
-<p>これはもうプロっぽく片付けましょう。シェル芸というやつです✨</p>
+<p>さすがですね☺️ もはやレールは存在していました。これを自分の設定に持っていけば良いだけです。</p>
+<p>ということで、<code>keybinds.lua</code>とでもしてここに設定を落とし込みます。</p>
+<p>これはもうプロっぽく片付けちゃいましょう。シェル芸というやつです✨</p>
 <div id="admonition-command-2" class="admonition quote">
 <div class="admonition-title">
 <p>Command</p>
@@ -215,6 +216,7 @@
 </code></pre>
 </div>
 </div>
+<p><code>&gt;</code>を使って出力先をファイルにすると、もうこれだけで流し込めちゃうんですね。簡単😆</p>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
@@ -225,7 +227,6 @@
 <p><code>~/.config/wezterm</code>に移動するか、出力先を<code>~/.config/wezterm/keybinds.lua</code>に指定してください。</p>
 </div>
 </div>
-<p>これだけでもう直接流し込めちゃうんですね。簡単〜😆</p>
 <h2 id="読み込み先を切り替える"><a class="header" href="#読み込み先を切り替える">読み込み先を切り替える</a></h2>
 <p>ここまでは暗黙的にデフォルト設定が適用されていましたが、これからは自分で作った<code>keybinds.lua</code>を使っていきましょう。</p>
 <div id="admonition-weztermlua" class="admonition example">
