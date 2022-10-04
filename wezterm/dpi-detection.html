@@ -230,7 +230,17 @@ end)
 <div>
 <p>理由はちょっとよくわからなかったのですが、</p>
 <p>カスタムイベントに渡した<code>window</code>に対しての<code>get_config_overrides().dpi</code>が上手くいかなかったので、
-<code>wezterm.emit('trigger-dpi', window, dpi)</code>として<code>dpi</code>も渡しています。これであれば動くみたいです。</p>
+<code>wezterm.emit('trigger-dpi', window, dpi)</code>として<code>dpi</code>も渡しています。</p>
+</div>
+</div>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p>わざわざカスタムイベントに分けなくても動くんですが、</p>
+<p>やっぱり本来の目的に無いことをしているので、少しでも設計思想に近づけているつもりなんです...。</p>
 </div>
 </div>
 <div id="admonition-success" class="admonition success">

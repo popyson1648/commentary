@@ -1094,7 +1094,7 @@ end)
 <p>wezterm.on は、event_name が発生したときに指定したコールバックを呼び出します。イベントは wezterm 自身によって、またはあなたが指定したコード/設定によって発行されます。</p>
 </div>
 </div>
-<p>この例で言うと、<code>format-window-title</code>という名前のイベントが発生したら、ここで定義した functtion が呼ばれるという動作をします。</p>
+<p>この例で言うと、<code>format-window-title</code>という名前のイベントが発生したら、ここで定義した<code>functtion</code>が呼ばれるという動作をします。</p>
 <div id="admonition-format-window-title---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigluawindow-eventsformat-window-titlehtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/format-window-title.html">format-window-title - Wez's Terminal Emulator</a></p>
@@ -1125,8 +1125,8 @@ end
 <p><a class="admonition-anchor-link" href="wezterm/window-title.html#admonition-success"></a></p>
 </div>
 <div>
-<p>スッキリしましたね、スッキリしすぎたかもしれません。</p>
-<p>まあ、これも各自お好みで調整してもらえればOKです。</p>
+<p>スッキリしましたね。スッキリしすぎたかもしれません😆</p>
+<p>まあ、これもお好みで調整してもらえればOKです。</p>
 </div>
 </div>
 <div class="footnote-definition" id="a"><sup class="footnote-definition-label">1</sup>
@@ -1211,7 +1211,7 @@ A Zoomed pane takes up all available space in the tab, hiding all other panes wh
 ズームされたペインは、タブ内で利用可能な全てのスペースを占め、ズーム中は他のペインが全て非表示になります。</p>
 </div>
 </div>
-<p>デフォルトのキーバインドだとZoom機能が割り当てられていないと思うので、<code>keybinds.lua</code>に入れておきましょう。</p>
+<p>デフォルトのキーバインドだとズーム機能が割り当てられていないと思うので、<code>keybinds.lua</code>に入れておきましょう。</p>
 <div id="admonition-keybindslua" class="admonition example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
@@ -1222,14 +1222,14 @@ A Zoomed pane takes up all available space in the tab, hiding all other panes wh
 </code></pre>
 </div>
 </div>
-<p>使い方としては、まあこんな感じになってたとして...
-(ペイン操作については<code>3.6 Leader Key</code>でふわっと話題にしました。)</p>
+<p>使い方としてはまあ、こんな感じになってたとして...</p>
 <p><img src="wezterm/img/zoom-before.png" alt="zoom-before" /></p>
 <p>上のペインにいる状態でズームすると...</p>
 <p><img src="wezterm/img/zoom-after.png" alt="zoom-after" /></p>
-<p>&quot;ズーム中は他のペインが全て非表示になります。&quot;のドキュメントどおり😏</p>
+<p>&quot;ズーム中は他のペインが全て非表示になります。&quot;というドキュメントどおり😏</p>
 <p>左上に 🔎 アイコンが出ていることも確認できましたね。</p>
 <p>もう一度同じ操作で戻ります。</p>
+<p>(ペイン操作については<code>3.6 Leader Key</code>でふわっと話題にしました。)</p>
 <h2 id="hover"><a class="header" href="#hover">Hover</a></h2>
 <p>ホバー中は該当のタブ背景色を少し変えてます。</p>
 <div id="admonition-hoverhttpswezfurlongorgweztermconfigluawindow-eventsformat-tab-titlehtml" class="admonition info">
@@ -1547,7 +1547,7 @@ end
 </code></pre>
 </div>
 </div>
-<p>wez さんのサンプルでは一度に取得していた date と time も分けちゃってます。</p>
+<p>wez さんのサンプルでは一度に取得していた<code>date</code>と<code>time</code>も分けちゃってます。</p>
 <p>程度は分かりませんが、非効率ではあると思われるのでお好みで。</p>
 <p>バッテリー表示については、わたしの場合はフルスクリーンの時だけ出しています。スクリーン状態は下記で取得できます。</p>
 <div id="admonition-windowget_dimensionshttpswezfurlongorgweztermconfigluawindowget_dimensionshtml" class="admonition info">
@@ -1557,18 +1557,29 @@ end
 </div>
 <div>
 <p>The table has the following fields:</p>
+<ul>
+<li>pixel_width: the width of the window in pixels</li>
+<li>pixel_height: the height of the window in pixels</li>
+<li>dpi: The DPI of the screen the window in on</li>
+<li>is_full_screen: whether the window is in full screen mode</li>
+</ul>
 <p>テーブルには以下のフィールドがあります:</p>
-<p>pixel_width, pixel_height, dpi, is_full_screen</p>
+<ul>
+<li>pixel_width: ピクセル単位のウィンドウの幅</li>
+<li>pixel_height: ピクセル単位で表したウィンドウの高さ</li>
+<li>dpi: ウィンドウが表示されているスクリーンの DPI</li>
+<li>is_full_screen: ウィンドウがフルスクリーンモードであるかどうか</li>
+</ul>
 </div>
 </div>
-<p>ここでは<code>is_full_screen</code>を使います。フルスクリーン時は true が返ります。</p>
+<p>ここでは<code>is_full_screen</code>を使います。フルスクリーン時は<code>true</code>が返ります。</p>
 <div id="admonition-warning-1" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="wezterm/right-status.html#admonition-warning-1"></a></p>
 </div>
 <div>
-<p><code>WezTerm</code>の<a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html">ToggleFullScreen</a>を使用してフルスクリーンにしている場合は反応してくれないようです。</p>
+<p><code>WezTerm</code>の<a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html">ToggleFullScreen</a>を使用してフルスクリーンにしている場合は反応しないみたいです。</p>
 <p>OSからフルスクリーン化した時はちゃんと反応します。</p>
 <p><img src="wezterm/img/fullscreen.png" alt="fullscreen" /></p>
 </div>
@@ -1636,9 +1647,8 @@ end)
 <p><a class="admonition-anchor-link" href="wezterm/right-status.html#admonition-success"></a></p>
 </div>
 <div>
-<p>華やかになりましたね。</p>
-<p>(ぶっちゃけそんな見ないんだけど) サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界ですよね〜。</p>
-<p>ほわほわ〜☺️</p>
+<p>華やかになりましたね。(まあ、ぶっちゃけそんな見ないんだけど...) </p>
+<p>サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界ですよね〜。ほわほわ〜☺️</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="custom-event"><a class="header" href="#custom-event">Custom Event</a></h1>
@@ -1679,7 +1689,7 @@ end)
 <p>環境によっては全く必要ないと思いますので、その場合はスキップしてください。</p>
 <h2 id="まず前提"><a class="header" href="#まず前提">まず前提</a></h2>
 <p>わたしのディスプレイ環境なんですが、MacBook と 4K を行ったり来たりして使っています。</p>
-<p>だからなんだって言われるとキツイんですが、一番わかりやすいところでフォントサイズの問題があって、画面のスケールが違いすぎて 大きすぎたり小さすぎたりしてしまう...😢</p>
+<p>だからなんだって言われるとキツイんですが、一番わかりやすいところでフォントサイズの問題があって、画面のスケールが違いすぎて大きすぎたり小さすぎたりしてしまう...😢</p>
 <p><img src="wezterm/img/img-4k.png" alt="img-4k" /></p>
 <p><img src="wezterm/img/img-mbp.png" alt="img-mbp" /></p>
 <div id="admonition-note" class="admonition note">
@@ -1695,8 +1705,8 @@ end)
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/DecreaseFontSize.html">DecreaseFontSize</a>・
 <a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/IncreaseFontSize.html">IncreaseFontSize</a>
 を使ってサイズを上げ下げしてもいいんですが、ちょっとコレじゃない...。</p>
-<p>わたしはこれが結構ストレスになっていたので、 この問題の解消に有用なのが次のフォント切り替え機能です。</p>
-<h2 id="フォント切り替え"><a class="header" href="#フォント切り替え">フォント切り替え</a></h2>
+<p>わたしはこれが結構ストレスになっていたので、 この問題を解消するのに有用なのが、次のフォント切り替え機能です。</p>
+<h2 id="フォントサイズ切り替え"><a class="header" href="#フォントサイズ切り替え">フォントサイズ切り替え</a></h2>
 <p>この例では<code>toggle-font-size</code>というイベントを独自に作っています。</p>
 <p>フォントサイズに限らず、元の設定を直接変えるのではなく、オーバーライドする形式になっています。</p>
 <div id="admonition-windowget_config_overrideshttpswezfurlongorgweztermconfigluawindowget_config_overrideshtml" class="admonition info">
@@ -1769,7 +1779,7 @@ end)
 </div>
 <div>
 <p>あれ？dpi取得できるなら自動で出来るのかな。このサイト作りながら気づいてしまった...。</p>
-<p>アウトプットはしてみるものですね😆次のページに書いちゃいます。</p>
+<p>アウトプットはしてみるものですね😆 次のページに書いちゃいます。</p>
 </div>
 </div>
 <p>素の状態: <sup class="footnote-reference"><a href="#big">1</a></sup>
@@ -1872,7 +1882,17 @@ end)
 <div>
 <p>理由はちょっとよくわからなかったのですが、</p>
 <p>カスタムイベントに渡した<code>window</code>に対しての<code>get_config_overrides().dpi</code>が上手くいかなかったので、
-<code>wezterm.emit('trigger-dpi', window, dpi)</code>として<code>dpi</code>も渡しています。これであれば動くみたいです。</p>
+<code>wezterm.emit('trigger-dpi', window, dpi)</code>として<code>dpi</code>も渡しています。</p>
+</div>
+</div>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="wezterm/dpi-detection.html#admonition-note-2"></a></p>
+</div>
+<div>
+<p>わざわざカスタムイベントに分けなくても動くんですが、</p>
+<p>やっぱり本来の目的に無いことをしているので、少しでも設計思想に近づけているつもりなんです...。</p>
 </div>
 </div>
 <div id="admonition-success" class="admonition success">

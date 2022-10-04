@@ -218,7 +218,7 @@ end
 </code></pre>
 </div>
 </div>
-<p>wez さんのサンプルでは一度に取得していた date と time も分けちゃってます。</p>
+<p>wez さんのサンプルでは一度に取得していた<code>date</code>と<code>time</code>も分けちゃってます。</p>
 <p>程度は分かりませんが、非効率ではあると思われるのでお好みで。</p>
 <p>バッテリー表示については、わたしの場合はフルスクリーンの時だけ出しています。スクリーン状態は下記で取得できます。</p>
 <div id="admonition-windowget_dimensionshttpswezfurlongorgweztermconfigluawindowget_dimensionshtml" class="admonition info">
@@ -228,18 +228,29 @@ end
 </div>
 <div>
 <p>The table has the following fields:</p>
+<ul>
+<li>pixel_width: the width of the window in pixels</li>
+<li>pixel_height: the height of the window in pixels</li>
+<li>dpi: The DPI of the screen the window in on</li>
+<li>is_full_screen: whether the window is in full screen mode</li>
+</ul>
 <p>テーブルには以下のフィールドがあります:</p>
-<p>pixel_width, pixel_height, dpi, is_full_screen</p>
+<ul>
+<li>pixel_width: ピクセル単位のウィンドウの幅</li>
+<li>pixel_height: ピクセル単位で表したウィンドウの高さ</li>
+<li>dpi: ウィンドウが表示されているスクリーンの DPI</li>
+<li>is_full_screen: ウィンドウがフルスクリーンモードであるかどうか</li>
+</ul>
 </div>
 </div>
-<p>ここでは<code>is_full_screen</code>を使います。フルスクリーン時は true が返ります。</p>
+<p>ここでは<code>is_full_screen</code>を使います。フルスクリーン時は<code>true</code>が返ります。</p>
 <div id="admonition-warning-1" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning-1"></a></p>
 </div>
 <div>
-<p><code>WezTerm</code>の<a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html">ToggleFullScreen</a>を使用してフルスクリーンにしている場合は反応してくれないようです。</p>
+<p><code>WezTerm</code>の<a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html">ToggleFullScreen</a>を使用してフルスクリーンにしている場合は反応しないみたいです。</p>
 <p>OSからフルスクリーン化した時はちゃんと反応します。</p>
 <p><img src="img/fullscreen.png" alt="fullscreen" /></p>
 </div>
@@ -307,9 +318,8 @@ end)
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
 </div>
 <div>
-<p>華やかになりましたね。</p>
-<p>(ぶっちゃけそんな見ないんだけど) サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界ですよね〜。</p>
-<p>ほわほわ〜☺️</p>
+<p>華やかになりましたね。(まあ、ぶっちゃけそんな見ないんだけど...) </p>
+<p>サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界ですよね〜。ほわほわ〜☺️</p>
 </div>
 </div>
 
