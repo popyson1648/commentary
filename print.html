@@ -151,10 +151,10 @@
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p>このページでは、わたしが普段使っているターミナル環境を元にした設定例を紹介しています。</p>
 <p><img src="goal.png" alt="goal.png" /></p>
-<p><em>Screenshot of wezterm on macOS, running neovim</em>.</p>
+<p><em>Screenshot of wezterm on macOS, running Neovim</em>.</p>
 <p>全ての設定を網羅しているわけではなく、あくまで自分で使っている設定に対しての解説です。</p>
-<p>見てくれた人のヒントになったり、何かの役に立ったりしたら嬉しいです。</p>
-<div id="admonition-このサイトが想定している読者" class="admonition info">
+<p>見てくれた人のヒントになったり、何かの役に立ったりしたら嬉しいです😊</p>
+<div id="admonition-このサイトが想定している読者" class="admonition note">
 <div class="admonition-title">
 <p>このサイトが想定している読者</p>
 <p><a class="admonition-anchor-link" href="introduction.html#admonition-このサイトが想定している読者"></a></p>
@@ -180,8 +180,7 @@
 </div>
 </div>
 <h2 id="thanks"><a class="header" href="#thanks">Thanks</a></h2>
-<p>Thanks to application developers!!</p>
-<p>I enjoy using it💓</p>
+<p>Thanks to application developers!! I enjoy using it💓</p>
 <p><a href="https://wezfurlong.org/wezterm/">WezTerm - Wez's Terminal Emulator</a></p>
 <p><a href="https://neovim.io">Neovim - hyperextensible Vim-based text editor</a></p>
 <p><a href="https://starship.rs">starship - cross-shell prompt</a></p>
@@ -203,7 +202,7 @@
 <p>WezTermは主要なプラットフォーム用にあらかじめビルドされていますが、オープンソースであるため、自分でビルドすることも可能です。</p>
 </div>
 </div>
-<p>環境に合わせて、好きな方法でインストールしてください。</p>
+<p>環境に合わせて、好きな方法でインストールしてください😃</p>
 <p>では、起動してみましょう。(ユーザー名だけちょっと雑に隠しますが気にしないでください。)</p>
 <p><img src="wezterm/img/initial.png" alt="initial.heic" /></p>
 <div id="admonition-success" class="admonition success">
@@ -224,7 +223,8 @@
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="base-settings"><a class="header" href="#base-settings">Base Settings</a></h1>
 <p>特に難しいことを考えずに ホームフォルダに <code>.wezterm.lua</code> を置いても良いのですが、
-後々ファイルを複数配置していくので、<code>$HOME/.config/wezterm</code>というディレクトリを作って、そこに <code>wezterm.lua</code> を置くほうがおすすめです。</p>
+後々ファイルを複数配置していきたくなるので、<code>$HOME/.config/wezterm</code>というディレクトリを作って、
+そこに <code>wezterm.lua</code> を置くほうがおすすめです😊</p>
 <p>以下のようにしてみましょう。</p>
 <div id="admonition-homeconfigweztermweztermlua" class="admonition example">
 <div class="admonition-title">
@@ -244,10 +244,10 @@
 <p><a class="admonition-anchor-link" href="wezterm/base.html#admonition-success"></a></p>
 </div>
 <div>
-<p>最初はこんなものです。できたら次のページへ進みましょう。</p>
+<p>最初はこんなものですね。できたら次のページへ進みましょう❗</p>
 </div>
 </div>
-<p>もし、手順が必要なら下へ。</p>
+<p>もし手順が必要なら下で解説していきます😄</p>
 <h2 id="手順"><a class="header" href="#手順">手順</a></h2>
 <p>以下のコマンドを順に実行してください。</p>
 <div id="admonition-ディレクトリを作る" class="admonition quote">
@@ -276,16 +276,17 @@
 <p><a class="admonition-anchor-link" href="wezterm/base.html#admonition-gui-のエディタを使う場合"></a></p>
 </div>
 <div>
-<p>GUI のエディタを使用したい場合は以下で出来ます。<code>lua</code>ファイルに関連付けられたアプリケーションが起動するはずです。</p>
+<p>GUI のエディタを使用したい場合は以下で出来ます。</p>
 <p>ファイルを作る:</p>
 <pre><code class="language-sh">touch ~/.config/wezterm/wezterm.lua
 </code></pre>
 <p>ファイルを開く:</p>
 <pre><code>open ~/.config/wezterm/wezterm.lua
 </code></pre>
+<p>これで<code>lua</code>ファイルに関連付けられたアプリケーションが起動するはずです。</p>
 <p>もし、こんなのが出てきたら</p>
 <p><img src="wezterm/img/no-app.png" alt="no-app.png" /></p>
-<p>普段使っているエディタを選びましょう。</p>
+<p><code>アプリケーションを選択...</code>から普段使っているエディタを選びましょう。</p>
 <p><code>Xcode</code>や<code>Visual Studio Code</code>などでもいけるはずです。
 <img src="wezterm/img/select-app.png" alt="select-app.png" /></p>
 </div>
@@ -296,7 +297,7 @@
 <p><a class="admonition-anchor-link" href="wezterm/base.html#admonition-success-1"></a></p>
 </div>
 <div>
-<p>できましたね!! それでは次のページへ進みましょう。</p>
+<p>できましたね❗ それでは次のページへ進みましょう😊</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="window"><a class="header" href="#window">Window</a></h1>
@@ -315,7 +316,7 @@
 </div>
 </div>
 <p>お気に入りのカラースキームは見つかりましたか？</p>
-<p>わたしは<code>Catppuccin Mocha</code>を愛用しているので、以下のようになりました。</p>
+<p>わたしは<code>Catppuccin Mocha</code>を愛用しているので、以下のようになりました🥰</p>
 <div id="admonition-weztermlua" class="admonition example">
 <div class="admonition-title">
 <p>wezterm.lua</p>
@@ -332,8 +333,8 @@
 <p><a class="admonition-anchor-link" href="wezterm/window.html#admonition-note"></a></p>
 </div>
 <div>
-<p>ちなみに、このWebページのカラースキームも<code>Catppuccin</code>を使ってたりします。
-左上のブラシマークから4種類のテーマを変えられるのでお好みで切り替えてみてください。</p>
+<p>ちなみに、このWebページのカラースキームも<code>Catppuccin</code>を使ってたりします。</p>
+<p>セルフサービスなので、左上のブラシアイコンからお好みで淹れて<sup class="footnote-reference"><a href="#a">1</a></sup>みてください😄</p>
 </div>
 </div>
 <h2 id="window_background_opacity"><a class="header" href="#window_background_opacity">window_background_opacity</a></h2>
@@ -380,7 +381,8 @@
 <p><a class="admonition-anchor-link" href="wezterm/window.html#admonition-warning"></a></p>
 </div>
 <div>
-<p>return {} の中に記述します。</p>
+<p>ここまでの書き方が解りにくかったらごめんなさい...😢</p>
+<p>wezterm.lua に記述する場合、基本的には return {} の中に記述していきます。</p>
 </div>
 </div>
 <p><img src="wezterm/img/opacity.png" alt="opacity.png" /></p>
@@ -390,12 +392,12 @@
 <p><a class="admonition-anchor-link" href="wezterm/window.html#admonition-success"></a></p>
 </div>
 <div>
-<p>カラースキームは白文字しかない状態だと「ちょっと何言ってるかわかんない」ですが、透過については確認できましたね。</p>
+<p>カラースキームについては、白文字しかない状態だと「ちょっと何言ってるかわかんない」ですが、透過は確認できましたね😄</p>
 <p>次は、せっかく設定したカラースキームを見たいので、少し脇に逸れてプロンプトを変えてみましょう。</p>
 </div>
 </div>
 <div class="footnote-definition" id="a"><sup class="footnote-definition-label">1</sup>
-<p>2022/09/23時点</p>
+<p>誤字じゃないです。<a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%97%E3%83%81%E3%83%BC%E3%83%8E">カプチーノ</a>なので❗</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="shell-prompt"><a class="header" href="#shell-prompt">Shell Prompt</a></h1>
 <p><code>WezTerm</code>の設定からは少し逸れますが、先にシェルプロンプトのカスタマイズをやってしまいましょう。</p>
