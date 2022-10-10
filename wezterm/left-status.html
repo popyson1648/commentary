@@ -157,17 +157,19 @@
 <p><a class="admonition-anchor-link" href="#admonition-statuslua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">local DEFAULT_COLOR = { Color = '#9a9eab' }
+<pre><code class="language-lua">local DEFAULT_FG = { Color = '#9a9eab' }
+local DEFAULT_BG = { Color = '#333333' }
 
 local SPACE_1 = ' '
 local SPACE_3 = '   '
 
-local HEADER_KEY_NORMAL = { Foreground = DEFAULT_COLOR, Text = '' }
+local HEADER_KEY_NORMAL = { Foreground = DEFAULT_FG, Text = '' }
 local HEADER_LEADER = { Foreground = { Color = '#ffffff' }, Text = '' }
-local HEADER_IME = { Foreground = DEFAULT_COLOR, Text = 'あ' }
+local HEADER_IME = { Foreground = DEFAULT_FG, Text = 'あ' }
 
 local function AddIcon(elems, icon)
   table.insert(elems, { Foreground = icon.Foreground })
+  table.insert(elems, { Background = DEFAULT_BG })
   table.insert(elems, { Text = SPACE_1 .. icon.Text .. SPACE_3 })
 end
 

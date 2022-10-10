@@ -1367,17 +1367,19 @@ return {
 <p><a class="admonition-anchor-link" href="wezterm/left-status.html#admonition-statuslua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">local DEFAULT_COLOR = { Color = '#9a9eab' }
+<pre><code class="language-lua">local DEFAULT_FG = { Color = '#9a9eab' }
+local DEFAULT_BG = { Color = '#333333' }
 
 local SPACE_1 = ' '
 local SPACE_3 = '   '
 
-local HEADER_KEY_NORMAL = { Foreground = DEFAULT_COLOR, Text = '' }
+local HEADER_KEY_NORMAL = { Foreground = DEFAULT_FG, Text = '' }
 local HEADER_LEADER = { Foreground = { Color = '#ffffff' }, Text = '' }
-local HEADER_IME = { Foreground = DEFAULT_COLOR, Text = 'あ' }
+local HEADER_IME = { Foreground = DEFAULT_FG, Text = 'あ' }
 
 local function AddIcon(elems, icon)
   table.insert(elems, { Foreground = icon.Foreground })
+  table.insert(elems, { Background = DEFAULT_BG })
   table.insert(elems, { Text = SPACE_1 .. icon.Text .. SPACE_3 })
 end
 
@@ -1477,7 +1479,7 @@ end)
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="right-status"><a class="header" href="#right-status">Right Status</a></h1>
-<p>これはもう手厚いサンプルが既に用意されているので、この通りに書けばバッチリです。やったね！</p>
+<p>これはもう手厚いサンプルが既に用意されているので、この通りに書けばバッチリです😆 やったね❗️</p>
 <div id="admonition-windowset_right_statusstringhttpswezfurlongorgweztermconfigluawindowset_right_statushtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window/set_right_status.html">window:set_right_status(string)</a></p>
@@ -1489,7 +1491,7 @@ end)
 </div>
 </div>
 ただ、わたしの設定例にお付き合いいただける方のために、もうちょっとだけ続きます。
-<h2 id="my-customize"><a class="header" href="#my-customize">My Customize</a></h2>
+<h2 id="get-parameter"><a class="header" href="#get-parameter">Get Parameter</a></h2>
 <p>まずは wez さんのサンプルコードをほぼ丸写しですが、一つずつ機能を分けます。</p>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
@@ -1579,7 +1581,8 @@ end
 <p><a class="admonition-anchor-link" href="wezterm/right-status.html#admonition-warning-1"></a></p>
 </div>
 <div>
-<p><code>WezTerm</code>の<a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html">ToggleFullScreen</a>を使用してフルスクリーンにしている場合は反応しないみたいです。</p>
+<p><code>WezTerm</code>の<a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/ToggleFullScreen.html">ToggleFullScreen</a>を使用して
+フルスクリーンにしている場合は反応しないみたいです。</p>
 <p>OSからフルスクリーン化した時はちゃんと反応します。</p>
 <p><img src="wezterm/img/fullscreen.png" alt="fullscreen" /></p>
 </div>
@@ -1598,21 +1601,26 @@ local HEADER_DATE = { Foreground = { Color = '#ffccac' }, Text = '' }
 local HEADER_TIME = { Foreground = { Color = '#bcbabe' }, Text = '' }
 local HEADER_BATTERY = { Foreground = { Color = '#dfe166' }, Text = '' }
 
-local HEADER_KEY_NORMAL = { Foreground = DEFAULT_COLOR, Text = '' }
-local HEADER_LEADER = { Foreground = { Color = '#ffffff' }, Text = '' }
-local HEADER_IME = { Foreground = DEFAULT_COLOR, Text = 'あ' }
-
 local function AddElement(elems, header, str)
   table.insert(elems, { Foreground = header.Foreground })
+  table.insert(elems, { Background = DEFAULT_BG })
   table.insert(elems, { Text = header.Text .. SPACE_1 })
 
-  table.insert(elems, { Foreground = DEFAULT_COLOR })
+  table.insert(elems, { Foreground = DEFAULT_FG })
+  table.insert(elems, { Background = DEFAULT_BG })
   table.insert(elems, { Text = str .. SPACE_3 })
 end
 </code></pre>
+<p>(前のページで書いた定義も使用しているので、無かったら以下も追記してください。)</p>
+<pre><code class="language-lua">local DEFAULT_FG = { Color = '#9a9eab' }
+local DEFAULT_BG = { Color = '#333333' }
+
+local SPACE_1 = ' '
+local SPACE_3 = '   '
+</code></pre>
 </div>
 </div>
-<p>引っ張った割には特に説明するところもないですね...。そのまま完成させちゃいましょう😆</p>
+<p>引っ張った割には特にコメントするところもないですね...。そのまま完成させちゃいましょう😊</p>
 <div id="admonition-statuslua-2" class="admonition example">
 <div class="admonition-title">
 <p>status.lua</p>
@@ -1624,8 +1632,8 @@ end
 
   GetHostAndCwd(elems, pane)
   GetDate(elems)
-  GetTime(elems)
   GetBattery(elems, window)
+  GetTime(elems)
 
   window:set_right_status(wezterm.format(elems))
 end
@@ -1637,9 +1645,9 @@ end)
 </code></pre>
 </div>
 </div>
-<p>さて、これでこんな感じになったはずなんですがどうでしょうか？右上です。</p>
+<p>さて、これでこんな感じになったはずなんですがどうでしょう❓(例によってユーザー名は雑に隠してます。)</p>
 <p><img src="wezterm/img/right-status.png" alt="right-status" /></p>
-<p>フルスクリーン時にバッテリー表示もされているでしょうか？
+<p>フルスクリーン時にはバッテリー表示がされていることも確認できます。
 <img src="wezterm/img/right-status-full.png" alt="right-status" /></p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
@@ -1647,8 +1655,8 @@ end)
 <p><a class="admonition-anchor-link" href="wezterm/right-status.html#admonition-success"></a></p>
 </div>
 <div>
-<p>華やかになりましたね。(まあ、ぶっちゃけそんな見ないんだけど...) </p>
-<p>サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界ですよね〜。ほわほわ〜☺️</p>
+<p>華やかになりましたね☺️ (まあ、ぶっちゃけそんな見ないんだけど...) </p>
+<p>サンプル通りとはいえ、自分で書いたコードが動くんだから楽しい世界です。ほわほわ〜💕</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="custom-event"><a class="header" href="#custom-event">Custom Event</a></h1>
