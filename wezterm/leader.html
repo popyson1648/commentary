@@ -188,7 +188,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
-<p><code>timeout_milliseconds</code>のパラメータを変えていますが、これは後で触れます。</p>
+<p><code>timeout_milliseconds</code>のパラメータを変えていますが、これは後で触れます。デフォルトは<code>1000</code>です。</p>
 </div>
 </div>
 <p><code>vim</code>や<code>tmux</code>等を使用する場合は、これとバッティングしていないかチェックしときましょう。</p>
@@ -227,8 +227,8 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </code></pre>
 </div>
 </div>
-<p>...と、やる場合、<code>CTRL-a</code> → <code>space</code>と順番にキーを押す必要があるわけですが、
-デフォルトでは、<code>CTRL-a</code>から<code>space</code>を押すまでが 1000ミリ秒( = 1秒)以内で完結しないといけないわけです。</p>
+<p>...と、やる場合、<code>CTRL-a</code> → <code>u</code>と順番にキーを押す必要があるわけですが、
+デフォルトでは、<code>CTRL-a</code>から<code>u</code>を押すまでが 1000ミリ秒( = 1秒)以内で完結しないといけないわけです。</p>
 <p>1秒を長いと見るか短いと見るかは人それぞれなので、これをお好みに調整できるのが、前項の<code>timeout_milliseconds</code>です。</p>
 <h2 id="でもう一回キーバインド"><a class="header" href="#でもう一回キーバインド">で、もう一回キーバインド</a></h2>
 <p>さて、皆さんはお気づきだろうか…。</p>

@@ -149,7 +149,18 @@
                     <main>
                         <h1 id="dpi-detection"><a class="header" href="#dpi-detection">DPI Detection</a></h1>
 <p>前回は手動でフォントサイズの切り替えを行いましたが、今回はこれを<code>dpi</code>の変更を検知して自動で切り替わるようにします。</p>
-<h2 id="まず前置き"><a class="header" href="#まず前置き">まず前置き</a></h2>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>今後の仕様追加・変更によって、より自然に実現できるかもしれませんね〜、などと書いていたら、</p>
+<p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/window-focus-changed.html">window-focus-changed</a>が実装されました🤩</p>
+</div>
+</div>
+<p>ここでは、二つのプランとして紹介します。おすすめは Plan B です。</p>
+<h2 id="実装--plan-a"><a class="header" href="#実装--plan-a">実装 : Plan A</a></h2>
 <p>さて、これまでにも何度か出てきていた<code>wezterm.on</code>ですが、以下のような説明がありました。</p>
 <div id="admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml" class="admonition info">
 <div class="admonition-title">
@@ -176,17 +187,7 @@ When the event is emitted, each of the registered callbacks is called in the ord
 </div>
 <p>説明にもある通り、「最終的に<code>window:set_right_status</code>または<code>window:set_left_status</code>を呼び出す目的」のものであるため、
 なんかコレじゃないとは思っていますが、他に方法が見つけられませんでした😢</p>
-<div id="admonition-note" class="admonition note">
-<div class="admonition-title">
-<p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
-</div>
-<div>
-<p>今後の仕様追加・変更によって、より自然に実現できるかもしれませんね。</p>
-</div>
-</div>
-<h2 id="では実装"><a class="header" href="#では実装">では実装</a></h2>
-<p><code>event.lua</code>に追記していきます。</p>
+<p>それでは<code>event.lua</code>に追記していきます。</p>
 <div id="admonition-eventlua" class="admonition example">
 <div class="admonition-title">
 <p>event.lua</p>
@@ -243,13 +244,77 @@ end)
 <p>やっぱり本来の目的に無いことをしているので、少しでも設計思想に近づけているつもりなんです...。</p>
 </div>
 </div>
+<h2 id="実装---plan-b"><a class="header" href="#実装---plan-b">実装 - Plan B</a></h2>
+<p>さて、Plan A よりも自然に目的を達成できそうな、これ。</p>
+<div id="admonition-window-focus-changedhttpswezfurlongorgweztermconfigluawindow-eventswindow-focus-changedhtml" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/window-focus-changed.html">window-focus-changed</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-window-focus-changedhttpswezfurlongorgweztermconfigluawindow-eventswindow-focus-changedhtml"></a></p>
+</div>
+<div>
+<p>The window-focus-changed event is emitted when the focus state for a window is changed.</p>
+<p>This event is fire-and-forget from the perspective of wezterm; it fires the event to advise of the config change, but has no other expectations.</p>
+<p>window-focus-changed イベントは、ウィンドウのフォーカス状態が変更されたときに発行されます。</p>
+<p>このイベントは wezterm の観点からは fire-and-forget です; それは設定変更を通知するためにイベントを発生させますが、それ以外のことは期待できません。</p>
+</div>
+</div>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p>10/12 時点では、nightly builds only となっていることに注意してください。</p>
+</div>
+</div>
+<p>それでは満を持して。</p>
+<div id="admonition-eventlua-1" class="admonition example">
+<div class="admonition-title">
+<p>event.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-eventlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">wezterm.on('window-focus-changed', function(window, pane)
+  local dpi = window:get_dimensions().dpi
+
+  if dpi == prev_dpi then
+    return
+  end
+
+  local overrides = window:get_config_overrides() or {}
+  overrides.font_size = dpi &gt;= DPI_CHANGE_NUM and DPI_CHANGE_FONT_SIZE or nil
+
+  window:set_config_overrides(overrides)
+
+  prev_dpi = dpi
+end)
+</code></pre>
+</div>
+</div>
+コードについては やっぱり`trigger-dpi`とほぼ同じなので割愛。
+<p>Plan A との比較では<code>update-status</code>を使わなくて良くなったのと、カスタムイベントの呼び出しも無くなりました。</p>
+<p>ウィンドウをドラッグしたりウィンドウマネージャー等を使ってディスプレイを移した際に切り替わらないという欠点こそあるものの、
+とても綺麗な実装になりました😄</p>
+<div id="admonition-note-4" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+</div>
+<div>
+<p>「欠点」と書いてしまいましたが、移動後にウィンドウのフォーカスを外すとフォントサイズが切り替わることが確認できるので、もちろん仕様に則した動作です。</p>
+</div>
+</div>
+<h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
+<p>上にも書きましたが、Plan B は10/12 時点で nightly builds only です。</p>
+<p>それ以外はほとんど問題にならないと思われますが、
+頻繁にディスプレイを切り替えるような使い方をする場合は Plan A の方が有用かもしれないので、ひとまず Tips として残しておきます。</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
 </div>
 <div>
-<p>なんか、すごい簡単😆</p>
+<p>それにしても、実装がすごく簡単😆</p>
 <p>既に用意されているロジックをつなぐだけ❗️</p>
 </div>
 </div>
