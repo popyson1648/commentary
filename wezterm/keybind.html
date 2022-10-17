@@ -176,7 +176,7 @@
 <p>設定ファイルに基づいたキー割り当ての完全なセットを表示します。</p>
 </div>
 </div>
-<p>実行してみましょう。そのまま<code>WezTerm</code>で<code>wezterm</code>コマンドを使えば良いです。</p>
+<p>実行してみましょう。<code>WezTerm</code>でそのまま<code>wezterm</code>コマンドを使えば良いです。</p>
 <div id="admonition-command" class="admonition quote">
 <div class="admonition-title">
 <p>Command</p>
@@ -217,13 +217,23 @@
 </div>
 </div>
 <p><code>&gt;</code>を使って出力先をファイルにすると、もうこれだけで流し込めちゃうんですね。簡単😆</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>あらかじめ<code>keybinds.lua</code>を作成しておく必要もありません😉</p>
+</div>
+</div>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
 </div>
 <div>
-<p>上記コマンドのファイル出力先は現在のディレクトリです。</p>
+<p>むしろ同名ファイルが存在している場合は完全に上書きしちゃうみたいなので注意❗</p>
+<p>また、上記例のファイル出力先は現在のディレクトリです。</p>
 <p><code>~/.config/wezterm</code>に移動するか、出力先を<code>~/.config/wezterm/keybinds.lua</code>に指定してください。</p>
 </div>
 </div>
@@ -267,7 +277,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
 </div>
 <div>
-<p>これでキーバインドの移行が完了しました。まあ、まだ中身は同じなんですけどね。</p>
+<p>これでキーバインドの移行が完了しました。まあ、まだ中身は同じなんですけどね😅</p>
 <p>さて、もう一つのポイントとして leader キーというものがあります。これについてはまた次回。</p>
 </div>
 </div>

@@ -205,14 +205,16 @@ OSのショートカットキー等も含め、あらかじめ確認しておき
 </div>
 <h2 id="timeout_milliseconds"><a class="header" href="#timeout_milliseconds">timeout_milliseconds</a></h2>
 <p>これは前項で挙げたマニュアルの文章を引用しますが、</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-leader-keyhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition note">
 <div class="admonition-title">
-<p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+<p><a href="https://wezfurlong.org/wezterm/config/keys.html#leader-key">Leader Key</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-leader-keyhttpswezfurlongorgweztermconfigkeyshtmlleader-key"></a></p>
 </div>
 <div>
 <p><code>LEADER</code> stays active until a keypress is registered (whether it matches a key binding or not),
 or until it has been active for the duration specified by <code>timeout_milliseconds</code>, at which point it will automatically cancel itself.</p>
+<p>LEADERはキーが登録されるまで（キーバインディングにマッチするかどうかに関わらず）、
+あるいはtimeout_millisecondsで指定された時間だけアクティブになり、その時点で自動的にキャンセルされます。</p>
 </div>
 </div>
 <p><code>Leader</code>キーが一回押されたら、とりあえず何か次のキーが押されるか、指定ミリ秒経過するまでは待つよ〜。ってことですね。</p>
@@ -245,10 +247,10 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
 </div>
 <div>
 <p><code>ALT|CTRL</code>は<code>Alt</code>キーと<code>Ctrl</code>キーを同時押しです。</p>
@@ -271,10 +273,10 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p><code>tmux</code>と同じキーバインドですね。ペイン操作も<code>WezTerm</code>に一任しちゃいます。</p>
 <p><code>tmux</code>使ってないのに同等の機能が実現できちゃうんですよ？すごくないです！？</p>
 <p>もしどこかで<code>tmux</code>を使うことがあっても同一操作なので迷わず使えます、たぶん！</p>
-<div id="admonition-note-4" class="admonition note">
+<div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
 <p>さらにタイムリーなことに、<code>Copy Mode</code>の各種<code>jump</code>機能も実装されてました。(9/22時点では<code>nightly build</code>だけです。)</p>

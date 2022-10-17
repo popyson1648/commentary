@@ -160,12 +160,11 @@
 <p><a class="admonition-anchor-link" href="introduction.html#admonition-このサイトが想定している読者"></a></p>
 </div>
 <div>
-<p>一つの目安として、<code>homebrew</code> などのコマンド操作ができる程度を想定しています。</p>
+<p>目安として、<code>Homebrew</code> などのコマンド操作ができる程度を想定しています。(ファイル操作から一歩踏み出せてるイメージ)</p>
 <p><code>WezTerm</code>の設定については、ほぼ<code>lua</code>ファイルの編集で完結するため、ターミナルコマンドを使う場面は限られていますし、
-コマンドの例示も全て行っているつもりではありますが、
-それでもコマンドを使って操作したことがない場合はやはり怖いです。</p>
+例示も全て行っているつもりではありますが、それでもコマンドを使って操作したことがない場合はやはり怖いです。</p>
 <p>逆に、ファイルの編集自体は<code>vim</code>などのターミナル上で動くソフトウェアではなく、<code>Xcode</code>や<code>Visual Studio Code</code>などでも構いません。
-これについては<code>3.Base Settings</code>で示します。</p>
+これについては<code>3.Base File</code>で示します。</p>
 </div>
 </div>
 <div id="admonition-使用環境" class="admonition warning">
@@ -174,7 +173,7 @@
 <p><a class="admonition-anchor-link" href="introduction.html#admonition-使用環境"></a></p>
 </div>
 <div>
-<p>わたしの使用している環境が<code>macOS</code>なので、説明やイメージもこれを使用しています。</p>
+<p>わたしの使用している環境が<code>macOS</code>なので、説明やイメージも主にこれを使用しています。</p>
 <p>必要なソフトウェアと設定さえ整っていれば 他の OS でも通用するはずですが、
 100% 自信を持っているわけではないので、その点ご了承ください。</p>
 </div>
@@ -377,7 +376,7 @@
 </div>
 </div>
 <h2 id="一旦確認"><a class="header" href="#一旦確認">一旦確認…</a></h2>
-<p>さて、ここまでで wezterm.lua は以下のようになりました。</p>
+<p>さて、ここまでで<code>wezterm.lua</code>は以下のようになりました。</p>
 <div id="admonition-weztermlua-2" class="admonition example">
 <div class="admonition-title">
 <p>wezterm.lua</p>
@@ -453,10 +452,10 @@ special symbols are available even without requiring you to use a patched font.<
 これはパッチされたフォントを使わなくてもこれらの特殊記号が利用可能であることを意味します。</p>
 </div>
 </div>
-<p>...とのことなので安心してください。入ってますよ。☺️</p>
+<p>...とのことなので安心してください。入ってますよ☺️</p>
 <p>とは言いつつ、わたしは別のフォントを使っているので<code>3.3 Font</code>で紹介したいな〜と思ってます。</p>
 <h2 id="インストール"><a class="header" href="#インストール">インストール</a></h2>
-<p>これは<code>starship</code>の説明通りにやっていけば大丈夫ですね。</p>
+<p>これは<code>Starship</code>の説明通りにやっていけば大丈夫ですね。</p>
 <h3 id="step-1"><a class="header" href="#step-1">Step 1.</a></h3>
 <p>ターミナルから</p>
 <div id="admonition-command" class="admonition quote">
@@ -469,7 +468,7 @@ special symbols are available even without requiring you to use a patched font.<
 </code></pre>
 </div>
 </div>
-<p>と、やってもいいのですが、わたしは<code>homebrew</code>でやっちゃいます。</p>
+<p>と、やってもいいのですが、わたしは<code>Homebrew</code>でやっちゃいます。</p>
 <div id="admonition-command-1" class="admonition quote">
 <div class="admonition-title">
 <p>Command</p>
@@ -527,8 +526,8 @@ special symbols are available even without requiring you to use a patched font.<
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="font"><a class="header" href="#font">Font</a></h1>
-<p>これはもう、ほんとにお好きなフォントでいいです。</p>
-<p>以下に再掲しますが、<code>starship</code>を使用する場合も<code>WezTerm</code>であれば<code>Nerd Font</code>を考慮する必要がありません😆</p>
+<p>これはもう、ほんとに好きなフォントでいいです。</p>
+<p>以下に再掲しますが、<code>Starship</code>を使用する場合も<code>WezTerm</code>であれば<code>Nerd Font</code>を考慮する必要がありません😆</p>
 <div id="admonition-weztermnerdfontshttpswezfurlongorgweztermconfigluaweztermnerdfontshtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/wezterm/nerdfonts.html">wezterm.nerdfonts</a></p>
@@ -562,7 +561,7 @@ special symbols are available even without requiring you to use a patched font.<
 <p><a class="admonition-anchor-link" href="wezterm/font.html#admonition-note"></a></p>
 </div>
 <div>
-<p><code>Nerd Font</code>いらないって言いながら<code>Nerd</code>とか言ってんの何なの❗️❓ってなっちゃうんですが、なんかごめんなさい。</p>
+<p><code>Nerd Font</code>いらないって言いながら<code>Nerd</code>とか言ってんの何なの⁉️ ってなっちゃうんですが、なんかごめんなさい。</p>
 </div>
 </div>
 <h2 id="インストール-1"><a class="header" href="#インストール-1">インストール</a></h2>
@@ -665,7 +664,7 @@ special symbols are available even without requiring you to use a patched font.<
 </div>
 </div>
 とのことなのですが、私はここはデフォルトでいいかなーって思ってるのでほぼ何もしていません。
-<p>...いや、一回細かく変えてみたこともあったんですが、最終的にはデフォルトでいいかーってなりました。</p>
+<p>...いや、一回細かく変えてみたこともあったんですが、最終的にはデフォルトでいいかー😉ってなりました。</p>
 <h2 id="font-1"><a class="header" href="#font-1">Font</a></h2>
 <p>これもほぼデフォルトのままで、フォントサイズだけ変える程度にしています。</p>
 <p>前回やっているフォント設定と同じですね。</p>
@@ -695,7 +694,7 @@ special symbols are available even without requiring you to use a patched font.<
 </div>
 </div>
 <h2 id="fancy-or-retro"><a class="header" href="#fancy-or-retro">Fancy or Retro</a></h2>
-<p>前項で、突然ファンシータブバーという文言が出てきましたが、<code>WezTerm</code>のタブバーには、ファンシーとレトロの2種類があります。</p>
+<p>前項で、突然 &quot;ファンシータブバー&quot; という文言が出てきましたが、<code>WezTerm</code>のタブバーには、ファンシーとレトロの2種類があります。</p>
 <div id="admonition-use_fancy_tab_barhttpswezfurlongorgweztermconfigluaconfiguse_fancy_tab_barhtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/config/use_fancy_tab_bar.html">use_fancy_tab_bar</a></p>
@@ -763,7 +762,7 @@ special symbols are available even without requiring you to use a patched font.<
 <p>設定ファイルに基づいたキー割り当ての完全なセットを表示します。</p>
 </div>
 </div>
-<p>実行してみましょう。そのまま<code>WezTerm</code>で<code>wezterm</code>コマンドを使えば良いです。</p>
+<p>実行してみましょう。<code>WezTerm</code>でそのまま<code>wezterm</code>コマンドを使えば良いです。</p>
 <div id="admonition-command" class="admonition quote">
 <div class="admonition-title">
 <p>Command</p>
@@ -804,13 +803,23 @@ special symbols are available even without requiring you to use a patched font.<
 </div>
 </div>
 <p><code>&gt;</code>を使って出力先をファイルにすると、もうこれだけで流し込めちゃうんですね。簡単😆</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="wezterm/keybind.html#admonition-note"></a></p>
+</div>
+<div>
+<p>あらかじめ<code>keybinds.lua</code>を作成しておく必要もありません😉</p>
+</div>
+</div>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="wezterm/keybind.html#admonition-warning"></a></p>
 </div>
 <div>
-<p>上記コマンドのファイル出力先は現在のディレクトリです。</p>
+<p>むしろ同名ファイルが存在している場合は完全に上書きしちゃうみたいなので注意❗</p>
+<p>また、上記例のファイル出力先は現在のディレクトリです。</p>
 <p><code>~/.config/wezterm</code>に移動するか、出力先を<code>~/.config/wezterm/keybinds.lua</code>に指定してください。</p>
 </div>
 </div>
@@ -854,7 +863,7 @@ special symbols are available even without requiring you to use a patched font.<
 <p><a class="admonition-anchor-link" href="wezterm/keybind.html#admonition-success"></a></p>
 </div>
 <div>
-<p>これでキーバインドの移行が完了しました。まあ、まだ中身は同じなんですけどね。</p>
+<p>これでキーバインドの移行が完了しました。まあ、まだ中身は同じなんですけどね😅</p>
 <p>さて、もう一つのポイントとして leader キーというものがあります。これについてはまた次回。</p>
 </div>
 </div>
@@ -919,14 +928,16 @@ OSのショートカットキー等も含め、あらかじめ確認しておき
 </div>
 <h2 id="timeout_milliseconds"><a class="header" href="#timeout_milliseconds">timeout_milliseconds</a></h2>
 <p>これは前項で挙げたマニュアルの文章を引用しますが、</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-leader-keyhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition note">
 <div class="admonition-title">
-<p>Note</p>
-<p><a class="admonition-anchor-link" href="wezterm/leader.html#admonition-note-2"></a></p>
+<p><a href="https://wezfurlong.org/wezterm/config/keys.html#leader-key">Leader Key</a></p>
+<p><a class="admonition-anchor-link" href="wezterm/leader.html#admonition-leader-keyhttpswezfurlongorgweztermconfigkeyshtmlleader-key"></a></p>
 </div>
 <div>
 <p><code>LEADER</code> stays active until a keypress is registered (whether it matches a key binding or not),
 or until it has been active for the duration specified by <code>timeout_milliseconds</code>, at which point it will automatically cancel itself.</p>
+<p>LEADERはキーが登録されるまで（キーバインディングにマッチするかどうかに関わらず）、
+あるいはtimeout_millisecondsで指定された時間だけアクティブになり、その時点で自動的にキャンセルされます。</p>
 </div>
 </div>
 <p><code>Leader</code>キーが一回押されたら、とりあえず何か次のキーが押されるか、指定ミリ秒経過するまでは待つよ〜。ってことですね。</p>
@@ -959,10 +970,10 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="wezterm/leader.html#admonition-note-3"></a></p>
+<p><a class="admonition-anchor-link" href="wezterm/leader.html#admonition-note-2"></a></p>
 </div>
 <div>
 <p><code>ALT|CTRL</code>は<code>Alt</code>キーと<code>Ctrl</code>キーを同時押しです。</p>
@@ -985,10 +996,10 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p><code>tmux</code>と同じキーバインドですね。ペイン操作も<code>WezTerm</code>に一任しちゃいます。</p>
 <p><code>tmux</code>使ってないのに同等の機能が実現できちゃうんですよ？すごくないです！？</p>
 <p>もしどこかで<code>tmux</code>を使うことがあっても同一操作なので迷わず使えます、たぶん！</p>
-<div id="admonition-note-4" class="admonition note">
+<div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="wezterm/leader.html#admonition-note-4"></a></p>
+<p><a class="admonition-anchor-link" href="wezterm/leader.html#admonition-note-3"></a></p>
 </div>
 <div>
 <p>さらにタイムリーなことに、<code>Copy Mode</code>の各種<code>jump</code>機能も実装されてました。(9/22時点では<code>nightly build</code>だけです。)</p>
@@ -2090,7 +2101,7 @@ Vimscript (&quot;init.vim&quot;)またはLua (&quot;init.lua&quot;)のどちら�
 <p>うん、このまま登っていきましょう。</p>
 <h2 id="initlua"><a class="header" href="#initlua">init.lua</a></h2>
 <p>前置きが少し長くなりました...。</p>
-<p>冒頭のドキュメントで設定ファイルは以下の場所だよ😄と示されています。(<code>macOS</code>は<code>Unix</code>と同じ場所です。)</p>
+<p>冒頭のドキュメントでconfigファイルは以下の場所だよ😄と示されています。(<code>macOS</code>は<code>Unix</code>と同じ場所です。)</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">OS</th><th style="text-align: left">configファイル</th></tr></thead><tbody>
 <tr><td style="text-align: left">Unix</td><td style="text-align: left">~/.config/nvim/init.vim	(or init.lua)</td></tr>
 <tr><td style="text-align: left">Windows</td><td style="text-align: left">~/AppData/Local/nvim/init.vim	(or init.lua)</td></tr>
