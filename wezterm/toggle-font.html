@@ -149,7 +149,7 @@
                     <main>
                         <h1 id="toggle-font"><a class="header" href="#toggle-font">Toggle Font</a></h1>
 <p>ここではわたしが使っている機能実装を紹介します。</p>
-<p>環境によっては全く必要ないと思いますので、その場合はスキップしてください。</p>
+<p>環境によっては全く必要ないと思いますので、その場合はスキップしてください😅</p>
 <h2 id="まず前提"><a class="header" href="#まず前提">まず前提</a></h2>
 <p>わたしのディスプレイ環境なんですが、MacBook と 4K を行ったり来たりして使っています。</p>
 <p>だからなんだって言われるとキツイんですが、一番わかりやすいところでフォントサイズの問題があって、画面のスケールが違いすぎて大きすぎたり小さすぎたりしてしまう...😢</p>
@@ -161,17 +161,17 @@
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
-<p>意図伝わりますでしょうか...。</p>
-<p>むしろツールバーをみてもらった方がわかりやすいかもしれません。アイコンとかフォントとか、サイズというか、スケール全然違うでしょ？</p>
+<p>意図伝わりますでしょうか...😅</p>
+<p>むしろツールバーをみてもらった方がわかりやすいかもしれません。アイコンとかフォントとか、サイズというか、スケール全然違うでしょ❓</p>
 </div>
 </div>
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/DecreaseFontSize.html">DecreaseFontSize</a>・
 <a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/IncreaseFontSize.html">IncreaseFontSize</a>
-を使ってサイズを上げ下げしてもいいんですが、ちょっとコレじゃない...。</p>
-<p>わたしはこれが結構ストレスになっていたので、 この問題を解消するのに有用なのが、次のフォント切り替え機能です。</p>
+を使ってサイズを上げ下げしてもいいんですが、ちょっとコレじゃない...😒</p>
+<p>わたしはこれが結構ストレスになっていたので、 この問題を解消するのに有用なのが、次のフォント切り替え機能です😃</p>
 <h2 id="フォントサイズ切り替え"><a class="header" href="#フォントサイズ切り替え">フォントサイズ切り替え</a></h2>
 <p>この例では<code>toggle-font-size</code>というイベントを独自に作っています。</p>
-<p>フォントサイズに限らず、元の設定を直接変えるのではなく、オーバーライドする形式になっています。</p>
+<p><code>WezTerm</code>では、フォントサイズに限らず、元の設定を直接書き換えるのではなく、オーバーライドすることで変化させます。</p>
 <div id="admonition-windowget_config_overrideshttpswezfurlongorgweztermconfigluawindowget_config_overrideshtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window/get_config_overrides.html">window:get_config_overrides()</a></p>
@@ -182,8 +182,6 @@
 <p>ウィンドウに適用されている設定オーバーライドの現在のセットのコピーを返します。</p>
 </div>
 </div>
-<p>端的に言えば、オーバーライドされていない素の状態であれば、<code>font_size</code>を<code>10.0</code>でオーバーライドする。</p>
-<p>オーバーライドされているのであれば、<code>font_size</code>を<code>nil</code>としてオーバーライドを無効化する(<code>14.0</code>に戻される)。</p>
 <div id="admonition-eventlua" class="admonition example">
 <div class="admonition-title">
 <p>event.lua</p>
@@ -201,6 +199,11 @@ end)
 </code></pre>
 </div>
 </div>
+<p>端的に言えば、以下の動作を交互に行っています。</p>
+<ul>
+<li>素の状態であれば、<code>font_size</code>を<code>10.0</code>でオーバーライド。</li>
+<li>オーバーライドされているのであれば、<code>font_size</code>を<code>nil</code>としてオーバーライドを無効化 (素の状態に戻す)。</li>
+</ul>
 <p>これでフォントサイズの切り替えが実現できます。</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
@@ -208,8 +211,8 @@ end)
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
-<p>ごめんなさい。わたしは<code>wezterm.lua</code>での素の<code>font_size</code>を<code>14.0</code>にしています。各自で調整してください。</p>
-<p>(<code>14.0</code>と<code>10.0</code>を行ったり来たりできるように設定しています。)</p>
+<p>わたしは<code>wezterm.lua</code>の<code>font_size</code>を<code>14.0</code>にして、<code>14.0</code>と<code>10.0</code>を行ったり来たりできるように設定しています。
+環境に合わせて調整してください。</p>
 </div>
 </div>
 <p>独自イベントが呼び出されるようにするには<code>EmitEvent</code>を用います。</p>
@@ -223,7 +226,7 @@ end)
 <p>このアクションは、現在のペインのコンテキストで wezterm.emit(name, window, pane) と同等のアクションが呼び出されるようにします。</p>
 </div>
 </div>
-<p>今回はキーバインド<code>ctrl-f</code>をトリガーとして呼び出します。</p>
+<p>わたしはキーバインド<code>ctrl-f</code>をトリガーとして呼び出しています。</p>
 <div id="admonition-keybindslua" class="admonition example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
@@ -234,7 +237,7 @@ end)
 </code></pre>
 </div>
 </div>
-<p>まあ、思いっきり手動なんですけどね。自動で出来たら面白いんですけどね。</p>
+<p>まあ、思いっきり手動なんですけどね😅 自動で出来たら面白いんですけどね。</p>
 <div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -242,7 +245,7 @@ end)
 </div>
 <div>
 <p>あれ？dpi取得できるなら自動で出来るのかな。このサイト作りながら気づいてしまった...。</p>
-<p>アウトプットはしてみるものですね😆 次のページに書いちゃいます。</p>
+<p>アウトプットはしてみるものですね❗次のページに書いちゃいます😆</p>
 </div>
 </div>
 <p>素の状態: <sup class="footnote-reference"><a href="#big">1</a></sup>

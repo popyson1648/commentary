@@ -957,7 +957,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p>1秒を長いと見るか短いと見るかは人それぞれなので、これをお好みに調整できるのが、前項の<code>timeout_milliseconds</code>です。</p>
 <h2 id="でもう一回キーバインド"><a class="header" href="#でもう一回キーバインド">で、もう一回キーバインド</a></h2>
 <p>さて、皆さんはお気づきだろうか…。</p>
-<p>デフォルトのキー設定では<code>Leader</code>キーなんて一切使われていないことに…😨</p>
+<p>デフォルトのキー設定では<code>Leader</code>キーなんて一切使われていないことに…😱</p>
 <p>例えばこれ。</p>
 <div id="admonition-default-keybinds" class="admonition quote">
 <div class="admonition-title">
@@ -1208,7 +1208,7 @@ end)
 </div>
 </div>
 <p>これもウィンドウタイトルとほぼ同じですね。</p>
-<p>所々で状態によって表示するものを変えていますが、やっていることは<code>zoomed</code>と<code>hover</code>の可視化ですね。</p>
+<p>所々で状態によって表示するものを変えていますが、やっていることは<code>zoomed</code>と<code>hover</code>の可視化ですね🤩</p>
 <h2 id="タブタイトル"><a class="header" href="#タブタイトル">タブタイトル</a></h2>
 <p>上にある例では表示する内容は特に加工していませんが、前回作った<code>BaseName</code>に通すのもスッキリしてオススメです。</p>
 <div id="admonition-example" class="admonition example">
@@ -1289,7 +1289,7 @@ local index = tab.is_active and 1 or 2
 </div>
 <p>lua の配列は<code>[1]</code>始まりなので、(Cとかは<code>[0]</code>から始まりますよね。)
 三項演算子<code>local index = tab.is_active and 1 or 2</code>によって<code>SYMBOL_COLOR</code>配列と<code>FONT_COLOR</code>配列それぞれから採用する色を切り替えます。</p>
-<p><code>else</code>節を消せるだけ消す書き方、わたしは好きなんですがどうでしょう?</p>
+<p><code>else</code>節を消せるだけ消す書き方、わたしは好きなんですがどうでしょう😆</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
@@ -1300,7 +1300,7 @@ local index = tab.is_active and 1 or 2
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="status-bar"><a class="header" href="#status-bar">Status Bar</a></h1>
-<p>今度はステータスバーを飾り付けちゃおっかなーと思います。</p>
+<p>今度はステータスバーを飾り付けちゃおっかなーと思います😆</p>
 <p><code>status.lua</code>というファイルを追加しましょう。</p>
 <div id="admonition-statuslua" class="admonition example">
 <div class="admonition-title">
@@ -1315,7 +1315,7 @@ end)
 </code></pre>
 </div>
 </div>
-<p>もうお馴染みですね。<code>wezterm.lua</code>から読み込みましょう。</p>
+<p>もうお馴染みですね😉 <code>wezterm.lua</code>から読み込みましょう。</p>
 <div id="admonition-weztermlua" class="admonition example">
 <div class="admonition-title">
 <p>wezterm.lua</p>
@@ -1383,11 +1383,11 @@ return {
 <p><a class="admonition-anchor-link" href="wezterm/status.html#admonition-success"></a></p>
 </div>
 <div>
-<p>それでは次に進みましょう！</p>
+<p>それでは次に進みましょう❗</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="left-status"><a class="header" href="#left-status">Left Status</a></h1>
-<p>まずはステータスバーの左側を活用していきましょう。</p>
+<p>まずはステータスバーの左側を活用していきましょう😆</p>
 <h2 id="キーボード状態"><a class="header" href="#キーボード状態">キーボード状態</a></h2>
 <p>わたしが使っているのはキーボード状態です。ひとまずコードはこんな感じ。</p>
 <div id="admonition-statuslua" class="admonition example">
@@ -1423,7 +1423,7 @@ end
 </code></pre>
 </div>
 </div>
-<p><code>SPACE_3</code>とかは自分でもちょっとマヌケだとは思ってますが、なんかごめんなさい...。</p>
+<p><code>SPACE_3</code>とかは自分でもちょっとマヌケだとは思ってますが、なんかごめんなさい...😿</p>
 <p>まだ<code>update-status</code>と繋いでないので動きませんが、ここで一旦区切って補足します。</p>
 <p>ここでは以下の状態を可視化します。</p>
 <ul>
@@ -1442,7 +1442,7 @@ end
 <p>リーダーキーがウィンドウ内でアクティブな場合はtrueを、そうでない場合はfalseを返します。</p>
 </div>
 </div>
-<p>リーダーキーがアクティブである場合はIMEよりも優先して表示します。</p>
+<p>上のコード例では、<code>leader</code>キーがアクティブである場合はIMEよりも優先して表示します。</p>
 <h2 id="ime状態"><a class="header" href="#ime状態">IME状態</a></h2>
 <p>次にIME状態です。</p>
 <div id="admonition-windowcomposition_statushttpswezfurlongorgweztermconfigluawindowcomposition_statushtml" class="admonition info">
@@ -1464,14 +1464,14 @@ end
 <p><a class="admonition-anchor-link" href="wezterm/left-status.html#admonition-note"></a></p>
 </div>
 <div>
-<p>コンポジションって何だ？と思われるかもしれませんが、わたしも思ってます。</p>
+<p>コンポジションって何だ？🤔と思われるかもしれませんが、わたしも思ってます。</p>
 <p>でも、この状態を指すようです。</p>
 <p><img src="wezterm/img/composition.png" alt="composition" /></p>
 <p>ちょっとフライングしてますが、左上に<code>あ</code>と出てるのが<code>composition_status()</code>で<code>nil以外</code>が返ってきている状態です。</p>
 <p>(<code>nil</code>でない場合は文字列が入りますが、この例では使用していません。)</p>
 </div>
 </div>
-<p>さて、それでは<code>update-status</code>に繋ぎ込みましょう。</p>
+<p>さて、それでは<code>update-status</code>に繋ぎ込みましょう😄</p>
 <div id="admonition-statuslua-1" class="admonition example">
 <div class="admonition-title">
 <p>status.lua</p>
@@ -1689,7 +1689,7 @@ end)
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="custom-event"><a class="header" href="#custom-event">Custom Event</a></h1>
-<p>さて、一通り片付いたかな〜って感じなので、ここは付録みたいなものです。</p>
+<p>さて、一通り片付いたかな〜って感じなので、ここは付録みたいなものです🥳</p>
 <p>お付き合いいただける方は<code>event.lua</code>とでもしてまたファイルを作成しましょう。</p>
 <div id="admonition-eventlua" class="admonition example">
 <div class="admonition-title">
@@ -1718,12 +1718,12 @@ end)
 <p><a class="admonition-anchor-link" href="wezterm/custom.html#admonition-success"></a></p>
 </div>
 <div>
-<p>もう何も言うことはありませんね。次に進みましょう。</p>
+<p>もう何も言うことはありませんね😉 次に進みましょう❗</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="toggle-font"><a class="header" href="#toggle-font">Toggle Font</a></h1>
 <p>ここではわたしが使っている機能実装を紹介します。</p>
-<p>環境によっては全く必要ないと思いますので、その場合はスキップしてください。</p>
+<p>環境によっては全く必要ないと思いますので、その場合はスキップしてください😅</p>
 <h2 id="まず前提"><a class="header" href="#まず前提">まず前提</a></h2>
 <p>わたしのディスプレイ環境なんですが、MacBook と 4K を行ったり来たりして使っています。</p>
 <p>だからなんだって言われるとキツイんですが、一番わかりやすいところでフォントサイズの問題があって、画面のスケールが違いすぎて大きすぎたり小さすぎたりしてしまう...😢</p>
@@ -1735,17 +1735,17 @@ end)
 <p><a class="admonition-anchor-link" href="wezterm/toggle-font.html#admonition-note"></a></p>
 </div>
 <div>
-<p>意図伝わりますでしょうか...。</p>
-<p>むしろツールバーをみてもらった方がわかりやすいかもしれません。アイコンとかフォントとか、サイズというか、スケール全然違うでしょ？</p>
+<p>意図伝わりますでしょうか...😅</p>
+<p>むしろツールバーをみてもらった方がわかりやすいかもしれません。アイコンとかフォントとか、サイズというか、スケール全然違うでしょ❓</p>
 </div>
 </div>
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/DecreaseFontSize.html">DecreaseFontSize</a>・
 <a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/IncreaseFontSize.html">IncreaseFontSize</a>
-を使ってサイズを上げ下げしてもいいんですが、ちょっとコレじゃない...。</p>
-<p>わたしはこれが結構ストレスになっていたので、 この問題を解消するのに有用なのが、次のフォント切り替え機能です。</p>
+を使ってサイズを上げ下げしてもいいんですが、ちょっとコレじゃない...😒</p>
+<p>わたしはこれが結構ストレスになっていたので、 この問題を解消するのに有用なのが、次のフォント切り替え機能です😃</p>
 <h2 id="フォントサイズ切り替え"><a class="header" href="#フォントサイズ切り替え">フォントサイズ切り替え</a></h2>
 <p>この例では<code>toggle-font-size</code>というイベントを独自に作っています。</p>
-<p>フォントサイズに限らず、元の設定を直接変えるのではなく、オーバーライドする形式になっています。</p>
+<p><code>WezTerm</code>では、フォントサイズに限らず、元の設定を直接書き換えるのではなく、オーバーライドすることで変化させます。</p>
 <div id="admonition-windowget_config_overrideshttpswezfurlongorgweztermconfigluawindowget_config_overrideshtml" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window/get_config_overrides.html">window:get_config_overrides()</a></p>
@@ -1756,8 +1756,6 @@ end)
 <p>ウィンドウに適用されている設定オーバーライドの現在のセットのコピーを返します。</p>
 </div>
 </div>
-<p>端的に言えば、オーバーライドされていない素の状態であれば、<code>font_size</code>を<code>10.0</code>でオーバーライドする。</p>
-<p>オーバーライドされているのであれば、<code>font_size</code>を<code>nil</code>としてオーバーライドを無効化する(<code>14.0</code>に戻される)。</p>
 <div id="admonition-eventlua" class="admonition example">
 <div class="admonition-title">
 <p>event.lua</p>
@@ -1775,6 +1773,11 @@ end)
 </code></pre>
 </div>
 </div>
+<p>端的に言えば、以下の動作を交互に行っています。</p>
+<ul>
+<li>素の状態であれば、<code>font_size</code>を<code>10.0</code>でオーバーライド。</li>
+<li>オーバーライドされているのであれば、<code>font_size</code>を<code>nil</code>としてオーバーライドを無効化 (素の状態に戻す)。</li>
+</ul>
 <p>これでフォントサイズの切り替えが実現できます。</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
@@ -1782,8 +1785,8 @@ end)
 <p><a class="admonition-anchor-link" href="wezterm/toggle-font.html#admonition-note-1"></a></p>
 </div>
 <div>
-<p>ごめんなさい。わたしは<code>wezterm.lua</code>での素の<code>font_size</code>を<code>14.0</code>にしています。各自で調整してください。</p>
-<p>(<code>14.0</code>と<code>10.0</code>を行ったり来たりできるように設定しています。)</p>
+<p>わたしは<code>wezterm.lua</code>の<code>font_size</code>を<code>14.0</code>にして、<code>14.0</code>と<code>10.0</code>を行ったり来たりできるように設定しています。
+環境に合わせて調整してください。</p>
 </div>
 </div>
 <p>独自イベントが呼び出されるようにするには<code>EmitEvent</code>を用います。</p>
@@ -1797,7 +1800,7 @@ end)
 <p>このアクションは、現在のペインのコンテキストで wezterm.emit(name, window, pane) と同等のアクションが呼び出されるようにします。</p>
 </div>
 </div>
-<p>今回はキーバインド<code>ctrl-f</code>をトリガーとして呼び出します。</p>
+<p>わたしはキーバインド<code>ctrl-f</code>をトリガーとして呼び出しています。</p>
 <div id="admonition-keybindslua" class="admonition example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
@@ -1808,7 +1811,7 @@ end)
 </code></pre>
 </div>
 </div>
-<p>まあ、思いっきり手動なんですけどね。自動で出来たら面白いんですけどね。</p>
+<p>まあ、思いっきり手動なんですけどね😅 自動で出来たら面白いんですけどね。</p>
 <div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -1816,7 +1819,7 @@ end)
 </div>
 <div>
 <p>あれ？dpi取得できるなら自動で出来るのかな。このサイト作りながら気づいてしまった...。</p>
-<p>アウトプットはしてみるものですね😆 次のページに書いちゃいます。</p>
+<p>アウトプットはしてみるものですね❗次のページに書いちゃいます😆</p>
 </div>
 </div>
 <p>素の状態: <sup class="footnote-reference"><a href="#big">1</a></sup>
@@ -1911,7 +1914,7 @@ end)
 </div>
 <p><code>dpi</code>と<code>font_size</code>周辺の値はわたしの環境にあわせてぼや〜っと決め打ちにしてるので適宜調整してください。</p>
 <p>動作としては、<code>dpi</code>に変更があったらカスタムイベントの<code>trigger-dpi</code>を呼んでフォントサイズを切り替えます。
-<code>trigger-dpi</code>自体は手動でフォントサイズを切り替える処理とほぼ同じですね。</p>
+<code>trigger-dpi</code>自体は手動でフォントサイズを切り替える処理とほぼ同じですね☺️</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -1956,7 +1959,7 @@ end)
 <p>10/12 時点では、nightly builds only となっていることに注意してください。</p>
 </div>
 </div>
-<p>それでは満を持して。</p>
+<p>それでは満を持して😌</p>
 <div id="admonition-eventlua-1" class="admonition example">
 <div class="admonition-title">
 <p>event.lua</p>
