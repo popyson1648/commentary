@@ -882,7 +882,7 @@ special symbols are available even without requiring you to use a patched font.<
 <p>Leaderキーは、モーダルモディファイアキーです。Leaderキーが設定されている場合、そのキーの組み合わせを押すと、仮想的なリーダーモディファイアが有効になります。</p>
 </div>
 </div>
-<p><code>Leader</code>キーという概念は WezTerm 特有のものではく、<code>tmux</code>や<code>vim</code>など古参のソフトウェアでも用いられています。</p>
+<p><code>Leader</code>キーという概念は<code>WezTerm</code>特有のものではく、<code>tmux</code>や<code>vim</code>など古参のソフトウェアでも用いられています。</p>
 <p>WezTerm でのデフォルトは<code>CTRL-a</code>です。<sup class="footnote-reference"><a href="#other">1</a></sup></p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
@@ -994,8 +994,8 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </div>
 </div>
 <p><code>tmux</code>と同じキーバインドですね。ペイン操作も<code>WezTerm</code>に一任しちゃいます。</p>
-<p><code>tmux</code>使ってないのに同等の機能が実現できちゃうんですよ？すごくないです！？</p>
-<p>もしどこかで<code>tmux</code>を使うことがあっても同一操作なので迷わず使えます、たぶん！</p>
+<p><code>tmux</code>使ってないのに同等の機能が実現できちゃうんですよ⁉️？すごくないです?☺️</p>
+<p>もしどこかで<code>tmux</code>を使うことがあっても同一操作なので迷わず使えます、たぶん❗</p>
 <div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -1042,8 +1042,8 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p>USキーボードの場合。</p>
 </div>
 <div class="footnote-definition" id="copy-mode"><sup class="footnote-definition-label">4</sup>
-<p><code>3.5 Keybind</code>で「いや、自分のキーバインドに切り替えたじゃないかー！」と思われた方、ごもっともです。実は<code>copy-mode</code>のキーバインドには触れていませんでした。
-ちょっとこの辺、複雑ですよね...。また今度改編します...。</p>
+<p><code>3.5 Keybind</code>で「いや、デフォルトのキーバインド無効にしたじゃないかー👿」と思われた方、ごもっともです...。
+実は<code>copy-mode</code>のキーバインドには触れていませんでした。ちょっとこの辺、複雑ですよね...。また今度改編します。</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="format"><a class="header" href="#format">Format</a></h1>
 <p>次はウィンドウタイトルとタブを飾り付けていこうかなーと思うのですが、
@@ -2048,7 +2048,7 @@ end)
 <p>なんて思ってましたが環境によっては結構ラグあるんですね...😿 (Oct 15 時点)</p>
 <p><em><code>0.8.0</code>だよね〜❗の図↓:</em>
 <img src="neovim/img/brew-info.png" alt="brew-info.png" /></p>
-<p><em><code>0.7.2.3.el9</code>だって〜⁉️の図↓:</em>
+<p><em><code>0.7.2-3.el9</code>だって〜⁉️の図↓:</em>
 <img src="neovim/img/rocky.png" alt="rocky.png" /></p>
 </div>
 </div>
@@ -2154,8 +2154,8 @@ nvim init.lua
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lua-module"><a class="header" href="#lua-module">Lua Module</a></h1>
-<p>なんと、これに関しては日本語に訳されたドキュメントが存在します。</p>
-<p>登っていきましょうとか言っておきながら、まずは掘り下げます😅</p>
+<p>なんと、これに関しては既に日本語に訳されたドキュメントが存在します。</p>
+<p>登っていきましょうとか言っておいてなんですが、まずは掘り下げちゃいます。どんまい😆</p>
 <div id="admonition-モジュールhttpsgithubcomwillelznvim-lua-guide-jablobmasterreadmejamdモジュール" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></p>
@@ -2189,7 +2189,7 @@ nvim init.lua
 <p><a class="admonition-anchor-link" href="neovim/lua-module.html#admonition-note"></a></p>
 </div>
 <div>
-<p>補足しておくと、OSによってホームディレクトリは違いますが、<code>~</code>や<code>$HOME</code>でアクセスできます。</p>
+<p>補足しておくと、OSによってホームディレクトリは違いますが、<code>~</code>や<code>$HOME</code>を使ってアクセスできます。</p>
 </div>
 </div>
 <p>ここに<code>lua</code>ディレクトリを作成することで、上に示されている「ほとんどの場合」に合致できます。</p>
@@ -2203,7 +2203,7 @@ nvim init.lua
 </code></pre>
 </div>
 </div>
-<p><code>runtimepath</code>絡みでもう一つポイントがあります。</p>
+<p>あと、<code>runtimepath</code>絡みでもう一つポイントがあります。</p>
 <div id="admonition-runtime-fileshttpsgithubcomwillelznvim-lua-guide-jablobmasterreadmejamdruntime-files" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md#runtime-files">Runtime files</a></p>
@@ -2256,8 +2256,8 @@ require('other_modules/anothermodule')
 <p>最後の一文は、</p>
 <pre><code class="language-lua">require('example') 
 </code></pre>
-<p>とした場合に<code>example/init.lua</code>をロードできるよ❗ってことですね。これらは<code>Neovim</code>に限ったものではなく、<code>Lua</code>の仕様みたいです。</p>
-<p>全く関係ないところでやってみても以下のような動作になりました。</p>
+<p>とした場合に<code>example/init.lua</code>をロードできるよ❗ってことですね。これは<code>Neovim</code>に限ったものではなく、<code>Lua</code>の仕様みたいです。</p>
+<p>全く関係ないところでやってみてもこの説明で通用するものになりました。</p>
 <p><img src="neovim/img/lua-example.png" alt="lua-example.png" /></p>
 </div>
 </div>
@@ -2269,7 +2269,7 @@ require('other_modules/anothermodule')
 <div>
 <p>どう？この流れ🐮</p>
 <p>能書きとしてはこんな感じじゃないでしょうか。</p>
-<p>あとはもう書き加えていくだけですね😄</p>
+<p>これだけ分かれば、あとはもうカスタマイズを書き加えていくだけですね😄</p>
 </div>
 </div>
 <div class="footnote-definition" id="not-config"><sup class="footnote-definition-label">1</sup>
