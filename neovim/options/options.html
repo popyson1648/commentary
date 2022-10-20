@@ -202,14 +202,31 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-help"></a></p>
 </div>
 <div>
-<pre><code>Open a window and display the help file in read-only mode.
-ウィンドウを開き、ヘルプファイルを読み込み専用で表示する。
+<pre><code>:h[elp]                 Open a window and display the help file in read-only mode.
+                        ウィンドウを開き、ヘルプファイルを読み込み専用で表示する。
 
-Type |gO| to see the table of contents.
-目次を見るには、gO (←大文字のアルファベットO) とタイプする。
+                        Type |gO| to see the table of contents.
+                        目次を見るには、gO (←大文字のアルファベットO) とタイプする。
+
+:h[elp] {subject}	Like &quot;:help&quot;, additionally jump to the tag {subject}.
+                        help&quot; と同様に、{subject} というタグにジャンプする。
+
+                        For example:   
+                            :help options
+
+                        If there is no full match for the pattern, or there
+                        are several matches, the &quot;best&quot; match will be used.
+                        A sophisticated algorithm is used to decide which
+                        match is better than another one.
+
+                        パターンに完全一致するものがない場合、または複数の一致するものがある場合は、
+                        「最良の」一致するものが使用される。。どのマッチが他のマッチより優れているか
+                        を決定するために、洗練されたアルゴリズムが使用される。
 </code></pre>
 </div>
 </div>
+<p><code>:h</code>でやるとトップページ。<code>:h {subject}</code>とやるとヘルプを検索してヒットしたタグにジャンプ。ということですね。</p>
+<p>今回は後者でした。<code>help</code>タグに直接飛びましたね。</p>
 <p>閉じるときは<code>:q</code>とか<code>:bd</code>でいいんですが、頑張りすぎて ぐちゃぐちゃ になっちゃう時があるので、
 併せて<code>:helpc</code>(or <code>:helpclose</code>)も覚えておくと安心です☺️</p>
 <div id="admonition-h-helpc" class="admonition info">
