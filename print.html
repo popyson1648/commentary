@@ -2371,7 +2371,7 @@ require('other_modules/anothermodule')
 </code></pre>
 </div>
 </div>
-<p><code>:h</code>でやるとトップページ。<code>:h {subject}</code>とやるとヘルプを検索してヒットしたタグにジャンプ。ということですね。</p>
+<p><code>:h</code>でトップページ、<code>:h {subject}</code>でヘルプを検索してヒットしたタグにジャンプ。ということですね。</p>
 <p>今回は後者でした。<code>help</code>タグに直接飛びましたね。</p>
 <p>閉じるときは<code>:q</code>とか<code>:bd</code>でいいんですが、頑張りすぎて ぐちゃぐちゃ になっちゃう時があるので、
 併せて<code>:helpc</code>(or <code>:helpclose</code>)も覚えておくと安心です☺️</p>
@@ -2447,7 +2447,7 @@ require('other_modules/anothermodule')
 </div>
 </div>
 <p><code>nvim_set_option</code>はグローバル値を設定できるタイプのモンスターみたいですね🤔</p>
-<p>次のページから野生のオプションが飛び出してきそうな気配ですが、<code>help</code>と<code>nvim_set_option</code>がいれば&quot;グローバルどうろ&quot;も歩いて行けそうですね。</p>
+<p>次のページから野生のオプションが飛び出してきそうな気配ですが、<code>help</code>と<code>nvim_set_option</code>がいれば &quot;グローバルどうろ&quot; も歩いて行けそうですね。</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
@@ -2506,7 +2506,7 @@ require('other_modules/anothermodule')
 <p><a class="admonition-anchor-link" href="neovim/options/termguicolors.html#admonition-note"></a></p>
 </div>
 <div>
-<p>そのまま素直に<code>on</code>とか<code>off</code>って書いちゃうとエラーが出て悲しいので、<code>boolean値</code>(<code>true</code>か<code>false</code>)で指定してください😉</p>
+<p>そのまま素直に<code>on</code>とか<code>off</code>って書いちゃうとエラーが出て悲しいので、<code>boolean</code>(<code>true</code>か<code>false</code>)で指定してください😉</p>
 </div>
 </div>
 <div id="admonition-tip" class="admonition tip">
@@ -2545,10 +2545,10 @@ require('other_modules/anothermodule')
 <p>&quot;東京ガールズコレクション&quot;❓ってなる、ウケる〜🤣 ...そうでもないかぁ😮</p>
 </div>
 <div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
-<p>このページで7色使えたら面白かったんですけど、1色足りませんでしたね...。</p>
+<p>このページで7色使えてたら面白かったんですけど、1色足りませんでしたね...。</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="scrolloff"><a class="header" href="#scrolloff">scrolloff</a></h2>
-<p>さて、次はこんなん飛び出してきました。もはやルーティンですね😌</p>
+<p>さて、次はこんなのが飛び出してきました❗もはやルーティンですね😌</p>
 <div id="admonition-h-scrolloff" class="admonition info">
 <div class="admonition-title">
 <p>:h scrolloff</p>
@@ -2605,7 +2605,7 @@ require('other_modules/anothermodule')
 </div>
 <div>
 <p>もし文法だったりパラメータが間違っていた場合は起動時にエラーが出るはずです。</p>
-<p>エラーが出ていないことを確認しながら、どんどんいきましょう。😆</p>
+<p>エラーが出ていなければ多分OKなので、どんどんいきましょう。😆</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ignorecase--smartcase"><a class="header" href="#ignorecase--smartcase">ignorecase / smartcase</a></h1>
@@ -2680,7 +2680,7 @@ vim.api.nvim_set_option('smartcase', true)
 </div>
 <p>「彼女がおれのことなんて気にも留めずに行っちゃうよ！」...っていう
 <a href="https://en.wikipedia.org/wiki/Ticket_to_Ride_(song)">Ticket to Ride</a>の一節です。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
-<p>それでは<code>she</code>を検索してみます。検索には<code>/</code>で入れます。</p>
+<p>それでは小文字だけの<code>she</code>を検索してみます。検索には<code>/</code>で入れます。</p>
 <pre><code>/she
 </code></pre>
 <p><img src="neovim/options/img/search-she1.png" alt="search-she1" /></p>
@@ -2690,7 +2690,7 @@ vim.api.nvim_set_option('smartcase', true)
 </code></pre>
 <p><img src="neovim/options/img/search-she2.png" alt="search-she1" /></p>
 <p><code>She</code>だけに反応しましたね。</p>
-<p>要は、「大文字が含まれていなければ大小無視。含まれていれば大小区別。」ということですね。</p>
+<p>要は、「大文字が含まれていれば大小区別するけど、含まれてないなら大小無視するよ。」ってことですね。</p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -2712,7 +2712,7 @@ vim.api.nvim_set_option('smartcase', true)
 </div>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>あ❗これは<a href="https://en.wikipedia.org/wiki/Help!">HELP! - The Beatles</a> の収録曲ですね❗
-なんか最近ヘルプばっかりじゃね⁉️ってなる、ウケる〜🤣 ...そうでもないかぁ😮</p>
+なんかこの辺ヘルプばっかりじゃね⁉️ってなる、ウケる〜🤣 ...そうでもないかぁ😮</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="inccommand"><a class="header" href="#inccommand">inccommand</a></h1>
 <p>検索の次は置換ですよね〜😆</p>
@@ -2801,8 +2801,8 @@ vim.api.nvim_set_option('smartcase', true)
 </div>
 <div>
 <p>全体のまとめに入っちゃうんですが、</p>
-<p>こんな感じでオプションを一個一個確認していくと、割とデフォルトのままでいいなーって思うものがほとんど(デフォルトでいい設定は書かない主義)なので、
-わたしが使っているグローバルオプションなんてこんなもんです。</p>
+<p>こんな感じでオプションを一個一個確認していくと、割とデフォルトのままでいいなーって思うものがほとんどなので、
+(デフォルトでいい設定は基本書かない主義の) わたしが使っているグローバルオプションなんてこんなもんです。</p>
 <p>たった5個です😅 少ないでしょ❓</p>
 <p>まだローカルオプションってのもあるんですけどね。それもそんなに大した数じゃないです。</p>
 <p>あと、プラグインとか使い出すともうちょっとだけ増えるんですが、それはまたその時に🤗</p>
