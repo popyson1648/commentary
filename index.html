@@ -3,10 +3,10 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>introduction - Commentary</title>
+        <title>introduction - Commentary of Dotfiles</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Example of WezTerm configuration.">
+        <meta name="description" content="Example of dotfiles configuration for WezTerm and Neovim">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -114,7 +114,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Commentary</h1>
+                    <h1 class="menu-title">Commentary of Dotfiles</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -148,22 +148,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p>このページでは、わたしが普段使っているターミナル環境を元にした設定例を紹介しています。</p>
+<p>このサイトでは、わたしが普段使っているターミナル環境を元にした設定例を紹介します。</p>
 <p><img src="goal.png" alt="goal.png" /></p>
 <p><em>Screenshot of wezterm on macOS, running Neovim and etc...</em></p>
-<p>全ての設定を網羅しているわけではなく、あくまで自分で使っている設定に対しての解説です。</p>
-<p>見てくれた人のヒントになったり、何かの役に立ったりしたら嬉しいです😊</p>
+<p>全ての設定を網羅しているわけではなく、あくまで自分で使っている設定に対してコメントを入れています。</p>
+<p>もしこれが、見てくれた人のヒントになったり、何かの役に立ったりしたら嬉しいです😊</p>
 <div id="admonition-このサイトが想定している読者" class="admonition note">
 <div class="admonition-title">
 <p>このサイトが想定している読者</p>
 <p><a class="admonition-anchor-link" href="#admonition-このサイトが想定している読者"></a></p>
 </div>
 <div>
-<p>目安として、<code>Homebrew</code> などのコマンド操作ができる程度を想定しています。(ファイル操作から一歩踏み出せてるイメージ)</p>
-<p><code>WezTerm</code>の設定については、ほぼ<code>lua</code>ファイルの編集で完結するため、ターミナルコマンドを使う場面は限られていますし、
-例示も全て行っているつもりではありますが、それでもコマンドを使って操作したことがない場合はやはり怖いです。</p>
-<p>逆に、ファイルの編集自体は<code>vim</code>などのターミナル上で動くソフトウェアではなく、<code>Xcode</code>や<code>Visual Studio Code</code>などでも構いません。
-これについては<code>3.Base File</code>で示します。</p>
+<p><code>WezTerm</code>セクションでは、目安として<code>Homebrew</code>などのパッケージマネージャーをコマンドで扱える程度を想定しています。
+(ファイル操作から一歩踏み出せてるイメージ😉)</p>
+<p>ターミナルコマンドを使う場面は限られていますし、例示も全て行っているつもりではありますが、
+コマンド操作を行ったことがないと、どうしても不安が残ります😓</p>
+<p>ファイルの編集自体は<code>Xcode</code>や<code>Visual Studio Code</code>などのGUIアプリケーションでも構いません。
+これについては<code>3.Configuration</code>で示します。</p>
+</div>
+</div>
+<div id="admonition-default" class="admonition note">
+<div>
+<p><code>Neovim</code>セクションでは、一転して<code>Neovim</code>自身でのファイル編集を前提としています。</p>
+<p>全く初めてだと大変かもしれませんが、もし少しでも興味があったらチャレンジしてもらえると楽しめると思います☺️</p>
 </div>
 </div>
 <div id="admonition-使用環境" class="admonition warning">
@@ -172,7 +179,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-使用環境"></a></p>
 </div>
 <div>
-<p>わたしの使用している環境が<code>macOS</code>なので、説明やイメージも主にこれを使用しています。</p>
+<p>わたしの使用する環境が<code>macOS</code>なので、説明やイメージも主にこれを使用しています。</p>
 <p>必要なソフトウェアと設定さえ整っていれば 他の OS でも通用するはずですが、
 100% 自信を持っているわけではないので、その点ご了承ください。</p>
 </div>
