@@ -2367,7 +2367,7 @@ require('other_modules/anothermodule')
                         目次を見るには、gO (←大文字のアルファベットO) とタイプする。
 
 :h[elp] {subject}	Like &quot;:help&quot;, additionally jump to the tag {subject}.
-                        help&quot; と同様に、{subject} というタグにジャンプする。
+                        &quot;:help&quot; と同様だが、さらに {subject} というタグにジャンプする。
 
                         For example:   
                             :help options
@@ -2377,14 +2377,14 @@ require('other_modules/anothermodule')
                         A sophisticated algorithm is used to decide which
                         match is better than another one.
 
-                        パターンに完全一致するものがない場合、または複数の一致するものがある場合は、
-                        「最良の」一致するものが使用される。。どのマッチが他のマッチより優れているか
-                        を決定するために、洗練されたアルゴリズムが使用される。
+                        パターンに完全一致するものがない場合、または複数の一致するものがある場合は
+                        「最良の」一致するものが使用される。どのマッチングが良いかを決めるために、
+                        高度なアルゴリズムが使われる。
 </code></pre>
 </div>
 </div>
 <p><code>:h</code>でトップページ、<code>:h {subject}</code>でヘルプを検索してヒットしたタグにジャンプ。ということですね。</p>
-<p>今回は後者でした。<code>help</code>タグに直接飛びましたね。</p>
+<p>今回は後者でした。<code>help</code>タグに直接飛びましたよね。</p>
 <p>閉じるときは<code>:q</code>とか<code>:bd</code>でいいんですが、頑張りすぎて ぐちゃぐちゃ になっちゃう時があるので、
 併せて<code>:helpc</code>(or <code>:helpclose</code>)も覚えておくと安心です☺️</p>
 <div id="admonition-h-helpc" class="admonition info">
@@ -2437,7 +2437,8 @@ require('other_modules/anothermodule')
 `nvim_set_option`が　とびだしてきた！
 </code></pre>
 <p>なんか始まったぁ❗というのか、まだ続いてんのぉ❓というのかわかりませんが へっちゃらです😉</p>
-<p>図鑑だとどうか分かりませんが、<code>help</code>なら今までに捕まえたことのないモンスターでも詳細な情報を確認できます。優秀😆</p>
+<p>図鑑だとどうか分かりませんが、<code>help</code>なら今までに捕まえたことのないモンスターでも既に登録されています。
+なんだったらバトル中でも確認できます。わーい😆</p>
 <div id="admonition-h-nvim_set_option" class="admonition info">
 <div class="admonition-title">
 <p>:h nvim_set_option</p>
@@ -2472,7 +2473,7 @@ require('other_modules/anothermodule')
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="termguicolors"><a class="header" href="#termguicolors">termguicolors</a></h1>
 <p>それでは前項でGETした<code>nvim_set_option()</code>を使ってカスタマイズを進めていきましょう😸</p>
-<p>お名前からある程度は推測できちゃうんですが、最初なのでまあ、のほほん☺️ と。</p>
+<p>掲題のお名前からある程度は推測できちゃうんですが、最初なのでまあ、のほほん☺️ と。</p>
 <div id="admonition-h-termguicolors" class="admonition info">
 <div class="admonition-title">
 <p>:h termguicolors</p>
@@ -2510,8 +2511,8 @@ require('other_modules/anothermodule')
 <p>すごい今さらなんですけど、ヘルプとかドキュメントとか、わたしが勝手に抜粋した上で載っけてるので、一回は手元で開いてみてください😌</p>
 </div>
 </div>
-<p>...わたしも全ての意味を理解しているわけではないのでこの辺で切り上げちゃうんですが、
-「24ビットRGBカラーを使いたいから<code>on</code>にしちゃえー❗」っていうのが上の設定です。</p>
+<p>...わたしも全ての意味を理解しているわけではないのでこの辺で切り上げちゃうんですが、</p>
+<p>「24ビットRGBカラーを使いたいから<code>on</code>にしちゃえー❗」っていうのが上の設定です。</p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -2528,7 +2529,7 @@ require('other_modules/anothermodule')
 </div>
 <div>
 <p>ヘルプの1行目にあるのはコマンドですね。</p>
-<p>頭に<code>no</code>がついてるのとかはなんかすごい無効化されそうな趣ですが、これらは<code>set</code>コマンドから使うことができます。</p>
+<p>頭に<code>no</code>がついてるのとかはなんかすごい無効化されそうな趣ですが、これらは<code>:set</code>コマンドから使うことができます。</p>
 <pre><code># 無効化
 :set notgc
 
@@ -2607,7 +2608,7 @@ require('other_modules/anothermodule')
 <p><a class="admonition-anchor-link" href="neovim/options/scrolloff.html#admonition-note"></a></p>
 </div>
 <div>
-<p>「グローバルか、ローカルのウィンドウか」みたいな記述がありますが、今回の例ではグローバルに設定しています。</p>
+<p>ヘルプには「グローバルもしくはローカルのウィンドウ」みたいな記述がありますが、この例ではグローバルに設定しています。</p>
 </div>
 </div>
 <div id="admonition-success" class="admonition success">
@@ -2617,7 +2618,7 @@ require('other_modules/anothermodule')
 </div>
 <div>
 <p>もし文法だったりパラメータが間違っていた場合は起動時にエラーが出るはずです。</p>
-<p>エラーが出ていなければ多分OKなので、どんどんいきましょう。😆</p>
+<p>エラーが出ていなければ多分OKなので、どんどんいきましょう😆</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ignorecase--smartcase"><a class="header" href="#ignorecase--smartcase">ignorecase / smartcase</a></h1>
@@ -2747,7 +2748,7 @@ vim.api.nvim_set_option('smartcase', true)
 
     受け取る値
         nosplit コマンドの効果をバッファにインクリメンタルに表示する。
-        split   &quot;nosplit&quot; と同様であるが、画面外の結果を部分的にプレビューウィンドウに表示する。
+        split   &quot;nosplit&quot; に加えて、画面外の結果を部分的にプレビューウィンドウに表示する。
 </code></pre>
 </div>
 </div>
@@ -2772,7 +2773,8 @@ vim.api.nvim_set_option('smartcase', true)
 </div>
 </div>
 <p>これ Karen が歌ったら面白いんじゃない？😆 ってなるのはなんかもう必然の Richard ですので、
-<code>She</code>を<code>He</code>に変えます。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<code>She</code>👩を<code>He</code>👨に変えます。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<p>置換操作は<code>:%s/検索値/置換値</code>とすると実行できます。</p>
 <pre><code>:%s/She/He
 </code></pre>
 <p>画面下にプレビューウィンドウが出るようになりました。</p>
@@ -2788,13 +2790,13 @@ vim.api.nvim_set_option('smartcase', true)
 <p>下のようになってたとして、(だいぶ強引ですが) 大文字を含まない<code>she</code>でやった場合にあれれー❓ってなるの気付きます？</p>
 <p><img src="neovim/options/img/replace3.png" alt="replace3.png" /></p>
 <p>そうです。3行目に<code>she</code>は2つあるのに、1つ取りこぼししちゃってます😱</p>
-<p>実は同じ行の中では最初にヒットしたところしか反応しません。</p>
+<p>実はこのやり方だと同じ行の中では最初にヒットしたところしか反応しません。</p>
 <p>こういう場合は、</p>
 <pre><code>:%s/she/he/g
 </code></pre>
 <p>...と、してあげると期待通りの結果が得られます。</p>
 <p><img src="neovim/options/img/replace4.png" alt="replace4.png" /></p>
-<p>割とあるシチュエーションだと思うので、覚えておくと役に立ちます。</p>
+<p>割とあるシチュエーションだと思うので、覚えておくと役に立ちます😉</p>
 </div>
 </div>
 <div id="admonition-question" class="admonition question">
@@ -2821,7 +2823,7 @@ vim.api.nvim_set_option('smartcase', true)
 </div>
 </div>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p><a href="http://www.richardandkarencarpenter.com/SN_TicketToRide.htm">Carpenters</a> の
+<p><a href="http://www.richardandkarencarpenter.com/SN_TicketToRide.htm">The Carpenters</a> の
 デビュー曲は<a href="https://en.wikipedia.org/wiki/Ticket_to_Ride_(song)">Ticket to Ride</a>のアレンジでした。これが1969年のお話。
 Richard が<code>vi</code>とかで歌詞置換してたらウケる〜🤣 とか思って見たら<a href="https://ja.wikipedia.org/wiki/Vi">vi</a>ですら初版が1976年...。
 <code>Neovim</code>どころか<code>Vim</code>どころか、<code>vi</code>ですら意外と新しい😲</p>

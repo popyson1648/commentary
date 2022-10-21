@@ -168,7 +168,7 @@
 
     受け取る値
         nosplit コマンドの効果をバッファにインクリメンタルに表示する。
-        split   &quot;nosplit&quot; と同様であるが、画面外の結果を部分的にプレビューウィンドウに表示する。
+        split   &quot;nosplit&quot; に加えて、画面外の結果を部分的にプレビューウィンドウに表示する。
 </code></pre>
 </div>
 </div>
@@ -193,7 +193,8 @@
 </div>
 </div>
 <p>これ Karen が歌ったら面白いんじゃない？😆 ってなるのはなんかもう必然の Richard ですので、
-<code>She</code>を<code>He</code>に変えます。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<code>She</code>👩を<code>He</code>👨に変えます。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<p>置換操作は<code>:%s/検索値/置換値</code>とすると実行できます。</p>
 <pre><code>:%s/She/He
 </code></pre>
 <p>画面下にプレビューウィンドウが出るようになりました。</p>
@@ -209,13 +210,13 @@
 <p>下のようになってたとして、(だいぶ強引ですが) 大文字を含まない<code>she</code>でやった場合にあれれー❓ってなるの気付きます？</p>
 <p><img src="img/replace3.png" alt="replace3.png" /></p>
 <p>そうです。3行目に<code>she</code>は2つあるのに、1つ取りこぼししちゃってます😱</p>
-<p>実は同じ行の中では最初にヒットしたところしか反応しません。</p>
+<p>実はこのやり方だと同じ行の中では最初にヒットしたところしか反応しません。</p>
 <p>こういう場合は、</p>
 <pre><code>:%s/she/he/g
 </code></pre>
 <p>...と、してあげると期待通りの結果が得られます。</p>
 <p><img src="img/replace4.png" alt="replace4.png" /></p>
-<p>割とあるシチュエーションだと思うので、覚えておくと役に立ちます。</p>
+<p>割とあるシチュエーションだと思うので、覚えておくと役に立ちます😉</p>
 </div>
 </div>
 <div id="admonition-question" class="admonition question">
@@ -242,7 +243,7 @@
 </div>
 </div>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p><a href="http://www.richardandkarencarpenter.com/SN_TicketToRide.htm">Carpenters</a> の
+<p><a href="http://www.richardandkarencarpenter.com/SN_TicketToRide.htm">The Carpenters</a> の
 デビュー曲は<a href="https://en.wikipedia.org/wiki/Ticket_to_Ride_(song)">Ticket to Ride</a>のアレンジでした。これが1969年のお話。
 Richard が<code>vi</code>とかで歌詞置換してたらウケる〜🤣 とか思って見たら<a href="https://ja.wikipedia.org/wiki/Vi">vi</a>ですら初版が1976年...。
 <code>Neovim</code>どころか<code>Vim</code>どころか、<code>vi</code>ですら意外と新しい😲</p>
