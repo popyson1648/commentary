@@ -194,9 +194,19 @@
 </div>
 <p>これ Karen が歌ったら面白いんじゃない？😆 ってなるのはなんかもう必然の Richard ですので、
 <code>She</code>👩を<code>He</code>👨に変えます。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
-<p>置換操作は<code>:%s/検索値/置換値</code>とすると実行できます。</p>
+<p>置換操作は<code>:%s/{検索値}/{置換値}</code>とすると実行できます。</p>
 <pre><code>:%s/She/He
 </code></pre>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>改めて確認してわたしも初めて知ったんですが😅</p>
+<p><code>%s</code>はファイル全体を示しているそうです。<code>s</code>とするとカーソル行に絞ってできるとか。へぇ〜😮</p>
+</div>
+</div>
 <p>画面下にプレビューウィンドウが出るようになりました。</p>
 <p><img src="img/replace1.png" alt="replace1.png" /></p>
 <p>ちょっとこれだとあんまり威力を感じられないんですが、画面に収まってない部分もプレビューできるのが強みです。</p>
@@ -214,7 +224,7 @@
 <p>こういう場合は、</p>
 <pre><code>:%s/she/he/g
 </code></pre>
-<p>...と、してあげると期待通りの結果が得られます。</p>
+<p>...と、<code>g</code>オプションを追加してあげると期待通りの結果が得られます。</p>
 <p><img src="img/replace4.png" alt="replace4.png" /></p>
 <p>割とあるシチュエーションだと思うので、覚えておくと役に立ちます😉</p>
 </div>
