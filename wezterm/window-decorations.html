@@ -184,7 +184,7 @@
 <p>今回はごめんなさいかなー。</p>
 <p>...。</p>
 <p>...。</p>
-<p>なんて言うと思う⁉️😜</p>
+<p>なんて言うと思う⁉️😝</p>
 <h2 id="configuring-mouse-assignments"><a class="header" href="#configuring-mouse-assignments">Configuring Mouse Assignments</a></h2>
 <div id="admonition-mouse-bindinghttpswezfurlongorgweztermconfigmousehtmlconfiguring-mouse-assignments" class="admonition info">
 <div class="admonition-title">
@@ -204,25 +204,33 @@
 <p><a class="admonition-anchor-link" href="#admonition-mousebindslua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">local wezterm = require 'wezterm'
-local act = wezterm.action
-
-wezterm.on('toggle-title-bar', function(window, pane)
-  local overrides = window:get_config_overrides() or {}
-
-  overrides.window_decorations = 'TITLE | RESIZE'
-  window:set_config_overrides(overrides)
-end)
+<pre><code class="language-lua">local act = require('wezterm').action
 
 return {
   mouse_bindings = {
     {
       event = { Down = { streak = 1, button = 'Left' } },
       mods = 'NONE',
-      action = act.EmitEvent 'toggle-title-bar',
+      action = act.EmitEvent 'show-title-bar',
     },
   },
 }
+</code></pre>
+</div>
+</div>
+<p>カスタムイベントは<code>event.lua</code>の方にまとめます。</p>
+<div id="admonition-eventlua" class="admonition example">
+<div class="admonition-title">
+<p>event.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-eventlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">wezterm.on('show-title-bar', function(window, pane)
+  local overrides = window:get_config_overrides() or {}
+
+  overrides.window_decorations = 'TITLE | RESIZE'
+  window:set_config_overrides(overrides)
+end)
 </code></pre>
 </div>
 </div>
@@ -258,13 +266,13 @@ return {
 <p>やっぱり今回はごめんなさいかなー。</p>
 <p>...。</p>
 <p>...。</p>
-<p>なんて言うと思う⁉️😜</p>
+<p>なんて言うと思う⁉️😝</p>
 <p>別で引っ込める処理も入れたらいいんです❗</p>
 <h2 id="ここでも-window-focus-changed"><a class="header" href="#ここでも-window-focus-changed">ここでも window-focus-changed</a></h2>
-<div id="admonition-eventlua" class="admonition example">
+<div id="admonition-eventlua-1" class="admonition example">
 <div class="admonition-title">
 <p>event.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-eventlua"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-eventlua-1"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">function DisableWindowDecorations(window, interval)
@@ -303,17 +311,17 @@ When the event is emitted, each of the registered callbacks is called in the ord
 </div>
 </div>
 <p>え❓😮 <code>DisableWindowDecorations</code>にある<code>interval</code>は何かって❓</p>
-<p>かなわんなあ。<code>mousebinds.lua</code>に記述したカスタムイベントに少しだけ手を加えましょ😄</p>
-<div id="admonition-mousebindslua-1" class="admonition example">
+<p>かなわんなあ。最初に記述した<code>show-title-bar</code>イベントに少しだけ手を加えましょ😄</p>
+<div id="admonition-eventlua-2" class="admonition example">
 <div class="admonition-title">
-<p>mousebinds.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-mousebindslua-1"></a></p>
+<p>event.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-eventlua-2"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">-- これを追加して...、
 local TITLE_BAR_DISPLAY_TIME = 3000
 
-wezterm.on('toggle-title-bar', function(window, pane)
+wezterm.on('show-title-bar', function(window, pane)
   local overrides = window:get_config_overrides() or {}
 
   overrides.window_decorations = 'TITLE | RESIZE'
