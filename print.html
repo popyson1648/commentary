@@ -2678,7 +2678,7 @@ require('other_modules/anothermodule')
 <p><a class="admonition-anchor-link" href="neovim/options/nvim_set_option.html#admonition-h-nvim_set_option"></a></p>
 </div>
 <div>
-<pre><code>nvim_set_option({name}, {value})                           nvim_set_option()
+<pre><code>nvim_set_option({name}, {value})            nvim_set_option()
     Sets the global value of an option.
     オプションのグローバル値を設定する。
 
@@ -2687,8 +2687,8 @@ require('other_modules/anothermodule')
       • {value}  New option value
 
     パラメータ  
-      - {name} オプション名
-      - {value} 新しいオプションの値
+      • {name}   オプション名
+      • {value}  新しいオプションの値
 </code></pre>
 </div>
 </div>
@@ -3216,27 +3216,27 @@ See 'clipboard' for details and options.
 <p><a class="admonition-anchor-link" href="neovim/options/nvim_win_set_option.html#admonition-h-nvim_win_set_option"></a></p>
 </div>
 <div>
-<pre><code>nvim_win_set_option({window}, {name}, {value})         *nvim_win_set_option()*
+<pre><code>nvim_win_set_option({window}, {name}, {value})          *nvim_win_set_option()*
     Sets a window option value. Passing `nil` as value deletes the option
     (only works if there's a global fallback)
 
-    window のオプション値を設定します。value として `nil` を渡すと、そのオプションが削除されます。
-    (グローバルフォールバックがある場合のみ動作します)
+    window のオプション値を設定する。value として `nil` を渡すと、そのオプションが削除される。
+    (グローバルフォールバックがある場合のみ動作する)
 
     Parameters:  
       • {window}  Window handle, or 0 for current window
       • {name}    Option name
       • {value}   Option value
 
-      - {window}  ウィンドウのハンドル、またはカレントウィンドウの場合は0
-      - {name}    オプション名
-      - {value}   新しいオプションの値
+      • {window}  ウィンドウのハンドル、またはカレントウィンドウの場合は0
+      • {name}    オプション名
+      • {value}   新しいオプションの値
 </code></pre>
 </div>
 </div>
 <p><code>nvim_win_set_option</code>は<code>window option</code>の値を設定できるタイプのモンスターみたいですね🤔</p>
 <p>本質的な説明ではありませんが、<code>Window handle</code>を<code>0</code>としておけば<code>nvim_set_option</code>と同じ感覚で使えます。</p>
-<p>(逆に、これ以上の説明はわたしのレベルがでは出来ない、と言うのが正直なところです😓)</p>
+<p>(逆に、これ以上の説明はわたしのレベルでは出来ない、と言うのが正直なところです😓)</p>
 <p>&quot;windowすいどう&quot; は波の穏やかな海ですが、<code>nvim_win_set_option</code>さえいれば &quot;かいパンやろう&quot;🙈とかそんなの関係なく進むことができそうです。</p>
 <p>...なんで &quot;かいパンやろう&quot; を避けるのかって❓いや、それは...🙊</p>
 <div id="admonition-success" class="admonition success">
@@ -3594,8 +3594,14 @@ See 'clipboard' for details and options.
 <p><a class="admonition-anchor-link" href="neovim/options/wrap-colorcolumn.html#admonition-note"></a></p>
 </div>
 <div>
-<p>有効にする場合は<code>sidescroll</code>などを変えると便利になるよ❗...と、
+<p>無効にする場合は<code>sidescroll</code>などを変えると便利になるよ❗...と、
 <code>wrap</code>のヘルプに書いてくれているので、参考にしてみると良いと思います😉</p>
+<pre><code>To make scrolling horizontally a bit more useful, try this:  
+		:set sidescroll=5
+		:set listchars+=precedes:&lt;,extends:&gt;
+See 'sidescroll', 'listchars' and |wrap-off|.
+</code></pre>
+<p>...わたしは今気づいたので、また今度試してみます。</p>
 </div>
 </div>
 <p>むしろ、変なファイルを作らないためのマナーに働きかけるものとして、<code>colorcolumn</code>を活用する方がいいと思います。</p>
