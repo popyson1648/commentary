@@ -208,10 +208,10 @@ See 'sidescroll', 'listchars' and |wrap-off|.
 </div>
 </div>
 <p>むしろ、変なファイルを作らないためのマナーに働きかけるものとして、<code>colorcolumn</code>を活用する方がいいと思います。</p>
-<div id="admonition-h-wrap-1" class="admonition info">
+<div id="admonition-h-colorcolumn" class="admonition info">
 <div class="admonition-title">
-<p>:h wrap</p>
-<p><a class="admonition-anchor-link" href="#admonition-h-wrap-1"></a></p>
+<p>:h colorcolumn</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-colorcolumn"></a></p>
 </div>
 <div>
 <pre><code>						    *'colorcolumn'* *'cc'*
@@ -232,9 +232,18 @@ See 'sidescroll', 'listchars' and |wrap-off|.
 </code></pre>
 </div>
 </div>
-<p>使い方としてはこんなんです。パラメータが<code>string</code>となっているところに注意🤫</p>
+<p>使い方としてはこんなんです。</p>
 <pre><code class="language-lua">vim.api.nvim_win_set_option(0, 'colorcolumn', '100')
 </code></pre>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>パラメータが<code>string</code>となっているところに注意🤫</p>
+</div>
+</div>
 <p>こんな感じで100文字目の列を教えてくれます。</p>
 <p><img src="img/colorcolumn.png" alt="colorcolumn.png" /></p>
 <p>ただ、これはなんか、再描画遅くなるとも書いてあるし😅 そんなに出しとく必要ある〜❓とか思っちゃうので、</p>
@@ -258,7 +267,7 @@ See 'sidescroll', 'listchars' and |wrap-off|.
 </code></pre>
 </div>
 </div>
-<p>...っていう運用にしてくのでもいいんじゃないかな〜、なんて思ってるんですが、どうでしょう❓</p>
+<p>...っていう運用にしていくのもいいんじゃないかな〜、なんて思ってるんですが、どうでしょう❓</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>

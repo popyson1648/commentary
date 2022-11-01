@@ -3070,10 +3070,10 @@ Richard が<code>vi</code>とかで歌詞置換してたらウケる〜🤣 と�
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="clipboard"><a class="header" href="#clipboard">ClipBoard</a></h1>
 <p>そうだそうだ。大事なものを忘れていました😅</p>
-<div id="admonition-h-clipboard-h-provider" class="admonition info">
+<div id="admonition-h-clipboard" class="admonition info">
 <div class="admonition-title">
-<p>:h clipboard (:h provider)</p>
-<p><a class="admonition-anchor-link" href="neovim/options/clipboard.html#admonition-h-clipboard-h-provider"></a></p>
+<p>:h clipboard</p>
+<p><a class="admonition-anchor-link" href="neovim/options/clipboard.html#admonition-h-clipboard"></a></p>
 </div>
 <div>
 <pre><code>Nvim has no direct connection to the system clipboard. Instead it depends on
@@ -3100,18 +3100,30 @@ See 'clipboard' for details and options.
 <p>これを設定しておくとクリップボードをシステムと共有できます☺️</p>
 <p>要は、クリップボードを介して<code>Neovim</code>の文字列を他のアプリケーションに持って行ったり、来たりができるんですね❗便利😆</p>
 <p>上のヘルプの中で、ほぼ答えは書いてくれてるんですが、詳細 (<code>options</code>の中にある<code>clipboard</code>) も確認してみましょう。</p>
-<div id="admonition-h-clipboard-h-options" class="admonition info">
+<div id="admonition-tip" class="admonition tip">
 <div class="admonition-title">
-<p>:h clipboard (:h options)</p>
-<p><a class="admonition-anchor-link" href="neovim/options/clipboard.html#admonition-h-clipboard-h-options"></a></p>
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="neovim/options/clipboard.html#admonition-tip"></a></p>
+</div>
+<div>
+<p>今回、<code>provider の clipboard</code>と、<code>options の clipboard</code>を見たいのですが、</p>
+<p>単純に<code>clipboard</code>とすると前者にしか飛べません。後者のようなコマンドを探す場合は<code>'</code>で囲うと一発で飛べます。</p>
+<p>...確信は無いんですけどね😅</p>
+<p>この先でもいくつか出てくるので、頭の片隅に置いといていただければ...。</p>
+</div>
+</div>
+<div id="admonition-h-clipboard-1" class="admonition info">
+<div class="admonition-title">
+<p>:h 'clipboard'</p>
+<p><a class="admonition-anchor-link" href="neovim/options/clipboard.html#admonition-h-clipboard-1"></a></p>
 </div>
 <div>
 <pre><code>'clipboard' 'cb'	string	(default &quot;&quot;)
 			            global
 
-	This option is a list of comma-separated names.
+    This option is a list of comma-separated names.
 
-  このオプションは、カンマで区切られた名前のリストである。
+    このオプションは、カンマで区切られた名前のリストである。
 </code></pre>
 </div>
 </div>
@@ -3123,9 +3135,9 @@ See 'clipboard' for details and options.
 </summary>
 <div>
 <pre><code>
-	These names are recognized:
+  These names are recognized:
 
-	これらの名前は認識される。
+  これらの名前は認識される。
 
 						                        clipboard-unnamed
 	unnamed
@@ -3140,7 +3152,8 @@ See 'clipboard' for details and options.
 
       これを含むと、Vim は通常 unnamed レジスタに行くような yank, delete, change, put 操作に対して、
       クリップボードレジスタ '*' を使用する。
-      レジスタが明示的に指定された場合、'clipboard' に unnamed が入っているかどうかに関わらず、常にそのレジスタが使用される。 
+      レジスタが明示的に指定された場合、'clipboard' に unnamed が入っているかどうかに関わらず、
+      常にそのレジスタが使用される。 
       クリップボードレジスタは、常に「*」表記で明示的にアクセスすることができる。
 
 						                    clipboard-unnamedplus
@@ -3162,7 +3175,7 @@ See 'clipboard' for details and options.
 </code></pre>
 </div>
 </details>
-<p>なんかもうヘルプまみれになってますが、ここで確認しておきたいのは<code>clipboard</code>のデフォルト値ですね。</p>
+<p>なんかもうヘルプまみれですが、ここで確認しておきたいのは<code>clipboard</code>のデフォルト値ですね。</p>
 <p>これを見ると<code>&quot;&quot;</code>とされているので、特に何も気にせず、このように書いてしまって問題ないはずです😉</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
@@ -3251,23 +3264,23 @@ See 'clipboard' for details and options.
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="number"><a class="header" href="#number">number</a></h1>
 <p>まず飛び出してくるのはこれですね。</p>
-<div id="admonition-h-number-h-options" class="admonition info">
+<div id="admonition-h-number" class="admonition info">
 <div class="admonition-title">
-<p>:h number (:h options)</p>
-<p><a class="admonition-anchor-link" href="neovim/options/number.html#admonition-h-number-h-options"></a></p>
+<p>:h 'number'</p>
+<p><a class="admonition-anchor-link" href="neovim/options/number.html#admonition-h-number"></a></p>
 </div>
 <div>
 <pre><code>				                        'number' 'nu' 'nonumber' 'nonu'
 
 'number' 'nu'	    boolean     (default off)
-			        local to window
+                    local to window
 
-	Print the line number in front of each line.  When the 'n' option is
-	excluded from 'cpoptions' a wrapped line will not use the column of
-	line numbers.
-	Use the 'numberwidth' option to adjust the room for the line number.
-	When a long, wrapped line doesn't start with the first character, '-'
-	characters are put before the number.
+    Print the line number in front of each line.  When the 'n' option is
+    excluded from 'cpoptions' a wrapped line will not use the column of
+    line numbers.
+    Use the 'numberwidth' option to adjust the room for the line number.
+    When a long, wrapped line doesn't start with the first character, '-'
+    characters are put before the number.
 
     各行の前に行番号を表示する。 cpoptions' で 'n' オプションが除外されている場合、折り返し行では行番号の列は使用されない。
     numberwidth' オプションを使用して、行番号を表示するスペースを調整する。
@@ -3299,10 +3312,10 @@ See 'clipboard' for details and options.
 'relativenumber' 'rnu'  boolean     (default off)
                         local to window
 
-	Show the line number relative to the line with the cursor in front of
-	each line. Relative line numbers help you use the |count| you can
-	precede some vertical motion commands (e.g. j k + -) with, without
-	having to calculate it yourself. 
+    Show the line number relative to the line with the cursor in front of
+    each line. Relative line numbers help you use the |count| you can
+    precede some vertical motion commands (e.g. j k + -) with, without
+    having to calculate it yourself. 
 
     各行の前にカーソルを置くと、その行からの相対行番号を表示する。
     相対的な行番号は、いくつかの垂直移動コマンド (例: j k + -) の前に付けることができる |count| を、
@@ -3317,20 +3330,20 @@ See 'clipboard' for details and options.
 <p><a class="admonition-anchor-link" href="neovim/options/number.html#admonition-h-number_relativenumber"></a></p>
 </div>
 <div>
-<pre><code>	The 'relativenumber' option changes the displayed number to be
-	relative to the cursor.  Together with 'number' there are these
-	four combinations (cursor in line 3):
+<pre><code>    The 'relativenumber' option changes the displayed number to be
+    relative to the cursor.  Together with 'number' there are these
+    four combinations (cursor in line 3):
 
     relativenumber' オプションは、表示される数字をカーソルからの相対位置に変更する。
     'number' と共に、以下の 4 つの組み合わせがある (カーソルは 3 行目にある)。
 
-		'nonu'          'nu'            'nonu'          'nu'
-		'nornu'         'nornu'         'rnu'           'rnu'
+        'nonu'          'nu'            'nonu'          'nu'
+        'nornu'         'nornu'         'rnu'           'rnu'
 
-	    |apple          |  1 apple      |  2 apple      |  2 apple
-	    |pear           |  2 pear       |  1 pear       |  1 pear
-	    |nobody         |  3 nobody     |  0 nobody     |3   nobody
-	    |there          |  4 there      |  1 there      |  1 there
+        |apple          |  1 apple      |  2 apple      |  2 apple
+        |pear           |  2 pear       |  1 pear       |  1 pear
+        |nobody         |  3 nobody     |  0 nobody     |3   nobody
+        |there          |  4 there      |  1 there      |  1 there
 </code></pre>
 </div>
 </div>
@@ -3353,10 +3366,10 @@ See 'clipboard' for details and options.
 </div>
 </div>
 <p>で、<code>numberwidth</code>も少し気になるんですが...、わたしは入れずにそのままにしてます。</p>
-<div id="admonition-h-numberwidth-h-options" class="admonition info">
+<div id="admonition-h-numberwidth" class="admonition info">
 <div class="admonition-title">
-<p>:h numberwidth (:h options)</p>
-<p><a class="admonition-anchor-link" href="neovim/options/number.html#admonition-h-numberwidth-h-options"></a></p>
+<p>:h numberwidth</p>
+<p><a class="admonition-anchor-link" href="neovim/options/number.html#admonition-h-numberwidth"></a></p>
 </div>
 <div>
 <pre><code>'numberwidth' 'nuw'     number      (default: 4)
@@ -3605,10 +3618,10 @@ See 'sidescroll', 'listchars' and |wrap-off|.
 </div>
 </div>
 <p>むしろ、変なファイルを作らないためのマナーに働きかけるものとして、<code>colorcolumn</code>を活用する方がいいと思います。</p>
-<div id="admonition-h-wrap-1" class="admonition info">
+<div id="admonition-h-colorcolumn" class="admonition info">
 <div class="admonition-title">
-<p>:h wrap</p>
-<p><a class="admonition-anchor-link" href="neovim/options/wrap-colorcolumn.html#admonition-h-wrap-1"></a></p>
+<p>:h colorcolumn</p>
+<p><a class="admonition-anchor-link" href="neovim/options/wrap-colorcolumn.html#admonition-h-colorcolumn"></a></p>
 </div>
 <div>
 <pre><code>						    *'colorcolumn'* *'cc'*
@@ -3629,9 +3642,18 @@ See 'sidescroll', 'listchars' and |wrap-off|.
 </code></pre>
 </div>
 </div>
-<p>使い方としてはこんなんです。パラメータが<code>string</code>となっているところに注意🤫</p>
+<p>使い方としてはこんなんです。</p>
 <pre><code class="language-lua">vim.api.nvim_win_set_option(0, 'colorcolumn', '100')
 </code></pre>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="neovim/options/wrap-colorcolumn.html#admonition-warning"></a></p>
+</div>
+<div>
+<p>パラメータが<code>string</code>となっているところに注意🤫</p>
+</div>
+</div>
 <p>こんな感じで100文字目の列を教えてくれます。</p>
 <p><img src="neovim/options/img/colorcolumn.png" alt="colorcolumn.png" /></p>
 <p>ただ、これはなんか、再描画遅くなるとも書いてあるし😅 そんなに出しとく必要ある〜❓とか思っちゃうので、</p>
@@ -3655,7 +3677,7 @@ See 'sidescroll', 'listchars' and |wrap-off|.
 </code></pre>
 </div>
 </div>
-<p>...っていう運用にしてくのでもいいんじゃないかな〜、なんて思ってるんですが、どうでしょう❓</p>
+<p>...っていう運用にしていくのもいいんじゃないかな〜、なんて思ってるんですが、どうでしょう❓</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
