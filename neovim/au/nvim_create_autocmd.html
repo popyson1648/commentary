@@ -155,8 +155,8 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_autocmd"></a></p>
 </div>
 <div>
-<pre><code>nvim_create_autocmd({event}, {*opts})                  *nvim_create_autocmd()*
-                                      Create an |autocommand|
+<pre><code>nvim_create_autocmd({event}, {*opts})                   nvim_create_autocmd()
+                                        Create an |autocommand|
 
     The API allows for two (mutually exclusive) types of actions to be
     executed when the autocommand triggers: a callback function (Lua or
@@ -177,7 +177,7 @@
 </code></pre>
 </div>
 </div>
-<p>ヘルプではもっと色々なサンプル付きで説明がされていますが、今回はここで切り上げます。</p>
+<p>ヘルプではもっと色々なサンプル付きで説明されていますが、今回はここで切り上げます😅</p>
 <p><code>nvim_create_autocmd</code>の中に記述が見つかる<code>callback</code>からいきます。抜粋すると以下です。</p>
 <div id="admonition-h-nvim_create_autocmd-1" class="admonition info">
 <div class="admonition-title">
@@ -191,7 +191,7 @@
 </code></pre>
 </div>
 </div>
-<p>次は一個手前の<code>pattern</code>を確認してみます。これは<code>file-pattern</code>として説明されています。たぶん...。</p>
+<p>次は一個手前の<code>pattern</code>を確認してみます。これは<code>file-pattern</code>として説明されています😌</p>
 <div id="admonition-h-file-pattern" class="admonition info">
 <div class="admonition-title">
 <p>:h file-pattern</p>
@@ -201,26 +201,25 @@
 <pre><code>The pattern is interpreted like mostly used in file names:
 このパターンは、ファイル名によく使われるものと同じように解釈されます。
 
-	*	matches any sequence of characters; Unusual: includes path
-		separators
-	?	matches any single character
-	\?	matches a '?'
-	.	matches a '.'
-	~	matches a '~'
-	,	separates patterns
-	\,	matches a ','
-	{ }	like \( \) in a |pattern|
-	,	inside { }: like \| in a |pattern|
-	\}	literal }
-	\{	literal {
-	\\\{n,m\}  like \{n,m} in a |pattern|
-	\	special meaning like in a |pattern|
-	[ch]	matches 'c' or 'h'
-	[^ch]   match any character but 'c' and 'h'
+  *         matches any sequence of characters; Unusual: includes path separators
+  ?         matches any single character
+  \?        matches a '?'
+  .         matches a '.'
+  ~         matches a '~'
+  ,         separates patterns
+  \,        matches a ','
+  { }       like \( \) in a |pattern|
+  ,         inside { }: like \| in a |pattern|
+  \}        literal }
+  \{        literal {
+  \\\{n,m\} like \{n,m} in a |pattern|
+  \         special meaning like in a |pattern|
+  [ch]      matches 'c' or 'h'
+  [^ch]     match any character but 'c' and 'h'
 </code></pre>
 </div>
 </div>
-<p>で、最初に戻ってきて<code>event</code>なんですが、<code>autocmd-events</code>がこれでしょう。きっと...❗</p>
+<p>で、最初に戻ってきて<code>event</code>なんですが、<code>autocmd-events</code>がこれでしょう🤔</p>
 <div id="admonition-h-autocmd-events" class="admonition info">
 <div class="admonition-title">
 <p>:h autocmd-events</p>
@@ -253,7 +252,7 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 </div>
 <div id="admonition-default" class="admonition info">
 <div>
-<p>(この後イベントの説明がズラ〜っと並んでいるわけなんですが、とにかく量が多いので以下略❗)</p>
+<p>(この後イベントの説明がズラ〜っと並んでいるんですが、とにかく量が多いので以下略❗)</p>
 </div>
 </div>
 <p>ここでやりたいことは、</p>
@@ -269,9 +268,9 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 </li>
 </ul>
 <p>...です。</p>
-<p><code>event</code>については、奇⭐︎跡⭐︎的🌟 にヘルプ内で例示を行ってくれていたので、そのまま採用します。(助かったぁ😆)</p>
-<p>ただ、これだけだと単純に<code>nvim</code>(ファイル指定無し)で起動したケースでうまく行かなかったので、<code>BufNew</code>も加えました。</p>
-<p><code>pattern</code>は簡単だし、<code>callback</code>はもう既に書いてあるコードを持ってくれば良いですね😉</p>
+<p><code>event</code>については、奇⭐︎跡⭐︎的🌟 に❗ヘルプ内で例示を行ってくれていたので、そのまま採用します。(助かったぁ😆)</p>
+<p>ただ、これだけだと単純に<code>nvim</code>(ファイル指定無し)として起動したケースでうまく行かなかったので、<code>BufNew</code>も加えました。</p>
+<p>あとはもう、<code>pattern</code>は簡単だし、<code>callback</code>はもう既に書いたコードを持ってくれば良いだけですね😉</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -296,7 +295,7 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
-<p><code>FilterReadPre</code>と<code>FileReadPre</code>が必要になるのかが少し釈然としませんが、特に害は無さそうなので、このままいきます😅</p>
+<p><code>FilterReadPre</code>と<code>FileReadPre</code>が必要になるのかが判然としませんが、特に害は無さそうなので、このままいきます😅</p>
 </div>
 </div>
 <div id="admonition-tip" class="admonition tip">
@@ -305,10 +304,11 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
 </div>
 <div>
-<p><code>pattern</code>のデフォルトは<code>'*'</code>らしいので、これ実は省略できちゃいます😉</p>
+<p><code>pattern</code>のデフォルトは<code>'*'</code>らしいので、実は省略できちゃいます😉</p>
 </div>
 </div>
-<p>一度、これがちゃんと登録されていることを確認してみましょう。以下のコマンドを実行してみてください。</p>
+<p>では、これがちゃんと登録されることを実際に確認してみましょう。</p>
+<p><code>nvim</code>を再起動する前に、以下のコマンドを実行してみてください。</p>
 <div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -333,20 +333,21 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 <p>スクリーンショットの環境が突然変わったことは気にしないでください😺</p>
 </div>
 </div>
-<p>それでは、<code>nvim</code>を再起動して、もう一度同じコマンドを実行してみてみましょう...。</p>
+<p>それでは、<code>nvim</code>を再起動して、もう一度同じ<code>:au</code>を実行してみましょう...。</p>
 <p><img src="img/aucmd-after.png" alt="aucmd-after" /></p>
-<p><code>options.lua</code>に自分で書いたイベントが登録されていることを確認できますね。
-そのまま編集画面に戻って適当にタブ入力をしてみてください。タブ幅の設定は反映されていますか？</p>
-<p>...いますよね？</p>
+<p><code>options.lua</code>に書いたイベントが登録されていることが確認できましたね❗</p>
+<p>編集画面に戻って適当にタブ入力をしてみてください。タブ幅の設定は反映されていますか❓</p>
+<p>...されてますよね⁉️</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
 </div>
 <div>
-<p>ここまで来れば、とりあえずは期待する動作が得られているはずです。</p>
-<p>...、あ、いえ。&quot;とりあえず&quot; と言っているのには理由があって...😮</p>
-<p>でも、なんだか長くなってきたので、もう一回だけ続く...❗🙀 (休憩とってね☕)</p>
+<p>ここまで来れば、とりあえずは期待する動作が得られているはずです😆</p>
+<p>...、あ、いえ。&quot;とりあえず&quot; と言っているのには理由があって...。</p>
+<p>でも、なんだか長くなってきたので、もう一回だけ続く...❗🙀</p>
+<p>(疲れたらちゃんと休憩とってね☕)</p>
 </div>
 </div>
 

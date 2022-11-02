@@ -149,7 +149,7 @@
                     <main>
                         <h1 id="nvim_create_augroup"><a class="header" href="#nvim_create_augroup">nvim_create_augroup</a></h1>
 <p>うん。とりあえず、何よりもまずはっきりさせておきたいのは、<code>au</code>というのは<code>autocmd</code>の先頭2文字からきているようですね。
-いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...。</p>
+いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...🍑</p>
 <p>...え❓ わたしだけ😧⁉️ 絶対嘘だ❗</p>
 <div id="admonition-h-nvim_create_augroup" class="admonition info">
 <div class="admonition-title">
@@ -195,8 +195,7 @@ This is useful for removing or executing a group of autocommands.
 </code></pre>
 </div>
 </div>
-<p>オートコマンドは以下で確認できます。
-コードをいじる前に確認しておきましょうか😌</p>
+<p>オートコマンドは以下で確認できます。コードをいじる前の現状を確認しておきましょう😌</p>
 <div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -211,8 +210,14 @@ This is useful for removing or executing a group of autocommands.
 </div>
 </div>
 <p><img src="img/augroup-before.png" alt="augroup-before.png" /></p>
-<p>こんな感じですね。</p>
-<p>じゃあ、話を進めるんですが、さっきのヘルプの中に、コードが例示されていましたね。</p>
+<p>こんな感じですね😌</p>
+<p>それでは話を進めるんですが、さっきのヘルプ中に、コードが例示されていましたね。</p>
+<div id="admonition-h-nvim_create_augroup-1" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim_create_augroup</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_augroup-1"></a></p>
+</div>
+<div>
 <pre><code>To get an existing group id, do:  
 既存のグループ ID を取得するには、次のようにする。 
 
@@ -220,26 +225,29 @@ This is useful for removing or executing a group of autocommands.
         clear = false
     })
 </code></pre>
-<p>&quot;既存の&quot;って言われると、なんで😮❓ってなるんですけど、
-&quot;オートコマンドグループを作成または取得する。&quot;という最初の文言を信じることにしましょう。<code>create_augroup</code>なんだし。</p>
-<p>パラメータは<code>name</code>には自分で決めたグループ名を、<code>opts</code>はまた更に話が長くなっちゃうんで空っぽ(デフォルト)にしときましょう。</p>
+</div>
+</div>
+<p>&quot;既存の&quot;って言われると、「なんで😮❓」ってなるんですけど、
+&quot;オートコマンドグループを作成または取得する。&quot;という最初の文言を信じることにしましょう。<code>create_augroup</code>なんだし❗</p>
+<p>パラメータは<code>name</code>には自分で決めたグループ名を、<code>opts</code>は...。更に話が長くなっちゃうんで空っぽ(デフォルト)にしときましょう。</p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
-<p><code>opts</code>は<code>clear</code>オプションを含んでいますが、これは「なんで<code>augroup</code>作らなきゃダメなの？」って検索とかしてみると、
-多くの人が同じ疑問を持ってることがわかります。</p>
-<p>なんとな〜く察するに、二重登録を防ぐためにある程度まとめて制御できた方がいいでしょ❓的な❓</p>
-<p>...まあ、わたしはイマイチわかってません😅</p>
+<p><code>opts</code>は<code>clear</code>オプションを含んでいますが、
+「なんでわざわざ<code>augroup</code>作らなきゃダメなの？」っていう疑問と密接な関係がありそうです。</p>
+<p>なんとな〜く察するに、「二重登録を防ぐためにある程度まとめて制御できた方がいいでしょ❓」的なことらしいんですが...、
+わたしはいまひとつわかってません❗</p>
+<p>ちなみに<code>clear</code>のデフォルト値は<code>true</code>なので安全は担保されています。(意味を理解していれば、なんですけどね😅)</p>
 </div>
 </div>
 <p>ってことで、こんな感じのコードになるのかな。</p>
 <p>グループの命名規則がわかりませんが、とりあえず雰囲気で...🤫</p>
 <pre><code class="language-lua">local id = vim.api.nvim_create_augroup(&quot;buffer_set_options&quot;, {})
 </code></pre>
-<p>これを<code>nvim_create_autocmd</code>に組み込むので、もう一回<code>nvim_create_autocmd</code>を確認します。</p>
+<p>これを<code>nvim_create_autocmd</code>に組み込むので、もう一回ヘルプを確認します。</p>
 <div id="admonition-h-nvim_create_autocmd" class="admonition info">
 <div class="admonition-title">
 <p>:h nvim_create_autocmd</p>
@@ -252,7 +260,7 @@ This is useful for removing or executing a group of autocommands.
 </code></pre>
 </div>
 </div>
-<p><code>nvim_create_augroup</code>が返してくれた<code>ID</code>を渡せば良さそうですね。</p>
+<p><code>nvim_create_augroup</code>が返してくれる<code>ID</code>をそのまま渡せば良さそうですね。</p>
 <p>じゃあ、こんな感じでどうかな😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
@@ -277,19 +285,19 @@ vim.api.nvim_create_autocmd({ 'BufNew', 'BufNewFile', 'BufReadPre', 'FilterReadP
 </div>
 </div>
 <p><img src="img/augroup-after.png" alt="augroup-after.png" /></p>
-<p><code>buffer_set_options</code>入りましたね❗完璧です😉</p>
+<p><code>buffer_set_options</code>の姿を確認できましたね❗これでもう完璧です😆</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
-<p>実は、このあたりのページ作る直前まで<code>autocmd</code>とか触ったことなくて、ず〜っと</p>
+<p>実はわたし、<code>autocmd</code>とか今まで全く触ってきてなくて、ず〜っと</p>
 <pre><code>-- なぜかうまく行く呪文 (2つ目以降のbufferもへーき)
 vim.opt.tabstop = 2
 </code></pre>
-<p>とかして誤魔化してたんですよ。</p>
-<p>でも、ここに来てようやく色々繋がって、見栄えのするコードに辿り着けたので、なんかホッとしました☺️</p>
+<p>とかして誤魔化してたんです。</p>
+<p>でも、この辺りのページを作るにあたって考え直して、ようやく見栄えのするコードに辿り着けたので、なんかホッとしてます☺️</p>
 <p>これなら公開できるでしょ🤗</p>
 </div>
 </div>

@@ -3746,12 +3746,13 @@ APIを　つかいます❗
 
     Parameters:  
       • {buffer}  Buffer handle, or 0 for current buffer
-      • {name}    Option name
-      • {value}   Option value
+                  バッファハンドル、またはカレントバッファの場合は0。
 
-      • {buffer}  バッファハンドル、またはカレントバッファの場合は0。
-      • {name}    オプション名
-      • {value}   新しいオプションの値
+      • {name}    Option name
+                  オプション名
+
+      • {value}   Option value
+                  新しいオプションの値
 </code></pre>
 </div>
 </div>
@@ -3781,20 +3782,20 @@ APIが　なくなったら
 <p><a class="admonition-anchor-link" href="neovim/options/tab.html#admonition-h-tabstop"></a></p>
 </div>
 <div>
-<pre><code>                                *'tabstop'* *'ts'*
+<pre><code>                                'tabstop' 'ts'
 
 'tabstop' 'ts'              number (default 8)
                             local to buffer
 
-	Number of spaces that a &lt;Tab&gt; in the file counts for.  Also see
-	the |:retab| command, and the 'softtabstop' option.
+  Number of spaces that a &lt;Tab&gt; in the file counts for.  Also see
+  the |:retab| command, and the 'softtabstop' option.
 
   ファイル中の&lt;Tab&gt;がカウントするスペースの数。
   |:retab| コマンドと 'softtabstop' オプションも参照のこと。
 
-	Note: Setting 'tabstop' to any other value than 8 can make your file
-	appear wrong in many places, e.g., when printing it.
-	The value must be more than 0 and less than 10000.
+  Note: Setting 'tabstop' to any other value than 8 can make your file
+  appear wrong in many places, e.g., when printing it.
+  The value must be more than 0 and less than 10000.
 
   注意: 'tabstop' を 8 以外の値に設定すると、ファイルを印刷するときなど、多くの場所で間違って表示されることがある。
   値は0以上10000以下でなければならない。
@@ -3806,8 +3807,8 @@ APIが　なくなったら
 </div>
 </div>
 <p><code>tabstop</code>は俗に言う &quot;タブ幅&quot; です。デフォルトのまま<code>8</code>ってなってると、古いファイルのような印象を持っちゃうんですが、実際のところはどうなのかな...🤔</p>
-<p>単純にタブ幅だけを設定して終わりなら話は簡単なのですが、<code>Neovim</code>の場合、この先に出てくるオプションと少し複雑に絡み合っています😓</p>
-<p>そのため、ここでは割愛していますが、ヘルプの中ではこれらを適切に設定する4つの方法が示されています。</p>
+<p>単純にタブ幅だけを設定して終わりなら話は簡単なのですが、<code>Neovim</code>の場合、この先に出てくるオプションとやや複雑に絡み合っています😓</p>
+<p>そのためなのか、ヘルプ (上の抜粋に含まない部分) ではこれらを適切に設定する4つの方法が示されています。</p>
 <p>わたしが採用しているのは、オーソドックスな<code>2.</code>です☺️</p>
 <div id="admonition-default" class="admonition info">
 <div>
@@ -3820,7 +3821,8 @@ APIが　なくなったら
 </code></pre>
 </div>
 </div>
-<p>じゃあ、先にちらっと<code>shiftwidth</code>を確認しちゃいましょう。</p>
+<p>「<code>expandtab</code>を使用すれば、<code>tabstop</code>と<code>shiftwidth</code>は好きにしちゃっていいよー。」...と読めますね。</p>
+<p>一つずつ確認していきましょう😉</p>
 <h2 id="shiftwidth"><a class="header" href="#shiftwidth">shiftwidth</a></h2>
 <div id="admonition-h-shiftwidth" class="admonition info">
 <div class="admonition-title">
@@ -3853,7 +3855,7 @@ APIが　なくなったら
 </div>
 <h2 id="タブ幅を決める"><a class="header" href="#タブ幅を決める">タブ幅を決める</a></h2>
 <p>この2つを別の値に設定して活用するシチュエーション、ちょっとわたしでは想像が及ばないので、もう<code>0</code>にしちゃいます😅</p>
-<p><code>tabstop</code>の方は、&quot;好きなように設定し&quot;というお言葉に甘えて、お好みの数値を入れましょう😉</p>
+<p><code>tabstop</code>の方は、&quot;好きなように設定し&quot;というお言葉に甘えて、お好みの数値を入れましょう😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -3875,7 +3877,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </div>
 </div>
 <h2 id="expandtab"><a class="header" href="#expandtab">expandtab</a></h2>
-<p>その上で、&quot;<code>expandtab</code>を使用する&quot;んでした。</p>
+<p>その上で、&quot;<code>expandtab</code>を使用する&quot;んでしたね。</p>
 <div id="admonition-optionslua-1" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -3892,7 +3894,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p><a class="admonition-anchor-link" href="neovim/options/tab.html#admonition-h-expandtab"></a></p>
 </div>
 <div>
-<pre><code>                                        *'expandtab'* *'et'* *'noexpandtab'* *'noet'*
+<pre><code>                                        'expandtab' 'et' 'noexpandtab' 'noet'
 
 'expandtab' 'et'                    boolean (default off)
                                     local to buffer
@@ -3909,16 +3911,16 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </code></pre>
 </div>
 </div>
-<p>&quot;これで、常にスペースを挿入することができる&quot; ...の、部分を担っているオプションですね☺️</p>
+<p>このオプションが、&quot;常にスペースを挿入することができる&quot; ...の、部分を担っているんですね☺️</p>
 <h3 id="autoindent"><a class="header" href="#autoindent">autoindent</a></h3>
-<p>ちなみに<code>autoindent</code>を少し見てみると...、</p>
+<p>ちなみに、<code>expandtab</code>のヘルプの中に出てきた<code>autoindent</code>を少し見てみると...、</p>
 <div id="admonition-h-autoindent" class="admonition info">
 <div class="admonition-title">
 <p>:h autoindent</p>
 <p><a class="admonition-anchor-link" href="neovim/options/tab.html#admonition-h-autoindent"></a></p>
 </div>
 <div>
-<pre><code>			                              *'autoindent'* *'ai'* *'noautoindent'* *'noai'*
+<pre><code>			                              'autoindent' 'ai' 'noautoindent' 'noai'
 
 'autoindent' 'ai'                   boolean (default on)
 			                        local to buffer
@@ -3931,11 +3933,11 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </code></pre>
 </div>
 </div>
-<p>これはデフォルトで<code>on</code>なので特に触らなくても平気でしょう。</p>
-<p>これでタブ関連の設定は完璧です。やったね❗</p>
+<p>これはデフォルト<code>on</code>なので特に触らなくても平気でしょう。</p>
+<p>よーし、これで全ての設定が終わったぞ❗やったね❗❗</p>
 <h2 id="フィナーレ"><a class="header" href="#フィナーレ">フィナーレ...❓</a></h2>
 <p>...って思うじゃないですか😮</p>
-<p>実は、これだけだと問題があって、起動直後に開いたバッファしか設定したオプションが有効になりません...。</p>
+<p>実はこれだけだと、起動直後に開いたバッファでしか設定したオプションが有効になりません...。</p>
 <div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -3969,8 +3971,8 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <div>
 <p><code>10. Options</code>章は...❗ なんと...❗</p>
 <p>これで終わりです😮</p>
-<p>ビックリするぐらい中途半端なので、すごく悩むところではあるんですが...、</p>
-<p><code>Options</code>というカテゴリでやると不自然になっちゃうんで、思い切って章を跨いじゃいます😆</p>
+<p>ビックリするぐらい中途半端なので、すごく悩むところではあるんですが...、
+でも<code>Options</code>というカテゴリでやると不自然になっちゃうんで、やっぱり思い切って章を跨いじゃいます😆</p>
 <p>次回、<code>buffer</code>解決編に続く。続くったら続く...🐃🐃🐃</p>
 </div>
 </div>
@@ -4029,8 +4031,8 @@ Vim の終了時に自動的に実行されるコマンドを指定すること�
 <p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-h-nvim_create_autocmd"></a></p>
 </div>
 <div>
-<pre><code>nvim_create_autocmd({event}, {*opts})                  *nvim_create_autocmd()*
-                                      Create an |autocommand|
+<pre><code>nvim_create_autocmd({event}, {*opts})                   nvim_create_autocmd()
+                                        Create an |autocommand|
 
     The API allows for two (mutually exclusive) types of actions to be
     executed when the autocommand triggers: a callback function (Lua or
@@ -4051,7 +4053,7 @@ Vim の終了時に自動的に実行されるコマンドを指定すること�
 </code></pre>
 </div>
 </div>
-<p>ヘルプではもっと色々なサンプル付きで説明がされていますが、今回はここで切り上げます。</p>
+<p>ヘルプではもっと色々なサンプル付きで説明されていますが、今回はここで切り上げます😅</p>
 <p><code>nvim_create_autocmd</code>の中に記述が見つかる<code>callback</code>からいきます。抜粋すると以下です。</p>
 <div id="admonition-h-nvim_create_autocmd-1" class="admonition info">
 <div class="admonition-title">
@@ -4065,7 +4067,7 @@ Vim の終了時に自動的に実行されるコマンドを指定すること�
 </code></pre>
 </div>
 </div>
-<p>次は一個手前の<code>pattern</code>を確認してみます。これは<code>file-pattern</code>として説明されています。たぶん...。</p>
+<p>次は一個手前の<code>pattern</code>を確認してみます。これは<code>file-pattern</code>として説明されています😌</p>
 <div id="admonition-h-file-pattern" class="admonition info">
 <div class="admonition-title">
 <p>:h file-pattern</p>
@@ -4075,26 +4077,25 @@ Vim の終了時に自動的に実行されるコマンドを指定すること�
 <pre><code>The pattern is interpreted like mostly used in file names:
 このパターンは、ファイル名によく使われるものと同じように解釈されます。
 
-	*	matches any sequence of characters; Unusual: includes path
-		separators
-	?	matches any single character
-	\?	matches a '?'
-	.	matches a '.'
-	~	matches a '~'
-	,	separates patterns
-	\,	matches a ','
-	{ }	like \( \) in a |pattern|
-	,	inside { }: like \| in a |pattern|
-	\}	literal }
-	\{	literal {
-	\\\{n,m\}  like \{n,m} in a |pattern|
-	\	special meaning like in a |pattern|
-	[ch]	matches 'c' or 'h'
-	[^ch]   match any character but 'c' and 'h'
+  *         matches any sequence of characters; Unusual: includes path separators
+  ?         matches any single character
+  \?        matches a '?'
+  .         matches a '.'
+  ~         matches a '~'
+  ,         separates patterns
+  \,        matches a ','
+  { }       like \( \) in a |pattern|
+  ,         inside { }: like \| in a |pattern|
+  \}        literal }
+  \{        literal {
+  \\\{n,m\} like \{n,m} in a |pattern|
+  \         special meaning like in a |pattern|
+  [ch]      matches 'c' or 'h'
+  [^ch]     match any character but 'c' and 'h'
 </code></pre>
 </div>
 </div>
-<p>で、最初に戻ってきて<code>event</code>なんですが、<code>autocmd-events</code>がこれでしょう。きっと...❗</p>
+<p>で、最初に戻ってきて<code>event</code>なんですが、<code>autocmd-events</code>がこれでしょう🤔</p>
 <div id="admonition-h-autocmd-events" class="admonition info">
 <div class="admonition-title">
 <p>:h autocmd-events</p>
@@ -4127,7 +4128,7 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 </div>
 <div id="admonition-default" class="admonition info">
 <div>
-<p>(この後イベントの説明がズラ〜っと並んでいるわけなんですが、とにかく量が多いので以下略❗)</p>
+<p>(この後イベントの説明がズラ〜っと並んでいるんですが、とにかく量が多いので以下略❗)</p>
 </div>
 </div>
 <p>ここでやりたいことは、</p>
@@ -4143,9 +4144,9 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 </li>
 </ul>
 <p>...です。</p>
-<p><code>event</code>については、奇⭐︎跡⭐︎的🌟 にヘルプ内で例示を行ってくれていたので、そのまま採用します。(助かったぁ😆)</p>
-<p>ただ、これだけだと単純に<code>nvim</code>(ファイル指定無し)で起動したケースでうまく行かなかったので、<code>BufNew</code>も加えました。</p>
-<p><code>pattern</code>は簡単だし、<code>callback</code>はもう既に書いてあるコードを持ってくれば良いですね😉</p>
+<p><code>event</code>については、奇⭐︎跡⭐︎的🌟 に❗ヘルプ内で例示を行ってくれていたので、そのまま採用します。(助かったぁ😆)</p>
+<p>ただ、これだけだと単純に<code>nvim</code>(ファイル指定無し)として起動したケースでうまく行かなかったので、<code>BufNew</code>も加えました。</p>
+<p>あとはもう、<code>pattern</code>は簡単だし、<code>callback</code>はもう既に書いたコードを持ってくれば良いだけですね😉</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -4170,7 +4171,7 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 <p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-note"></a></p>
 </div>
 <div>
-<p><code>FilterReadPre</code>と<code>FileReadPre</code>が必要になるのかが少し釈然としませんが、特に害は無さそうなので、このままいきます😅</p>
+<p><code>FilterReadPre</code>と<code>FileReadPre</code>が必要になるのかが判然としませんが、特に害は無さそうなので、このままいきます😅</p>
 </div>
 </div>
 <div id="admonition-tip" class="admonition tip">
@@ -4179,10 +4180,11 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 <p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-tip"></a></p>
 </div>
 <div>
-<p><code>pattern</code>のデフォルトは<code>'*'</code>らしいので、これ実は省略できちゃいます😉</p>
+<p><code>pattern</code>のデフォルトは<code>'*'</code>らしいので、実は省略できちゃいます😉</p>
 </div>
 </div>
-<p>一度、これがちゃんと登録されていることを確認してみましょう。以下のコマンドを実行してみてください。</p>
+<p>では、これがちゃんと登録されることを実際に確認してみましょう。</p>
+<p><code>nvim</code>を再起動する前に、以下のコマンドを実行してみてください。</p>
 <div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -4207,25 +4209,26 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 <p>スクリーンショットの環境が突然変わったことは気にしないでください😺</p>
 </div>
 </div>
-<p>それでは、<code>nvim</code>を再起動して、もう一度同じコマンドを実行してみてみましょう...。</p>
+<p>それでは、<code>nvim</code>を再起動して、もう一度同じ<code>:au</code>を実行してみましょう...。</p>
 <p><img src="neovim/au/img/aucmd-after.png" alt="aucmd-after" /></p>
-<p><code>options.lua</code>に自分で書いたイベントが登録されていることを確認できますね。
-そのまま編集画面に戻って適当にタブ入力をしてみてください。タブ幅の設定は反映されていますか？</p>
-<p>...いますよね？</p>
+<p><code>options.lua</code>に書いたイベントが登録されていることが確認できましたね❗</p>
+<p>編集画面に戻って適当にタブ入力をしてみてください。タブ幅の設定は反映されていますか❓</p>
+<p>...されてますよね⁉️</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-success"></a></p>
 </div>
 <div>
-<p>ここまで来れば、とりあえずは期待する動作が得られているはずです。</p>
-<p>...、あ、いえ。&quot;とりあえず&quot; と言っているのには理由があって...😮</p>
-<p>でも、なんだか長くなってきたので、もう一回だけ続く...❗🙀 (休憩とってね☕)</p>
+<p>ここまで来れば、とりあえずは期待する動作が得られているはずです😆</p>
+<p>...、あ、いえ。&quot;とりあえず&quot; と言っているのには理由があって...。</p>
+<p>でも、なんだか長くなってきたので、もう一回だけ続く...❗🙀</p>
+<p>(疲れたらちゃんと休憩とってね☕)</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nvim_create_augroup"><a class="header" href="#nvim_create_augroup">nvim_create_augroup</a></h1>
 <p>うん。とりあえず、何よりもまずはっきりさせておきたいのは、<code>au</code>というのは<code>autocmd</code>の先頭2文字からきているようですね。
-いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...。</p>
+いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...🍑</p>
 <p>...え❓ わたしだけ😧⁉️ 絶対嘘だ❗</p>
 <div id="admonition-h-nvim_create_augroup" class="admonition info">
 <div class="admonition-title">
@@ -4271,8 +4274,7 @@ This is useful for removing or executing a group of autocommands.
 </code></pre>
 </div>
 </div>
-<p>オートコマンドは以下で確認できます。
-コードをいじる前に確認しておきましょうか😌</p>
+<p>オートコマンドは以下で確認できます。コードをいじる前の現状を確認しておきましょう😌</p>
 <div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -4287,8 +4289,14 @@ This is useful for removing or executing a group of autocommands.
 </div>
 </div>
 <p><img src="neovim/au/img/augroup-before.png" alt="augroup-before.png" /></p>
-<p>こんな感じですね。</p>
-<p>じゃあ、話を進めるんですが、さっきのヘルプの中に、コードが例示されていましたね。</p>
+<p>こんな感じですね😌</p>
+<p>それでは話を進めるんですが、さっきのヘルプ中に、コードが例示されていましたね。</p>
+<div id="admonition-h-nvim_create_augroup-1" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim_create_augroup</p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_augroup.html#admonition-h-nvim_create_augroup-1"></a></p>
+</div>
+<div>
 <pre><code>To get an existing group id, do:  
 既存のグループ ID を取得するには、次のようにする。 
 
@@ -4296,26 +4304,29 @@ This is useful for removing or executing a group of autocommands.
         clear = false
     })
 </code></pre>
-<p>&quot;既存の&quot;って言われると、なんで😮❓ってなるんですけど、
-&quot;オートコマンドグループを作成または取得する。&quot;という最初の文言を信じることにしましょう。<code>create_augroup</code>なんだし。</p>
-<p>パラメータは<code>name</code>には自分で決めたグループ名を、<code>opts</code>はまた更に話が長くなっちゃうんで空っぽ(デフォルト)にしときましょう。</p>
+</div>
+</div>
+<p>&quot;既存の&quot;って言われると、「なんで😮❓」ってなるんですけど、
+&quot;オートコマンドグループを作成または取得する。&quot;という最初の文言を信じることにしましょう。<code>create_augroup</code>なんだし❗</p>
+<p>パラメータは<code>name</code>には自分で決めたグループ名を、<code>opts</code>は...。更に話が長くなっちゃうんで空っぽ(デフォルト)にしときましょう。</p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="neovim/au/nvim_create_augroup.html#admonition-note"></a></p>
 </div>
 <div>
-<p><code>opts</code>は<code>clear</code>オプションを含んでいますが、これは「なんで<code>augroup</code>作らなきゃダメなの？」って検索とかしてみると、
-多くの人が同じ疑問を持ってることがわかります。</p>
-<p>なんとな〜く察するに、二重登録を防ぐためにある程度まとめて制御できた方がいいでしょ❓的な❓</p>
-<p>...まあ、わたしはイマイチわかってません😅</p>
+<p><code>opts</code>は<code>clear</code>オプションを含んでいますが、
+「なんでわざわざ<code>augroup</code>作らなきゃダメなの？」っていう疑問と密接な関係がありそうです。</p>
+<p>なんとな〜く察するに、「二重登録を防ぐためにある程度まとめて制御できた方がいいでしょ❓」的なことらしいんですが...、
+わたしはいまひとつわかってません❗</p>
+<p>ちなみに<code>clear</code>のデフォルト値は<code>true</code>なので安全は担保されています。(意味を理解していれば、なんですけどね😅)</p>
 </div>
 </div>
 <p>ってことで、こんな感じのコードになるのかな。</p>
 <p>グループの命名規則がわかりませんが、とりあえず雰囲気で...🤫</p>
 <pre><code class="language-lua">local id = vim.api.nvim_create_augroup(&quot;buffer_set_options&quot;, {})
 </code></pre>
-<p>これを<code>nvim_create_autocmd</code>に組み込むので、もう一回<code>nvim_create_autocmd</code>を確認します。</p>
+<p>これを<code>nvim_create_autocmd</code>に組み込むので、もう一回ヘルプを確認します。</p>
 <div id="admonition-h-nvim_create_autocmd" class="admonition info">
 <div class="admonition-title">
 <p>:h nvim_create_autocmd</p>
@@ -4328,7 +4339,7 @@ This is useful for removing or executing a group of autocommands.
 </code></pre>
 </div>
 </div>
-<p><code>nvim_create_augroup</code>が返してくれた<code>ID</code>を渡せば良さそうですね。</p>
+<p><code>nvim_create_augroup</code>が返してくれる<code>ID</code>をそのまま渡せば良さそうですね。</p>
 <p>じゃあ、こんな感じでどうかな😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
@@ -4353,19 +4364,19 @@ vim.api.nvim_create_autocmd({ 'BufNew', 'BufNewFile', 'BufReadPre', 'FilterReadP
 </div>
 </div>
 <p><img src="neovim/au/img/augroup-after.png" alt="augroup-after.png" /></p>
-<p><code>buffer_set_options</code>入りましたね❗完璧です😉</p>
+<p><code>buffer_set_options</code>の姿を確認できましたね❗これでもう完璧です😆</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="neovim/au/nvim_create_augroup.html#admonition-note-1"></a></p>
 </div>
 <div>
-<p>実は、このあたりのページ作る直前まで<code>autocmd</code>とか触ったことなくて、ず〜っと</p>
+<p>実はわたし、<code>autocmd</code>とか今まで全く触ってきてなくて、ず〜っと</p>
 <pre><code>-- なぜかうまく行く呪文 (2つ目以降のbufferもへーき)
 vim.opt.tabstop = 2
 </code></pre>
-<p>とかして誤魔化してたんですよ。</p>
-<p>でも、ここに来てようやく色々繋がって、見栄えのするコードに辿り着けたので、なんかホッとしました☺️</p>
+<p>とかして誤魔化してたんです。</p>
+<p>でも、この辺りのページを作るにあたって考え直して、ようやく見栄えのするコードに辿り着けたので、なんかホッとしてます☺️</p>
 <p>これなら公開できるでしょ🤗</p>
 </div>
 </div>

@@ -156,20 +156,20 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-tabstop"></a></p>
 </div>
 <div>
-<pre><code>                                *'tabstop'* *'ts'*
+<pre><code>                                'tabstop' 'ts'
 
 'tabstop' 'ts'              number (default 8)
                             local to buffer
 
-	Number of spaces that a &lt;Tab&gt; in the file counts for.  Also see
-	the |:retab| command, and the 'softtabstop' option.
+  Number of spaces that a &lt;Tab&gt; in the file counts for.  Also see
+  the |:retab| command, and the 'softtabstop' option.
 
   ファイル中の&lt;Tab&gt;がカウントするスペースの数。
   |:retab| コマンドと 'softtabstop' オプションも参照のこと。
 
-	Note: Setting 'tabstop' to any other value than 8 can make your file
-	appear wrong in many places, e.g., when printing it.
-	The value must be more than 0 and less than 10000.
+  Note: Setting 'tabstop' to any other value than 8 can make your file
+  appear wrong in many places, e.g., when printing it.
+  The value must be more than 0 and less than 10000.
 
   注意: 'tabstop' を 8 以外の値に設定すると、ファイルを印刷するときなど、多くの場所で間違って表示されることがある。
   値は0以上10000以下でなければならない。
@@ -181,8 +181,8 @@
 </div>
 </div>
 <p><code>tabstop</code>は俗に言う &quot;タブ幅&quot; です。デフォルトのまま<code>8</code>ってなってると、古いファイルのような印象を持っちゃうんですが、実際のところはどうなのかな...🤔</p>
-<p>単純にタブ幅だけを設定して終わりなら話は簡単なのですが、<code>Neovim</code>の場合、この先に出てくるオプションと少し複雑に絡み合っています😓</p>
-<p>そのため、ここでは割愛していますが、ヘルプの中ではこれらを適切に設定する4つの方法が示されています。</p>
+<p>単純にタブ幅だけを設定して終わりなら話は簡単なのですが、<code>Neovim</code>の場合、この先に出てくるオプションとやや複雑に絡み合っています😓</p>
+<p>そのためなのか、ヘルプ (上の抜粋に含まない部分) ではこれらを適切に設定する4つの方法が示されています。</p>
 <p>わたしが採用しているのは、オーソドックスな<code>2.</code>です☺️</p>
 <div id="admonition-default" class="admonition info">
 <div>
@@ -195,7 +195,8 @@
 </code></pre>
 </div>
 </div>
-<p>じゃあ、先にちらっと<code>shiftwidth</code>を確認しちゃいましょう。</p>
+<p>「<code>expandtab</code>を使用すれば、<code>tabstop</code>と<code>shiftwidth</code>は好きにしちゃっていいよー。」...と読めますね。</p>
+<p>一つずつ確認していきましょう😉</p>
 <h2 id="shiftwidth"><a class="header" href="#shiftwidth">shiftwidth</a></h2>
 <div id="admonition-h-shiftwidth" class="admonition info">
 <div class="admonition-title">
@@ -228,7 +229,7 @@
 </div>
 <h2 id="タブ幅を決める"><a class="header" href="#タブ幅を決める">タブ幅を決める</a></h2>
 <p>この2つを別の値に設定して活用するシチュエーション、ちょっとわたしでは想像が及ばないので、もう<code>0</code>にしちゃいます😅</p>
-<p><code>tabstop</code>の方は、&quot;好きなように設定し&quot;というお言葉に甘えて、お好みの数値を入れましょう😉</p>
+<p><code>tabstop</code>の方は、&quot;好きなように設定し&quot;というお言葉に甘えて、お好みの数値を入れましょう😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -250,7 +251,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </div>
 </div>
 <h2 id="expandtab"><a class="header" href="#expandtab">expandtab</a></h2>
-<p>その上で、&quot;<code>expandtab</code>を使用する&quot;んでした。</p>
+<p>その上で、&quot;<code>expandtab</code>を使用する&quot;んでしたね。</p>
 <div id="admonition-optionslua-1" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -267,7 +268,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p><a class="admonition-anchor-link" href="#admonition-h-expandtab"></a></p>
 </div>
 <div>
-<pre><code>                                        *'expandtab'* *'et'* *'noexpandtab'* *'noet'*
+<pre><code>                                        'expandtab' 'et' 'noexpandtab' 'noet'
 
 'expandtab' 'et'                    boolean (default off)
                                     local to buffer
@@ -284,16 +285,16 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </code></pre>
 </div>
 </div>
-<p>&quot;これで、常にスペースを挿入することができる&quot; ...の、部分を担っているオプションですね☺️</p>
+<p>このオプションが、&quot;常にスペースを挿入することができる&quot; ...の、部分を担っているんですね☺️</p>
 <h3 id="autoindent"><a class="header" href="#autoindent">autoindent</a></h3>
-<p>ちなみに<code>autoindent</code>を少し見てみると...、</p>
+<p>ちなみに、<code>expandtab</code>のヘルプの中に出てきた<code>autoindent</code>を少し見てみると...、</p>
 <div id="admonition-h-autoindent" class="admonition info">
 <div class="admonition-title">
 <p>:h autoindent</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-autoindent"></a></p>
 </div>
 <div>
-<pre><code>			                              *'autoindent'* *'ai'* *'noautoindent'* *'noai'*
+<pre><code>			                              'autoindent' 'ai' 'noautoindent' 'noai'
 
 'autoindent' 'ai'                   boolean (default on)
 			                        local to buffer
@@ -306,11 +307,11 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </code></pre>
 </div>
 </div>
-<p>これはデフォルトで<code>on</code>なので特に触らなくても平気でしょう。</p>
-<p>これでタブ関連の設定は完璧です。やったね❗</p>
+<p>これはデフォルト<code>on</code>なので特に触らなくても平気でしょう。</p>
+<p>よーし、これで全ての設定が終わったぞ❗やったね❗❗</p>
 <h2 id="フィナーレ"><a class="header" href="#フィナーレ">フィナーレ...❓</a></h2>
 <p>...って思うじゃないですか😮</p>
-<p>実は、これだけだと問題があって、起動直後に開いたバッファしか設定したオプションが有効になりません...。</p>
+<p>実はこれだけだと、起動直後に開いたバッファでしか設定したオプションが有効になりません...。</p>
 <div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -344,8 +345,8 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <div>
 <p><code>10. Options</code>章は...❗ なんと...❗</p>
 <p>これで終わりです😮</p>
-<p>ビックリするぐらい中途半端なので、すごく悩むところではあるんですが...、</p>
-<p><code>Options</code>というカテゴリでやると不自然になっちゃうんで、思い切って章を跨いじゃいます😆</p>
+<p>ビックリするぐらい中途半端なので、すごく悩むところではあるんですが...、
+でも<code>Options</code>というカテゴリでやると不自然になっちゃうんで、やっぱり思い切って章を跨いじゃいます😆</p>
 <p>次回、<code>buffer</code>解決編に続く。続くったら続く...🐃🐃🐃</p>
 </div>
 </div>
