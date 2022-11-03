@@ -198,12 +198,20 @@
 </div>
 </div>
 <p>大まかにいえば3通りがあって、</p>
+<ul>
+<li>
 <p><code>auto</code>(デフォルト)にしておくか...、</p>
+</li>
+<li>
 <p><code>yes</code>か<code>no</code>で決め打つか...、</p>
-<p>ややクセのある<code>number</code>か...、</p>
+</li>
+<li>
+<p>何か独特の雰囲気を持つ<code>number</code>か...、</p>
+</li>
+</ul>
 <p>ですね。</p>
-<p><code>auto</code>は表示と非表示が動的に切り替わるので、編集中にぺこぱこすることがあります。
-わたしは固定しちゃう方が好きです😆</p>
+<p><code>auto</code>は表示と非表示が動的に切り替わるので、編集中にぺこぱこすることがあります。</p>
+<p>わたしは固定しちゃう方が好きです😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -226,7 +234,7 @@
 </div>
 <p><code>number</code>はこんな感じになります。</p>
 <p><img src="img/sign-number.png" alt="sign-number.png" /></p>
-<p><code>gitsigns.nvim</code><sup class="footnote-reference"><a href="#1">1</a></sup>というプラグイン<sup class="footnote-reference"><a href="#2">2</a></sup>を使用して、変更箇所を<code>signcolumn</code>に表示しています。</p>
+<p>上のスクリーンショットでは、<code>gitsigns.nvim</code><sup class="footnote-reference"><a href="#1">1</a></sup>というプラグイン<sup class="footnote-reference"><a href="#2">2</a></sup>を使用して、変更箇所を<code>signcolumn</code>に表示しています。</p>
 <p>(▶︎ とか ▎の部分がそれです。)</p>
 <p><code>yes</code>と比べて違いは明らかですね😆 行番号に優先してコラムを表示してます。</p>
 <p>まあこれくらいなら、なんか見た目的に面白いなーと思うんですが、

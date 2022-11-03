@@ -3108,9 +3108,9 @@ See 'clipboard' for details and options.
 </div>
 <div>
 <p>今回、<code>provider の clipboard</code>と、<code>options の clipboard</code>を見たいのですが、</p>
-<p>単純に<code>clipboard</code>とすると前者にしか飛べません。後者のようなコマンドを探す場合は<code>'</code>で囲うと一発で飛べます。</p>
+<p>単純に<code>clipboard</code>とすると前者にしか飛べません。後者のように、コマンドを探す場合は<code>'</code>で囲うと一発で飛べます。</p>
 <p>...確信は無いんですけどね😅</p>
-<p>この先でもいくつか出てくるので、頭の片隅に置いといていただければ...。</p>
+<p>この先でもいくつか出てくるので、頭の片隅にでも置いといていただければ...。</p>
 </div>
 </div>
 <div id="admonition-h-clipboard-1" class="admonition info">
@@ -3128,7 +3128,7 @@ See 'clipboard' for details and options.
 </code></pre>
 </div>
 </div>
-<p>この先はレジスタの話が出てきて自信がない😓ので逃げてしまうんですが...。</p>
+<p>この先はレジスタの話が出てきて自信がない...😓</p>
 <details id="admonition-unnamed--unnamedplus" class="admonition info">
 <summary class="admonition-title">
 <p>unnamed / unnamedplus</p>
@@ -3177,7 +3177,7 @@ See 'clipboard' for details and options.
 </div>
 </details>
 <p>なんかもうヘルプまみれですが、ここで確認しておきたいのは<code>clipboard</code>のデフォルト値ですね。</p>
-<p>これを見ると<code>&quot;&quot;</code>とされているので、特に何も気にせず、このように書いてしまって問題ないはずです😉</p>
+<p>これを見ると<code>&quot;&quot;</code>となっているので、特に何も気にしないで、このように書いてしまって問題ないはずです😉</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -3215,7 +3215,7 @@ See 'clipboard' for details and options.
 <p>こんな感じでオプションを一個一個確認していくと、デフォルトのままでいいなーって思うものがほとんどなので、
 (デフォルト設定は基本書かない) わたしが使っているグローバルオプションなんてこんなもんです。☺️</p>
 <p>次でローカルオプションというものが出てきますが、それもやっぱりわたしが書いているものだけなら大した数じゃないです。</p>
-<p>またさらにその先でプラグインとか使い出すともうちょっとだけ増えるんですが、それはまたその時に🤗</p>
+<p>またさらにその先でプラグインとか使い出すと、もうちょっとだけ増えるんですが、それはまたその時に🤗</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nvim_win_set_option"><a class="header" href="#nvim_win_set_option">nvim_win_set_option</a></h1>
@@ -3444,11 +3444,22 @@ See 'clipboard' for details and options.
 </div>
 </div>
 <p>これは動かしてみれば一目瞭然ですね😉</p>
-<p><img src="neovim/options/img/cursorline1.png" alt="cursorline1" /></p>
-<p><img src="neovim/options/img/cursorline2.png" alt="cursorline2" /></p>
-<p>強いて言うなら「画面の再描画が遅くなります」という注意書きがされていることでしょうか。
-わざわざ書かれているぐらいなので、想像以上に重い処理なのかもしれない...😱</p>
-<p>ご自身の環境と相談の上で、使うかどうか決めてください😺</p>
+<p>before:</p>
+<p><img src="neovim/options/img/cursorline-before.png" alt="cursorline1" /></p>
+<p>after:</p>
+<p><img src="neovim/options/img/cursorline-after.png" alt="cursorline2" /></p>
+<p>しっかりと&quot;カーソルのあるテキスト行を強調表示&quot;してますね❗</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="neovim/options/cursorline.html#admonition-note"></a></p>
+</div>
+<div>
+<p>少し気になるのは、「画面の再描画が遅くなります」という注意書きがされていることでしょうか...。</p>
+<p>わざわざ書かれているぐらいなので、想像以上に重い処理なのかもしれない...😱</p>
+<p>ご自身の環境と相談の上で、使うかどうかを決めて頂ければ😺</p>
+</div>
+</div>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
@@ -3509,12 +3520,20 @@ See 'clipboard' for details and options.
 </div>
 </div>
 <p>大まかにいえば3通りがあって、</p>
+<ul>
+<li>
 <p><code>auto</code>(デフォルト)にしておくか...、</p>
+</li>
+<li>
 <p><code>yes</code>か<code>no</code>で決め打つか...、</p>
-<p>ややクセのある<code>number</code>か...、</p>
+</li>
+<li>
+<p>何か独特の雰囲気を持つ<code>number</code>か...、</p>
+</li>
+</ul>
 <p>ですね。</p>
-<p><code>auto</code>は表示と非表示が動的に切り替わるので、編集中にぺこぱこすることがあります。
-わたしは固定しちゃう方が好きです😆</p>
+<p><code>auto</code>は表示と非表示が動的に切り替わるので、編集中にぺこぱこすることがあります。</p>
+<p>わたしは固定しちゃう方が好きです😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
@@ -3537,7 +3556,7 @@ See 'clipboard' for details and options.
 </div>
 <p><code>number</code>はこんな感じになります。</p>
 <p><img src="neovim/options/img/sign-number.png" alt="sign-number.png" /></p>
-<p><code>gitsigns.nvim</code><sup class="footnote-reference"><a href="#1">1</a></sup>というプラグイン<sup class="footnote-reference"><a href="#2">2</a></sup>を使用して、変更箇所を<code>signcolumn</code>に表示しています。</p>
+<p>上のスクリーンショットでは、<code>gitsigns.nvim</code><sup class="footnote-reference"><a href="#1">1</a></sup>というプラグイン<sup class="footnote-reference"><a href="#2">2</a></sup>を使用して、変更箇所を<code>signcolumn</code>に表示しています。</p>
 <p>(▶︎ とか ▎の部分がそれです。)</p>
 <p><code>yes</code>と比べて違いは明らかですね😆 行番号に優先してコラムを表示してます。</p>
 <p>まあこれくらいなら、なんか見た目的に面白いなーと思うんですが、
