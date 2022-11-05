@@ -4089,20 +4089,102 @@ Vim の終了時に自動的に実行されるコマンドを指定すること�
 </div>
 </div>
 <p>ヘルプではもっと色々なサンプル付きで説明されていますが、今回はここで切り上げます😅</p>
-<p><code>nvim_create_autocmd</code>の中に記述が見つかる<code>callback</code>からいきます。抜粋すると以下です。</p>
-<div id="admonition-h-nvim_create_autocmd-1" class="admonition info">
+<h2 id="autocmd"><a class="header" href="#autocmd">autocmd</a></h2>
+<p>現時点で<code>autocmd</code>がどのように登録されているのかは、以下のコマンドを実行してみると確認できます。</p>
+<div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
-<p>:h nvim_create_autocmd</p>
-<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-h-nvim_create_autocmd-1"></a></p>
+<p>Quote</p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-quote"></a></p>
 </div>
 <div>
-<pre><code>Lua function which is called when this autocommand is triggered. Cannot be used with {command}.
-
-このオートコマンドが起動した際に呼び出されるLua関数です。{コマンド}とは併用できません。
+<pre><code>:au
+</code></pre>
+<p>または</p>
+<pre><code>:autocmd
 </code></pre>
 </div>
 </div>
-<p>次は一個手前の<code>pattern</code>を確認してみます。これは<code>file-pattern</code>として説明されています😌</p>
+<p><img src="neovim/au/img/aucmd-before.png" alt="aucmd-before" /></p>
+<p>こんな感じに出てきたでしょうか。</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-note"></a></p>
+</div>
+<div>
+<p>スクリーンショットの環境が突然変わったことは気にしないでください😺</p>
+</div>
+</div>
+<p>ここに、自分で作った<code>autocmd</code>を追加して「全てのバッファに対して<code>tab</code>関連の設定をするぞ❗」というのが
+この節の趣旨であり、これこそが10.3.1節の問題を解決する方法です。</p>
+<p>準備はよろしいでしょうか？</p>
+<p>...OK❓</p>
+<p>OKね...❗</p>
+<p>それでは、例によって一つずつ確認していきます。</p>
+<h2 id="event"><a class="header" href="#event">event</a></h2>
+<p>まずは<code>event</code>なんですが、<code>autocmd-events</code>がこれでしょう🤔</p>
+<div id="admonition-h-autocmd-events" class="admonition info">
+<div class="admonition-title">
+<p>:h autocmd-events</p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-h-autocmd-events"></a></p>
+</div>
+<div>
+<pre><code>5. Events           autocmd-events E215 E216
+
+You can specify a comma-separated list of event names.  No white space can be
+used in this list.  The command applies to all the events in the list.
+
+イベント名のリストをカンマ区切りで指定することができる。
+このリストには空白を使用できない。コマンドは、リスト内のすべてのイベントに適用される。
+</code></pre>
+</div>
+</div>
+<p>で、上の例で使用されていた<code>BufEnter</code>と<code>BufWinEnter</code>だけ抜粋すると以下です。</p>
+<div id="admonition-h-bufenter" class="admonition info">
+<div class="admonition-title">
+<p>:h BufEnter</p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-h-bufenter"></a></p>
+</div>
+<div>
+<pre><code>BufEnter        After entering a buffer.  Useful for setting
+                options for a file type.  Also executed when
+                starting to edit a buffer.
+
+                バッファに入った後。
+                ファイルタイプに応じたオプションを設定するのに便利。
+                また、バッファの編集を開始するときにも実行されます。
+</code></pre>
+</div>
+</div>
+<div id="admonition-h-bufwinenter" class="admonition info">
+<div class="admonition-title">
+<p>:h BufWinEnter</p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-h-bufwinenter"></a></p>
+</div>
+<div>
+<pre><code>BufWinEnter     After a buffer is displayed in a window.  This
+                may be when the buffer is loaded (after
+                processing modelines) or when a hidden buffer
+                is displayed (and is no longer hidden).
+
+                バッファがウィンドウに表示された後。
+                これは、バッファが読み込まれたとき (モデリング処理後) か、
+                非表示のバッファが表示されたとき(そして非表示でなくなったとき) かもしれません。
+
+                Not triggered for |:split| without arguments,
+                since the buffer does not change, or :split
+                with a file already open in a window.
+                Triggered for &quot;:split&quot; with the name of the
+                current buffer, since it reloads that buffer.
+
+                引数なしの |:split| や、
+                すでにウィンドウで開いているファイルとの :split では、バッファは変更されないためトリガーされません。
+                現在のバッファの名前を指定した &quot;:split&quot; では、バッファを再読み込みするためトリガーが発生します。
+</code></pre>
+</div>
+</div>
+<h2 id="pattern"><a class="header" href="#pattern">pattern</a></h2>
+<p>次は<code>pattern</code>です。これは<code>file-pattern</code>として説明されています😌</p>
 <div id="admonition-h-file-pattern" class="admonition info">
 <div class="admonition-title">
 <p>:h file-pattern</p>
@@ -4130,65 +4212,37 @@ Vim の終了時に自動的に実行されるコマンドを指定すること�
 </code></pre>
 </div>
 </div>
-<p>で、最初に戻ってきて<code>event</code>なんですが、<code>autocmd-events</code>がこれでしょう🤔</p>
-<div id="admonition-h-autocmd-events" class="admonition info">
+<h2 id="callback"><a class="header" href="#callback">callback</a></h2>
+<p>最後に<code>callback</code>ですが、これは<code>nvim_create_autocmd</code>の中に記述が見つかります。</p>
+<div id="admonition-h-nvim_create_autocmd-1" class="admonition info">
 <div class="admonition-title">
-<p>:h autocmd-events</p>
-<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-h-autocmd-events"></a></p>
+<p>:h nvim_create_autocmd</p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-h-nvim_create_autocmd-1"></a></p>
 </div>
 <div>
-<pre><code>5. Events					*autocmd-events* *E215* *E216*
+<pre><code>Lua function which is called when this autocommand is triggered. Cannot be used with {command}.
 
-You can specify a comma-separated list of event names.  No white space can be
-used in this list.  The command applies to all the events in the list.
-
-イベント名のリストをカンマ区切りで指定することができる。
-このリストには空白を使用できない。コマンドは、リスト内のすべてのイベントに適用される。
-
-For READING FILES there are four kinds of events possible:
-ファイル読み込みでは、4種類のイベントが考えられる:
-
-	BufNewFile                    starting to edit a non-existent file
-	BufReadPre BufReadPost        starting to edit an existing file
-	FilterReadPre FilterReadPost  read the temp file with filter output
-	FileReadPre FileReadPost      any other file read
-
-Vim uses only one of these four kinds when reading a file.  The &quot;Pre&quot; and
-&quot;Post&quot; events are both triggered, before and after reading the file.
-
-Vim はファイルを読み込むとき、これら 4 種類のうち 1 つだけを使用する。
-Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読んだ後の両方がトリガーされます。
+このオートコマンドが起動した際に呼び出されるLua関数です。{コマンド}とは併用できません。
 </code></pre>
 </div>
 </div>
-<div id="admonition-default" class="admonition info">
-<div>
-<p>(この後イベントの説明がズラ〜っと並んでいるんですが、とにかく量が多いので以下略❗)</p>
-</div>
-</div>
-<p>ここでやりたいことは、</p>
+<h2 id="実践"><a class="header" href="#実践">実践</a></h2>
+<p>これらを踏まえて、改めて今回やりたいことを明確にすると、</p>
 <ul>
-<li>
-<p><code>event</code>: バッファを作る・開くする際に</p>
-</li>
-<li>
-<p><code>pattern</code>: 全てのファイル(パターン)に対して</p>
-</li>
-<li>
-<p><code>callback</code>: <code>local to buffer</code>の設定をする</p>
-</li>
+<li><code>event</code>: バッファに入った際に</li>
+<li><code>pattern</code>: 全てのファイル(パターン)に対して</li>
+<li><code>callback</code>: <code>nvim_buf_set_option</code>を通して<code>tab</code>関連の設定をする</li>
 </ul>
-<p>...です。</p>
-<p><code>event</code>については、奇⭐︎跡⭐︎的🌟 に❗ヘルプ内で例示を行ってくれていたので、そのまま採用します。(助かったぁ😆)</p>
-<p>ただ、これだけだと単純に<code>nvim</code>(ファイル指定無し)として起動したケースでうまく行かなかったので、<code>BufNew</code>も加えました。</p>
-<p>あとはもう、<code>pattern</code>は簡単だし、<code>callback</code>はもう既に書いたコードを持ってくれば良いだけですね😉</p>
+<p>...に、なります。</p>
+<p><code>event</code>については、ヘルプ内で例示を行ってくれているので、そのまま採用します。(助かったぁ😆)</p>
+<p>あとはもう、<code>pattern</code>は簡単だし、<code>callback</code>は既に書いたコードを持ってくれば良いだけですね😉</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
 <p>options.lua</p>
 <p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-optionslua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">vim.api.nvim_create_autocmd({ 'BufNew', 'BufNewFile', 'BufReadPre', 'FilterReadPre', 'FileReadPre' }, {
+<pre><code class="language-lua">vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = '*',
   callback = function()
     -- 10.3.1 節で書いたコードをここに移動する
@@ -4200,13 +4254,13 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 </code></pre>
 </div>
 </div>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-note"></a></p>
+<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-note-1"></a></p>
 </div>
 <div>
-<p><code>FilterReadPre</code>と<code>FileReadPre</code>が必要になるのかが判然としませんが、特に害は無さそうなので、このままいきます😅</p>
+<p><code>BufWinEnter</code>が必要になるのかが判然としませんが...、どうなんだろう😅</p>
 </div>
 </div>
 <div id="admonition-tip" class="admonition tip">
@@ -4218,33 +4272,7 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 <p><code>pattern</code>のデフォルトは<code>'*'</code>らしいので、実は省略できちゃいます😉</p>
 </div>
 </div>
-<p>では、これがちゃんと登録されることを実際に確認してみましょう。</p>
-<p><code>nvim</code>を再起動する前に、以下のコマンドを実行してみてください。</p>
-<div id="admonition-quote" class="admonition quote">
-<div class="admonition-title">
-<p>Quote</p>
-<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-quote"></a></p>
-</div>
-<div>
-<pre><code>:au
-</code></pre>
-<p>または</p>
-<pre><code>:autocmd
-</code></pre>
-</div>
-</div>
-<p><img src="neovim/au/img/aucmd-before.png" alt="aucmd-before" /></p>
-<p>こんな感じに出てきたでしょうか。</p>
-<div id="admonition-note-1" class="admonition note">
-<div class="admonition-title">
-<p>Note</p>
-<p><a class="admonition-anchor-link" href="neovim/au/nvim_create_autocmd.html#admonition-note-1"></a></p>
-</div>
-<div>
-<p>スクリーンショットの環境が突然変わったことは気にしないでください😺</p>
-</div>
-</div>
-<p>それでは、<code>nvim</code>を再起動して、もう一度同じ<code>:au</code>を実行してみましょう...。</p>
+<p>それでは、<code>nvim</code>を再起動して、もう一度<code>:au</code>を実行してみましょう...。</p>
 <p><img src="neovim/au/img/aucmd-after.png" alt="aucmd-after" /></p>
 <p><code>options.lua</code>に書いたイベントが登録されていることが確認できましたね❗</p>
 <p>編集画面に戻って適当にタブ入力をしてみてください。タブ幅の設定は反映されていますか❓</p>
@@ -4256,14 +4284,14 @@ Pre&quot; と &quot;Post&quot; イベントは、ファイルを読む前と読�
 </div>
 <div>
 <p>ここまで来れば、とりあえずは期待する動作が得られているはずです😆</p>
-<p>...、あ、いえ。&quot;とりあえず&quot; と言っているのには理由があって...。</p>
+<p>...、あ、えっと、&quot;とりあえず&quot; と言っているのには理由があって...。</p>
 <p>でも、なんだか長くなってきたので、もう一回だけ続く...❗🙀</p>
 <p>(疲れたらちゃんと休憩とってね☕)</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nvim_create_augroup"><a class="header" href="#nvim_create_augroup">nvim_create_augroup</a></h1>
-<p>うん。とりあえず、何よりもまずはっきりさせておきたいのは、<code>au</code>というのは<code>autocmd</code>の先頭2文字からきているようですね。
-いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...🍑</p>
+<p>うん。まず何よりもはっきりさせておきたいのは、<code>au</code>というのは<code>autocmd</code>の先頭2文字からきているようですね。</p>
+<p>いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...🍑</p>
 <p>...え❓ わたしだけ😧⁉️ 絶対嘘だ❗</p>
 <div id="admonition-h-nvim_create_augroup" class="admonition info">
 <div class="admonition-title">
@@ -4309,7 +4337,8 @@ This is useful for removing or executing a group of autocommands.
 </code></pre>
 </div>
 </div>
-<p>オートコマンドは以下で確認できます。コードをいじる前の現状を確認しておきましょう😌</p>
+<h2 id="augroup"><a class="header" href="#augroup">augroup</a></h2>
+<p>オートコマンドは以下で確認できます。まずは現状を確認します😌</p>
 <div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -4325,6 +4354,7 @@ This is useful for removing or executing a group of autocommands.
 </div>
 <p><img src="neovim/au/img/augroup-before.png" alt="augroup-before.png" /></p>
 <p>こんな感じですね😌</p>
+<h2 id="グループid"><a class="header" href="#グループid">グループID</a></h2>
 <p>それでは話を進めるんですが、さっきのヘルプ中に、コードが例示されていましたね。</p>
 <div id="admonition-h-nvim_create_augroup-1" class="admonition info">
 <div class="admonition-title">
@@ -4354,7 +4384,7 @@ This is useful for removing or executing a group of autocommands.
 「なんでわざわざ<code>augroup</code>作らなきゃダメなの？」っていう疑問と密接な関係がありそうです。</p>
 <p>なんとな〜く察するに、「二重登録を防ぐためにある程度まとめて制御できた方がいいでしょ❓」的なことらしいんですが...、
 わたしはいまひとつわかってません❗</p>
-<p>ちなみに<code>clear</code>のデフォルト値は<code>true</code>なので安全は担保されています。(意味を理解していれば、なんですけどね😅)</p>
+<p>ちなみに<code>clear</code>のデフォルト値は<code>true</code>なので安全は担保されてます。(意味を理解していれば、なんでしょうけどね😅)</p>
 </div>
 </div>
 <p>ってことで、こんな感じのコードになるのかな。</p>
@@ -4375,6 +4405,7 @@ This is useful for removing or executing a group of autocommands.
 </div>
 </div>
 <p><code>nvim_create_augroup</code>が返してくれる<code>ID</code>をそのまま渡せば良さそうですね。</p>
+<h2 id="実践-1"><a class="header" href="#実践-1">実践</a></h2>
 <p>じゃあ、こんな感じでどうかな😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
@@ -4383,7 +4414,7 @@ This is useful for removing or executing a group of autocommands.
 </div>
 <div>
 <pre><code class="language-lua">-- local to buffer options:
-vim.api.nvim_create_autocmd({ 'BufNew', 'BufNewFile', 'BufReadPre', 'FilterReadPre', 'FileReadPre' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = '*',
 
   -- groupを追加する
@@ -4412,7 +4443,7 @@ vim.opt.tabstop = 2
 </code></pre>
 <p>とかして誤魔化してたんです。</p>
 <p>でも、この辺りのページを作るにあたって考え直して、ようやく見栄えのするコードに辿り着けたので、なんかホッとしてます☺️</p>
-<p>これなら公開できるでしょ🤗</p>
+<p>(...公開後に思いっきり書き直してますけどね😅 ここほんと怖い...。)</p>
 </div>
 </div>
 <div id="admonition-success" class="admonition success">
@@ -4426,7 +4457,7 @@ vim.opt.tabstop = 2
 </div>
 <div id="admonition-default" class="admonition success">
 <div>
-<p>おまえが　nvim　チャンピオン</p>
+<p>おまえが　ｎｖｉｍ　チャンピオン</p>
 <p>をめざす❗　といっても</p>
 </div>
 </div>

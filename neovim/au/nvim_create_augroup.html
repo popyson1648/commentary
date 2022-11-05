@@ -148,8 +148,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="nvim_create_augroup"><a class="header" href="#nvim_create_augroup">nvim_create_augroup</a></h1>
-<p>うん。とりあえず、何よりもまずはっきりさせておきたいのは、<code>au</code>というのは<code>autocmd</code>の先頭2文字からきているようですね。
-いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...🍑</p>
+<p>うん。まず何よりもはっきりさせておきたいのは、<code>au</code>というのは<code>autocmd</code>の先頭2文字からきているようですね。</p>
+<p>いや、なんか...、どうしても三太郎CMを思い浮かべてしまうので...🍑</p>
 <p>...え❓ わたしだけ😧⁉️ 絶対嘘だ❗</p>
 <div id="admonition-h-nvim_create_augroup" class="admonition info">
 <div class="admonition-title">
@@ -195,7 +195,8 @@ This is useful for removing or executing a group of autocommands.
 </code></pre>
 </div>
 </div>
-<p>オートコマンドは以下で確認できます。コードをいじる前の現状を確認しておきましょう😌</p>
+<h2 id="augroup"><a class="header" href="#augroup">augroup</a></h2>
+<p>オートコマンドは以下で確認できます。まずは現状を確認します😌</p>
 <div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -211,6 +212,7 @@ This is useful for removing or executing a group of autocommands.
 </div>
 <p><img src="img/augroup-before.png" alt="augroup-before.png" /></p>
 <p>こんな感じですね😌</p>
+<h2 id="グループid"><a class="header" href="#グループid">グループID</a></h2>
 <p>それでは話を進めるんですが、さっきのヘルプ中に、コードが例示されていましたね。</p>
 <div id="admonition-h-nvim_create_augroup-1" class="admonition info">
 <div class="admonition-title">
@@ -240,7 +242,7 @@ This is useful for removing or executing a group of autocommands.
 「なんでわざわざ<code>augroup</code>作らなきゃダメなの？」っていう疑問と密接な関係がありそうです。</p>
 <p>なんとな〜く察するに、「二重登録を防ぐためにある程度まとめて制御できた方がいいでしょ❓」的なことらしいんですが...、
 わたしはいまひとつわかってません❗</p>
-<p>ちなみに<code>clear</code>のデフォルト値は<code>true</code>なので安全は担保されています。(意味を理解していれば、なんですけどね😅)</p>
+<p>ちなみに<code>clear</code>のデフォルト値は<code>true</code>なので安全は担保されてます。(意味を理解していれば、なんでしょうけどね😅)</p>
 </div>
 </div>
 <p>ってことで、こんな感じのコードになるのかな。</p>
@@ -261,6 +263,7 @@ This is useful for removing or executing a group of autocommands.
 </div>
 </div>
 <p><code>nvim_create_augroup</code>が返してくれる<code>ID</code>をそのまま渡せば良さそうですね。</p>
+<h2 id="実践"><a class="header" href="#実践">実践</a></h2>
 <p>じゃあ、こんな感じでどうかな😆</p>
 <div id="admonition-optionslua" class="admonition example">
 <div class="admonition-title">
@@ -269,7 +272,7 @@ This is useful for removing or executing a group of autocommands.
 </div>
 <div>
 <pre><code class="language-lua">-- local to buffer options:
-vim.api.nvim_create_autocmd({ 'BufNew', 'BufNewFile', 'BufReadPre', 'FilterReadPre', 'FileReadPre' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = '*',
 
   -- groupを追加する
@@ -298,7 +301,7 @@ vim.opt.tabstop = 2
 </code></pre>
 <p>とかして誤魔化してたんです。</p>
 <p>でも、この辺りのページを作るにあたって考え直して、ようやく見栄えのするコードに辿り着けたので、なんかホッとしてます☺️</p>
-<p>これなら公開できるでしょ🤗</p>
+<p>(...公開後に思いっきり書き直してますけどね😅 ここほんと怖い...。)</p>
 </div>
 </div>
 <div id="admonition-success" class="admonition success">
@@ -312,7 +315,7 @@ vim.opt.tabstop = 2
 </div>
 <div id="admonition-default" class="admonition success">
 <div>
-<p>おまえが　nvim　チャンピオン</p>
+<p>おまえが　ｎｖｉｍ　チャンピオン</p>
 <p>をめざす❗　といっても</p>
 </div>
 </div>
