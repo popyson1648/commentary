@@ -847,6 +847,22 @@ special symbols are available even without requiring you to use a patched font.<
 </code></pre>
 </div>
 </div>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="wezterm/keybind.html#admonition-note-1"></a></p>
+</div>
+<div>
+<p>このサイトではまだ取り扱っていませんが、
+<a href="https://wezfurlong.org/wezterm/config/key-tables.html">Key Tables</a>
+という機能があって、これを<code>keybinds.lua</code>内でカスタマイズしても、このままでは反映されません。</p>
+<p>なのでごめんなさい😱 上のコードだけでは混乱の元になってました😭</p>
+<p><code>keybinds.lua</code>内で<code>Key Tables</code>のカスタマイズをする場合、以下のコードも必要になります。</p>
+<pre><code class="language-lua">key_tables = require('keybinds').key_tables,
+</code></pre>
+<p>これで、<code>keybinds.lua</code>内で編集した<code>Key Tables</code>がちゃんと反映されるようになります🥹</p>
+</div>
+</div>
 <p>冒頭のリンクを再掲しますが、一番下にこのようにあります。</p>
 <div id="admonition-default-key-assignmentshttpswezfurlongorgweztermconfigdefault-keyshtml" class="admonition info">
 <div class="admonition-title">
