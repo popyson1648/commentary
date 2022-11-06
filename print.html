@@ -552,7 +552,7 @@ special symbols are available even without requiring you to use a patched font.<
 これはパッチされたフォントを使わなくてもこれらの特殊記号が利用可能であることを意味します。</p>
 </div>
 </div>
-<p>ただ、環境にもよるかもしれませんが、デフォルトの<code>Roboto</code>だと日本語がイマイチ...😢</p>
+<p>ただ、環境にもよるかもしれませんが、デフォルトのままだと日本語がイマイチ...😢</p>
 <p><img src="wezterm/img/font-roboto.png" alt="font-roboto.png" /></p>
 <p>なんてことがあるので、次項に続くわけです。</p>
 <h2 id="プログラミングフォント-firge-ファージ"><a class="header" href="#プログラミングフォント-firge-ファージ">プログラミングフォント Firge (ファージ)</a></h2>
@@ -2559,20 +2559,20 @@ require('other_modules/anothermodule')
 <div style="break-before: page; page-break-before: always;"></div><h1 id="options"><a class="header" href="#options">Options</a></h1>
 <p>じゃあ、いつも通りのところから始めていきます☺️</p>
 <p><code>lua</code>ディレクトリに<code>options.lua</code>とでもしてファイルを作成しましょう。</p>
-<div id="admonition-luaoptionsluaを作る" class="admonition quote">
+<div id="admonition-optionsluaを作る" class="admonition quote">
 <div class="admonition-title">
-<p>lua/options.luaを作る</p>
-<p><a class="admonition-anchor-link" href="neovim/options/options.html#admonition-luaoptionsluaを作る"></a></p>
+<p>options.luaを作る</p>
+<p><a class="admonition-anchor-link" href="neovim/options/options.html#admonition-optionsluaを作る"></a></p>
 </div>
 <div>
-<pre><code class="language-sh">nvim lua/options.lua
+<pre><code class="language-sh">nvim options.lua
 </code></pre>
 </div>
 </div>
 <p>で、<code>init.lua</code>から<code>require()</code>するんでしたね。</p>
 <div id="admonition-initlua" class="admonition example">
 <div class="admonition-title">
-<p>init.lua</p>
+<p>../init.lua</p>
 <p><a class="admonition-anchor-link" href="neovim/options/options.html#admonition-initlua"></a></p>
 </div>
 <div>
@@ -4332,7 +4332,7 @@ used in this list.  The command applies to all the events in the list.
 <pre><code>Autocommands can be put together in a group. 
 This is useful for removing or executing a group of autocommands.
 
-オートコマンドは、グループとしてまとめることができます。
+オートコマンドは、グループとしてまとめることができる。
 これは、オートコマンドのグループを削除したり実行したりするのに便利。
 </code></pre>
 </div>
@@ -4381,7 +4381,7 @@ This is useful for removing or executing a group of autocommands.
 </div>
 <div>
 <p><code>opts</code>は<code>clear</code>オプションを含んでいますが、
-「なんでわざわざ<code>augroup</code>作らなきゃダメなの？」っていう疑問と密接な関係がありそうです。</p>
+「なんでわざわざ<code>augroup</code>作らなきゃダメなの❓」っていう疑問と密接な関係がありそうです。</p>
 <p>なんとな〜く察するに、「二重登録を防ぐためにある程度まとめて制御できた方がいいでしょ❓」的なことらしいんですが...、
 わたしはいまひとつわかってません❗</p>
 <p>ちなみに<code>clear</code>のデフォルト値は<code>true</code>なので安全は担保されてます。(意味を理解していれば、なんでしょうけどね😅)</p>
