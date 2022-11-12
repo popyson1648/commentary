@@ -4641,7 +4641,7 @@ vim.keymap.set('n', '&lt;Down&gt;', '&lt;C-e&gt;')
 <p><a class="admonition-anchor-link" href="neovim/keybind.html#admonition-note-2"></a></p>
 </div>
 <div>
-<p>ヘルプの中で、右辺には<code>lua</code>関数でも可。の部分に当たる「<code>キー操作に機能</code>を割り当てる」については、次の章で😉</p>
+<p>ヘルプの中で、「右辺には<code>lua</code>関数でも可。」の部分に当たる「<code>キー操作に機能</code>を割り当てる」については、14章で😉</p>
 </div>
 </div>
 <p>ここでは一度、実際に動くことを確認してもらいたかったので<code>keybinds.lua</code>のサンプルとして提示しましたが、</p>
@@ -4688,7 +4688,7 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 </div>
 </div>
 <p><code>ZZ</code>は保存してウィンドウを閉じる、<code>ZQ</code>は保存しないで終了、...というのがデフォルトの動作ですが、これをそれぞれ無効化しています。</p>
-<p>いや、なんか...、ノーマルモードから急に終了したら怖くないですか...😱</p>
+<p>いや、なんか...、ノーマルモードから終了なんて、急すぎて怖くないですか...😱</p>
 <h3 id="モード"><a class="header" href="#モード">モード</a></h3>
 <p>ここまでは全てノーマルモードでの例でしたが、もちろん他のモードでのカスタマイズもできます。</p>
 <div id="admonition-default-2" class="admonition quote">
@@ -4697,13 +4697,15 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 </code></pre>
 </div>
 </div>
+<p>これを入れると、<code>jj</code>と連打するだけでインサートモードから抜けられるようになります。</p>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="neovim/keybind.html#admonition-warning"></a></p>
 </div>
 <div>
-<p>自分は使っておいてアレですが、かなりのクセつよなのでおすすめしないし、説明も少し長くなるので省略しちゃうんですがごめんなさい...😿</p>
+<p>...自分は使っておいてアレですが、使わないで済むならそれに越したことはないと思ってる設定です。</p>
+<p>わたし自身はデフォルトで割り当てられている<code>&lt;Ctrl&gt;[</code>への脱却を試みてるんですが、だいぶ苦労してます...😅</p>
 </div>
 </div>
 <p><code>{mode}</code>(第一パラメータ)をもう少し詳しく見ると、こんな感じです。</p>
@@ -4746,7 +4748,7 @@ l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 <p><a class="admonition-anchor-link" href="neovim/keybind.html#admonition-note-4"></a></p>
 </div>
 <div>
-<p>正確に言うと、上の表を参照するとわかる通り、さらにセレクトモードにも適用されることになります。</p>
+<p>上の表を参照するとわかる通り、正確にはさらにセレクトモードにも適用されることになります。</p>
 </div>
 </div>
 <h2 id="まとめ-1"><a class="header" href="#まとめ-1">まとめ</a></h2>
@@ -4773,7 +4775,7 @@ l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 vim.keymap.set('n', 'X', '&quot;_X')
 vim.keymap.set('n', 's', '&quot;_s')
 </code></pre>
-<p>これらは「1文字消して〜」のキーですが、こうすると消した文字をレジスタに入れず、純粋に文字を消すだけの動作になります。</p>
+<p>これらは「1文字消して〜」の操作ですが、こうすると消した文字をレジスタに入れず、純粋に文字を消すだけの動作になります。</p>
 <p>...って、ちょっと紹介したい欲が出てしまった🙀</p>
 </div>
 </div>
@@ -4794,9 +4796,9 @@ vim.keymap.set('n', 's', '&quot;_s')
 <p><a class="admonition-anchor-link" href="neovim/keybind.html#admonition-success"></a></p>
 </div>
 <div>
-<p>ほんとしつこいようなんですけど、結局キーマップのカスタマイズは個人の感覚に依るので、根拠らしい根拠とかも出てこないんですよね😅</p>
+<p>ほんとしつこいようなんですけど、キーマップのカスタマイズは個人の感覚に依るので、根拠らしい根拠も出てこないですよね😅</p>
+<p>この章では雰囲気だけ掴めれば、充分です😉</p>
 <p>ただ、もう少し進むと「もう嫌❗🙀」ってなるぐらい実用的なキーカスタマイズに触れて行くことになります。</p>
-<p>ここでは雰囲気だけ掴めれば、ほんと充分です😉</p>
 </div>
 </div>
 <div id="admonition-default-4" class="admonition success">
