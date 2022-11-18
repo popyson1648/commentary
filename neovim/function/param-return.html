@@ -152,7 +152,7 @@
 <p>ここで例示しているコードは実用性の無いものだけですが、できれば手元で動かしてみてください。</p>
 <p>(そして、終わったら消しておいてください...😅)</p>
 <h2 id="通常の-function-を呼び出す"><a class="header" href="#通常の-function-を呼び出す">通常の function を呼び出す</a></h2>
-<p>前節では無名関数を右辺に組み込んでいましたが、これはちゃんと名前のある関数を呼び出す形ですね😆</p>
+<p>前節では<code>無名関数</code>を右辺に組み込んでいましたが、これはちゃんと名前のある<code>関数</code>を呼び出す形ですね😆</p>
 <pre><code class="language-lua">function testfunc()
   print('i am test function')
 end
@@ -168,12 +168,12 @@ vim.keymap.set('n', '&lt;Leader&gt;3', testfunc)
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
-<p>もちろん、処理内容が短い場合や、別の場所から呼ばれない関数であれば、無名関数を使えば良いので、
+<p>もちろん、別の場所から呼ばれない関数であれば<code>無名関数</code>を使えば良いので、
 適宜使い分けていきましょう😉</p>
 </div>
 </div>
 <h2 id="パラメータを渡す"><a class="header" href="#パラメータを渡す">パラメータを渡す</a></h2>
-<p>さて、上の項でなんだか急に<code>keymap.set</code>がスッキリして見えるのは、この辺りの話が関わってきます。</p>
+<p>さて、上の項でなんだか急に<code>keymap.set</code>がスッキリして見えるのは、この辺りの話が関わってきます😌</p>
 <p>例えば、これはエラーになります。</p>
 <div id="admonition-error" class="admonition danger">
 <div class="admonition-title">
@@ -189,7 +189,7 @@ vim.keymap.set('n', '&lt;Leader&gt;4', testparam('hello'))
 </code></pre>
 </div>
 </div>
-<p>パラメータを渡す場合は<code>function()</code> ~ <code>end</code>で囲ってあげないといけないんですね。</p>
+<p>パラメータを渡す場合は<code>function()</code> ~ <code>end</code>で囲ってあげないといけないんですね🤔</p>
 <pre><code class="language-lua">function testparam(str)
   print(str)
 end
@@ -205,7 +205,7 @@ end
 
 vim.keymap.set('n', '&lt;Leader&gt;5', testret)
 </code></pre>
-<p>ただ、これだと戻り値を全く無視しているので無意味ですよね。...じゃあってことで</p>
+<p>ただ、これだと戻り値を全く無視しているので無意味ですよね😮 ...じゃあってことで</p>
 <pre><code class="language-lua">vim.keymap.set('n', '&lt;Leader&gt;5', print(testret()))
 </code></pre>
 <p>とかしたくなるんですけど、これは<code>print()</code>に &quot;パラメータを渡してる&quot; のでエラーになるやつです😅</p>
@@ -215,7 +215,7 @@ vim.keymap.set('n', '&lt;Leader&gt;5', testret)
 <h2 id="function-呼び出し"><a class="header" href="#function-呼び出し">function 呼び出し</a></h2>
 <p>関数に<code>()</code>があったりなかったりするのはなんでなんだろうなーってなるんですけど、
 要は<code>()</code>をつけちゃうと<code>function</code>型ではなくてこの<code>functionの戻り値</code>の型は何かなー❓って判断をしに行っちゃうんですね😮</p>
-<p>今回は<code>vim.keymap.set()</code>を使用しているので、これをもう一回見返して欲しいんですけど、</p>
+<p>今回は<code>vim.keymap.set()</code>を使用しているので、もう一回ヘルプを見返して欲しいんですけど、</p>
 <div id="admonition-h-keymapset" class="admonition info">
 <div class="admonition-title">
 <p>:h keymap.set</p>
