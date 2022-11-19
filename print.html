@@ -5639,17 +5639,11 @@ mkdir plugin/lesson
 <p><a class="admonition-anchor-link" href="neovim/function/call-plugin.html#admonition-pluginlesson2lua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">local M = {}
-
-function M.Order()
+<pre><code class="language-lua">vim.api.nvim_create_user_command('Order', function()
   if vim.fn.input('Coffee or beer? &gt; ') == 'beer' then
     vim.cmd.echo '&quot;\nCheers!!&quot;'
   end
-end
-
-vim.api.nvim_create_user_command('Order', M.order, {})
-
-return M
+end, {})
 </code></pre>
 </div>
 </div>
