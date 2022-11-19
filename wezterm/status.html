@@ -25,10 +25,11 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href=".././theme/catppuccin.css">
-        <link rel="stylesheet" href=".././theme/catppuccin-highlight.css">
-        <link rel="stylesheet" href=".././mdbook-admonish.css">
-        <link rel="stylesheet" href=".././override.css">
+        <link rel="stylesheet" href="../theme/catppuccin.css">
+        <link rel="stylesheet" href="../theme/catppuccin-highlight.css">
+        <link rel="stylesheet" href="../mdbook-admonish.css">
+        <link rel="stylesheet" href="../override.css">
+        <link rel="stylesheet" href="../sidebar/style.css">
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -147,6 +148,10 @@
 
                 <div id="content" class="content">
                     <main>
+                        <div class="sidetoc">
+                          <nav class="pagetoc"></nav>
+                        </div>
+
                         <h1 id="status-bar"><a class="header" href="#status-bar">Status Bar</a></h1>
 <p>今度はステータスバーを飾り付けちゃおっかなーと思います😆</p>
 <p><code>status.lua</code>というファイルを追加しましょう。</p>
@@ -272,5 +277,6 @@ return {
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../sidebar/sidebar.js"></script>
     </body>
 </html>
