@@ -1,199 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://coralpink.github.io/commentary/</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/404.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/googlee354b901ed450920.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/introduction.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/installation.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/keybind.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/leader.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/lua-module.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/user-config.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/configuration.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/custom.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/dpi-detection.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/font.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/format.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/frame.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/installation.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/keybind.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/leader.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/left-status.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/right-status.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/shell.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/status.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/tab.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/toggle-font.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/window-decorations.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/window-title.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/wezterm/window.html</loc>
-<lastmod>2022-09-30</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/au/automatic-commands.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/au/nvim_create_augroup.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/au/nvim_create_autocmd.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/function/call-plugin.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/function/function.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/function/param-return.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/function/vim-cmd.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/function/warming-up.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/clipboard.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/cursorline.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/ignorecase-smartcase.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/inccommand.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/number.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/nvim_buf_set_option.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/nvim_set_option.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/nvim_win_set_option.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/options.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/scrolloff.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/signcolumn.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/tab.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/termguicolors.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
-<url>
-<loc>https://coralpink.github.io/commentary/neovim/options/wrap-colorcolumn.html</loc>
-<lastmod>2022-11-26</lastmod>
-</url>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/404.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/googlee354b901ed450920.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/introduction.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/installation.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/keybind.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/leader.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/lua-module.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/user-config.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/configuration.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/custom.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/dpi-detection.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/font.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/format.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/frame.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/installation.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/keybind.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/leader.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/left-status.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/right-status.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/shell.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/status.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/tab.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/toggle-font.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/window-decorations.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/window-title.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/wezterm/window.html</loc>
+	<lastmod>2022-09-30</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/au/automatic-commands.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/au/nvim_create_augroup.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/au/nvim_create_autocmd.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/function/call-plugin.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/function/function.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/function/param-return.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/function/vim-cmd.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/function/warming-up.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/clipboard.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/cursorline.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/ignorecase-smartcase.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/inccommand.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/number.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/nvim_buf_set_option.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/nvim_set_option.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/nvim_win_set_option.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/options.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/scrolloff.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/signcolumn.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/tab.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/termguicolors.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
+<sitemap>
+	<loc>https://coralpink.github.io/commentary/neovim/options/wrap-colorcolumn.html</loc>
+	<lastmod>2022-11-26</lastmod>
+</sitemap>
 </urlset>
