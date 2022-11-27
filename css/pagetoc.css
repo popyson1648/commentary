@@ -17,7 +17,7 @@
   .pagetoc {
     position: fixed;
     width: 170px;
-    height: calc(100vh - var(--menu-bar-height) - 0.67em * 4);
+    height: var(--content-max-height);
     overflow: auto;
     font-size: 0.85em;
   }
