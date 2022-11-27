@@ -118,7 +118,7 @@ h6:target::before {
   font-size: 1.3rem;
   margin-left: 1.2em;
   margin-right: 1.2em;
-  max-width: 80vw;
+  max-width: 75vw;
 }
 .content p {
   line-height: 1.45em;
