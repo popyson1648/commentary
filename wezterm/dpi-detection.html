@@ -257,15 +257,6 @@ end)
 <p>このイベントは wezterm の観点からは fire-and-forget です; それは設定変更を通知するためにイベントを発生させますが、それ以外のことは期待できません。</p>
 </div>
 </div>
-<div id="admonition-note-3" class="admonition note">
-<div class="admonition-title">
-<p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
-</div>
-<div>
-<p>10/12 時点では、nightly builds only となっていることに注意してください。</p>
-</div>
-</div>
 <p>それでは満を持して😌</p>
 <div id="admonition-eventlua-1" class="admonition example">
 <div class="admonition-title">
@@ -294,18 +285,17 @@ end)
 <p>Plan A との比較では<code>update-status</code>を使わなくて良くなったのと、カスタムイベントの呼び出しも無くなりました。</p>
 <p>ウィンドウをドラッグしたりウィンドウマネージャー等を使ってディスプレイを移した際に切り替わらないという欠点こそあるものの、
 とても綺麗な実装になりました😄</p>
-<div id="admonition-note-4" class="admonition note">
+<div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
 <p>「欠点」と書いてしまいましたが、移動後にウィンドウのフォーカスを外すとフォントサイズが切り替わることが確認できるので、もちろん仕様に則した動作です。</p>
 </div>
 </div>
 <h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
-<p>上にも書きましたが、Plan B は10/12 時点で nightly builds only です。</p>
-<p>それ以外はほとんど問題にならないと思われますが、
+<p>ほとんど問題にならないと思われますが、
 頻繁にディスプレイを切り替えるような使い方をする場合は Plan A の方が有用かもしれないので、ひとまず Tips として残しておきます。</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
