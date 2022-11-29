@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -310,9 +310,12 @@ vim.keymap.set('n', '&lt;Down&gt;', '&lt;C-e&gt;')
 <p>これを記述してから再起動すると、方向キーの上下でスクロールするようになっているはずです。
 (適当に2行以上入力してから試してください。)</p>
 <p>上のコードが何をしているかと言うと、</p>
-<pre><code>ノーマルモードの時に, &lt;上&gt;キーが入力されたら, &lt;Ctrl+y&gt;キーの操作として受け付けるぞぉ❗
-ノーマルモードの時に, &lt;下&gt;キーが入力されたら, &lt;Ctrl+e&gt;キーの操作として受け付けるぞぉ❗
-</code></pre>
+<div id="admonition-default" class="admonition quote">
+<div>
+<p>ノーマルモードの時に, <kbd>↑</kbd>キーが入力されたら, <kbd>Ctrl-y</kbd>キーの操作として受け付けるぞぉ❗</p>
+<p>ノーマルモードの時に, <kbd>↓</kbd>キーが入力されたら, <kbd>Ctrl-e</kbd>キーの操作として受け付けるぞぉ❗</p>
+</div>
+</div>
 <p>ってことですね。</p>
 <p>「<code>キー操作に機能</code>を割り当てる」と言うよりは、「<code>キー操作にリンク先のキー</code>を割り当てる 」というニュアンスかもしれません。</p>
 <div id="admonition-note-2" class="admonition note">
@@ -338,17 +341,17 @@ vim.keymap.set('n', '&lt;Down&gt;', '&lt;C-e&gt;')
 </div>
 <h3 id="入れ替え"><a class="header" href="#入れ替え">入れ替え</a></h3>
 <p>「相互に操作を入れ替える」みたいなパターンも、たったこれだけ😸</p>
-<div id="admonition-default" class="admonition quote">
+<div id="admonition-default-1" class="admonition quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
 </code></pre>
 </div>
 </div>
-<p><code>:</code>は説明が長くなるので省略してしまうんですが、<code>;</code>でコマンドモードに入れるようになります。</p>
+<p><kbd>:</kbd>は説明が長くなるので省略してしまうんですが、<kbd>;</kbd>でコマンドモードに入れるようになります。</p>
 <h3 id="無効化"><a class="header" href="#無効化">無効化</a></h3>
 <p>無効化するパターンもあります。</p>
-<div id="admonition-default-1" class="admonition quote">
+<div id="admonition-default-2" class="admonition quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set('n', 'ZZ', '&lt;NOP&gt;')
 vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
@@ -367,17 +370,17 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 </code></pre>
 </div>
 </div>
-<p><code>ZZ</code>は保存してウィンドウを閉じる、<code>ZQ</code>は保存しないで終了、...というのがデフォルトの動作ですが、これをそれぞれ無効化しています。</p>
+<p><kbd>Z</kbd><kbd>Z</kbd>は保存してウィンドウを閉じる、<kbd>Z</kbd><kbd>Q</kbd>は保存しないで終了、...というのがデフォルトの動作ですが、これをそれぞれ無効化しています。</p>
 <p>いや、なんか...、ノーマルモードから終了なんて、急すぎて怖くないですか...😱</p>
 <h3 id="モード"><a class="header" href="#モード">モード</a></h3>
 <p>ここまでは全てノーマルモードでの例でしたが、もちろん他のモードでのカスタマイズもできます。</p>
-<div id="admonition-default-2" class="admonition quote">
+<div id="admonition-default-3" class="admonition quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set('i', 'jj', '&lt;Esc&gt;')
 </code></pre>
 </div>
 </div>
-<p>これを入れると、<code>jj</code>と連打するだけでインサートモードから抜けられるようになります。</p>
+<p>これを入れると、<kbd>j</kbd><kbd>j</kbd>と連打するだけでインサートモードから抜けられるようになります。</p>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
@@ -415,7 +418,7 @@ l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 </div>
 <p>冒頭の例で言うと、<code>'i'</code>はインサートモードを指しています。</p>
 <p>また、複数のモードに対して適用するのであれば以下のようになります。</p>
-<div id="admonition-default-3" class="admonition quote">
+<div id="admonition-default-4" class="admonition quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set({ 'n', 'v' }, 'p', 'p`]')
 </code></pre>
@@ -481,7 +484,7 @@ vim.keymap.set('n', 's', '&quot;_s')
 <p>ただ、もう少し進むと「もう嫌❗🙀」ってなるぐらい実用的なキーカスタマイズに触れて行くことになります。</p>
 </div>
 </div>
-<div id="admonition-default-4" class="admonition success">
+<div id="admonition-default-5" class="admonition success">
 <div>
 <div style="text-align: center">
 <p>KEYMAP WILL RETURN</p>

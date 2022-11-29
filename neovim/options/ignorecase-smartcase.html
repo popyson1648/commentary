@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -218,7 +218,7 @@ vim.api.nvim_set_option('smartcase', true)
 </div>
 <p>「彼女がおれのことなんて気にも留めずに行っちゃうよ！」...っていう
 <a href="https://en.wikipedia.org/wiki/Ticket_to_Ride_(song)">Ticket to Ride</a>の一節です。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
-<p>それでは小文字だけの<code>she</code>を検索してみます。検索には<code>/</code>で入れます。</p>
+<p>それでは小文字だけの<code>she</code>を検索してみます。検索には<kbd>/</kbd>で入れます。</p>
 <pre><code>/she
 </code></pre>
 <p><img src="img/search-she1.webp" alt="search-she1" /></p>
@@ -250,7 +250,7 @@ vim.api.nvim_set_option('smartcase', true)
 </div>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>あ❗これは<a href="https://en.wikipedia.org/wiki/Help!">HELP! - The Beatles</a> の収録曲ですね❗
-なんかこの辺ヘルプばっかりじゃね⁉️ってなる、ウケる〜🤣 ...そうでもないかぁ😮</p>
+なんか help ばっかりじゃね⁉️ってなる、ウケる〜🤣 ...そうでもないかぁ😮</p>
 </div>
 
                     </main>

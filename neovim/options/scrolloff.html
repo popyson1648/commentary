@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -183,8 +183,8 @@
 </div>
 <p>デフォルト値<code>0</code>の場合は、画面の上下端まで行かないと行スクロールしませんが、
 <code>1</code>以上を指定すると指定行数分の余裕を持って手前でスクロールします。</p>
-<p>下から数えて5行目の位置から<code>4</code>行目に移動しようとすると...、
-<img src="img/scrolloff1.webp" alt="scrolloff1" /></p>
+<p>下から数えて5行目の位置から<code>4</code>行目に移動しようとすると...、</p>
+<p><img src="img/scrolloff1.webp" alt="scrolloff1" /></p>
 <p>カーソル移動ではなく、本文が<code>行スクロール</code>する。</p>
 <p><img src="img/scrolloff2.webp" alt="scrolloff2" /></p>
 <p>文字で説明するとイメージが難しいんですが、<code>0</code>の状態と比べて動かしてみれば、すぐに意味はわかると思います😸</p>

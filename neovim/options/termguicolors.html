@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -176,7 +176,7 @@
 </code></pre>
 </div>
 </div>
-<p>「24ビットRGBカラーを有効にする<code>global</code>なオプション、<code>termguicolors</code>もしくは<code>tgc</code><sup class="footnote-reference"><a href="#1">1</a></sup>は、<code>boolean</code>値(デフォルト<code>off</code>)だよ。」ってのがなんか伝わってきますね🤔</p>
+<p>「24ビットRGBカラーを有効にする<code>global</code>なオプション、<code>termguicolors</code>もしくは<code>tgc</code>は、<code>boolean</code>値(デフォルト<code>off</code>)だよ。」ってのがなんか伝わってきますね🤔</p>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
@@ -226,13 +226,10 @@
 </div>
 <div id="admonition-default" class="admonition success">
 <div>
-<p>タマムシ　にじいろ　ゆめの　いろ<sup class="footnote-reference"><a href="#2">2</a></sup></p>
+<p>タマムシ　にじいろ　ゆめの　いろ<sup class="footnote-reference"><a href="#1">1</a></sup></p>
 </div>
 </div>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>&quot;東京ガールズコレクション&quot;❓ってなる、ウケる〜🤣 ...そうでもないかぁ😮</p>
-</div>
-<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
 <p>このページで7色使えてたら面白かったんですけど、1色足りませんでしたね...。</p>
 </div>
 

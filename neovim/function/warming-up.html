@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -233,7 +233,7 @@
 </div>
 </div>
 <h2 id="実行"><a class="header" href="#実行">実行</a></h2>
-<p>本題に戻って、ノーマルモードで<code>lhs</code>と入力してみましょう。</p>
+<p>本題に戻って、ノーマルモードで<kbd>l</kbd><kbd>h</kbd><kbd>s</kbd>と入力してみましょう。</p>
 <p><img src="img/call-function1.webp" alt="call-function1" /></p>
 <p>...動きましたね❗</p>
 <div id="admonition-warning" class="admonition warning">
@@ -243,7 +243,7 @@
 </div>
 <div>
 <p>動くことが確認できたら、このコードはすぐ消しときましょう😅</p>
-<p>じゃないと、ノーマルモードのカーソル移動 (<code>l</code>) が挙動不審になっちゃうので❗</p>
+<p>じゃないと、ノーマルモードのカーソル移動 (<kbd>l</kbd>) が挙動不審になっちゃうので❗</p>
 <p>(ぶっちゃけサンプルが不親切だと思う...🤫)</p>
 </div>
 </div>

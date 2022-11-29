@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -241,7 +241,7 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 1文字目の<code>\</code>は<code>エスケープシーケンス</code>として入っているものなので、<code>\</code>(2文字目) だけが設定されます。</p>
 </div>
 </div>
-<p>上の例はデフォルトと同じ<code>\</code>になっていますが、ここを好きなキーに変えることができます。</p>
+<p>上の例はデフォルトと同じ<kbd>\</kbd>になっていますが、ここを好きなキーに変えることができます。</p>
 <div id="admonition-tip-1" class="admonition tip">
 <div class="admonition-title">
 <p>Tip</p>
@@ -273,12 +273,12 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 </code></pre>
 </div>
 </div>
-<p><code>Neovim</code>は単独で使用するキーを指定します。(<code>WezTerm</code>は<code>Ctrl</code>キーと同時押しするキーを指定していました。)</p>
-<p>なので「<code>Space</code>キーにするとOSのショートカットと被っちゃうかもよ ❗」ということは無いです。</p>
-<p>ただ、例えば<code>,</code>にしちゃうと<code>Neovim</code>の中で被ってるよって話が出てきちゃったりします😧</p>
-<p>わたしは最近まで<code>,</code>で使用していましたが、そこまで使用頻度が高いわけでもなかったので<code>\</code>に戻しました。
-US配列であれば、ゆーて<code>return</code>キーの上ってだけですからね😅
-(配列は勿論、形状とかも含めて、使用するキーボードに依るので一概には言えないんですけどね。)</p>
+<p><code>Neovim</code>は単独で使用するキーを指定します。(<code>WezTerm</code>は<kbd>Ctrl</kbd>キーと同時押しするキーを指定していました。)</p>
+<p>なので「<kbd>Space</kbd>キーにするとOSのショートカットと被っちゃうかもよ ❗」ということは無いです。</p>
+<p>ただ、例えば<kbd>,</kbd>にしちゃうと<code>Neovim</code>の中で被ってるよって話が出てきちゃったりします😧</p>
+<p>わたしは最近まで<kbd>,</kbd>で使用していましたが、そこまで使用頻度が高いわけでもなかったので<kbd>\</kbd>に戻しました。
+US配列であれば、ゆーて<kbd>Return</kbd>キーの上ってだけですからね😅</p>
+<p>(配列は勿論、形状とかも含めて、使用するキーボードに依るので一概には言えないんですけどね。)</p>
 <div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -333,7 +333,7 @@ global プラグインでは &lt;Leader&gt; を、filetype プラグインでは
 </code></pre>
 </div>
 </div>
-<p>こっちはなんか<code>_</code>がメジャーらしい...🤔</p>
+<p>こっちはなんか<kbd>_</kbd>がメジャーらしい...🤔</p>
 <div id="admonition-keybindslua-2" class="admonition example">
 <div class="admonition-title">
 <p>keybinds.lua</p>

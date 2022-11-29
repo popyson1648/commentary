@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -191,8 +191,8 @@
 <p>She's got a ticket to ride, but she don’t care.</p>
 </div>
 </div>
-<p>これ Karen が歌ったら面白いんじゃない？😆 ってなるのはなんかもう必然の Richard ですので、
-<code>She</code>👩を<code>He</code>👨に変えます。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<p>これ Karen が歌ったら面白いんじゃない？😆 ってなるのはなんかもう必然の Richard なので、
+&quot;She&quot; 👩を &quot;He&quot; 👨に変えます。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
 <p>置換操作は<code>:%s/{検索値}/{置換値}</code>とすると実行できます。</p>
 <pre><code>:%s/She/He
 </code></pre>
@@ -216,9 +216,9 @@
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
 </div>
 <div>
-<p>下のようになってたとして、(だいぶ強引ですが) 大文字を含まない<code>she</code>でやった場合にあれれー❓ってなるの気付きます？</p>
+<p>下のようになってたとして、(だいぶ強引ですが) 大文字を含まない &quot;she&quot;でやった場合にあれれー❓ってなるの気付きます？</p>
 <p><img src="img/replace3.webp" alt="replace3" /></p>
-<p>そうです。3行目に<code>she</code>は2つあるのに、1つ取りこぼししちゃってます😱</p>
+<p>そうです。3行目に &quot;she&quot;は2つあるのに、1つ取りこぼししちゃってます😱</p>
 <p>実はこのやり方だと同じ行の中では最初にヒットしたところしか反応しません。</p>
 <p>こういう場合は、</p>
 <pre><code>:%s/she/he/g

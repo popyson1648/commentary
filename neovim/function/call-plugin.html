@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="sidebar-visible no-js latte">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -65,7 +65,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('latte')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -191,7 +191,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 </code></pre>
 </div>
 </div>
-<p>じゃあ、<code>&lt;Leader&gt;9</code>でぽちぽちっとして呼んでみましょう...。動くかなぁ〜❓</p>
+<p>じゃあ、ぽちぽちっと<kbd>Leader</kbd><kbd>9</kbd>で呼んでみましょう...。動くかなぁ〜❓</p>
 <p><img src="img/call-function5.webp" alt="call-function5" /></p>
 <p>動いたぁ〜❗😆</p>
 <div id="admonition-tip" class="admonition tip">
@@ -245,15 +245,6 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 </div>
 </div>
 <p><code>require</code>のキャッシュを読み直してるだけっていう可能性を疑ったり、<code>Neovim</code>を起動し直して試すっていうことも選択のうちに入れておいて下さい😉</p>
-<div id="admonition-note-2" class="admonition note">
-<div class="admonition-title">
-<p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
-</div>
-<div>
-<p>後味が悪くなってたらごめんなさいなんだけど、<code>lesson</code>ディレクトリと<code>require</code>、<code>keymap</code>は消しておきましょう。</p>
-</div>
-</div>
 <h2 id="nvim_create_user_command"><a class="header" href="#nvim_create_user_command">nvim_create_user_command</a></h2>
 <p>もう一個だけやっておきたいのは、独自コマンドからプラグインを使うパターンです。</p>
 <p>今度は<code>nvim</code>ディレクトリまで上がって、<code>plugin</code>ディレクトリを新しく作成し、その中に<code>/lesson2/init.lua</code>をおいてください。</p>
@@ -308,10 +299,10 @@ end, {})
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
 </div>
 <div>
 <p>サンプルは<code>:h input</code>から持ってきて、<code>lua</code>で動くように書き換えました。</p>
@@ -329,10 +320,10 @@ end, {})
 </div>
 </div>
 <p><code>plugin</code>ディレクトリに置いた<code>lua</code>ファイルは<code>require</code>などをしなくても自動で読み込まれます。</p>
-<div id="admonition-note-4" class="admonition note">
+<div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
 <p>これもやっぱり<code>9. Lua Module</code>で触れてました。<code>Runtime files</code>を確認してみて下さい😉</p>
@@ -345,13 +336,13 @@ end, {})
 <p><img src="img/beer.webp" alt="beer" /></p>
 <p>乾杯❗🍻</p>
 <p><img src="img/cheers.webp" alt="cheers" /></p>
-<div id="admonition-note-5" class="admonition note">
+<div id="admonition-note-4" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-5"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
 </div>
 <div>
-<p>飲み終わったら<code>plugin</code>は消しておきましょう。</p>
+<p>飲み終わったら<code>plugin</code>ディレクトリは消しておきましょう。<code>lesson</code>ディレクトリとrequire、keymapも忘れずに...。</p>
 </div>
 </div>
 <h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
