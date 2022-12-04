@@ -1,0 +1,520 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js latte">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Packer.nvim - Commentary of Dotfiles</title>
+        <!-- Custom HTML head -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRHGDF4JZV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GRHGDF4JZV');
+</script>
+        <meta name="description" content="このサイトでは、わたしが普段使っている WezTerm と Neovim の設定例 (dotfiles) を紹介しています🤗 - This site introduces WezTerm and Neovim dotfiles that I usually use.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../css/catppuccin.css">
+        <link rel="stylesheet" href="../../css/catppuccin-highlight.css">
+        <link rel="stylesheet" href="../../css/mdbook-admonish.css">
+        <link rel="stylesheet" href="../../css/pagetoc.css">
+        <link rel="stylesheet" href="../../css/header.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../introduction.html"><strong aria-hidden="true">1.</strong> introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../../wezterm/installation.html"><strong aria-hidden="true">2.</strong> installation</a></li><li class="chapter-item expanded "><a href="../../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item expanded "><a href="../../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item expanded "><a href="../../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item expanded "><a href="../../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item expanded "><a href="../../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item expanded "><a href="../../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item expanded "><a href="../../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../../neovim/installation.html"><strong aria-hidden="true">7.</strong> installation</a></li><li class="chapter-item expanded "><a href="../../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item expanded "><a href="../../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item expanded "><a href="../../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item expanded "><a href="../../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item expanded "><a href="../../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item expanded "><a href="../../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item expanded "><a href="../../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item expanded "><a href="../../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item expanded "><a href="../../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item expanded "><a href="../../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item expanded "><a href="../../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/packer.html" class="active"><strong aria-hidden="true">15.1.</strong> Packer.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">...To Be Continued</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-title">Commentary of Dotfiles</div>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div class="sidetoc">
+                          <nav class="pagetoc"></nav>
+                        </div>
+
+                        <h1 id="packernvim"><a class="header" href="#packernvim">packer.nvim</a></h1>
+<p>では、早速ですが、まずはプラグインマネージャーからいきます。</p>
+<p>マネージャーだったりお作法だったりは色々あるんですが、わたしは<code>packer.nvim</code>を愛用しています😆</p>
+<div id="admonition-packernvimhttpsgithubcomwbthomasonpackernvim" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/wbthomason/packer.nvim">packer.nvim</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-packernvimhttpsgithubcomwbthomasonpackernvim"></a></p>
+</div>
+<div>
+<p>use-package inspired plugin/package management for Neovim.</p>
+<p>use-packageにインスパイアされたNeovimのプラグイン/パッケージマネージャー。</p>
+</div>
+</div>
+<div id="admonition-default" class="admonition info">
+<div>
+<p>Packer is built on native packages. You may wish to read :h packages before continuing</p>
+<p>Packerはネイティブパッケージの上に構築されています。先に進む前に :h packages を読んでおくとよいでしょう。</p>
+</div>
+</div>
+<div id="admonition-requirements" class="admonition abstract">
+<div class="admonition-title">
+<p>Requirements</p>
+<p><a class="admonition-anchor-link" href="#admonition-requirements"></a></p>
+</div>
+<div>
+<ul>
+<li>You need to be running Neovim v0.5.0+; <code>packer</code> makes use of extmarks and other newly-added Neovim features.</li>
+<li>Your version of Neovim must be compiled with LuaJIT support; <code>packer</code> relies on this to detect whether you are running Windows or a Unix-like OS (for path separators)</li>
+<li>If you are on Windows 10, you need developer mode enabled in order to use local plugins (creating symbolic links requires admin privileges on Windows
+<ul>
+<li>credit to @TimUntersberger for this note)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p><code>Neovim v0.5.0</code>以降と<code>LuaJIT</code>については、ここまで来て今更問題にはならないと思われますが、
+<code>Windows 10</code>で動かす場合には別途操作が必要になるみたいです。(自信がないので触れられない...😰)</p>
+<p>あと、(ここには書いてないけど) 当然のように<code>git</code>を使用するので、まだの人は前節へ。</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>例えば、同じように「パッケージマネージャー」と呼ばれる<code>Homebrew</code>や<code>apt</code>、<code>dnf</code>なんかだと、
+<code>あれ install</code>と唱えるだけで、依存関係と照らし合わせて不足しているソフトやライブラリまでを自動でインストールしてくれますが、
+<code>Neovim</code>プラグインはそういった依存関係をデータとして持ち合わせていないので、作者の説明を読んで自分で把握しないといけないんですね。</p>
+<p>なので、どのプラグインであっても<code>Requirements</code>は必ず確認するようにしてください。重要だぞ😉❤️</p>
+<p>「とにかく動かしてみたいから、細かい話はあとだー❗」ってなっちゃうわたしが言うのも変ですが、まあ、焦らず進めましょう☺️</p>
+</div>
+</div>
+<h2 id="download"><a class="header" href="#download">Download</a></h2>
+<p>それでは、ターミナルから手動で<code>git</code>を使い、<code>packer.nvim</code>を所定のディレクトリ(<code>packpath</code>のいずれか)に配置します。</p>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p><code>packpath</code>については、ちょっと自信ないんですが、</p>
+<pre><code>:echo &amp;packpath
+</code></pre>
+<p>...と、することで確認できました。</p>
+<p><img src="img/packpath.webp" alt="packpath" /></p>
+</div>
+</div>
+<p>&quot;Quickstart&quot; にあるように、順を追ってやっていきましょう。</p>
+<div id="admonition-git-clone" class="admonition quote">
+<div class="admonition-title">
+<p>Git Clone</p>
+<p><a class="admonition-anchor-link" href="#admonition-git-clone"></a></p>
+</div>
+<div>
+<p>Unix, Linux Installation</p>
+<pre><code class="language-sh">git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+</code></pre>
+<p>Windows Powershell Installation</p>
+<pre><code class="language-sh">git clone https://github.com/wbthomason/packer.nvim &quot;$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim&quot;
+</code></pre>
+</div>
+</div>
+<p>わたしの環境では &quot;/home/utm-user/.local/share/nvim/site&quot; が<code>packpath</code>に含まれていたので、例示されているパスのままで進めていますが、
+環境によってはこのパスが含まれていないかもしれません。</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p>(仮想環境ではあるんですが)<code>Ubuntu Server for ARM</code>では<code>apt</code>からインストールできる<code>Neovim</code>のバージョンが異様に低かったので
+<code>flatpak</code>を使ったら、「なにこれ、マルチバース❓」って言うぐらい未知な<code>packpath</code>でした。もはや &quot;panicpath&quot; です🤣</p>
+<p>...ただ、話がわかっていればこんなの適合させるぐらい簡単ですよね〜😉 <code>packpath</code>を確認の上で合わせてあげてください。</p>
+<p><img src="img/flatpak.webp" alt="flatpak" /></p>
+<pre><code class="language-sh"># あくまで一例です。
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.var/app/io.neovim.nvim/data/nvim/site/pack/packer/start/packer.nvim
+</code></pre>
+<p>っていうか、これだとそもそも設定ファイルの場所も違うんですね...。</p>
+</div>
+</div>
+<h2 id="設定ファイル"><a class="header" href="#設定ファイル">設定ファイル</a></h2>
+<p>ここからはわたしのやり方を並べていくんですが、まずは設定ファイルを新しく作りましょう。</p>
+<p><code>lua</code>ディレクトリに新しく<code>extensions</code>ディレクトリを作成します。</p>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p>ディレクトリ名はやっぱり何でも良くて、それこそ<code>plugin</code>とかしてもいいんですが、もうこの後すぐややこしくなるので<code>extensions</code>としました。</p>
+</div>
+</div>
+<div id="admonition-extensionsディレクトリを作る" class="admonition quote">
+<div class="admonition-title">
+<p>extensionsディレクトリを作る</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsディレクトリを作る"></a></p>
+</div>
+<div>
+<pre><code class="language-sh">mkdir extensions
+</code></pre>
+</div>
+</div>
+<p>で、その中に<code>init.lua</code>を作っちゃいましょう。</p>
+<div id="admonition-extensionsinitlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require('packer').startup(function()
+  use 'wbthomason/packer.nvim'
+end)
+</code></pre>
+</div>
+</div>
+<p>この時点でのディレクトリ構成はこんな感じですね。</p>
+<p><img src="img/first-tree.webp" alt="first-tree" /></p>
+<p>それじゃあ、<code>nvim</code>直下の<code>init.lua</code>から呼び出してあげましょう。</p>
+<p>(今作ったやつではなくて、前からいるやつです。)<code>options</code>とか<code>keybinds</code>を呼び出しているところに並べてあげてください。</p>
+<div id="admonition-initlua" class="admonition example">
+<div class="admonition-title">
+<p>../init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-initlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require 'extensions'
+</code></pre>
+</div>
+</div>
+<h2 id="起動"><a class="header" href="#起動">起動</a></h2>
+<p>ここまで行った状態で<code>nvim</code>を起動すると...❓何も起きませんね😮</p>
+<p>ちなみに、今の状態で</p>
+<div id="admonition-runtimepathを確認" class="admonition quote">
+<div class="admonition-title">
+<p>runtimepathを確認</p>
+<p><a class="admonition-anchor-link" href="#admonition-runtimepathを確認"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">:lua print(vim.inspect(vim.api.nvim_list_runtime_paths()))
+</code></pre>
+</div>
+</div>
+ってやってみると、
+<p><img src="img/runtimepath.webp" alt="runtimepath" /></p>
+<p>...なんか前より増えてますよね。しれっと<code>packer.nvim</code>も入ってるし。</p>
+<div id="admonition-h-packages" class="admonition info">
+<div class="admonition-title">
+<p>:h packages</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-packages"></a></p>
+</div>
+<div>
+<pre><code>On startup after processing your |config|, Nvim scans all directories in
+
+'packpath' for plugins in &quot;pack/*/start/*&quot;, then loads the plugins.
+
+Nvim は起動時に |config| を処理した後、'packpath' にある全てのディレクトリをスキャンして
+&quot;pack/*/start/*&quot; にあるプラグインを探し、プラグインを読み込ませます。
+
+To allow for calling into package functionality while parsing your |vimrc|,
+|:colorscheme| and |autoload| will both automatically search under 'packpath'
+as well in addition to 'runtimepath'.  See the documentation for each for
+details.
+
+|vimrc| を解析している間にパッケージの機能を呼び出せるように、
+|:colorscheme| と |autoload| は自動的に 'runtimepath' だけでなく 'packpath' の下も検索するようになっています。
+詳しくはそれぞれのドキュメントをご覧ください。
+</code></pre>
+</div>
+</div>
+<p>入ってるならじゃあ...ってことで、コマンドモードで<kbd>p</kbd><kbd>Tab</kbd>とぽちぽち入力してみましょう。すると...❓</p>
+<p><img src="img/packer-cmd.webp" alt="packer-cmd" /></p>
+<p>見た目はちょっと Poison☠️ ですが、何やら<code>Packer</code>を名乗るコマンドが候補に上がってきましたね❗確かにインストールできてそうな気配です。</p>
+<p>せっかくなので、<code>PackerCompile</code>を選んで実行してみましょう...❗何も起きませ...いや、ちょっと待って❗</p>
+<p>なんだか<code>nvim/plugin</code>ディレクトリが勝手に作成されて、その中に<code>packer_compiled.lua</code>が生成されていますね。</p>
+<p><img src="img/packer-tree.webp" alt="packer-tree" /></p>
+<p>このファイルは<code>packer.nvim</code>が管理してくれるので、触らなくていい (というか、<code>触ってはいけない</code>) のですが、ちょっとだけ中を見てみましょう。</p>
+<p><img src="img/packer_compiled.webp" alt="packer-compiled" /></p>
+<p>わたしがそこまで意味を分かっているわけではないので、ふわっとだけ触れますが、</p>
+<pre><code class="language-lua">_G.packer_plugins = {
+  [&quot;packer.nvim&quot;] = {
+    loaded = true,
+    path = &quot;/home/utm-user/.local/share/nvim/site/pack/packer/start/packer.nvim&quot;,
+    url = &quot;https://github.com/wbthomason/packer.nvim&quot;
+  },
+</code></pre>
+<p>なんかこんなのがいますよね。</p>
+<p>この<code>packer_plugins</code>の中に、<code>extensions/init.lua</code>に指定したプラグインがどんどん追加されていきます。</p>
+<p>要するに便利ってことです😆</p>
+<h2 id="command"><a class="header" href="#command">Command</a></h2>
+<p><code>packer.nvim</code>はプラグインのアップデートなども含めてマネージメントしてくれます☺️</p>
+<h3 id="packercompile"><a class="header" href="#packercompile">PackerCompile</a></h3>
+<p>You must run this or <code>PackerSync</code> whenever you make changes to your plugin configuration regenerate compiled loader file</p>
+<p>プラグインの設定を変更したときは、必ずこのコマンドか<code>PackerSync</code>を実行しなければなりません。</p>
+<p>コンパイル済みのローダーファイルを再生成します。</p>
+<h3 id="packerclean"><a class="header" href="#packerclean">PackerClean</a></h3>
+<p>Remove any disabled or unused plugins</p>
+<p>無効または未使用のプラグインを削除します。</p>
+<h3 id="packerinstall"><a class="header" href="#packerinstall">PackerInstall</a></h3>
+<p>Clean, then install missing plugins</p>
+<p>無効になっているプラグインを削除し、インストールします。</p>
+<h3 id="packerupdate"><a class="header" href="#packerupdate">PackerUpdate</a></h3>
+<p>Clean, then update and install plugins</p>
+<p>supports the <code>--preview</code> flag as an optional first argument to preview updates</p>
+<p>クリーンアップの後、プラグインをアップデートしてインストールします。</p>
+<p>アップデートをプレビューするためのオプションの第一引数として <code>--preview</code> フラグをサポートします。</p>
+<h3 id="packersync"><a class="header" href="#packersync">PackerSync</a></h3>
+<p>Perform <code>PackerUpdate</code> and then <code>PackerCompile</code></p>
+<p>supports the <code>--preview</code> flag as an optional first argument to preview updates</p>
+<p><code>PackerUpdate</code>と<code>PackerCompile</code>を実行します。</p>
+<p>アップデートをプレビューするためのオプションの第一引数として <code>--preview</code> フラグをサポートします。</p>
+<div id="admonition-note-4" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+</div>
+<div>
+<p>基本的には、何か変更があったら<code>:PackerSync</code>を使えばインストール、アップデート、コンパイルまで全て行ってくれます😉</p>
+<p><img src="img/packer-sync.webp" alt="packer_update" /></p>
+</div>
+</div>
+<h3 id="packerstatus"><a class="header" href="#packerstatus">PackerStatus</a></h3>
+<p>Show list of installed plugins</p>
+<p>インストールされているプラグインのリストを表示します。</p>
+<h3 id="packerload"><a class="header" href="#packerload">PackerLoad</a></h3>
+<p>Loads opt plugin immediately</p>
+<p>optプラグインをすぐにロードする</p>
+<h2 id="help"><a class="header" href="#help">Help</a></h2>
+<p><code>Neovim</code>プラグインの場合は、作者が書いてくれている<code>readme</code>を見れば、もうこれだけで済んでしまうことも多いんですが、
+(大抵は)<code>Neovim</code>の<code>Help</code>にもプラグイン固有の説明が追加されます。</p>
+<div id="admonition-quote" class="admonition quote">
+<div class="admonition-title">
+<p>Quote</p>
+<p><a class="admonition-anchor-link" href="#admonition-quote"></a></p>
+</div>
+<div>
+<pre><code>:h packer.nvim
+</code></pre>
+</div>
+</div>
+<p><img src="img/packer-help.webp" alt="packer-help" /></p>
+<h2 id="floating-window"><a class="header" href="#floating-window">Floating Window</a></h2>
+<p>これは完全に見た目だけのお話なんですが、こんなのがあります。</p>
+<div id="admonition-using-a-floating-windowhttpsgithubcomwbthomasonpackernvimusing-a-floating-window" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/wbthomason/packer.nvim#using-a-floating-window">Using a floating window</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-using-a-floating-windowhttpsgithubcomwbthomasonpackernvimusing-a-floating-window"></a></p>
+</div>
+<div>
+<p>Packer の config にユーティリティ関数を渡すことで、コマンド出力にフローティングウィンドウを使用するように設定することができます。</p>
+</div>
+</div>
+<p>少しコードを変えてしまうんですが、<code>extensions/init.lua</code>を以下のようにしてみましょう。</p>
+<div id="admonition-extensionsinitlua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require('packer').startup { function() -- `(` から '{' に変わってます
+  use 'wbthomason/packer.nvim'
+end,
+config = {
+  display = {
+    open_fn = function()
+      return require 'packer.util'.float { border = 'single' }
+    end,
+  }
+}} -- 文法的に当たり前ではありますが、ここも `)` から '}' に変わってます
+</code></pre>
+</div>
+</div>
+<div id="admonition-extensionsinitlua-2" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-2"></a></p>
+</div>
+<div>
+<p>上の例はちょっと変則的なインデントになっちゃってますが、きっちりやるならこうです。お好みで😉</p>
+<pre><code class="language-lua">require('packer').startup {
+  function()
+    use 'wbthomason/packer.nvim'
+  end,
+  config = {
+    display = {
+      open_fn = function()
+        return require 'packer.util'.float { border = 'single' }
+      end,
+    }
+  }
+}
+</code></pre>
+</div>
+</div>
+<p><img src="img/float-window1.webp" alt="float-window1" /></p>
+<p>なんていうか...、やっぱ Poison☠️❓</p>
+<p>この毒はカラーテーマを入れちゃえば自然と抜けるんで、「少しの間だけ気にしないで...」と言いたいところではありますが、
+「どうしても耐えられない〜❗」っていう場合は、一個飛ばして<code>15.3. onenord.nvim</code>を先にやってもらえると、すぐにいい感じになります。</p>
+<p><img src="img/float-window2.webp" alt="float-window2" /></p>
+<h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
+<p><code>pakcer.nvim</code>には便利な機能や設定がまだあるのですが、
+ここで説明だけしてもイメージが掴みにくいと思うので、使用する場面で、その都度注釈を入れていく形にしようと思ってます。</p>
+<p><code>packer.nvim</code>はこの後も出ずっぱりになるので、親しみを込めて、今後は単に<code>packer</code>と呼びます🤗</p>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>それでは次のページからプラグインを追加していきましょう😆</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../neovim/plugin/plugin.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../neovim/plugin/nvim-treesitter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../neovim/plugin/plugin.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../neovim/plugin/nvim-treesitter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../js/pagetoc.js"></script>
+    </body>
+</html>
