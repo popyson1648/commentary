@@ -464,6 +464,18 @@ Plugin authors are encouraged to write new healthchecks. |health-dev|
 <p><img src="img/checkhealth.webp" alt="checkhealth" /></p>
 <p>結果が表示されましたね☺️</p>
 <p>診断内容はプラグインに依りますが、<code>nvim-treesitter</code>の場合は、依存ソフトウェアの確認とインストールされたパーサの表示を行ってくれます。</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p>これもヘルプそのままですが、指定したプラグインだけを診断することも可能です。</p>
+<pre><code>:che nvim-treesitter
+</code></pre>
+<p>とすると、<code>nvim-treesitter</code>のヘルスチェックのみを行えます。</p>
+</div>
+</div>
 <div id="admonition-tip" class="admonition tip">
 <div class="admonition-title">
 <p>Tip</p>
@@ -471,19 +483,7 @@ Plugin authors are encouraged to write new healthchecks. |health-dev|
 </div>
 <div>
 <p>上では<code>環境条件</code>と表されていますが、<code>packer</code>の節で少し触れた<code>依存関係</code>と (大体は) 同じ意味でしょう。
-プラグインによっては、今回のようにヘルスチェックによる診断を提供してくれているので、困った時はこれも参考にすると良いです。</p>
-</div>
-</div>
-<div id="admonition-info-1" class="admonition info">
-<div class="admonition-title">
-<p>Info</p>
-<p><a class="admonition-anchor-link" href="#admonition-info-1"></a></p>
-</div>
-<div>
-<p>これもヘルプそのままですが、指定したプラグインだけを診断することも可能です。</p>
-<pre><code>:che nvim-treesitter
-</code></pre>
-<p>とすると、<code>nvim-treesitter</code>のヘルスチェックのみを行えます。</p>
+プラグインによっては、今回のようにヘルスチェックによる診断を提供してくれているので、困った時はこれも参考にすると良いです😉</p>
 </div>
 </div>
 <h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
