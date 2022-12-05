@@ -435,6 +435,57 @@ Supported options:
 </code></pre>
 </div>
 </div>
+<h2 id="checkhealth"><a class="header" href="#checkhealth">CheckHealth</a></h2>
+<p>これは<code>nvim-treesitter</code>に限らない<code>Neovim</code>の機能になりますが、<code>health</code>チェックというものがあります😉</p>
+<div id="admonition-h-health" class="admonition info">
+<div class="admonition-title">
+<p>:h health</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-health"></a></p>
+</div>
+<div>
+<pre><code>health.vim is a minimal framework to help users troubleshoot configuration and
+any other environment conditions that a plugin might care about. 
+
+health.vim は、プラグイン設定やその他の環境条件の
+トラブルシューティングを支援するための最小限のフレームワークである。
+
+Plugin authors are encouraged to write new healthchecks. |health-dev|
+
+プラグインの作者は新しいヘルスチェックを書くことが推奨されている。
+</code></pre>
+</div>
+</div>
+<p>コマンドは<code>:h health-commands</code>にある通りです。試しに動かしてみましょう。</p>
+<pre><code>:che
+</code></pre>
+<p>または</p>
+<pre><code>:checkhealth
+</code></pre>
+<p><img src="img/checkhealth.webp" alt="checkhealth" /></p>
+<p>結果が表示されましたね☺️</p>
+<p>診断内容はプラグインに依りますが、<code>nvim-treesitter</code>の場合は、依存ソフトウェアの確認とインストールされたパーサの表示を行ってくれます。</p>
+<div id="admonition-tip" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
+</div>
+<div>
+<p>上では<code>環境条件</code>と表されていますが、<code>packer</code>の節で少し触れた<code>依存関係</code>と (大体は) 同じ意味でしょう。
+プラグインによっては、今回のようにヘルスチェックによる診断を提供してくれているので、困った時はこれも参考にすると良いです。</p>
+</div>
+</div>
+<div id="admonition-info-1" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info-1"></a></p>
+</div>
+<div>
+<p>これもヘルプそのままですが、指定したプラグインだけを診断することも可能です。</p>
+<pre><code>:che nvim-treesitter
+</code></pre>
+<p>とすると、<code>nvim-treesitter</code>のヘルスチェックのみを行えます。</p>
+</div>
+</div>
 <h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
