@@ -177,7 +177,7 @@ More specifically, it seeks to add more vibrance to the Nord theme and provide a
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
-<p>これは少し前のお話です。<code>nvim-treesitter</code>で大規模な変更が施されたことによる甚大な影響が出て、<code>onenord</code>に限らず、highlight`が壊滅したことがありました。</p>
+<p>これはちょっと前のお話ですが、<code>nvim-treesitter</code>で大規模な変更が施されたことによる甚大な影響により、<code>highlight</code>が壊滅したことがありました。</p>
 <p><a href="https://github.com/nvim-treesitter/nvim-treesitter/commit/42ab95d5e11f247c6f0c8f5181b02e816caa4a4f">feat!: remove obsolete TS* highlight groups</a></p>
 <p>なんだか世界が色褪せてしまいましたが、<code>onenord</code>は3日で救いに来てくれました🤗 My HERO❗</p>
 <p><a href="https://github.com/rmehri01/onenord.nvim/commit/98c64654375bc087e96bca08fd194066d778717c">fix!: highlight groups for neovim 0.8 #50</a></p>
@@ -233,8 +233,8 @@ require('onenord').setup {
 </div>
 </div>
 <h2 id="config"><a class="header" href="#config">config</a></h2>
-<p>ある程度は変数名とコメントだけで推測できると思うんですが、上の例で使ってないものも含めてフワッと触れます。</p>
-<p>また、見た感じですが、<code>disable.background</code>を<code>true</code>にしている場合は効果が無いものもありそうです。</p>
+<p>ある程度は変数名とコメントだけで推測できると思うんですが、上の例で使ってないものも含めてフワ〜っと触れます。
+見た感じ、<code>disable.background</code>を<code>true</code>にしている場合は効果が無いものもありそうです。</p>
 <div id="admonition-configurationhttpsgithubcomrmehri01onenordnvimconfiguration" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/rmehri01/onenord.nvim#configuration">Configuration</a></p>
@@ -246,27 +246,35 @@ require('onenord').setup {
 </div>
 </div>
 <h3 id="theme"><a class="header" href="#theme">theme</a></h3>
-<p>&quot;dark&quot; or &quot;light&quot;. Alternatively, remove the option and set vim.o.background instead</p>
-<p><code>dark</code>または<code>light</code>。もしくは、このオプションを削除して<code>vim.o.background</code>を設定します。</p>
+<pre><code>&quot;dark&quot; or &quot;light&quot;. Alternatively, remove the option and set vim.o.background instead
+
+`dark`または`light`。もしくは、このオプションを削除して`vim.o.background`を設定します。
+</code></pre>
 <p><code>:h background</code>を見ると、<code>defalut &quot;dark&quot;</code>とあったので、<code>light</code>テーマを使う場合には変更が必要かもしれません。
 (ごめんなさい、確認してない...😅)</p>
 <h3 id="borders"><a class="header" href="#borders">borders</a></h3>
-<p>Split window borders</p>
-<p>ウィンドウの境界にボーダーを表示します。</p>
+<pre><code>Split window borders
+
+ウィンドウの境界にボーダーを表示します。
+</code></pre>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">true</th><th style="text-align: center">false</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/borders-true.webp" alt="enable" /></td><td style="text-align: center"><img src="img/borders-false.webp" alt="disable" /></td></tr>
 </tbody></table>
 </div>
 <h3 id="fade_nc"><a class="header" href="#fade_nc">fade_nc</a></h3>
-<p>Fade non-current windows, making them more distinguishable</p>
-<p>現在表示されていないウィンドウをフェードさせ、区別しやすくする。</p>
+<pre><code>Fade non-current windows, making them more distinguishable
+
+現在表示されていないウィンドウをフェードさせ、区別しやすくする。
+</code></pre>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">true</th><th style="text-align: center">false</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/fade_nc-true.webp" alt="enable" /></td><td style="text-align: center"><img src="img/fade_nc-false.webp" alt="disable" /></td></tr>
 </tbody></table>
 </div>
 <h3 id="styles"><a class="header" href="#styles">styles</a></h3>
-<p>Style that is applied to various groups: see <code>highlight-args</code> for options</p>
-<p>様々なグループに適用されるスタイル: オプションは <code>:h highlight-args</code> を参照してください。</p>
+<pre><code>Style that is applied to various groups: see `highlight-args` for options
+
+様々なグループに適用されるスタイル: オプションは `:h highlight-args` を参照してください。
+</code></pre>
 <pre><code class="language-lua">-- 以下はデフォルト値です。
 styles = {
   comments = &quot;NONE&quot;,
@@ -280,43 +288,66 @@ styles = {
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">bold</th><th style="text-align: center">NONE</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/style-bold.webp" alt="bold" /></td><td style="text-align: center"><img src="img/style-none.webp" alt="disable" /></td></tr>
 </tbody></table>
+</div><div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
+<div>
 <p><code>comments</code>を<code>italic</code>にするのもオシャレなんですが、カーソルがそのままなので、個人的には使いにくいかなー、なんて😅
 <img src="img/italic.webp" alt="italic" /></p>
+</div>
+</div>
 <h3 id="disable"><a class="header" href="#disable">disable</a></h3>
 <h4 id="background"><a class="header" href="#background">background</a></h4>
-<p>Disable setting the background color</p>
-<p>これを<code>true</code>として無効化すると、ターミナルの背景色やアルファチャンネル値がそのまま反映されます。</p>
+<pre><code>Disable setting the background color
+
+これを`true`として無効化すると、ターミナルの背景色やアルファチャンネル値がそのまま反映されます。
+</code></pre>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">true</th><th style="text-align: center">false</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/background-true.webp" alt="enable" /></td><td style="text-align: center"><img src="img/background-false.webp" alt="disable" /></td></tr>
 </tbody></table>
 </div>
 <h4 id="cursorline"><a class="header" href="#cursorline">cursorline</a></h4>
-<p>Disable the cursorline</p>
-<p>カーソルラインを無効にします。</p>
+<pre><code>Disable the cursorline
+
+カーソルラインを無効にします。
+</code></pre>
 <h4 id="eob_lines"><a class="header" href="#eob_lines">eob_lines</a></h4>
-<p>Hide the end-of-buffer lines</p>
-<p>バッファ終端行を隠します。...これちょっと何かわからなかった...😿</p>
+<pre><code>Hide the end-of-buffer lines
+
+バッファ終端行を隠します。
+</code></pre>
+<p>...これちょっと何かわからなかった...😿</p>
 <h3 id="inverse"><a class="header" href="#inverse">inverse</a></h3>
-<p>Inverse highlight for different groups</p>
-<p>グループごとにハイライトを反転させます。</p>
+<pre><code>Inverse highlight for different groups
+
+グループごとにハイライトを反転させます。
+</code></pre>
 <h3 id="custom_highlights"><a class="header" href="#custom_highlights">custom_highlights</a></h3>
-<p>Overwrite default highlight groups</p>
-<p>デフォルトのハイライトグループを上書きします。</p>
+<pre><code>Overwrite default highlight groups
+
+デフォルトのハイライトグループを上書きします。
+</code></pre>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">customize</th><th style="text-align: center">none</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/custom_highlight.webp" alt="enable" /></td><td style="text-align: center"><img src="img/custom_highlight-none.webp" alt="disable" /></td></tr>
 </tbody></table>
 </div>
 <p>ちょっと見えにくいかな...。上の例では<code>}</code>です。</p>
 <h3 id="custom_colors"><a class="header" href="#custom_colors">custom_colors</a></h3>
-<p>Overwrite default colors</p>
-<p>デフォルトの色を上書きします。</p>
+<pre><code>Overwrite default colors
+
+デフォルトの色を上書きします。
+</code></pre>
 <h3 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h3>
 <p>ここまでやっただけでも見違えるような変身っぷりですね❗</p>
 <p><img src="img/onenord.webp" alt="onenord" /></p>
-<p>前のページでも使用したイメージと比べるとさらに変化がわかりやすいです。</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">default</th><th style="text-align: center">nvim-treesitter</th><th style="text-align: center">onenord.nvim</th></tr></thead><tbody>
-<tr><td style="text-align: center"><img src="img/color1.webp" alt="color1" /></td><td style="text-align: center"><img src="img/color2.webp" alt="color2" /></td><td style="text-align: center"><img src="img/color3.webp" alt="color3" /></td></tr>
+<p>前のページとの比較ではさらに変化がわかりやすいです。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">default</th><th style="text-align: center">nvim-treesitter</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/color1.webp" alt="color1" /></td><td style="text-align: center"><img src="img/color2.webp" alt="color2" /></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th style="text-align: center">onenord.nvim</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/color3.webp" alt="color3" /></td></tr>
 </tbody></table>
 </div><div id="admonition-success" class="admonition success">
 <div class="admonition-title">
@@ -324,8 +355,8 @@ styles = {
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
 </div>
 <div>
-<p>なんだか、ようやくひと段落ついた感じがします☺️</p>
-<p>わたしも頑張ったぞ、ニッポン❗トーナメント勝ち上がるとこ見たいなぁ〜😌</p>
+<p>なんだか、ようやくひと段落って感じがします☺️</p>
+<p>わたしも頑張ったぞ、ニッポン❗トーナメントを駆け上がった景色見たいなぁ...⚽🏆</p>
 </div>
 </div>
 

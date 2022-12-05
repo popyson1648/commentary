@@ -172,15 +172,15 @@ highlighting based on it:</p>
 </div>
 </div>
 <h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
-<p>環境によっては別途インストールが必要かもしれないので、一個ずつ確認していきます。</p>
+<p>ここは一個ずつ確認していきます。</p>
 <h3 id="neovim-080-or-later"><a class="header" href="#neovim-080-or-later">Neovim 0.8.0 or later</a></h3>
 <p>まずは<code>Neovim 0.8.0</code> 以降が必須とされていることに注意が必要です。</p>
 <p>2022-11-30 時点で、<code>stable release</code>はもう一つ進んで<code>0.8.1</code>となっていますが、念の為確かめておきましょう。</p>
 <h3 id="git-tarcurl"><a class="header" href="#git-tarcurl">git (tar,curl)</a></h3>
-<p>これは<code>packer.nvim</code>を導入する前にもう既に<code>git</code>をインストールしているはずなので大丈夫😉</p>
+<p>これは<code>packer.nvim</code>を導入する前に、既に<code>git</code>をインストールしているはずなので大丈夫😉</p>
 <p>気になる場合は<code>tar</code>と<code>curl</code>も確認しておきましょう。</p>
 <h3 id="c-compiler"><a class="header" href="#c-compiler">C compiler</a></h3>
-<p>わたしの経験で言えば<code>macOS</code>では問題になったことが無いです。最低限<code>Command Line Tools</code>が入っていれば大丈夫なはずです。
+<p>わたしの経験で言えば<code>macOS</code>では問題になったことがありません。最低限<code>Command Line Tools</code>が入っていれば大丈夫なはずです。
 (例えば<code>Homebrew</code>のインストール時に自動で導入されます。)</p>
 <p><code>Windows</code>の場合はやっぱり別途案内がされているので、そちらを参照頂ければ...。</p>
 <p><code>Linux</code>の場合、もしかしたら別途インストールが必要かもしれないので手っ取り早く解決方法だけ載っけちゃうんですが、
@@ -188,10 +188,17 @@ highlighting based on it:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">gcc-c++</th><th style="text-align: center">clang</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/gcc-cpp.webp" alt="gcc_cpp" /></td><td style="text-align: center"><img src="img/clang.webp" alt="gcc_cpp" /></td></tr>
 </tbody></table>
+</div><div id="admonition-info" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="#admonition-info"></a></p>
 </div>
-<p>Readmeにも明記されているように<code>libstd++</code>も必要になってくるようなので、<code>gcc</code>だとうまくいきませんでした😮</p>
+<div>
+<p>Readmeにも明記されているように<code>libstd++</code>も必要になるはずなので、<code>gcc</code>だとうまくいきませんでした😮</p>
+</div>
+</div>
 <h2 id="install"><a class="header" href="#install">Install</a></h2>
-<p>前項が済めば、あとは<code>packer</code>にお願いするだけで、あっ❗と言う間に終わります😆</p>
+<p>前項の確認さえ済めば、あとは<code>packer</code>にお願いするだけで「あっ❗」と言う間に終わります😆</p>
 <p><code>extensions/init.lua</code>に以下を追記しましょう。</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
@@ -199,9 +206,13 @@ highlighting based on it:</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">use {
-  `nvim-treesitter/nvim-treesitter`,
-}
+<pre><code class="language-lua">require('packer').startup { function()
+  use 'wbthomason/packer.nvim'
+
+  -- 前節で入れたpackerと同列に並べる
+  use 'nvim-treesitter/nvim-treesitter'
+end,
+-- (以下略)
 </code></pre>
 </div>
 </div>
@@ -215,7 +226,7 @@ highlighting based on it:</p>
 </div>
 <div>
 <p><code>nvim-treesitter</code>の説明では、<code>:TSUpdate</code>を併せて行うように説明されているのですが、これはあくまで<code>vim-plug</code>を使用している場合の例です。</p>
-<p><code>packer.nvim</code>では<code>run</code>オプションで同じことができそうなんですが、これを使用すると初回でエラーが起きてしまうので、わたしは外しています。</p>
+<p><code>packer.nvim</code>では<code>run</code>オプションで同じことができそうなんですが、これを使用すると初回だけエラーが起きてしまうので、わたしは外しています。</p>
 <p><img src="img/error-tsupdate.webp" alt="ErrorTSUpdate" /></p>
 </div>
 </div>
@@ -258,19 +269,23 @@ highlighting based on it:</p>
 </code></pre>
 </div>
 </div>
-<p>そして、これを<code>packer</code>の管理下に置いて使います。</p>
+<p>そして、これを<code>packer</code>の管理下に置いて使います。<code>nvim-treesitter</code>の読み込み部分を少し書き換えます。</p>
 <div id="admonition-extensionsinitlua-1" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-1"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">  use {
-    'nvim-treesitter/nvim-treesitter',
+<pre><code class="language-lua">require('packer').startup { function()
+  use 'wbthomason/packer.nvim'
 
-    -- 以下を追記
+  -- こんな感じで。
+  use {
+    'nvim-treesitter/nvim-treesitter',
     config = function() require 'extensions.nvim-treesitter' end,
   }
+end,
+-- (以下略)
 </code></pre>
 </div>
 </div>
@@ -278,6 +293,15 @@ highlighting based on it:</p>
 <p>すると、<code>nvim-treesitter</code>が動いて、最終的にこんなのが出てきました。</p>
 <p><img src="img/lua-installed.webp" alt="lua-installed" /></p>
 <p>これで、<code>lua</code>ファイルが今までよりも賢く色付けされてるはずです。どうでしょう❓</p>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>もしここでエラーが起きるようであれば、<code>C compiler</code>を疑ってください😣</p>
+</div>
+</div>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">default</th><th style="text-align: center">nvim-treesitter</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/color1.webp" alt="color1" /></td><td style="text-align: center"><img src="img/color2.webp" alt="color2" /></td></tr>
 </tbody></table>
@@ -287,9 +311,9 @@ highlighting based on it:</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
-<p>これは例が面白くないのであれなんですが、オフィシャルイメージを拝借すると、こんなに変わってます❗</p>
+<p>これは例が面白くないのであれなんですが、オフィシャルイメージを見るとこんなに変わってます❗</p>
 <p><a href="https://github.com/nvim-treesitter/nvim-treesitter/wiki/Gallery">nvim-treesitter/wiki/Gallery</a></p>
-<p>...まあ、こっちでも<code>lua</code>はあんまり変わってないですね...😅</p>
+<p>...あっちでも<code>lua</code>はあんまり変わってないですけど😅</p>
 </div>
 </div>
 <h2 id="commands"><a class="header" href="#commands">Commands</a></h2>
@@ -304,7 +328,7 @@ highlighting based on it:</p>
 </code></pre>
 </div>
 </div>
-<p>ちなみに、わたしはほぼ':TSUpdate'しか使ってません❗&quot;sitter&quot;って言うぐらいなので、特に操作しなくてもしっかりお世話してくれます👶</p>
+<p>ちなみに、わたしはほぼ<code>:TSUpdate</code>しか使ってません❗ sitter って言うぐらいなので、特に操作しなくてもしっかりお世話してくれます👶</p>
 <h2 id="modules"><a class="header" href="#modules">Modules</a></h2>
 <p>上の例で使用しているモジュール設定について少しだけ触れておきます。</p>
 <div id="admonition-moduleshttpsgithubcomnvim-treesitternvim-treesittermodules" class="admonition info">
@@ -320,8 +344,10 @@ highlighting based on it:</p>
 </div>
 </div>
 <h3 id="ensure_installed"><a class="header" href="#ensure_installed">ensure_installed</a></h3>
-<p>A list of parser names, or &quot;all&quot;</p>
-<p>パーサ名のリスト、または &quot;all&quot;を指定する。</p>
+<pre><code>A list of parser names, or &quot;all&quot;
+
+パーサ名のリスト、または &quot;all&quot;を指定する。
+</code></pre>
 <p>上の例では<code>lua</code>だけ入れてます。使用頻度の高い言語を入れておくと良いです。</p>
 <p>面倒なら<code>all</code>でも良いんですが、<code>auto_install</code>があるので、オフライン環境でない限りはそちらを活用する方が良いんじゃないかなーって思ってます。</p>
 <div id="admonition-supported-languageshttpsgithubcomnvim-treesitternvim-treesittersupported-languages" class="admonition info">
@@ -335,25 +361,33 @@ highlighting based on it:</p>
 </div>
 </div>
 <h3 id="sync_install"><a class="header" href="#sync_install">sync_install</a></h3>
-<p>Install parsers synchronously. (only applied to <code>ensure_installed</code>)</p>
-<p>パーサーを同期的にインストールする。 (<code>ensure_installed</code> にのみ適用される)</p>
-<p>「同期的インストール」、要はアップデートですね😉
-<code>ensure_installed</code>に入れていないパーサーについては、コマンドから<code>:TSUpdate</code>で行うことができます。</p>
-<h3 id="auto_install"><a class="header" href="#auto_install">auto_install</a></h3>
-<p>Automatically install missing parsers when entering buffer.</p>
-<p>バッファに入ったときに足りないパーサーを自動的にインストールします。</p>
-<p>手動でインストールしたい場合はコマンドから<code>:TSInstall あれ</code>を行いましょう。</p>
-<h3 id="highlight"><a class="header" href="#highlight">highlight</a></h3>
-<p><code>false</code> will disable the whole extension</p>
-<pre><code class="language-lua">enable = false
+<pre><code>Install parsers synchronously. (only applied to `ensure_installed`)
+
+パーサを同期的にインストールする。 (`ensure_installed` にのみ適用される)
 </code></pre>
-<p>...と、すると拡張機能全体を無効にします。いや、せっかく入れたので<code>true</code>にしましょ❓</p>
+<p>「同期的インストール」...、つまりアップデートですね😉</p>
+<p><code>ensure_installed</code>に入れていないパーサについては、コマンドから<code>:TSUpdate</code>で行うことができます。</p>
+<h3 id="auto_install"><a class="header" href="#auto_install">auto_install</a></h3>
+<pre><code>Automatically install missing parsers when entering buffer.
+
+バッファに入ったときに足りないパーサを自動的にインストールします。
+</code></pre>
+<p>手動でインストールしたい場合はコマンドから<code>:TSInstall 言語</code>を行いましょう。</p>
+<h3 id="highlight"><a class="header" href="#highlight">highlight</a></h3>
+<pre><code>`false` will disable the whole extension
+
+false` を指定すると、拡張機能全体を無効にすることができます。
+</code></pre>
+<pre><code class="language-lua">highlight = {
+  enable = false
+}
+</code></pre>
+<p>...と、すれば拡張機能全体を無効にします。いや、せっかく入れたので<code>true</code>にしましょ❓</p>
 <p>ちなみに<code>disable</code>オプションを使うと、特定の言語だけ選んで除外できます。</p>
 <pre><code class="language-lua">highlight = {
   enable = true,
   disable = { &quot;c&quot;, &quot;rust&quot; },
 },
-}
 </code></pre>
 <h3 id="incremental_selection"><a class="header" href="#incremental_selection">incremental_selection</a></h3>
 <p>これについては、適当にコードを開いて<code>keymap</code>に設定した操作をしてみればなんとな〜く察せると思います。</p>
@@ -383,8 +417,7 @@ highlighting based on it:</p>
 </div>
 </div>
 <h3 id="indent"><a class="header" href="#indent">indent</a></h3>
-<p>実験的な段階らしいですが、インデントが賢くなる...んですか⁉️</p>
-<p>あんまり威力を実感することはないんですが、わたしはなんとなく使ってます😅</p>
+<p>実験的な段階らしいですが、インデントが賢くなる...んです⁉️ あんまり威力を実感することはないんですが、わたしはなんとなく使ってます😅</p>
 <p>これも<code>highlight</code>と同じく、言語を選んで除外できます。</p>
 <div id="admonition-h-nvim-treesitter-indntation-mod" class="admonition info">
 <div class="admonition-title">
