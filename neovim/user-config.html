@@ -189,10 +189,10 @@ Vimscript (&quot;init.vim&quot;)またはLua (&quot;init.lua&quot;)のどちら�
 <p>うん、このまま登っていきましょう。</p>
 <h2 id="initlua"><a class="header" href="#initlua">init.lua</a></h2>
 <p>前置きが少し長くなりました...。</p>
-<p>冒頭のドキュメントでconfigファイルは以下の場所だよ😄と示されています。(<code>macOS</code>は<code>Unix</code>と同じ場所です。)</p>
+<p>冒頭のドキュメントでconfigファイルは以下のパスだよ😄と示されています。(<code>macOS</code>は<code>Unix</code>と同じ場所です。)</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">OS</th><th style="text-align: left">configファイル</th></tr></thead><tbody>
-<tr><td style="text-align: left">Unix</td><td style="text-align: left">~/.config/nvim/init.vim	(or init.lua)</td></tr>
-<tr><td style="text-align: left">Windows</td><td style="text-align: left">~/AppData/Local/nvim/init.vim	(or init.lua)</td></tr>
+<tr><td style="text-align: left">Unix</td><td style="text-align: left">~/.config/nvim/init.vim (or init.lua)</td></tr>
+<tr><td style="text-align: left">Windows</td><td style="text-align: left">~/AppData/Local/nvim/init.vim (or init.lua)</td></tr>
 <tr><td style="text-align: left">$XDG_CONFIG_HOME</td><td style="text-align: left">$XDG_CONFIG_HOME/nvim/init.vim (or init.lua)</td></tr>
 </tbody></table>
 </div><div id="admonition-note-1" class="admonition note">
@@ -204,8 +204,20 @@ Vimscript (&quot;init.vim&quot;)またはLua (&quot;init.lua&quot;)のどちら�
 <p><code>$XDG_CONFIG_HOME</code>はちょっと影響範囲が広いので、このサイトでは扱いません。</p>
 </div>
 </div>
+<div id="admonition-flatpakhttpsgithubcomneovimneovimwikiinstalling-neovimflatpak" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/neovim/neovim/wiki/Installing-Neovim#flatpak">Flatpak</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-flatpakhttpsgithubcomneovimneovimwikiinstalling-neovimflatpak"></a></p>
+</div>
+<div>
+<p>リンク先の説明通りですが、<code>Flatpak</code>を使用してインストールした場合はパスが以下になるので注意😉</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">OS</th><th style="text-align: left">configファイル</th></tr></thead><tbody>
+<tr><td style="text-align: left">flatpak</td><td style="text-align: left">~/.var/app/io.neovim.nvim/config/nvim (or init.lua)</td></tr>
+</tbody></table>
+</div></div>
+</div>
 <p>では作っていきましょう😄</p>
-<p><code>Windows</code>の場合は<code>~/AppData/Local/nvim</code>に読み替えてください。</p>
+<p><code>Windows</code>の場合は<code>~/AppData/Local/nvim</code>、<code>Flatpak</code>の場合は<code>~/.var/app/io.neovim.nvim/config/nvim</code>に読み替えてください。</p>
 <div id="admonition-ディレクトリを作る" class="admonition quote">
 <div class="admonition-title">
 <p>ディレクトリを作る</p>
