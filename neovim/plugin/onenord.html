@@ -193,7 +193,6 @@ More specifically, it seeks to add more vibrance to the Nord theme and provide a
 <pre><code class="language-lua">local colors = require('onenord.colors').load()
 
 require('onenord').setup {
-  -- Style that is applied to various groups: see `highlight-args` for options
   styles = {
     comments = 'NONE',
     strings = 'NONE',
@@ -203,13 +202,11 @@ require('onenord').setup {
     diagnostics = 'underline',
   },
 
-  -- Disable settings
   disable = {
     background = true,
     eob_lines = true,
   },
 
-  -- Custom highlight
   custom_highlights = {
     MatchParen = { fg = colors.none, bg = colors.none, style = 'bold,underline' },
   },
@@ -217,7 +214,7 @@ require('onenord').setup {
 </code></pre>
 </div>
 </div>
-<p>これももうテンプレートですね。</p>
+<p>これももうテンプレートですね😉 他の<code>use</code>ブロックと同列に並べてあげてください。</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -232,7 +229,7 @@ require('onenord').setup {
 </div>
 </div>
 <h2 id="config"><a class="header" href="#config">config</a></h2>
-<p>ある程度は変数名とコメントだけで推測できると思うんですが、上の例で使ってないものも含めてフワ〜っと触れます。
+<p>ある程度は変数名とコメントだけで推測できると思うんですが、上の例で使ってないものも含めてフワ〜っと触れます😆
 見た感じ、<code>disable.background</code>を<code>true</code>にしている場合は効果が無いものもありそうです。</p>
 <div id="admonition-configurationhttpsgithubcomrmehri01onenordnvimconfiguration" class="admonition info">
 <div class="admonition-title">
@@ -263,7 +260,7 @@ require('onenord').setup {
 <h3 id="fade_nc"><a class="header" href="#fade_nc">fade_nc</a></h3>
 <pre><code>Fade non-current windows, making them more distinguishable
 
-現在表示されていないウィンドウをフェードさせ、区別しやすくする。
+現在のウィンドウ以外をフェードさせ、区別しやすくする。
 </code></pre>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">true</th><th style="text-align: center">false</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/fade_nc-true.webp" alt="enable" /></td><td style="text-align: center"><img src="img/fade_nc-false.webp" alt="disable" /></td></tr>
@@ -301,8 +298,9 @@ styles = {
 <h4 id="background"><a class="header" href="#background">background</a></h4>
 <pre><code>Disable setting the background color
 
-これを`true`として無効化すると、ターミナルの背景色やアルファチャンネル値がそのまま反映されます。
+背景色の設定を無効にします。
 </code></pre>
+<p>これを<code>true</code>として無効化すると、ターミナルの背景色やアルファチャンネル値がそのまま反映されます。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">true</th><th style="text-align: center">false</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/background-true.webp" alt="enable" /></td><td style="text-align: center"><img src="img/background-false.webp" alt="disable" /></td></tr>
 </tbody></table>

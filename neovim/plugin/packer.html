@@ -356,41 +356,51 @@ details.
 <h2 id="command"><a class="header" href="#command">Command</a></h2>
 <p><code>packer.nvim</code>はプラグインのアップデートなども含めてマネージメントしてくれます☺️</p>
 <h3 id="packercompile"><a class="header" href="#packercompile">PackerCompile</a></h3>
-<p>You must run this or <code>PackerSync</code> whenever you make changes to your plugin configuration regenerate compiled loader file</p>
-<p>プラグインの設定を変更したときは、必ずこのコマンドか<code>PackerSync</code>を実行しなければなりません。</p>
-<p>コンパイル済みのローダーファイルを再生成します。</p>
+<pre><code>You must run this or `PackerSync` whenever you make changes to your plugin configuration regenerate compiled loader file
+
+プラグインの設定を変更したときは、必ずこのコマンドか`PackerSync`を実行しなければなりません。
+コンパイル済みのローダーファイルを再生成します。
+</code></pre>
 <h3 id="packerclean"><a class="header" href="#packerclean">PackerClean</a></h3>
-<p>Remove any disabled or unused plugins</p>
-<p>無効または未使用のプラグインを削除します。</p>
+<pre><code>Remove any disabled or unused plugins
+無効または未使用のプラグインを削除します。
+</code></pre>
 <h3 id="packerinstall"><a class="header" href="#packerinstall">PackerInstall</a></h3>
-<p>Clean, then install missing plugins</p>
-<p>無効になっているプラグインを削除し、インストールします。</p>
+<pre><code>Clean, then install missing plugins
+無効になっているプラグインを削除し、インストールします。
+</code></pre>
 <h3 id="packerupdate"><a class="header" href="#packerupdate">PackerUpdate</a></h3>
-<p>Clean, then update and install plugins</p>
-<p>supports the <code>--preview</code> flag as an optional first argument to preview updates</p>
-<p>クリーンアップの後、プラグインをアップデートしてインストールします。</p>
-<p>アップデートをプレビューするためのオプションの第一引数として <code>--preview</code> フラグをサポートします。</p>
+<pre><code>Clean, then update and install plugins
+supports the `--preview` flag as an optional first argument to preview updates
+
+クリーンアップの後、プラグインをアップデートしてインストールします。
+アップデートをプレビューするためのオプションの第一引数として `--preview` フラグをサポートします。
+</code></pre>
 <h3 id="packersync"><a class="header" href="#packersync">PackerSync</a></h3>
-<p>Perform <code>PackerUpdate</code> and then <code>PackerCompile</code></p>
-<p>supports the <code>--preview</code> flag as an optional first argument to preview updates</p>
-<p><code>PackerUpdate</code>と<code>PackerCompile</code>を実行します。</p>
-<p>アップデートをプレビューするためのオプションの第一引数として <code>--preview</code> フラグをサポートします。</p>
+<pre><code>Perform `PackerUpdate` and then `PackerCompile`
+supports the `--preview` flag as an optional first argument to preview updates
+
+`PackerUpdate`と`PackerCompile`を実行します。
+アップデートをプレビューするためのオプションの第一引数として `--preview` フラグをサポートします。
+</code></pre>
 <div id="admonition-note-4" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
 </div>
 <div>
-<p>基本的には、何か変更があったら<code>:PackerSync</code>を使えばインストール、アップデート、コンパイルまで全て行ってくれます😉</p>
-<p><img src="img/packer-sync.webp" alt="packer_update" /></p>
+<p>基本的には、何か変更があったら<code>:PackerSync</code>を使えばインストール、アップデート、コンパイルまで全て行ってくれます😉
+<img src="img/packer-sync.webp" alt="packer_update" /></p>
 </div>
 </div>
 <h3 id="packerstatus"><a class="header" href="#packerstatus">PackerStatus</a></h3>
-<p>Show list of installed plugins</p>
-<p>インストールされているプラグインのリストを表示します。</p>
+<pre><code>Show list of installed plugins
+インストールされているプラグインのリストを表示します。
+</code></pre>
 <h3 id="packerload"><a class="header" href="#packerload">PackerLoad</a></h3>
-<p>Loads opt plugin immediately</p>
-<p>optプラグインをすぐにロードする</p>
+<pre><code>Loads opt plugin immediately
+optプラグインをすぐにロードする
+</code></pre>
 <h2 id="help"><a class="header" href="#help">Help</a></h2>
 <p><code>Neovim</code>プラグインの場合は、作者が書いてくれている<code>readme</code>を見れば、もうこれだけで済んでしまうことも多いんですが、
 (大抵は)<code>Neovim</code>の<code>Help</code>にもプラグイン固有の説明が追加されます。</p>
@@ -423,7 +433,7 @@ details.
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-1"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">require('packer').startup { function() -- `(` から '{' に変わってます
+<pre><code class="language-lua">require('packer').startup { function() -- '(' から '{' に変わってます
   use 'wbthomason/packer.nvim'
 end,
 config = {
@@ -432,14 +442,14 @@ config = {
       return require('packer.util').float { border = 'single' }
     end,
   }
-}} -- 文法的に当たり前ではありますが、ここも `)` から '}' に変わってます
+}} -- 文法的に当たり前ではあるんですが、ここも ')' から '}' に変わってます
 </code></pre>
 </div>
 </div>
-<div id="admonition-extensionsinitlua-2" class="admonition example">
+<div id="admonition-note-5" class="admonition note">
 <div class="admonition-title">
-<p>extensions/init.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-2"></a></p>
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-5"></a></p>
 </div>
 <div>
 <p>上の例はちょっと変則的なインデントになっちゃってますが、きっちりやるならこうです。お好みで😉</p>
@@ -460,8 +470,9 @@ config = {
 </div>
 <p><img src="img/float-window1.webp" alt="float-window1" /></p>
 <p>なんていうか...、やっぱ Poison☠️❓</p>
-<p>この毒はカラーテーマを入れちゃえば自然と抜けるんで、「少しの間だけ気にしないで...」と言いたいところではありますが、
-「どうしても耐えられない〜❗」っていう場合は、一個飛ばして<code>15.3. onenord.nvim</code>を先にやってもらえると、すぐにいい感じになります。</p>
+<p>この毒はカラーテーマを入れちゃえば自然と抜けるんで、
+わたしとしては「少しの間だけ気にしないで...」と言ってしまいたいところではあるんですが、
+「どうしても耐えられない〜❗」っていう場合は、一個飛ばして<code>15.3. onenord.nvim</code>を先にやってもらうと、すぐにいい感じになります。</p>
 <p><img src="img/float-window2.webp" alt="float-window2" /></p>
 <h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
 <p><code>pakcer.nvim</code>には便利な機能や設定がまだまだあるのですが、
