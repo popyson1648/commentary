@@ -20,7 +20,6 @@ var updateFunction = function () {
   Array.prototype.some.call(
     document.getElementsByClassName("header"),
     function (el) {
-      console.log(window.pageYOffset + ":" + el.offsetTop + "-" + el.href);
       if (window.pageYOffset >= el.offsetTop) {
         id = el;
       } else {
