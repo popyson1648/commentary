@@ -247,6 +247,16 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 <h2 id="nvim_create_user_command"><a class="header" href="#nvim_create_user_command">nvim_create_user_command</a></h2>
 <p>もう一個だけやっておきたいのは、独自コマンドからプラグインを使うパターンです。</p>
 <p>今度は<code>nvim</code>ディレクトリまで上がって、<code>plugin</code>ディレクトリを新しく作成し、その中に<code>/lesson2/init.lua</code>をおいてください。</p>
+<div id="admonition-command" class="admonition quote">
+<div class="admonition-title">
+<p>Command</p>
+<p><a class="admonition-anchor-link" href="#admonition-command"></a></p>
+</div>
+<div>
+<pre><code>mkdir -p plugin/lesson
+</code></pre>
+</div>
+</div>
 <p><img src="img/make-dir2.webp" alt="make-dir2" /></p>
 <div id="admonition-tip-1" class="admonition tip">
 <div class="admonition-title">
@@ -304,7 +314,7 @@ end, {})
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
 </div>
 <div>
-<p>サンプルは<code>:h input</code>から持ってきて、<code>lua</code>で動くように書き換えました。</p>
+<p>コードは<code>:h input</code>の<code>Example</code>から持ってきて、<code>lua</code>で動くように書き換えました。</p>
 <pre><code>input({opts})
 		The result is a String, which is whatever the user typed on
 		the command-line.
@@ -325,7 +335,7 @@ end, {})
 <p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
-<p>これもやっぱり<code>9. Lua Module</code>で触れてました。<code>Runtime files</code>を確認してみて下さい😉</p>
+<p>これもやっぱり<code>9. Lua Module</code>で触れてました。<code>Runtime files</code>項です😉</p>
 </div>
 </div>
 <p>じゃあ、実際にオーダーしてみましょう。コマンドから<code>:Order</code>と入れてみてください。</p>

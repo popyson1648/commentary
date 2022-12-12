@@ -216,7 +216,7 @@ end,
 </code></pre>
 </div>
 </div>
-<p>で、<code>PackerSync</code>を実行しましょう。</p>
+<p>で、<code>:PackerSync</code>を実行しましょう❗</p>
 <p><img src="img/installed.webp" alt="installed" /></p>
 <p>簡単ですね😉 すっごい見にくいけど❗</p>
 <div id="admonition-note-1" class="admonition note">
@@ -238,12 +238,12 @@ end,
 </div>
 </div>
 <h2 id="config"><a class="header" href="#config">Config</a></h2>
-<p>インストールが終わったら、次にやることはコンフィグですね。</p>
+<p>インストールが終わったら、次にやることはコンフィグですね😆</p>
 <p><code>Neovim</code>プラグインの場合、<code>Readme</code>である程度デフォルト設定が示されていて、
 それを基に「変える？変えない？」を決めるみたいな、割とアバウトな方法にどうしてもなってくる...んじゃないかなぁと思ってるんですがどうでしょう❓
 (違ってたらごめんなさい😅)</p>
 <p>とりあえずは新しくファイルを作っていきます。</p>
-<p>これもやっぱり名前は何でも良いんですが、パッケージ名と揃えて<code>nvim-treesitter.lua</code>としています。</p>
+<p>これもやっぱり名前は何でも良いんですが、パッケージ名と揃えて<code>nvim-treesitter.lua</code>としています☺️</p>
 <div id="admonition-extensionsnvim-treesitterlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-treesitter.lua</p>
@@ -276,7 +276,7 @@ end,
 </code></pre>
 </div>
 </div>
-<p>そして、これを<code>packer</code>の管理下に置いて使います。<code>nvim-treesitter</code>の読み込み部分を少し書き換えます。</p>
+<p>そして、これを<code>packer</code>の管理下に置いて使います。先ほど書いた<code>nvim-treesitter</code>の読み込み部分を少し書き換えます。</p>
 <div id="admonition-extensionsinitlua-1" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -296,10 +296,30 @@ end,
 </code></pre>
 </div>
 </div>
+<div id="admonition-h-packeruse" class="admonition info">
+<div class="admonition-title">
+<p>:h packer.use()</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-packeruse"></a></p>
+</div>
+<div>
+<pre><code>config = string or function, -- Specifies code to run after this plugin is loaded.
+                                このプラグインがロードされた後に実行するコードを指定します。
+</code></pre>
+</div>
+</div>
 <p>再起動もしくは<code>:so</code>でこの状態を反映させてから<code>PackerSync</code>もしくは<code>PackerCompile</code>を実行しましょう。</p>
 <p>すると、<code>nvim-treesitter</code>が動いて、最終的にこんなのが出てきました。</p>
 <p><img src="img/lua-installed.webp" alt="lua-installed" /></p>
 <p>これで、<code>lua</code>ファイルが今までよりも賢く色付けされてるはずです。どうでしょう❓</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p><code>ensure_installed</code>で指定した言語パーサのインストールが行われるはずなので、それによっては少し表示が変わります。</p>
+</div>
+</div>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
 <p>Warning</p>
@@ -312,10 +332,10 @@ end,
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">default</th><th style="text-align: center">nvim-treesitter</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/color1.webp" alt="color1" /></td><td style="text-align: center"><img src="img/color2.webp" alt="color2" /></td></tr>
 </tbody></table>
-</div><div id="admonition-note-2" class="admonition note">
+</div><div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
 <p>これは例が面白くないのであれなんですが、オフィシャルイメージを見るとこんなに変わってます❗</p>
@@ -356,7 +376,8 @@ end,
 パーサ名のリスト、または &quot;all&quot;を指定する。
 </code></pre>
 <p>上の例では<code>lua</code>だけ入れてます。使用頻度の高い言語を入れておくと良いです。</p>
-<p>面倒なら<code>all</code>でも良いんですが、<code>auto_install</code>があるので、オフライン環境でない限りはそちらを活用する方が良いんじゃないかなーって思ってます。</p>
+<p>面倒なら<code>all</code>でも良いんですが、<code>auto_install</code>があるので、&quot;オフライン環境で動かす&quot;とかでなければ、そちらを活用する方が良いんじゃないかなーって思ってます。</p>
+<p>対応言語は以下の通りです。</p>
 <div id="admonition-supported-languageshttpsgithubcomnvim-treesitternvim-treesittersupported-languages" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/nvim-treesitter/nvim-treesitter#supported-languages">Supported languages</a></p>
@@ -373,13 +394,29 @@ end,
 パーサを同期的にインストールする。 (`ensure_installed` にのみ適用される)
 </code></pre>
 <p>「同期的インストール」...、つまりアップデートですね😉</p>
+<div id="admonition-note-4" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+</div>
+<div>
 <p><code>ensure_installed</code>に入れていないパーサについては、コマンドから<code>:TSUpdate</code>で行うことができます。</p>
+</div>
+</div>
 <h3 id="auto_install"><a class="header" href="#auto_install">auto_install</a></h3>
 <pre><code>Automatically install missing parsers when entering buffer.
 
 バッファに入ったときに足りないパーサを自動的にインストールします。
 </code></pre>
-<p>手動でインストールしたい場合はコマンドから<code>:TSInstall 言語</code>を行いましょう。</p>
+<div id="admonition-note-5" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-5"></a></p>
+</div>
+<div>
+<p>手動でインストールしたい場合はコマンドから<code>:TSInstall {言語}</code>を行いましょう。</p>
+</div>
+</div>
 <h3 id="highlight"><a class="header" href="#highlight">highlight</a></h3>
 <pre><code>`false` will disable the whole extension
 
@@ -425,7 +462,7 @@ false` を指定すると、拡張機能全体を無効にすることができ�
 </div>
 </div>
 <h3 id="indent"><a class="header" href="#indent">indent</a></h3>
-<p>実験的な段階らしいですが、インデントが賢くなる...んです⁉️ あんまり威力を実感することはないんですが、わたしはなんとなく使ってます😅</p>
+<p>実験的な機能らしいですが、インデントが賢くなる...んです⁉️ あんまり威力を実感することはないんですが、わたしはなんとなく使ってます😅</p>
 <p>これも<code>highlight</code>と同じく、言語を選んで除外できます。</p>
 <div id="admonition-h-nvim-treesitter-indntation-mod" class="admonition info">
 <div class="admonition-title">
@@ -434,7 +471,11 @@ false` を指定すると、拡張機能全体を無効にすることができ�
 </div>
 <div>
 <pre><code>Indentation based on treesitter for the |=| operator.
+
+|=| 演算子の treesitter に基づくインデント。
+
 NOTE: this is an experimental feature.
+      これは実験的な機能です。
 
 Query files: `indents.scm`.
 Supported options:
@@ -471,11 +512,11 @@ Plugin authors are encouraged to write new healthchecks. |health-dev|
 </code></pre>
 <p><img src="img/checkhealth.webp" alt="checkhealth" /></p>
 <p>結果が表示されましたね☺️</p>
-<p>診断内容はプラグインに依りますが、<code>nvim-treesitter</code>の場合は、依存ソフトウェアの確認とインストールされたパーサの表示を行ってくれます。</p>
-<div id="admonition-note-3" class="admonition note">
+<p>診断内容はプラグインに依りますが、<code>nvim-treesitter</code>の場合は、依存ソフトウェアの確認と、OS情報・インストールされたパーサの表示を行ってくれます。</p>
+<div id="admonition-note-6" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-6"></a></p>
 </div>
 <div>
 <p>これもヘルプそのままですが、指定したプラグインだけを診断することも可能です。</p>
@@ -490,11 +531,11 @@ Plugin authors are encouraged to write new healthchecks. |health-dev|
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
 </div>
 <div>
-<p>上では<code>環境条件</code>と表されていますが、<code>packer</code>の節で少し触れた<code>依存関係</code>と (大体は) 同じ意味でしょう。
+<p>冒頭の説明では<code>環境条件</code>と表されていますが、<code>packer</code>の節で少し触れた<code>依存関係</code>と (大体は) 同じ意味でしょう。
 プラグインによっては、今回のようにヘルスチェックを提供してくれているので、困った時はこれも参考にすると良いです😉</p>
 </div>
 </div>
-<h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
+<h1 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h1>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>

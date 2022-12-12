@@ -146,7 +146,7 @@
                         </div>
 
                         <h1 id="onenordnvim"><a class="header" href="#onenordnvim">onenord.nvim</a></h1>
-<p>わたしの一番のお気に入りカラーテーマは<code>onenord.nvim</code>です。</p>
+<p>わたしの一番のお気に入りカラーテーマは<code>onenord.nvim</code>です😆</p>
 <div id="admonition-onenordnvimhttpsgithubcomrmehri01onenordnvim" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/rmehri01/onenord.nvim">onenord.nvim</a></p>
@@ -156,7 +156,7 @@
 <p>Onenord is a Neovim theme written in Lua that combines the Nord and Atom One Dark color palettes.
 More specifically, it seeks to add more vibrance to the Nord theme and provide a great programming experience by leveraging Treesitter!</p>
 <p>Onenordは、NordとAtom One Darkのカラーパレットを組み合わせた、Luaで書かれたNeovimのテーマです。
-具体的には、Treesitterを活用することで、Nordのテーマに活気を与え、素晴らしいプログラミング体験を提供することを目的としています。</p>
+具体的には、Treesitterを活用することで、Nordのテーマに活気を与え、素晴らしいプログラミング体験を提供することを目的としています!</p>
 </div>
 </div>
 <p>生きていたのか。<code>Atom</code>の意志は...👁️</p>
@@ -204,11 +204,13 @@ require('onenord').setup {
 
   disable = {
     background = true,
-    eob_lines = true,
   },
 
   custom_highlights = {
     MatchParen = { fg = colors.none, bg = colors.none, style = 'bold,underline' },
+  },
+  custom_colors = {
+    mypink = '#FFB2CC',
   },
 }
 </code></pre>
@@ -290,7 +292,7 @@ styles = {
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
-<p><code>comments</code>を<code>italic</code>にするのもオシャレなんですが、カーソルがそのままなので、個人的には使いにくいかなー、なんて😅
+<p>例えば、<code>comments</code>を<code>italic</code>にするのもオシャレなんですが、カーソルがそのままなので個人的には使いにくいかなー、なんて😅
 <img src="img/italic.webp" alt="italic" /></p>
 </div>
 </div>
@@ -336,17 +338,34 @@ styles = {
 
 デフォルトの色を上書きします。
 </code></pre>
-<h3 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h3>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p>説明にはありませんが、実はオリジナルの色を新しく定義することもできちゃいます。</p>
+</div>
+</div>
+<h1 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h1>
 <p>ここまでやっただけでも見違えるような変身っぷりですね❗</p>
 <p><img src="img/onenord.webp" alt="onenord" /></p>
-<p>前のページとの比較ではさらに変化がわかりやすいです。</p>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p>前のページとの比較ではさらに変化がわかりやすいです😉</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">default</th><th style="text-align: center">nvim-treesitter</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/color1.webp" alt="color1" /></td><td style="text-align: center"><img src="img/color2.webp" alt="color2" /></td></tr>
 </tbody></table>
 </div><div class="table-wrapper"><table><thead><tr><th style="text-align: center">onenord.nvim</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/color3.webp" alt="color3" /></td></tr>
 </tbody></table>
-</div><div id="admonition-success" class="admonition success">
+</div></div>
+</div>
+<div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
