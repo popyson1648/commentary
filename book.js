@@ -1,8 +1,5 @@
 "use strict";
 
-// Fix back button cache problem
-window.onunload = () => {};
-
 // Global variable, shared between modules
 const playground_text = (playground) => {
   return playground.querySelector("code").innerText;
@@ -102,7 +99,7 @@ const playground_text = (playground) => {
   }
 
   const updateThemeSelected = () => {
-    themePopup.querySelectorAll(".theme-selected").forEach(function (el) {
+    themePopup.querySelectorAll(".theme-selected").forEach((el) => {
       el.classList.remove("theme-selected");
     });
 
@@ -406,14 +403,14 @@ const playground_text = (playground) => {
   }
 
   const clipboardSnippets = new ClipboardJS(".clip-button", {
-    text: function (trigger) {
+    text: (trigger) => {
       hideTooltip(trigger);
       return playground_text(trigger.closest("pre"));
     },
   });
 
   Array.from(document.querySelectorAll(".clip-button")).forEach((clipButton) => {
-    clipButton.addEventListener("mouseout", function (e) {
+    clipButton.addEventListener("mouseout", (e) => {
       hideTooltip(e.currentTarget);
     });
   });
@@ -430,7 +427,7 @@ const playground_text = (playground) => {
 
 // scrollToTop
 (() => {
-  document.querySelector(".menu-title").addEventListener("click", function () {
+  document.querySelector(".menu-title").addEventListener("click", () => {
     document.scrollingElement.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
