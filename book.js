@@ -396,12 +396,12 @@ const playground_text = (playground, hidden = true) => {
 (() => {
   const hideTooltip = (elem) => {
     elem.firstChild.innerText = "";
-    elem.className = "fa fa-regular fa-copy";
+    elem.className = "fa fa-copy clip-button";
   }
 
   const showTooltip = (elem, msg) => {
     elem.firstChild.innerText = msg;
-    elem.className = "fa fa-regular fa-copy tooltipped";
+    elem.className = "fa fa-copy tooltipped";
   }
 
   const clipboardSnippets = new ClipboardJS(".clip-button", {
