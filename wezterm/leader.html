@@ -166,7 +166,10 @@
 </div>
 </div>
 <p><code>Leader</code>キーという概念は<code>WezTerm</code>特有のものではく、<code>tmux</code>や<code>vim</code>など古参のソフトウェアでも用いられています。</p>
-<p>WezTerm でのデフォルトは<kbd>Ctrl-a</kbd>です。<sup class="footnote-reference"><a href="#other">1</a></sup></p>
+<p>WezTerm でのデフォルトは<kbd>Ctrl-a</kbd>です。
+<sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup></p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -204,8 +207,12 @@
 <p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
 </div>
 <div>
-<p>macOSでUS配列なのに日本語IME使うような環境<sup class="footnote-reference"><a href="#minority">2</a></sup>では<kbd>Ctrl-Space</kbd>が入力ソースの切り替えに割り当てられています。
-OSのショートカットキー等も含め、あらかじめ確認しておきましょう。</p>
+<p>macOSでUS配列なのに日本語IME使うような環境
+<sup class="footnote-reference">
+<a name="to-footnote-2"><a href="#2">2</a></a>
+</sup>
+では<kbd>Ctrl-Space</kbd>が入力ソースの切り替えに割り当てられています。</p>
+<p>OSのショートカットキー等も含め、あらかじめ確認しておきましょう。</p>
 <p>他のと被っちゃうと困っちゃいます。</p>
 </div>
 </div>
@@ -260,7 +267,9 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </div>
 <div>
 <p><code>ALT|CTRL</code>は<kbd>Alt</kbd>キーと<kbd>Ctrl</kbd>キーを同時押しです。</p>
-<p>さらに<code>&quot;</code>を押せと言われれば<kbd>Shift</kbd>キーを押しながら<kbd>'</kbd>です。<sup class="footnote-reference"><a href="#key">3</a></sup></p>
+<p>さらに<code>&quot;</code>を押せと言われれば<kbd>Shift</kbd>キーを押しながら<kbd>'</kbd>です。<sup class="footnote-reference">
+<a name="to-footnote-3"><a href="#3">3</a></a>
+</sup></p>
 </div>
 </div>
 …なんか、難しくないですか？
@@ -290,7 +299,10 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p><code>tmux</code>のキーバインドを完全に真似るのであれば、<code>CopyMode</code>に入るキーバインドはこれですね。</p>
 <pre><code class="language-lua">  { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
 </code></pre>
-<p><code>jump</code>機能はデフォルトのままで<code>tmux</code>と同じキーバインドが割り当てられているようなので、そのままいけます。<sup class="footnote-reference"><a href="#copy-mode">4</a></sup></p>
+<p><code>jump</code>機能はデフォルトのままで<code>tmux</code>と同じキーバインドが割り当てられているようなので、そのままいけます。
+<sup class="footnote-reference">
+<a name="to-footnote-4"><a href="#4">4</a></a>
+</sup></p>
 </div>
 </div>
 <p>ということで、キーバインドは色々試してみてほしいです。</p>
@@ -313,21 +325,15 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p>キーバインドについてはこのくらいでしょうか。次からは外観を変えていきたいと思います。</p>
 </div>
 </div>
-<div class="footnote-definition" id="other"><sup class="footnote-definition-label">1</sup>
-<p>tmux のデフォルトは <kbd>CTRL-b</kbd>、vimのデフォルトは<kbd>\</kbd>です。
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> tmux のデフォルトは <kbd>CTRL-b</kbd>、vimのデフォルトは<kbd>\</kbd>です。
 ちょっと遠い位置に置かれていて大変なので、<code>Leader</code>キーのカスタマイズは一般的に行われているみたいです。
-メジャーなカスタマイズ先は<kbd>CTRL-a</kbd>や、<kbd>CTRL-j</kbd>、<kbd>CTRL-,</kbd>、<kbd>CTRL-Space</kbd>あたりでしょうか？</p>
-</div>
-<div class="footnote-definition" id="minority"><sup class="footnote-definition-label">2</sup>
-<p>色んな意味で少数派なんですけどね。わたしもこの環境です。</p>
-</div>
-<div class="footnote-definition" id="key"><sup class="footnote-definition-label">3</sup>
-<p>USキーボードの場合。</p>
-</div>
-<div class="footnote-definition" id="copy-mode"><sup class="footnote-definition-label">4</sup>
-<p><code>3.5 Keybind</code>で「いや、デフォルトのキーバインド無効にしたじゃないかー👿」と思われた方、ごもっともです...。
-実は<code>copy-mode</code>のキーバインドには触れていませんでした。ちょっとこの辺、複雑ですよね...。また今度改編します。</p>
-</div>
+メジャーなカスタマイズ先は<kbd>CTRL-a</kbd>や、<kbd>CTRL-j</kbd>、<kbd>CTRL-,</kbd>、<kbd>CTRL-Space</kbd>あたりでしょうか❓</p>
+</div><div class="footnote-definition" id=2>
+<p><a href="#to-footnote-2"><sup>2:</sup></a> 色んな意味で少数派なんですけどね😅 わたしもこの環境です。</div><div class="footnote-definition" id=3></p>
+<p><a href="#to-footnote-3"><sup>3:</sup></a> USキーボードの場合。</div><div class="footnote-definition" id=4></p>
+<p><a href="#to-footnote-4"><sup>4:</sup></a> <a href="https://coralpink.github.io/commentary/wezterm/keybind.html#%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E5%85%88%E3%82%92%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B">3.5 Keybind</a>で「いや、デフォルトのキーバインド無効にしたじゃないかー👿」と思われた方、ごもっともです...。
+実は<code>copy-mode</code>のキーバインドには触れていませんでした。ちょっとこの辺、複雑ですよね...。また今度改編します。</div></p>
 
                     </main>
 
