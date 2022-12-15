@@ -1,8 +1,10 @@
 "use strict";
 
 // Global variable, shared between modules
-const playground_text = (playground) => {
-  return playground.querySelector("code").innerText;
+const playground_text = (playground, hidden = true) => {
+  return hidden
+    ? playground.querySelector("code").textContent
+    : playground.querySelector("code").innerText;
 }
 
 // codeSnippets
@@ -394,18 +396,18 @@ const playground_text = (playground) => {
 (() => {
   const hideTooltip = (elem) => {
     elem.firstChild.innerText = "";
-    elem.className = "fa fa-copy clip-button";
+    elem.className = "fa fa-regular fa-copy";
   }
 
   const showTooltip = (elem, msg) => {
     elem.firstChild.innerText = msg;
-    elem.className = "fa fa-copy tooltipped";
+    elem.className = "fa fa-regular fa-copy tooltipped";
   }
 
   const clipboardSnippets = new ClipboardJS(".clip-button", {
     text: (trigger) => {
       hideTooltip(trigger);
-      return playground_text(trigger.closest("pre"));
+      return playground_text(trigger.closest("pre"), false);
     },
   });
 
