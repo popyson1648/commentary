@@ -101,12 +101,12 @@
   font-display: swap;
 }
 
+/* source-code-pro-500 - latin_vietnamese_latin-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: "HackGen35 Console NF";
+  font-family: "Source Code Pro";
   font-style: normal;
-  font-weight: 300;
-  src: url("HackGen/HackGen35ConsoleNF-Regular.woff2") format("woff2");
-
+  font-weight: 500;
+  src: url("source-code-pro-v11-all-charsets-500.woff2") format("woff2");
   font-display: swap;
 }
 
