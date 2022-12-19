@@ -178,8 +178,8 @@ Best kind of customize is the one where you have the power to customize but not 
 <p><a class="admonition-anchor-link" href="#admonition-requirements"></a></p>
 </div>
 <div>
-<p>neovim &gt;= 0.5
-nvim-web-devicons | Only if you want filetype icons.</p>
+<p>neovim &gt;= 0.5</p>
+<p>nvim-web-devicons | Only if you want filetype icons.</p>
 </div>
 </div>
 <h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
@@ -345,8 +345,8 @@ If `ensure_dependencies` is true, the plugins specified in `requires` will be in
 </div>
 </div>
 <p><code>Neovim</code>パッケージは依存関係をデータとして持ち合わせていないことは
-<a href="https://coralpink.github.io/commentary/neovim/plugin/packer.html">15.1. Packer</a>で触れたんですが、</p>
-<p>「これ<code>requires</code>(必要なもの) なんだよねー🤔」と教えてあげると、
+<a href="https://coralpink.github.io/commentary/neovim/plugin/packer.html">15.1. Packer</a>で触れたんですが、
+「これ<code>requires</code>(必要なもの) なんだよねー🤔」と教えてあげると、
 <code>packer</code>は「ん❓そうなんれすね❓😆」と言って、一切疑わずにインストールしてくれます。</p>
 <div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
@@ -366,13 +366,18 @@ If `ensure_dependencies` is true, the plugins specified in `requires` will be in
 <p><img src="img/showmode.webp" alt="showmode" /></p>
 <p>...でも、これだけじゃない。</p>
 <p>この先は、これまでとは違ってかなりプラグインを連携して使っていきたいので、
-今まで通りに一個ずつやっていこうとすると手詰まり感がすごい...😰</p>
-<p>もう...、本当に...、気が遠くなってしまって...。</p>
+今まで通りに一個ずつ進めていこうとすると膨大な作業量に圧倒されてしまって...。</p>
+<p>このページだって、半分くらいは<code>lualine</code>以外への言及になっちゃってますよね。</p>
+<p>「やることが多すぎる。それは間違いない。」<sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup></p>
+<p>あまりにも話が進まない...❗手詰まり感がすごい...😰</p>
+<p>ちょっともう...、本当に...、気が遠くなってしまって...。</p>
 <div id="admonition-default" class="admonition quote">
 <div>
 <p>CoralPink
 <sup class="footnote-reference">
-<a name="to-footnote-1"><a href="#1">1</a></a>
+<a name="to-footnote-2"><a href="#2">2</a></a>
 </sup>
 　のてには</p>
 <p>たたかえる　ちからが　ない❗</p>
@@ -401,7 +406,7 @@ If `ensure_dependencies` is true, the plugins specified in `requires` will be in
 <p>...It's nvim Trainer. Can you hear me...? </p>
 <p>(...nvimトレーナー
 <sup class="footnote-reference">
-<a name="to-footnote-2"><a href="#2">2</a></a>
+<a name="to-footnote-3"><a href="#3">3</a></a>
 </sup>
 だ。聞こえるか...?)</p>
 </div>
@@ -455,10 +460,11 @@ vim.api.nvim_set_option('showmode', false)
 </div>
 </div>
 <div class="footnote-definition" id=1>
-<p><a href="#to-footnote-1"><sup>1:</sup></a> このサイトを書いてる ふしぎないきもの。(はじめまして☺️ )
-なんかもう、<code>MARVEL</code>なのか<code>ポケットモンスター</code>なのかわからない世界に飛び込んでいました。</p>
-</div><div class="footnote-definition" id=2>
-<p><a href="#to-footnote-2"><sup>2:</sup></a> このサイトの
+<p><a href="#to-footnote-1"><sup>1:</sup></a> たまたま Elon Musk も同じようなこと言ってた。</div><div class="footnote-definition" id=2></p>
+<p><a href="#to-footnote-2"><sup>2:</sup></a> このサイトを書いてる ふしぎないきもの。(はじめまして☺️ )
+なんかもう、<code>MARVEL</code>なのか<code>ポケットモンスター</code>なのかわからない世界に飛び込んでしまった。</p>
+</div><div class="footnote-definition" id=3>
+<p><a href="#to-footnote-3"><sup>3:</sup></a> このサイトの
 <a href="https://coralpink.github.io/commentary/neovim/options/options.html">10章</a>と
 <a href="https://coralpink.github.io/commentary/neovim/au/automatic-commands.html">11章</a>の主人公。(はじめてしゃべった😮)
 みらいのチャンピオン。</p>
