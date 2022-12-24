@@ -1,0 +1,637 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js latte">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>gitsigns - Commentary of Dotfiles</title>
+
+
+        <!-- Custom HTML head -->
+        <meta name="google-site-verification" content="I2IiJw92-ns-i89-BauWRWbONmTxkGU0LuMpMEI3E2I" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRHGDF4JZV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-GRHGDF4JZV');
+        </script>
+
+        <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css" async>
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../css/style.css" async>
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "macchiato" : "latte";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../../wezterm/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item "><a href="../../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item "><a href="../../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item "><a href="../../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item "><a href="../../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item "><a href="../../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item "><a href="../../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item "><a href="../../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item "><a href="../../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item "><a href="../../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../../neovim/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item "><a href="../../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item "><a href="../../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item "><a href="../../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item "><a href="../../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item "><a href="../../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item "><a href="../../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item "><a href="../../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item "><a href="../../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item "><a href="../../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item "><a href="../../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item "><a href="../../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item "><a href="../../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item "><a href="../../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/plugin/packer.html"><strong aria-hidden="true">15.1.</strong> Packer.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item "><a href="../../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/lualine.html"><strong aria-hidden="true">15.4.</strong> lualine.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-hlslens.html"><strong aria-hidden="true">15.5.</strong> nvim-hlslens</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/gitsigns.html" class="active"><strong aria-hidden="true">15.6.</strong> gitsigns</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-scrollbar.html"><strong aria-hidden="true">15.7.</strong> nvim-scrollbar</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">... To Be Continued.</li></ol>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa-list-ul"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa-palette"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-title">Commentary of Dotfiles</div>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa-github fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div class="sidetoc">
+                          <nav class="pagetoc"></nav>
+                        </div>
+
+                        <h1 id="gitsignsnvim"><a class="header" href="#gitsignsnvim">gitsigns.nvim</a></h1>
+<p>今回は<code>gitsigns.nvim</code>です。</p>
+<p>人によっては<code>git</code>を使っていないかもしれないんだけど、これをきっかけに挑戦してみると楽しいと思います。</p>
+<div id="admonition-httpsgithubcomlewis6991gitsignsnvim" class="admonition info">
+<div class="admonition-title">
+<p>https://github.com/lewis6991/gitsigns.nvim</p>
+<p><a class="admonition-anchor-link" href="#admonition-httpsgithubcomlewis6991gitsignsnvim"></a></p>
+</div>
+<div>
+<p>Super fast git decorations implemented purely in lua/teal.</p>
+<p>lua/teal でピュアに実装された超高速な git 装飾。</p>
+</div>
+</div>
+<p>だよねー。もう Christmas🎄 だもんねー😆 華やかな &quot;装飾&quot; を施していきましょう❗</p>
+<div id="admonition-requirements" class="admonition note">
+<div class="admonition-title">
+<p>Requirements</p>
+<p><a class="admonition-anchor-link" href="#admonition-requirements"></a></p>
+</div>
+<div>
+<p>Neovim &gt;= 0.7.0</p>
+<p>Note: If your version of Neovim is too old, then you can use a past release.</p>
+<pre><code>  Neovimのバージョンが古すぎる場合、過去のリリースを使用することができます。
+</code></pre>
+<p>Note: If you are running a development version of Neovim (aka master), then breakage may occur if your build is behind latest.</p>
+<pre><code>  Neovimの開発版(別名master)を使っている場合、ビルドが最新より遅れていると破損する可能性があります。
+</code></pre>
+<p>Newish version of git. Older versions may not work with some features.</p>
+<p>gitの新しいバージョン。古いバージョンでは、一部の機能が動作しない可能性があります。</p>
+</div>
+</div>
+<p><code>Neovim</code>も<code>git</code>も、「<code>stable release</code>をあえて外している😑」 とかしてなければ気にしなくて平気です。</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>もう意地でも聖夜🌃に間に合わせます。<code>gitsigns</code>に負けないくらい超高速でいきましょう😆</p>
+<p>今回は色々カスタマイズしていきたいので、
+まずは<a href="https://github.com/lewis6991/gitsigns.nvim#usage">Usage</a>に示されているデフォルトセッティングを入れておくことにしましょう。</p>
+<p>これを基に、あとでカスタマイズしていきます。</p>
+<div id="admonition-extensionsgitsignslua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/gitsigns.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require('gitsigns').setup {
+  signs = {
+    add          = { hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+    change       = { hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+    delete       = { hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+    topdelete    = { hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+    changedelete = { hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+    untracked    = { hl = 'GitSignsAdd'   , text = '┆', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+  },
+  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+  numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
+  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+  word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  watch_gitdir = {
+    interval = 1000,
+    follow_files = true
+  },
+  attach_to_untracked = true,
+  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+    delay = 1000,
+    ignore_whitespace = false,
+  },
+  current_line_blame_formatter = '&lt;author&gt;, &lt;author_time:%Y-%m-%d&gt; - &lt;summary&gt;',
+  sign_priority = 6,
+  update_debounce = 100,
+  status_formatter = nil, -- Use default
+  max_file_length = 40000, -- Disable if file is longer than this (in lines)
+  preview_config = {
+    -- Options passed to nvim_open_win
+    border = 'single',
+    style = 'minimal',
+    relative = 'cursor',
+    row = 0,
+    col = 1
+  },
+  yadm = {
+    enable = false
+  },
+}
+</code></pre>
+</div>
+</div>
+<div id="admonition-extensionsinitlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">use {
+  'lewis6991/gitsigns.nvim',
+  -- tag = 'release',
+  config = function() require 'extensions.gitsigns' end,
+}
+</code></pre>
+</div>
+</div>
+<p>ってことで、もうすっかりお馴染みの<code>:PackerSync</code>😆</p>
+<p><img src="img/gitsigns-install.webp" alt="gitsigns-install" /></p>
+<p>もし<code>git</code>の管理下に居たのなら、もうこの時点で<code>sigincolumn</code>に装飾🎄がされてますね❗yeah!! 🍾</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>フライングで登場していた<a href="https://coralpink.github.io/commentary/neovim/options/signcolumn.html">signcolumn</a>
+からここまでに2ヶ月かかりました...。</p>
+<p>まあなんか、やってやったぜってな感じはあります☺️</p>
+</div>
+</div>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p><code>Neovim</code>の<code>nightly</code>ビルドや開発ビルドを実行している場合は、<code>tag</code>オプションを使用しないでください!</p>
+<p>(Stable Releaseを使用している場合は入れてね!) ...と記載されているのですが、
+なぜかアップデート確認(次回以降の<code>:PackerSync</code>)で失敗します。</p>
+<p><img src="img/gitsigns-install-failed.webp" alt="gitsigns-install" /></p>
+<p>これは<code>packer</code>の問題なのかな...。ごめんなさい、今ちょっと高速なんで、また今度確認してみます😣</p>
+<p>あ、上の例では既にコメントアウトしてます。</p>
+</div>
+</div>
+<h2 id="keymaps"><a class="header" href="#keymaps">Keymaps</a></h2>
+<p>カスタマイズに入る前に、キーマップも入れておきましょう。</p>
+<p>キーマップはデフォルトでは有効になっていないようなので、
+これも<a href="https://github.com/lewis6991/gitsigns.nvim#keymaps">Keymaps</a>からそのまま貼り付けちゃいます。</p>
+<div id="admonition-keymaps" class="admonition info">
+<div class="admonition-title">
+<p>Keymaps</p>
+<p><a class="admonition-anchor-link" href="#admonition-keymaps"></a></p>
+</div>
+<div>
+<p>Gitsigns provides an on_attach callback which can be used to setup buffer mappings.</p>
+<p>Gitsigns は on_attach コールバックを提供し、buffer マッピングの設定に使用することができます。</p>
+</div>
+</div>
+<div id="admonition-extensionsgitsignslua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/gitsigns.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">-- require('gitsigns').setup {
+
+-- setup の中にペーストします。
+
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', ']c', function()
+      if vim.wo.diff then return ']c' end
+      vim.schedule(function() gs.next_hunk() end)
+      return '&lt;Ignore&gt;'
+    end, {expr=true})
+
+    map('n', '[c', function()
+      if vim.wo.diff then return '[c' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '&lt;Ignore&gt;'
+    end, {expr=true})
+
+    -- Actions
+    map({'n', 'v'}, '&lt;leader&gt;hs', ':Gitsigns stage_hunk&lt;CR&gt;')
+    map({'n', 'v'}, '&lt;leader&gt;hr', ':Gitsigns reset_hunk&lt;CR&gt;')
+    map('n', '&lt;leader&gt;hS', gs.stage_buffer)
+    map('n', '&lt;leader&gt;hu', gs.undo_stage_hunk)
+    map('n', '&lt;leader&gt;hR', gs.reset_buffer)
+    map('n', '&lt;leader&gt;hp', gs.preview_hunk)
+    map('n', '&lt;leader&gt;hb', function() gs.blame_line{full=true} end)
+    map('n', '&lt;leader&gt;tb', gs.toggle_current_line_blame)
+    map('n', '&lt;leader&gt;hd', gs.diffthis)
+    map('n', '&lt;leader&gt;hD', function() gs.diffthis('~') end)
+    map('n', '&lt;leader&gt;td', gs.toggle_deleted)
+
+    -- Text object
+    map({'o', 'x'}, 'ih', ':&lt;C-U&gt;Gitsigns select_hunk&lt;CR&gt;')
+  end
+-- }
+</code></pre>
+</div>
+</div>
+<p>もう結構<code>lua</code>にも見慣れてきたんじゃないでしょうか❓</p>
+<p>「<code>on_attach</code>と言われても...」、という感じには多少なるものの、<code>map()</code>が<code>vim.keymap.set()</code>に繋いでくれてるのは、まあなんか分かりますよね😉</p>
+<p>パラメータもほぼそのままなので、カスタマイズをしたい場合は<code>map()</code>を追加・変更していけば良さそうです。</p>
+<p>使用できる機能は以下で説明されています。</p>
+<div id="admonition-h-gitsigns-functions" class="admonition info">
+<div class="admonition-title">
+<p>:h gitsigns-functions</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-functions"></a></p>
+</div>
+<div>
+<pre><code>Note functions with the {async} attribute are run asynchronously and are
+non-blocking (return immediately).
+
+{async} 属性を持つ関数は、非同期で実行され、ノンブロッキング（即座に戻る）であることに注意してください。
+</code></pre>
+</div>
+</div>
+<p>キーマップにはあらかじめ機能が割り当てられていて、「こんな色々できるんだぁ☺️」とサプライズ満載なので、ぜひ色々試してみてください。</p>
+<p><code>preview_hunk</code>とかちょっとした時に便利😉</p>
+<p><img src="img/preview_hunk.webp" alt="preview_hunk" /></p>
+<h2 id="config"><a class="header" href="#config">Config</a></h2>
+<p>手始めに、装飾を少しアレンジしてみます。</p>
+<p>もちろん、このままがいい❗って場合はスキップしちゃって構いません。デフォルトでも全然イケてるプラグインです😆</p>
+<h3 id="signs"><a class="header" href="#signs">signs</a></h3>
+<p>ここは表示する<code>text</code>だけ変えてます。</p>
+<p><code>untracked</code>については、後に出てくる<code>attach_to_untracked</code>を無効にすると使用されないので定義していません。</p>
+<div id="admonition-extensionsonenordlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/onenord.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  signs = {
+    add =          { hl = 'GitSignsAdd',    text = ' ▎', numhl = 'GitSignsAddNr',    linehl = 'GitSignsAddLn' },
+    change =       { hl = 'GitSignsChange', text = ' ▎', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+    delete =       { hl = 'GitSignsDelete', text = ' ', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+    topdelete =    { hl = 'GitSignsDelete', text = ' ', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+    changedelete = { hl = 'GitSignsChange', text = '▎ ', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+  },
+</code></pre>
+</div>
+</div>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">before</th><th style="text-align: center">after</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/signs-before.webp" alt="signs-default" /></td><td style="text-align: center"><img src="img/signs-after.webp" alt="signs-costom" /></td></tr>
+</tbody></table>
+</div>
+<h3 id="word_diff"><a class="header" href="#word_diff">word_diff</a></h3>
+<div id="admonition-extensionsonenordlua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/onenord.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  word_diff = true,
+</code></pre>
+</div>
+</div>
+<div id="admonition-h-gitsigns-config-word_diff" class="admonition info">
+<div class="admonition-title">
+<p>:h gitsigns-config-word_diff</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-config-word_diff"></a></p>
+</div>
+<div>
+<pre><code>word_diff                                          gitsigns-config-word_diff
+      Type: `boolean`, Default: `false`
+
+      Highlight intra-line word differences in the buffer.
+      バッファ内の行内の単語の相違をハイライトします。
+
+      Requires `config.diff_opts.internal = true` .
+
+      Uses the highlights:
+        • For word diff in previews:
+          • `GitSignsAddInline`
+          • `GitSignsChangeInline`
+          • `GitSignsDeleteInline`
+        • For word diff in buffer:
+          • `GitSignsAddLnInline`
+          • `GitSignsChangeLnInline`
+          • `GitSignsDeleteLnInline`
+        • For word diff in virtual lines (e.g. show_deleted):
+          • `GitSignsAddVirtLnInline`
+          • `GitSignsChangeVirtLnInline`
+          • `GitSignsDeleteVirtLnInline`
+</code></pre>
+</div>
+</div>
+<p><code>word_diff</code>を有効にすると、単語単位で差分が検出されます。</p>
+<p><img src="img/custom_highlights_before.webp" alt="custom_highlights_before_before" /></p>
+<p>...ちょっと派手だと思いません❓</p>
+<p>この例では変更箇所が1行だけなのでまだ見た目楽しそうなんですけど、変更箇所が増えてくるとなかなかのインパクトになりそうです...😵‍💫</p>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>「それは<code>git</code>の運用が下手なんだ」と言われればそうなんですけどね😿</p>
+</div>
+</div>
+<p>なので、もうちょっと抑えたいなーと思うんですけど...🤔
+そういえば<code>:h gitsigns-config-word_diff</code>の中で、これに関して使用している<code>highlights</code>が示されてますよね。</p>
+<p><code>highlights</code>といえば心強い味方が既にいました❗<code>onenord.nvim</code>です😆</p>
+<p><code>extensions/onenord.lua</code>を引っ張り出してきて、以下を追記してみましょう。</p>
+<div id="admonition-extensionsonenordlua-2" class="admonition example">
+<div class="admonition-title">
+<p>extensions/onenord.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-2"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  custom_highlights = {
+    MatchParen = { fg = colors.none, bg = colors.none, style = 'bold,underline' },
+
+    -- ここに追記する
+    GitSignsAddLnInline = { fg = colors.none, bg = colors.none, style = 'underline' },
+    GitSignsChangeLnInline = { fg = colors.none, bg = colors.none, style = 'underline' },
+    GitSignsDeleteLnInline = { fg = colors.purple, bg = colors.none, style = 'bold,underline' },
+  },
+</code></pre>
+</div>
+</div>
+<p>ありがとう...❗onenord...❗</p>
+<p><img src="img/custom_highlights_after.webp" alt="custom_highlights_before_after" /></p>
+<h3 id="attach_to_untracked"><a class="header" href="#attach_to_untracked">attach_to_untracked</a></h3>
+<div id="admonition-extensionsonenordlua-3" class="admonition example">
+<div class="admonition-title">
+<p>extensions/onenord.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-3"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  attach_to_untracked = false,
+</code></pre>
+</div>
+</div>
+<p>これは、わたしが今の今まで気づいていなかったんですが...。</p>
+<div id="admonition-h-gitsigns-config-attach_to_untracked" class="admonition info">
+<div class="admonition-title">
+<p>:h gitsigns-config-attach_to_untracked</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-config-attach_to_untracked"></a></p>
+</div>
+<div>
+<pre><code>attach_to_untracked                      *gitsigns-config-attach_to_untracked*
+      Type: `boolean`, Default: `true`
+
+      Attach to untracked files.
+      未追跡のファイルにアタッチする。
+</code></pre>
+</div>
+</div>
+<p>ちゃんとアタッチを無効にするオプションありました😮</p>
+<p><a href="https://coralpink.github.io/commentary/neovim/options/signcolumn.html">signcolumn</a>でこれを知らなくて、
+<code>number</code>オプションを&quot;クセつよ&quot;呼ばわりしてたんですが、わたしが無知なだけでした...。</p>
+<p>ほんとごめんなさい😭</p>
+<h3 id="current_line_blame_formatter"><a class="header" href="#current_line_blame_formatter">current_line_blame_formatter</a></h3>
+<div id="admonition-extensionsonenordlua-4" class="admonition example">
+<div class="admonition-title">
+<p>extensions/onenord.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-4"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  current_line_blame_formatter = '&lt;summary&gt; (&lt;author_time:%Y/%m&gt;)',
+</code></pre>
+</div>
+</div>
+<p>わたし自身はそんなにうまく活用できてないんですが、これはちょっと面白いやつです。</p>
+<div id="admonition-gitsigns-config-current_line_blame_formatter" class="admonition info">
+<div class="admonition-title">
+<p>gitsigns-config-current_line_blame_formatter</p>
+<p><a class="admonition-anchor-link" href="#admonition-gitsigns-config-current_line_blame_formatter"></a></p>
+</div>
+<div>
+<pre><code>current_line_blame_formatter    gitsigns-config-current_line_blame_formatter
+      Type: `string|function`, Default: `' &lt;author&gt;, &lt;author_time&gt; - &lt;summary&gt;'`
+
+      String or function used to format the virtual text of
+      |gitsigns-config-current_line_blame|.
+
+      仮想テキストをフォーマットするために使用される文字列または関数。
+
+      When a string, accepts the following format specifiers:
+      文字列の場合、以下のフォーマット指定子を受け付けます。
+</code></pre>
+</div>
+</div>
+<p>フォーマット指定子については量が多いので手元で確認してもらうとして、
+デフォルトで<code>current_line_brame</code>を有効化するかどうかは、以下のパラメータです。</p>
+<div id="admonition-gitsigns-config-current_line_blame" class="admonition info">
+<div class="admonition-title">
+<p>gitsigns-config-current_line_blame</p>
+<p><a class="admonition-anchor-link" href="#admonition-gitsigns-config-current_line_blame"></a></p>
+</div>
+<div>
+<pre><code>current_line_blame                        gitsigns-config-current_line_blame
+      Type: `boolean`, Default: `false`
+
+      Adds an unobtrusive and customisable blame annotation at the end of
+      the current line.
+
+      現在の行の末尾に、目立たずカスタマイズ可能な注釈を追加します。
+
+      The highlight group used for the text is `GitSignsCurrentLineBlame`.
+</code></pre>
+</div>
+</div>
+<p>デフォルトでは有効になっていないのですが、キーマップをそのまま持ってきているなら以下のコードが入っているはずです。</p>
+<pre><code>    map('n', '&lt;leader&gt;tb', gs.toggle_current_line_blame)
+</code></pre>
+<p><kbd>leader</kbd><kbd>t</kbd><kbd>b</kbd>としてみましょう。</p>
+<p>変更箇所に持っていくとあら不思議😮</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">before</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/currentr_line_brame_before.webp" alt="currentr_line_brame_before" /></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th style="text-align: center">after</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/currentr_line_brame_after.webp" alt="currentr_line_brame_after" /></td></tr>
+</tbody></table>
+</div>
+<p><code>summary</code>が表示されました😆</p>
+<p>これだとちょっと見にくいな〜と思ったら、また<code>onenord.lua</code>に<code>GitSignsCurrentLineBlame</code>を追加して好きなように変えられます。</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p><code>gitsigns</code>を<code>GitSign</code>とか言っちゃっててかわいいですね❗❗...はい、ごめんなさい🥹</p>
+</div>
+</div>
+<h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
+<p>賑やかな装飾を施せましたね❗サンタさんも大喜びです🎅</p>
+<div id="admonition-assemble" class="admonition success">
+<div class="admonition-title">
+<p>Assemble</p>
+<p><a class="admonition-anchor-link" href="#admonition-assemble"></a></p>
+</div>
+<div>
+<p>冒頭でも少し書いてるんですが、やっぱり<code>git</code>を使い出すと世界が広がるし、色々知れて楽しいと思うので、
+<code>git</code>触ったことない❗って人でも、このプラグインをきっかけに使い始めるのは全然アリです❗</p>
+<p>下手しても失敗しても、未来で笑い飛ばせばいいんです❗❗...はい、ごめんなさい🥹</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../neovim/plugin/nvim-hlslens.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../neovim/plugin/nvim-scrollbar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../neovim/plugin/nvim-hlslens.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../neovim/plugin/nvim-scrollbar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../js/dist/pagetoc.js"></script>
+
+
+    </body>
+</html>
