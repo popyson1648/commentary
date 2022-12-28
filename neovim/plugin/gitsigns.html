@@ -151,10 +151,10 @@
                         <h1 id="gitsignsnvim"><a class="header" href="#gitsignsnvim">gitsigns.nvim</a></h1>
 <p>今回は<code>gitsigns.nvim</code>です。</p>
 <p>人によっては<code>git</code>を使っていないかもしれないんだけど、これをきっかけに挑戦してみると楽しいと思います。</p>
-<div id="admonition-httpsgithubcomlewis6991gitsignsnvim" class="admonition info">
+<div id="admonition-gitsignsnvimhttpsgithubcomlewis6991gitsignsnvim" class="admonition info">
 <div class="admonition-title">
-<p>https://github.com/lewis6991/gitsigns.nvim</p>
-<p><a class="admonition-anchor-link" href="#admonition-httpsgithubcomlewis6991gitsignsnvim"></a></p>
+<p><a href="https://github.com/lewis6991/gitsigns.nvim">gitsigns.nvim</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-gitsignsnvimhttpsgithubcomlewis6991gitsignsnvim"></a></p>
 </div>
 <div>
 <p>Super fast git decorations implemented purely in lua/teal.</p>
@@ -368,10 +368,10 @@ non-blocking (return immediately).
 <h3 id="signs"><a class="header" href="#signs">signs</a></h3>
 <p>ここは表示する<code>text</code>だけ変えてます。</p>
 <p><code>untracked</code>については、後に出てくる<code>attach_to_untracked</code>を無効にすると使用されないので定義していません。</p>
-<div id="admonition-extensionsonenordlua" class="admonition example">
+<div id="admonition-extensionsgitsignslua-2" class="admonition example">
 <div class="admonition-title">
-<p>extensions/onenord.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua"></a></p>
+<p>extensions/gitsigns.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-2"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">  signs = {
@@ -389,10 +389,10 @@ non-blocking (return immediately).
 </tbody></table>
 </div>
 <h3 id="word_diff"><a class="header" href="#word_diff">word_diff</a></h3>
-<div id="admonition-extensionsonenordlua-1" class="admonition example">
+<div id="admonition-extensionsgitsignslua-3" class="admonition example">
 <div class="admonition-title">
-<p>extensions/onenord.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-1"></a></p>
+<p>extensions/gitsigns.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-3"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">  word_diff = true,
@@ -442,14 +442,14 @@ non-blocking (return immediately).
 <p>「それは<code>git</code>の運用が下手なんだ」と言われればそうなんですけどね😿</p>
 </div>
 </div>
-<p>なので、もうちょっと抑えたいなーと思うんですけど...🤔
-そういえば<code>:h gitsigns-config-word_diff</code>の中で、これに関して使用している<code>highlights</code>が示されてますよね。</p>
+<p>なので、もうちょっと抑えたいなーと思うんですけど...🤔</p>
+<p>そういえば<code>:h gitsigns-config-word_diff</code>の中で、これに関して使用している<code>highlights</code>が示されてますよね。</p>
 <p><code>highlights</code>といえば心強い味方が既にいました❗<code>onenord.nvim</code>です😆</p>
 <p><code>extensions/onenord.lua</code>を引っ張り出してきて、以下を追記してみましょう。</p>
-<div id="admonition-extensionsonenordlua-2" class="admonition example">
+<div id="admonition-extensionsonenordlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/onenord.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-2"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">  custom_highlights = {
@@ -466,10 +466,10 @@ non-blocking (return immediately).
 <p>ありがとう...❗onenord...❗</p>
 <p><img src="img/custom_highlights_after.webp" alt="custom_highlights_before_after" /></p>
 <h3 id="attach_to_untracked"><a class="header" href="#attach_to_untracked">attach_to_untracked</a></h3>
-<div id="admonition-extensionsonenordlua-3" class="admonition example">
+<div id="admonition-extensionsgitsignslua-4" class="admonition example">
 <div class="admonition-title">
-<p>extensions/onenord.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-3"></a></p>
+<p>extensions/gitsigns.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-4"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">  attach_to_untracked = false,
@@ -496,10 +496,10 @@ non-blocking (return immediately).
 <code>number</code>オプションを&quot;クセつよ&quot;呼ばわりしてたんですが、わたしが無知なだけでした...。</p>
 <p>ほんとごめんなさい😭</p>
 <h3 id="current_line_blame_formatter"><a class="header" href="#current_line_blame_formatter">current_line_blame_formatter</a></h3>
-<div id="admonition-extensionsonenordlua-4" class="admonition example">
+<div id="admonition-extensionsgitsignslua-5" class="admonition example">
 <div class="admonition-title">
-<p>extensions/onenord.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua-4"></a></p>
+<p>extensions/gitsigns.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-5"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">  current_line_blame_formatter = '&lt;summary&gt; (&lt;author_time:%Y/%m&gt;)',
