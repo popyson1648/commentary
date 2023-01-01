@@ -1,1 +1,1 @@
-:root{--sidebar-width: 200px;--page-padding: 15px;--content-max-width: 770px;--menu-bar-height: 50px;--mono-font: "HackGen35 Console NF", "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace;--code-font-size: 0.75em}
+:root{--sidebar-width: $sidebar-width}
