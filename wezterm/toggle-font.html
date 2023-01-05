@@ -131,7 +131,7 @@
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/DecreaseFontSize.html">DecreaseFontSize</a>・
 <a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/IncreaseFontSize.html">IncreaseFontSize</a>
 を使ってサイズを上げ下げしてもいいんですが、ちょっとコレじゃない...😒</p>
-<p>わたしはこれが結構ストレスになっていたので、 この問題を解消するのに有用なのが、次のフォント切り替え機能です😃</p>
+<p>わたしはこれが結構ストレスになっていたので、 この問題を解消するのに有用なのが、次のフォントサイズ切り替え機能です😃</p>
 <h2 id="フォントサイズ切り替え"><a class="header" href="#フォントサイズ切り替え">フォントサイズ切り替え</a></h2>
 <p>この例では<code>toggle-font-size</code>というイベントを独自に作っています。</p>
 <p><code>WezTerm</code>では、フォントサイズに限らず、元の設定を直接書き換えるのではなく、オーバーライドすることで変化させます。</p>
@@ -207,15 +207,22 @@ end)
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
 </div>
 <div>
-<p>あれ？dpi取得できるなら自動で出来るのかな。このサイト作りながら気づいてしまった...。</p>
+<p>あれ❓dpi取得できるなら自動で出来るのかな。このサイト作りながら気づいてしまった...。</p>
 <p>アウトプットはしてみるものですね❗次のページに書いちゃいます😆</p>
 </div>
 </div>
-<p>|素の状態<sup class="footnote-reference">
-<a name="to-footnote-1"><a href="#1">1</a></a>
-</sup>|切り替えた状態|
-|:---:|:---:|
-|<img src="img/font-big.webp" alt="font-big" />|<img src="img/font-small.webp" alt="font-small" />|</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">素の状態</th><th style="text-align: center">切り替えた状態</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/font-big.webp" alt="font-big" /></td><td style="text-align: center"><img src="img/font-small.webp" alt="font-small" /></td></tr>
+</tbody></table>
+</div><div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p>さらにフォントサイズを大きくして説明用に誇張しています。が、まだなんか中途半端でしたね...😿</p>
+</div>
+</div>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
@@ -226,8 +233,6 @@ end)
 <p>気持ちいい〜❗️</p>
 </div>
 </div>
-<div class="footnote-definition" id=1>
-<p><a href="#to-footnote-1"><sup>1:</sup></a> さらにフォントサイズを大きくして説明用に誇張しています。が、まだなんか中途半端でしたね...😿</div></p>
 
                     </main>
 
