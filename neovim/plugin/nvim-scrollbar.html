@@ -171,12 +171,13 @@ require(&quot;scrollbar.handlers.gitsigns&quot;).setup()
 </div>
 </div>
 <p>このコードでは、</p>
-<ul>
-<li>local colors = require('onenord.colors').load()</li>
-<li>require('scrollbar.handlers.search').setup() ※これは<code>nvim-hlslens</code></li>
-<li>require(&quot;scrollbar.handlers.gitsigns&quot;).setup()</li>
-</ul>
-<p>で、それぞれのプラグインを必要とします。<code>pakcer</code>にも教えといてあげましょう🫶</p>
+<pre><code class="language-lua">local colors = require('onenord.colors').load()
+</code></pre>
+<pre><code class="language-lua">require('scrollbar.handlers.search').setup() -- これは nvim-hlslens
+</code></pre>
+<pre><code class="language-lua">require(&quot;scrollbar.handlers.gitsigns&quot;).setup()
+</code></pre>
+<p>...で、それぞれのプラグインを必要とします。<code>pakcer</code>にも教えといてあげましょう🫶</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
