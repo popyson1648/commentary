@@ -145,34 +145,33 @@
 </div>
 </div>
 <h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>ちょっと一手間加えて、ここでも<code>onenord.nvim</code>の力を借ります。</p>
+<p>これはもう本当に簡単です。<sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup></p>
 <div id="admonition-extensionsnvim-scrollbarlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-scrollbar.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-scrollbarlua"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">local colors = require('onenord.colors').load()
-
-require('scrollbar').setup {
-  marks = {
-    Search = { color = colors.yellow },
-    Error = { color = colors.error },
-    Warn = { color = colors.warn },
-    Info = { color = colors.info },
-    Hint = { color = colors.hint },
-    Misc = { color = colors.purple },
-  },
-}
+<pre><code class="language-lua">require('scrollbar').setup {}
 
 require('scrollbar.handlers.search').setup()
 require(&quot;scrollbar.handlers.gitsigns&quot;).setup()
 </code></pre>
 </div>
 </div>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>もし細かく設定したい場合は
+<a href="https://github.com/petertriho/nvim-scrollbar#config">config</a> にある Defaults を参照すると良いです。</p>
+</div>
+</div>
 <p>このコードでは、</p>
-<pre><code class="language-lua">local colors = require('onenord.colors').load()
-</code></pre>
 <pre><code class="language-lua">require('scrollbar.handlers.search').setup() -- これは nvim-hlslens
 </code></pre>
 <pre><code class="language-lua">require(&quot;scrollbar.handlers.gitsigns&quot;).setup()
@@ -188,7 +187,7 @@ require(&quot;scrollbar.handlers.gitsigns&quot;).setup()
     'petertriho/nvim-scrollbar',
     config = function() require 'extensions.nvim-scrollbar' end,
     requires = {
-      'rmehri01/onenord.nvim', 'kevinhwang91/nvim-hlslens', 'lewis6991/gitsigns.nvim',
+      'kevinhwang91/nvim-hlslens', 'lewis6991/gitsigns.nvim',
     },
   }
 </code></pre>
@@ -231,7 +230,11 @@ IF YOU WANT IT
 </div>
 </div>
 </div>
-
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> 初掲出時には「<code>onenord.nvim</code>を使って色を設定するといいよ！」なんて書いちゃいましたが、
+改めて確認してみたら全く必要ありませんでした...。
+何も設定しなくても<code>onenord.nvim</code>の力は発揮されています❗これホントごめんなさい😿</p>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
