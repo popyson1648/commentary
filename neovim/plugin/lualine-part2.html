@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js latte">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>lualine.nvim Part Ⅱ - Commentary of Dotfiles</title>
+
+
+        <!-- Custom HTML head -->
+        <meta name="google-site-verification" content="I2IiJw92-ns-i89-BauWRWbONmTxkGU0LuMpMEI3E2I" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRHGDF4JZV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-GRHGDF4JZV');
+        </script>
+
+        <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css" async>
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../css/style.css" async>
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_theme = "latte";
+        </script>
+
+        <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../../wezterm/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item "><a href="../../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item "><a href="../../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item "><a href="../../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item "><a href="../../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item "><a href="../../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item "><a href="../../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item "><a href="../../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item "><a href="../../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item "><a href="../../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../../neovim/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item "><a href="../../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item "><a href="../../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item "><a href="../../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item "><a href="../../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item "><a href="../../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item "><a href="../../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item "><a href="../../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item "><a href="../../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item "><a href="../../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item "><a href="../../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item "><a href="../../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item "><a href="../../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item "><a href="../../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/plugin/packer.html"><strong aria-hidden="true">15.1.</strong> Packer.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item "><a href="../../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/lualine.html"><strong aria-hidden="true">15.4.</strong> lualine.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-hlslens.html"><strong aria-hidden="true">15.5.</strong> nvim-hlslens</a></li><li class="chapter-item "><a href="../../neovim/plugin/gitsigns.html"><strong aria-hidden="true">15.6.</strong> gitsigns</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-scrollbar.html"><strong aria-hidden="true">15.7.</strong> nvim-scrollbar</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine-part2.html" class="active"><strong aria-hidden="true">15.8.</strong> lualine.nvim Part Ⅱ</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">... To Be Continued.</li></ol>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa-list-ul"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa-palette"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-title">Commentary of Dotfiles</div>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa-github fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book (English only) ..."
+                          aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div class="sidetoc">
+                          <nav class="pagetoc"></nav>
+                        </div>
+
+                        <h1 id="lualinenvim-part-Ⅱ"><a class="header" href="#lualinenvim-part-Ⅱ">lualine.nvim Part Ⅱ</a></h1>
+<div id="admonition-default" class="admonition success">
+<div>
+<div style="font-size: 500%; text-align: right;">
+🌅
+</div>
+<div style="text-align: center;">
+<div style="font-size: 280%;">
+A Happy New Year!!
+</div>
+<div style="font-size: 120%; margin: 35px auto;">
+2023年もぬるっとはじまりました。
+<p>今年もよろしくね🤗</p>
+</div>
+</div>
+</div>
+</div>
+<p>このまま未来に突き進んでいくのも良いんですが、ちょっと心残りがありました。</p>
+<p><code>lualine.nvim</code>です。</p>
+<p>2023年早々、いきなり過去に戻ってしまいますが、<code>lualine.nvim</code>のカスタマイズから初めます❗</p>
+<p>...まあ、たった数週間戻るだけなんですけどね😮
+この程度なら時速 88 マイルも 1.21 ジゴワット<sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup>も必要ないでしょう。</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>あ、でもブラウザの表示幅が 750px あるといいです。</p>
+<p>これがあると<code>Nerd Fonts</code>に対応したフォントセット
+<sup class="footnote-reference">
+<a name="to-footnote-2"><a href="#2">2</a></a>
+</sup>
+が使用されるように仕組んであるんです、実は❗</p>
+<p><code>lualine.nvim</code>に関するサンプルコードには<code>Nerd Fonts</code>がいつもより多めに入ってるので、
+PCならブラウザのウィンドウを横に広げてみたり、タブレットなら横表示にしてみたり、よかったら試してみてね☺️</p>
+<p>ちゃんと綺麗にコードが見られるよ😆</p>
+</div>
+</div>
+<p>改めて明記するんですが、このサイトに記載されているカスタマイズは &quot;完全に&quot; わたしの好みで作ってあるし、
+あくまでもそれらに対してコメントしていくってだけなので、「汲み取れるものがあったら組み込んでもらえれば〜」ぐらいの感じです。</p>
+<p>前置きはこのくらいにして、いよいよ
+<a href="file:///Users/yukari/Works/commentary/book/neovim/plugin/lualine.html#to-be-continued">あのシーン</a>まで戻りましょう...。</p>
+<div id="admonition-default-1" class="admonition tip">
+<div>
+<p>いよいよ　これから</p>
+<p>きみの　ものがたりの　つづきだ❗</p>
+</div>
+</div>
+<div id="admonition-default-2" class="admonition tip">
+<div>
+<p>ゆめと　ぼうけんと❗</p>
+<p>ｎｖｉｍの　せかいへ❗</p>
+</div>
+</div>
+<div id="admonition-default-3" class="admonition tip">
+<div>
+<p>レッツ　ゴー❗</p>
+</div>
+</div>
+<div id="admonition-default-4" class="admonition quote">
+<div>
+<p>...　...　...　...</p>
+</div>
+</div>
+<div id="admonition-default-5" class="admonition note">
+<div>
+<p>Hey, CaP..., you read me...?</p>
+<p>(キャップ...、聞こえるか...?)</p>
+</div>
+</div>
+<div id="admonition-default-6" class="admonition note">
+<div>
+<p>...It's nvim Trainer. Can you hear me...?</p>
+<p>(...nvimトレーナーだ。聞こえるか...?)</p>
+</div>
+</div>
+<p>...❗</p>
+<div id="admonition-default-7" class="admonition failure">
+<div>
+<p>I'm back. ...I'm back from the future!!</p>
+<p>(わたしは戻ってきたんだ。...未来から戻ってきたんだ!!)</p>
+</div>
+</div>
+<div id="admonition-default-8" class="admonition note">
+<div>
+<p>On your next.</p>
+<p>(次を見てみろ。)</p>
+</div>
+</div>
+<h2 id="options"><a class="header" href="#options">options</a></h2>
+<p>ここから頑張って本題に入りましょう❗</p>
+<p>まずはベースとなる設定を2つ。</p>
+<h3 id="separators"><a class="header" href="#separators">separators</a></h3>
+<div id="admonition-h-lualine" class="admonition info">
+<div class="admonition-title">
+<p>:h lualine</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-lualine"></a></p>
+</div>
+<div>
+<pre><code>SEPARATORS
+
+lualine defines two kinds of separators:
+
+lualine は2種類のセパレータを定義しています。
+
+- `section_separators`   - separators between sections
+                           セクション間のセパレータ。
+
+- `component_separators` - separators between the different components in sections
+                           セクション内の異なるコンポーネントを区切るセパレータ
+</code></pre>
+<pre><code class="language-lua">  options = {
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' }
+  }
+</code></pre>
+<pre><code>Here, left refers to the left-most sections (a, b, c), and right refers to the
+right-most sections (x, y, z).
+
+ここで、left は左端のセクション(a, b, c)を、right は右端のセクション(x, y, z)を意味します。
+</code></pre>
+</div>
+</div>
+<p>まあ細かいことは後にしましょう。これはもう例示されている通りにやっちゃいます😆</p>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>ちなみにデフォルト値は <code></code> とか、 <code></code> とか なので、こっちの方が好きな場合はスキップしちゃってください。</p>
+</div>
+</div>
+<div id="admonition-extensionslualinelua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/lualine.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionslualinelua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require('lualine').setup {
+  options = {
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+  },
+}
+</code></pre>
+</div>
+</div>
+<h3 id="globalstatus"><a class="header" href="#globalstatus">globalstatus</a></h3>
+<div id="admonition-h-lualine-1" class="admonition info">
+<div class="admonition-title">
+<p>:h lualine</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-lualine-1"></a></p>
+</div>
+<div>
+<pre><code>globalstatus = false,       -- enable global statusline (have a single statusline
+                            -- at bottom of neovim instead of one for  every window).
+                            -- This feature is only available in neovim 0.7 and higher.
+
+                            グローバルステータスラインを有効にする
+                            (各ウィンドウに1つではなく、neovim の下部に1つのステータスラインを表示する)。
+                            この機能は、neovim 0.7以降で利用可能です。
+</code></pre>
+</div>
+</div>
+<p>これはデフォルトで無効になっているので有効化しましょう。
+<code>options</code>の中に追記してください。</p>
+<div id="admonition-extensionslualinelua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/lualine.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionslualinelua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">--options = {
+    globalstatus = true,
+--},
+</code></pre>
+</div>
+</div>
+<h2 id="check-options"><a class="header" href="#check-options">Check: options</a></h2>
+<p>ここまでで以下のように見た目の変化があるはずです。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">before</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/lualine-options-before.webp" alt="lualine-options-before" /></td></tr>
+<tr><td style="text-align: center">after</td></tr>
+<tr><td style="text-align: center"><img src="img/lualine-options-after.webp" alt="lualine-options-before" /></td></tr>
+</tbody></table>
+</div>
+<p><code>separators</code>を変えることによって、ステータスラインがやわらか〜な印象になりましたね。</p>
+<p>また、<code>global statusline</code>によってウィンドウを分割してもステータスラインは常に一つだけが表示されるようになりました。
+なんだか無理やり押し込まれたような窮屈な表示も解消されていて、とってもいい感じですね😆</p>
+<h2 id="sections"><a class="header" href="#sections">Sections</a></h2>
+<p>さて、<code>separators</code>項で出てきたこれ。</p>
+<pre><code>Here, left refers to the left-most sections (a, b, c), and right refers to the
+right-most sections (x, y, z).
+</code></pre>
+<div id="admonition-h-lualine-usage-and-customization" class="admonition info">
+<div class="admonition-title">
+<p>:h lualine-usage-and-customization</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-lualine-usage-and-customization"></a></p>
+</div>
+<div>
+<pre><code>Lualine has sections as shown below.
+Lualineには以下のようなセクションがあります。
+
+    +-------------------------------------------------+
+    | A | B | C                             X | Y | Z |
+    +-------------------------------------------------+
+
+Each sections holds its components e.g. Vim’s current mode.
+各セクションは、例えば Vim の現在のモードのような構成要素を保持します。
+</code></pre>
+</div>
+</div>
+<p>わかりやすいですね😉
+この6つのセクションが<code>section_separator</code>で区分けされます。</p>
+<p>ひとつのセクションの中に2つ以上の機能を入れて表示することもできます。
+この場合は<code>component_separators</code>で更に区分けされます。(...が、このページではまだ使っていません。)</p>
+<h2 id="statusline"><a class="header" href="#statusline">statusline</a></h2>
+<p>じゃあ、とりあえずやってみましょう。わたしはこんなんしてます😉</p>
+<div id="admonition-extensionslualinelua-2" class="admonition example">
+<div class="admonition-title">
+<p>extensions/lualine.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionslualinelua-2"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">-- onenord.nvim のカラーパレットを取得する
+local colors = require('onenord.colors').load()
+
+require('lualine').setup {
+--options = {
+--  (省略...)
+--},
+
+  -- options と同列に並べてください。
+  sections = {
+    lualine_a = {
+      'mode',
+    },
+    lualine_b = {
+      {
+        'filename',
+        newfile_status = true,
+        path = 1,
+        shorting_target = 24,
+        symbols = { modified = ' _', readonly = ' ', newfile = '' },
+      },
+    },
+    lualine_c = {},
+
+    lualine_x = {
+      'encoding',
+    },
+    lualine_y = {
+      { 'filetype', color = { fg = colors.fg } },
+    },
+
+    lualine_z = {
+      { 'fileformat', icons_enabled = true, separator = { left = '', right = '' } },
+    },
+  },
+}
+</code></pre>
+</div>
+</div>
+<div id="admonition-tip" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
+</div>
+<div>
+<p>「その鍵とか猫とかどっから拾ってくんねん❗」って思われるかもしれないんですが、わたしの場合は<code>Font Book</code>から。</p>
+<p>もうなんとな〜くで拾ってきちゃいます😺</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"></th><th style="text-align: center"></th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="img/fontbook1.webp" alt="fontbook1" /></td><td style="text-align: center"><img src="img/fontbook2.webp" alt="fontbook2" /></td></tr>
+</tbody></table>
+</div></div>
+</div>
+<p><img src="img/meow-meow.webp" alt="meow-meow" /></p>
+<p>あらかわいい🥰</p>
+<h2 id="components"><a class="header" href="#components">Components</a></h2>
+<p>なんとなく察しがつくかと思いますが、<code>lualine_a</code>がセクション<code>A</code>に対応しています。
+<code>B</code>, <code>C</code> と <code>X</code>, <code>Y</code>, <code>Z</code> も同様です。</p>
+<p>で、それぞれのセクションの最初にある文字列が機能(コンポーネント)を指定しています。</p>
+<p>基本機能の一覧は次の通り。</p>
+<div id="admonition-h-lualine-available-components" class="admonition info">
+<div class="admonition-title">
+<p>:h lualine-Available-components</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-lualine-available-components"></a></p>
+</div>
+<div>
+<ul>
+<li><code>branch</code> (git branch)</li>
+<li><code>buffers</code> (shows currently available buffers)</li>
+<li><code>diagnostics</code> (diagnostics count from your preferred source)</li>
+<li><code>diff</code> (git diff status)</li>
+<li><code>encoding</code> (file encoding)</li>
+<li><code>fileformat</code> (file format)</li>
+<li><code>filename</code></li>
+<li><code>filesize</code></li>
+<li><code>filetype</code></li>
+<li><code>hostname</code></li>
+<li><code>location</code> (location in file in line:column format)</li>
+<li><code>mode</code> (vim mode)</li>
+<li><code>progress</code> (%progress in file)</li>
+<li><code>searchcount</code> (number of search matches when hlsearch is active)</li>
+<li><code>tabs</code> (shows currently available tabs)</li>
+<li><code>windows</code> (shows currently available windows)</li>
+</ul>
+</div>
+</div>
+<p>以下については、それぞれ詳細が示されています。</p>
+<div id="admonition-h-lualine--component-options" class="admonition info">
+<div class="admonition-title">
+<p>:h lualine-***-component-options</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-lualine--component-options"></a></p>
+</div>
+<div>
+<ul>
+<li><code>filename</code> :h lualine-filename-component-options</li>
+<li><code>filetype</code> :h lualine-filetype-component-options</li>
+<li><code>fileformat</code> :h lualine-fileformat-component-options</li>
+</ul>
+</div>
+</div>
+<p><code>lualine_y</code>の<code>colors</code>とか、<code>lualine_z</code>の<code>separator</code>とかはわたしの趣味です。
+もうほんとに見た目だけの設定なんで❗</p>
+<p><img src="img/lualine-sections.webp" alt="lualine-sections" /></p>
+<p>うん、こんな感じですね😉</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p><code>lualine_c</code>には、もう少し先で登場する予定の<code>LSP</code><sup class="footnote-reference">
+<a name="to-footnote-3"><a href="#3">3</a></a>
+</sup>
+関連の情報を表示したいと思ってます。</p>
+<p>イメージとしては<a href="https://coralpink.github.io/commentary/index.html">トップページ</a>のようになるので、
+まだ見ぬ仲間の登場を楽しみにしておきましょう☺️</p>
+</div>
+</div>
+<h2 id="to-be-concluded"><a class="header" href="#to-be-concluded">To Be Concluded...</a></h2>
+<div id="admonition-assemble" class="admonition success">
+<div class="admonition-title">
+<p>Assemble</p>
+<p><a class="admonition-anchor-link" href="#admonition-assemble"></a></p>
+</div>
+<div>
+<p><code>lualine.nvim</code>節は...❗ なんと...❗</p>
+<p>まだ続きます😮</p>
+<p>やっぱりここはボリュームがありました...。
+でも区切りとしてはとても自然だと思うので、やっぱり思い切ってもう一回だけ跨ぎます😆</p>
+<p>次回、<code>lualine.nvim</code> PartⅢ  に続く。続くったら続く...🐈🐈🐈</p>
+</div>
+</div>
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> <a href="https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%82%AF%E3%83%BB%E3%83%88%E3%82%A5%E3%83%BB%E3%82%B6%E3%83%BB%E3%83%95%E3%83%A5%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC">Back to the Future</a> の世界ですね。
+“gigawatt”（ギガワット）を誤って“jigowatt”（ジゴワット）と書いた脚本がそのまま採用されたんだって。 (どういう誤り方❓😑)
+<a href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%AD%E3%83%AA%E3%82%A2%E3%83%B3_(%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%9E%E3%82%B7%E3%83%B3)#cite_note-jigowatt-2">wikipedia</a>より。</p>
+</div><div class="footnote-definition" id=2>
+<p><a href="#to-footnote-2"><sup>2:</sup></a> <a href="https://github.com/yuru7/HackGen">プログラミングフォント 白源 (はくげん／HackGen)</a>から❗</div><div class="footnote-definition" id=3></p>
+<p><a href="#to-footnote-3"><sup>3:</sup></a> <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a>の略。
+Microsoftが開発したものがオープンスタンダードになっているそう。
+その辺は<a href="https://en.wikipedia.org/wiki/Language_Server_Protocol">wikipedia</a>で❗</div></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../neovim/plugin/nvim-scrollbar.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../js/dist/pagetoc.js"></script>
+
+
+    </body>
+</html>
