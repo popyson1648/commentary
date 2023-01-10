@@ -5,8 +5,13 @@
         <meta charset="UTF-8">
         <title>lualine.nvim Part Ⅲ - Commentary of Dotfiles</title>
 
-
         <!-- Custom HTML head -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WMN96QT');</script>
+        
         <meta name="google-site-verification" content="I2IiJw92-ns-i89-BauWRWbONmTxkGU0LuMpMEI3E2I" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRHGDF4JZV"></script>
         <script>
@@ -36,6 +41,11 @@
 
     </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         <!-- Provide site root to javascript -->
         <script>
             const path_to_root = "../../";
@@ -116,17 +126,17 @@
 <div id="admonition-default" class="admonition note">
 <div>
 <p>I gave you explicit instructions not to come here, but to go directly back to 2023.</p>
-<p>ここには来るなと言ったはずだ、2023年に戻れとね。</p>
+<p>ここには来ないで、そのまま2023年に戻れと明確な指示をしたはずだ。</p>
 </div>
 </div>
-<p>...言われてないですけど😅</p>
+<p>...されてないですけど😅</p>
 <div id="admonition-default-1" class="admonition note">
 <div>
 <p>But it's good to see you.</p>
 <p>だが また会えて嬉しい。</p>
 </div>
 </div>
-<p>わたしも嬉しいよ😭</p>
+<p>...❗😭</p>
 <h2 id="tabline"><a class="header" href="#tabline">TabLine</a></h2>
 <p>Cinema Part もそこそこに、早速いっちゃいましょう。</p>
 <div id="admonition-extensionlualinelua" class="admonition example">
@@ -207,8 +217,8 @@ require('lualine').setup {
 </div>
 <h2 id="using-external-source"><a class="header" href="#using-external-source">Using external source</a></h2>
 <p>前回出てきた<code>:h lualine-Available-components</code>も併せて思い出してほしいんですが、
-<code>lualine.nvim</code>単体でも<code>branch</code>と<code>diff</code>の表示に対応しているんですね。</p>
-<p>しかしここで登場するのが<code>gitsigns.nvim</code>です❗</p>
+<code>lualine.nvim</code>単体でも<code>git</code>の<code>branch</code>と<code>diff</code>の表示に対応しているんですね。</p>
+<p>しかし、ここで登場するのが<code>gitsigns.nvim</code>です❗</p>
 <p><code>git</code>の扱いに関して彼の右に出るものはいません😆</p>
 <h3 id="for-git-diff"><a class="header" href="#for-git-diff">for git-diff</a></h3>
 <div id="admonition-using-external-source-for-diffhttpsgithubcomnvim-lualinelualinenvimwikicomponent-snippetsusing-external-source-for-diff" class="admonition info">
@@ -255,6 +265,15 @@ end
 </code></pre>
 </div>
 </div>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p><code>symbols</code>はわたしが勝手に入れてます。</p>
+</div>
+</div>
 <h3 id="for-git-branch"><a class="header" href="#for-git-branch">for git-branch</a></h3>
 <div id="admonition-using-external-source-for-branchhttpsgithubcomnvim-lualinelualinenvimwikicomponent-snippetsusing-external-source-for-branch" class="admonition info">
 <div class="admonition-title">
@@ -276,6 +295,15 @@ end
       { 'b:gitsigns_head', icon = { '', color = { fg = colors.orange } }, color = { fg = colors.fg } },
     },
 </code></pre>
+</div>
+</div>
+<div id="admonition-note-4" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+</div>
+<div>
+<p>これもやっぱり<code>icon</code>と<code>color</code>はわたしが勝手に入れてます。</p>
 </div>
 </div>
 <h3 id="wrap-up"><a class="header" href="#wrap-up">Wrap Up</a></h3>
@@ -326,9 +354,20 @@ end
 </div>
 <div id="admonition-default-2" class="admonition success">
 <div>
-<p>It means your future hasn’t been written yet.
-No one’s has. Your future is whatever you make it. So make it a good one!!</p>
-<p>君の未来はまだ白紙なんだよ。君の未来は君が描くんだ。だからこそ良いものにしよう!!</p>
+<p>It means your future hasn’t been written yet.</p>
+<p>きみの未来はまだ白紙なんだよ。</p>
+</div>
+</div>
+<div id="admonition-default-3" class="admonition success">
+<div>
+<p>No one’s has. Your future is whatever you make it.</p>
+<p>他の誰でもない。きみの未来はきみが描くんだ。</p>
+</div>
+</div>
+<div id="admonition-default-4" class="admonition success">
+<div>
+<p>So make it a good one!!</p>
+<p>だからこそ良いものにしよう!!</p>
 </div>
 </div>
 
@@ -363,7 +402,5 @@ No one’s has. Your future is whatever you make it. So make it a good one!!</p>
 
         <!-- Custom JS scripts -->
         <script src="../../js/dist/pagetoc.js"></script>
-
-
     </body>
 </html>
