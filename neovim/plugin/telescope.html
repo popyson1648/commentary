@@ -123,7 +123,7 @@
 <p>月の力を借りて、未知の領域を深く覗き込む。</p>
 </div>
 </div>
-<p>とってもロマンチックな見出しですね🥰</p>
+<p>とってもロマンチックな見出し🥰</p>
 <div id="admonition-default" class="admonition info">
 <div>
 <p>telescope.nvim is a highly extendable fuzzy finder over lists.
@@ -144,10 +144,11 @@ Telescope はモジュール性を重視しており、簡単にカスタマイ�
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
-<p>&quot;moon&quot; はポルトガル語で<code>lua</code>です。</p>
+<p>&quot;moon&quot; はポルトガル語で<code>lua</code>です😉</p>
 </div>
 </div>
 <h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<p>しばらくは文字ばっかり続いちゃいますが、頑張っていきましょう😆</p>
 <div id="admonition-getting-startedhttpsgithubcomnvim-telescopetelescopenvimgetting-started" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/nvim-telescope/telescope.nvim#getting-started">Getting started</a></p>
@@ -159,7 +160,7 @@ Telescope はモジュール性を重視しており、簡単にカスタマイ�
 </div>
 <p>最初のこれはもう問題ないですよね。</p>
 <p>ここから先は、月の力を借りているとは言え、高度な拡張を謳っていることもあってインストールは少し複雑に感じられるかもしれません。</p>
-<p>...とは言え、必要なのは有名なソフトウェアばかりなので、どんな環境に対しても簡単な導入方法が確立されています。</p>
+<p>...とは言え、必要なのは有名なソフトウェアばかりなので、どんな環境に対しても簡単な導入方法が確立されています❗</p>
 <p>まあだいじょぶ。できるよ🤗</p>
 <h3 id="required-dependencies"><a class="header" href="#required-dependencies">Required dependencies</a></h3>
 <div id="admonition-required-dependencieshttpsgithubcomnvim-telescopetelescopenvimrequired-dependencies" class="admonition info">
@@ -282,8 +283,8 @@ As of now, we do not ship binaries. Both install methods will be supported going
 <p>わたしが普段このサイトのスクリーンショットに使っている<code>Linux</code>の環境では、
 <code>nvim-treesitter</code>のインストール時に<code>Clang</code>を導入してあったので、特に何もせずそのままいけました。</p>
 <p><code>macOS</code>もやっぱり何も考えないでいけました。</p>
-<p><code>Windows</code>はやっぱり自信がありませんが、<code>MinGW</code>が必要無い分、
-<code>CMake</code>と<code> Microsoft C++ Build Tools on Windows</code>を使う方が簡単かもしれません。</p>
+<p><code>Windows</code>はやっぱり自信がありませんが、
+もしかしたら<code>CMake</code>と<code>Microsoft C++ Build Tools on Windows</code>を使う方が、<code>MinGW</code>を必要としない分、簡単かもしれません。</p>
 </div>
 </div>
 <h3 id="optional-dependencies"><a class="header" href="#optional-dependencies">Optional dependencies</a></h3>
@@ -385,10 +386,11 @@ vim.keymap.set('n', '&lt;leader&gt;fh', builtin.help_tags)
 <div>
 <pre><code class="language-lua">use {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.1',-- or... branch = '0.1.x',
+  branch = '0.1.x',-- or... tag = '0.1.1'
   config = function() require 'extensions.telescope' end,
   requires = {
-    'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    'nvim-tree/nvim-web-devicons', 'nvim-lua/plenary.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
   },
 }
 </code></pre>
