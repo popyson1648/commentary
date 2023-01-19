@@ -1,0 +1,512 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js latte">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>telescope.nvim - Commentary of Dotfiles</title>
+
+        <!-- Custom HTML head -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WMN96QT');</script>
+
+        <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css" async>
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../css/style.css" async>
+
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_theme = "latte";
+        </script>
+
+        <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../../wezterm/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item "><a href="../../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item "><a href="../../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item "><a href="../../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item "><a href="../../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item "><a href="../../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item "><a href="../../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item "><a href="../../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item "><a href="../../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item "><a href="../../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../../neovim/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item "><a href="../../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item "><a href="../../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item "><a href="../../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item "><a href="../../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item "><a href="../../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item "><a href="../../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item "><a href="../../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item "><a href="../../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item "><a href="../../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item "><a href="../../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item "><a href="../../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item "><a href="../../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item "><a href="../../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../neovim/plugin/packer.html"><strong aria-hidden="true">15.1.</strong> Packer.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item "><a href="../../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/lualine.html"><strong aria-hidden="true">15.4.</strong> lualine.nvim</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-hlslens.html"><strong aria-hidden="true">15.5.</strong> nvim-hlslens</a></li><li class="chapter-item "><a href="../../neovim/plugin/gitsigns.html"><strong aria-hidden="true">15.6.</strong> gitsigns</a></li><li class="chapter-item "><a href="../../neovim/plugin/nvim-scrollbar.html"><strong aria-hidden="true">15.7.</strong> nvim-scrollbar</a></li><li class="chapter-item "><a href="../../neovim/plugin/lualine-part2.html"><strong aria-hidden="true">15.8.</strong> lualine.nvim Part Ⅱ</a></li><li class="chapter-item "><a href="../../neovim/plugin/lualine-part3.html"><strong aria-hidden="true">15.9.</strong> lualine.nvim Part Ⅲ</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope.html" class="active"><strong aria-hidden="true">15.10.</strong> telescope.nvim</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">... To Be Continued.</li></ol>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa-list-ul"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa-palette"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-title">Commentary of Dotfiles</div>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa-github fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book (English only) ..."
+                          aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div class="sidetoc">
+                          <nav class="pagetoc"></nav>
+                        </div>
+
+                        <h1 id="telescopenvim"><a class="header" href="#telescopenvim">telescope.nvim</a></h1>
+<p>前回でほぼ外観が出来上がったので、ここからは一気に機能を追加していきます😆</p>
+<div id="admonition-telescopenvimhttpsgithubcomnvim-telescopetelescopenvim" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-telescope/telescope.nvim">telescope.nvim</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-telescopenvimhttpsgithubcomnvim-telescopetelescopenvim"></a></p>
+</div>
+<div>
+<p>Gaze deeply into unknown regions using the power of the moon.</p>
+<p>月の力を借りて、未知の領域を深く覗き込む。</p>
+</div>
+</div>
+<p>とってもロマンチックな見出しですね🥰</p>
+<div id="admonition-default" class="admonition info">
+<div>
+<p>telescope.nvim is a highly extendable fuzzy finder over lists.
+Built on the latest awesome features from neovim core.
+Telescope is centered around modularity, allowing for easy customization.</p>
+<p>telescope.nvim は、リスト上のファジーファインダーで、高度に拡張可能です。
+neovim core の最新の素晴らしい機能に基づいて構築されています。
+Telescope はモジュール性を重視しており、簡単にカスタマイズすることができます。</p>
+<p>Community driven builtin pickers, sorters and previewers.</p>
+<p>コミュニティによって開発された、ピッカー、ソーター、プレビュー機能を搭載しています。</p>
+</div>
+</div>
+<p>2023年はうさぎ年です🐰 うさぎといえば月ですね🌝</p>
+<p>今やらないでいつやるの❓<code>telescope.nvim</code>の登場です 🔭</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>&quot;moon&quot; はポルトガル語で<code>lua</code>です。</p>
+</div>
+</div>
+<h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<div id="admonition-getting-startedhttpsgithubcomnvim-telescopetelescopenvimgetting-started" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-telescope/telescope.nvim#getting-started">Getting started</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-getting-startedhttpsgithubcomnvim-telescopetelescopenvimgetting-started"></a></p>
+</div>
+<div>
+<p>Neovim (v0.7.0) or the latest neovim nightly commit is required for telescope.nvim to work.</p>
+</div>
+</div>
+<p>最初のこれはもう問題ないですよね。</p>
+<p>ここから先は、月の力を借りているとは言え、高度な拡張を謳っていることもあってインストールは少し複雑に感じられるかもしれません。</p>
+<p>...とは言え、必要なのは有名なソフトウェアばかりなので、どんな環境に対しても簡単な導入方法が確立されています。</p>
+<p>まあだいじょぶ。できるよ🤗</p>
+<h3 id="required-dependencies"><a class="header" href="#required-dependencies">Required dependencies</a></h3>
+<div id="admonition-required-dependencieshttpsgithubcomnvim-telescopetelescopenvimrequired-dependencies" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-telescope/telescope.nvim#required-dependencies">Required dependencies</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-required-dependencieshttpsgithubcomnvim-telescopetelescopenvimrequired-dependencies"></a></p>
+</div>
+<div>
+<p>nvim-lua/plenary.nvim is required.</p>
+</div>
+</div>
+<p><code>packer</code>の<code>required</code>に指定してあげれば良いので、ここもまだ見知った領域ですね❗</p>
+<h3 id="suggested-dependencies"><a class="header" href="#suggested-dependencies">Suggested dependencies</a></h3>
+<p>ここから未知の領域に入っていきます。覗いてみましょう...。</p>
+<div id="admonition-suggested-dependencieshttpsgithubcomnvim-telescopetelescopenvimsuggested-dependencies" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies">Suggested dependencies</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-suggested-dependencieshttpsgithubcomnvim-telescopetelescopenvimsuggested-dependencies"></a></p>
+</div>
+<div>
+<p>BurntSushi/ripgrep is required for live_grep and grep_string and is the first priority for find_files.</p>
+<p>BurntSushi/ripgrep は live_grep と grep_string に必要で、find_files では最優先されます。</p>
+</div>
+</div>
+<p>わたしも半分くらいは何言われてるのかわからないんで思考回路はショート寸前😵‍💫ですが、
+<code>ripgrep</code>が必要だということは伝わってきました❗</p>
+<div id="admonition-default-1" class="admonition info">
+<div>
+<p>We also suggest you install one native telescope sorter to significantly improve sorting performance.
+Take a look at either telescope-fzf-native.nvim or telescope-fzy-native.nvim.
+For more information and a performance benchmark take a look at the Extensions wiki.</p>
+<p>また、ソート性能を大幅に向上させるために、1つのネイティブな telescope sorter をインストールすることをお勧めします。
+telescope-fzf-native.nvim か telescope-fzy-native.nvim のいずれかを見てみてください。
+より詳細な情報とパフォーマンスベンチマークについては、Extensions wiki をご覧ください。</p>
+</div>
+</div>
+<p>こちらは必須ではありませんが、せっかくお勧めされているし、何よりもなんか面白そうです☺️</p>
+<p>&quot;性能を大幅に向上&quot;❓今すぐ 会いたいよ😆</p>
+<h4 id="ripgrep"><a class="header" href="#ripgrep">ripgrep</a></h4>
+<p>まずは<code>ripgrep</code>から。</p>
+<div id="admonition-ripgrep-rghttpsgithubcomburntsushiripgrep" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/BurntSushi/ripgrep">ripgrep (rg)</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-ripgrep-rghttpsgithubcomburntsushiripgrep"></a></p>
+</div>
+<div>
+<p>ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
+ripgrep は行指向の検索ツールで、正規表現パターンに基づいてカレントディレクトリを再帰的に検索します。</p>
+</div>
+</div>
+<p><code>Rust</code>で開発されている<code>grep</code><sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup>ツールです。</p>
+<div id="admonition-installationhttpsgithubcomburntsushiripgrepinstallation" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/BurntSushi/ripgrep#installation">installation</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-installationhttpsgithubcomburntsushiripgrepinstallation"></a></p>
+</div>
+<div>
+<p>Archives of precompiled binaries for ripgrep are available for Windows, macOS and Linux.</p>
+<p>ripgrep のコンパイル済みバイナリのアーカイブは、Windows、macOS、Linux 用に用意されています。</p>
+</div>
+</div>
+<p>インストールに関しては手厚くフォローされているので、ほとんどの環境で楽勝でしょう❗</p>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>例えば<code>macOS</code>ならすっかりお馴染みの<code>Homebrew</code>でできます。</p>
+<pre><code class="language-sh">brew install ripgrep
+</code></pre>
+</div>
+</div>
+<h4 id="telescope-fzf-nativenvim"><a class="header" href="#telescope-fzf-nativenvim">telescope-fzf-native.nvim</a></h4>
+<p>わたし自身があんまりよく分かってない領域なので、無責任な紹介になってしまいますが、
+ここでは<code>telescope-fzf-native.nvim</code>を選んで話を進めます。</p>
+<div id="admonition-telescope-fzf-nativenvimhttpsgithubcomnvim-telescopetelescope-fzf-nativenvim" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-telescope/telescope-fzf-native.nvim">telescope-fzf-native.nvim</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-telescope-fzf-nativenvimhttpsgithubcomnvim-telescopetelescope-fzf-nativenvim"></a></p>
+</div>
+<div>
+<p>fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
+This means that the fzf syntax is supported:</p>
+<p>fzf-native は fzf の c 版です。これはアルゴリズムのみをカバーし、スコア計算をサポートするいくつかの関数を実装しています。
+これは、fzf構文がサポートされていることを意味します。</p>
+</div>
+</div>
+<p>これもまた<code>require</code>のミルフィーユになっていて、泣きたくなるような moonlight🌕</p>
+<div id="admonition-installationhttpsgithubcomnvim-telescopetelescope-fzf-nativenviminstallation" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation">Installation</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-installationhttpsgithubcomnvim-telescopetelescope-fzf-nativenviminstallation"></a></p>
+</div>
+<div>
+<p>To get fzf-native working, you need to build it with either cmake or make.
+As of now, we do not ship binaries. Both install methods will be supported going forward.</p>
+</div>
+</div>
+<p>まあでも、ここまで来れたのだからなんとかなるでしょ😉</p>
+<p><code>telescope-fzf-native.nvim</code>では、<code>CMake</code>を使う方法と、<code>Make</code>を使う方法が示されています。</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p>このサイトでは<code>packer</code>への指示が簡単な<code>Make</code>を使っていきます。(コードはもうちょっと先で示します❗)</p>
+</div>
+</div>
+<p>これにプラスして、<code>GCC</code>か<code>Clang</code>が必要なので、足りないものがあれば事前にインストールしておきましょう。</p>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p>わたしが普段このサイトのスクリーンショットに使っている<code>Linux</code>の環境では、
+<code>nvim-treesitter</code>のインストール時に<code>Clang</code>を導入してあったので、特に何もせずそのままいけました。</p>
+<p><code>macOS</code>もやっぱり何も考えないでいけました。</p>
+<p><code>Windows</code>はやっぱり自信がありませんが、<code>MinGW</code>が必要無い分、
+<code>CMake</code>と<code> Microsoft C++ Build Tools on Windows</code>を使う方が簡単かもしれません。</p>
+</div>
+</div>
+<h3 id="optional-dependencies"><a class="header" href="#optional-dependencies">Optional dependencies</a></h3>
+<p>あともう少し...。がんばれ...❗</p>
+<div id="admonition-optional-dependencieshttpsgithubcomnvim-telescopetelescopenvimoptional-dependencies" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-telescope/telescope.nvim#optional-dependencies">Optional dependencies</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-optional-dependencieshttpsgithubcomnvim-telescopetelescopenvimoptional-dependencies"></a></p>
+</div>
+<div>
+<p>sharkdp/fd (finder)</p>
+<p>nvim-treesitter/nvim-treesitter (finder/preview)</p>
+<p>neovim LSP (picker)</p>
+<p>devicons (icons)</p>
+</div>
+</div>
+<p><code>nvim-treesitter</code>と<code>devicons</code>については導入済みですね、だいぶ安心できました。
+<code>neovim LSP</code>については、このサイトで扱うのはもう少し先の予定なので、ここは一旦スキップしましょ❓</p>
+<p>ってことは...❓あとひとつ❗</p>
+<h4 id="fd"><a class="header" href="#fd">fd</a></h4>
+<div id="admonition-fdhttpsgithubcomsharkdpfd" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/sharkdp/fd">fd</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-fdhttpsgithubcomsharkdpfd"></a></p>
+</div>
+<div>
+<p>fd is a program to find entries in your filesystem.
+It is a simple, fast and user-friendly alternative to find.
+While it does not aim to support all of find's powerful functionality,
+it provides sensible (opinionated) defaults for a majority of use cases.</p>
+<p>fd は、ファイルシステム内のエントリを検索するプログラムです。
+find に代わる、シンプルで高速かつユーザフレンドリなプログラムです。
+find の強力な機能のすべてをサポートすることを目的としているわけではありませんが、
+ほとんどのユースケースに対して、賢明な(意見のある)デフォルトを提供しています。</p>
+</div>
+</div>
+<div id="admonition-installationhttpsgithubcomsharkdpfdinstallation" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/sharkdp/fd#installation">installation</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-installationhttpsgithubcomsharkdpfdinstallation"></a></p>
+</div>
+<div>
+<p>On ***</p>
+</div>
+</div>
+<p>これも<code>rigprep</code>と同じく、手厚くインストール方法が提供されているので大丈夫❗</p>
+<div id="admonition-tip" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
+</div>
+<div>
+<p>わたしが知っている範囲で言うと、</p>
+<ul>
+<li><code>fd</code>: ファイル名検索</li>
+<li><code>rg</code>: ファイル内を覗いてテキスト検索する</li>
+</ul>
+<p>なので、似ているようで役割は別々です。</p>
+</div>
+</div>
+<h2 id="installation--configration"><a class="header" href="#installation--configration">Installation &amp; Configration</a></h2>
+<p>長い道のりでしたが、ようやくコンフィグを書くところまで来ました😆</p>
+<div id="admonition-extensionstelescopelua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/telescope.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionstelescopelua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local telescope = require 'telescope'
+
+telescope.setup {
+  defaults = {
+    mappings = {
+      i = {
+        ['&lt;C-h&gt;'] = 'which_key',
+      },
+    },
+    winblend = 20,
+  },
+}
+require('telescope').load_extension 'fzf'
+
+local builtin = require 'telescope.builtin'
+
+vim.keymap.set('n', '&lt;leader&gt;ff', builtin.find_files)
+vim.keymap.set('n', '&lt;leader&gt;fg', builtin.live_grep)
+vim.keymap.set('n', '&lt;leader&gt;fb', builtin.buffers)
+vim.keymap.set('n', '&lt;leader&gt;fh', builtin.help_tags)
+</code></pre>
+</div>
+</div>
+<p>上の例は、オフィシャルに示されているコードから所々省略したコードになってます。</p>
+<p>長い道のりでいたが、ここまで来れば、あとはもう<code>packer</code>に任せればできちゃいます😸</p>
+<div id="admonition-extensionsinitlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">use {
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.1',-- or... branch = '0.1.x',
+  config = function() require 'extensions.telescope' end,
+  requires = {
+    'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+  },
+}
+</code></pre>
+</div>
+</div>
+<p>信じてないのね...😿</p>
+<p>だったらね、こう叫んでみて❗ムーンプリズム・パワー、メイクアーップ🐱🌙</p>
+<p>はっ❗🐰🙋</p>
+<div id="admonition-note-4" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+</div>
+<div>
+<p>このサイトは色々パク...🙊</p>
+<p>引用作品へのリスペクトや愛情の深さや再現度の高さやその他諸々なんか等に定評があります❗きっと❗</p>
+</div>
+</div>
+<p><img src="img/telescope-install.webp" alt="telescope-installation" /></p>
+<p><code>telescope.nvim</code>、<code>telescope-fzf-native.nvim</code>、<code>plenary.nvim</code>の3つがインストールされていれば成功です❗</p>
+<div id="admonition-note-5" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-5"></a></p>
+</div>
+<div>
+<p>なんと❗<code>telescope.nvim</code>は、つい最近<code>0.1.1</code>がリリースされました👏 とってもタイムリー❗</p>
+<p><a href="https://github.com/nvim-telescope/telescope.nvim/commit/c1a2af0af69e80e14e6b226d3957a064cd080805">release: 0.1.1</a></p>
+<p>ただ、今後この<code>tag</code>、<code>branch</code>がどういう扱いになるのか分からない(わたしが知らないだけ❓)ので、
+今後の動向を気にかけておく必要はあるかも。</p>
+</div>
+</div>
+<h2 id="checkhealth"><a class="header" href="#checkhealth">CheckHealth</a></h2>
+<p><code>telescope</code>さえインストールできれば、<code>health</code>チェックが使えます。</p>
+<div id="admonition-note-6" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-6"></a></p>
+</div>
+<div>
+<p>これは<code>nvim-treesitter</code>でも出てきた<code>Neovim</code>のコマンドですね。</p>
+<p><a href="nvim-treesitter.html#checkhealth">checkhealth</a>が使えます。</p>
+</div>
+</div>
+<p>まさかサボってたせいでエラーが出てるぅ❗な〜んてこと、あるはずはありませんが、一度確認のために動かしてみましょう😉</p>
+<pre><code>:che telescope
+</code></pre>
+<p><img src="img/telescope-che-err.webp" alt="telescope-che-err" /></p>
+<p>...。😮</p>
+<p><img src="img/telescope-require.webp" alt="telescope-che-require" /></p>
+<p><img src="img/telescope-che-ok.webp" alt="telescope-che" /></p>
+<p>ほら❗オールグリーン✨</p>
+<div id="admonition-tip-1" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip-1"></a></p>
+</div>
+<div>
+<p><code>fzf</code>を知っている人に向けて書くと、少なくともここに出てくる<code>fzf</code>は<code>telescope-fzf-native.nvim</code>の事なので、
+本家の<a href="https://github.com/junegunn/fzf">fzf</a>はあってもなくても平気みたいです😉</p>
+<p>実際、上の環境ではインストールされていません。</p>
+</div>
+</div>
+<h2 id="telescopebuiltin"><a class="header" href="#telescopebuiltin">telescope.builtin</a></h2>
+<p>それでは試しにコンフィグに入れた<kbd>leader</kbd><kbd>f</kbd><kbd>f</kbd>を試してみましょう...。</p>
+<p><img src="img/telescope-ff.webp" alt="telescope-installation" /></p>
+<p>いい感じ〜☺️</p>
+<p>ファイル名で検索して絞り込んだり、
+<kbd>↑</kbd><kbd>↓</kbd>でカーソルを動かしたり、<kbd>return</kbd>でファイルを開いたりできます😌</p>
+<h2 id="wrap-up"><a class="header" href="#wrap-up">Wrap Up</a></h2>
+<p>やっぱりというか、当然というか...。これもインストールだけなのにすごいボリュームでしたね😅</p>
+<p>しかし、月の力を借りて、未知の領域を深く覗き込むことが出来るようになりました❗</p>
+<p>コンフィグについてはまだもう少し書いておきたい事があるのですが、ここで一旦休憩しましょ🌕🐇</p>
+<div id="admonition-assemble" class="admonition success">
+<div class="admonition-title">
+<p>assemble</p>
+<p><a class="admonition-anchor-link" href="#admonition-assemble"></a></p>
+</div>
+<div>
+<p>幾千万の星から あなたを見つけられる</p>
+<p>偶然もチャンスに換える 生き方が好きよ</p>
+</div>
+</div>
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> <a href="https://ja.wikipedia.org/wiki/Grep">grep</a>は、
+search <code>g</code>lobally in the file / each lines to which the <code>r</code>egular <code>e</code>xpression matches / <code>p</code>rint them
+の頭文字から来てるんだって😮</p>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../neovim/plugin/lualine-part3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../js/dist/pagetoc.js"></script>
+    </body>
+</html>
