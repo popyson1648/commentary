@@ -407,7 +407,7 @@ vim.keymap.set('n', '&lt;leader&gt;fh', builtin.help_tags)
 <p><code>CMake</code>を使用する場合、<code>telescope-fzf-native.nvim</code>のコードを以下のようにしてください。</p>
 <pre><code class="language-lua">    {
       'nvim-telescope/telescope-fzf-native.nvim',
-      run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release\&amp;&amp;\
+      run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release &amp;&amp;\
         cmake --build build --config Release &amp;&amp;\
         cmake --install build --prefix build'
     }
