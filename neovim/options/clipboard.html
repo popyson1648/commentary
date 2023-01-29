@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -119,7 +116,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-clipboard"></a></p>
 </div>
 <div>
-<pre><code>Nvim has no direct connection to the system clipboard. Instead it depends on
+<pre><code class="language-txt">Nvim has no direct connection to the system clipboard. Instead it depends on
 a |provider| which transparently uses shell commands to communicate with the
 system clipboard or any other clipboard &quot;backend&quot;.
 
@@ -128,7 +125,7 @@ Nvim は、システムのクリップボードに直接接続することはで
 通信するためにシェルコマンドを透過的に使用するプロバイダに依存する。
 
 To ALWAYS use the clipboard for ALL operations (instead of interacting with
-the '+' and/or '*' registers explicitly):  
+the '+' and/or '*' registers explicitly):
 
 クリップボードを常に使用する場合 ('+' や '*' を明示的に操作する代わりに以下のようにする):
 
@@ -161,7 +158,7 @@ See 'clipboard' for details and options.
 <p><a class="admonition-anchor-link" href="#admonition-h-clipboard-1"></a></p>
 </div>
 <div>
-<pre><code>'clipboard' 'cb'	string	(default &quot;&quot;)
+<pre><code class="language-txt">'clipboard' 'cb'	string	(default &quot;&quot;)
 			            global
 
     This option is a list of comma-separated names.
@@ -177,8 +174,7 @@ See 'clipboard' for details and options.
 <p><a class="admonition-anchor-link" href="#admonition-unnamed--unnamedplus"></a></p>
 </summary>
 <div>
-<pre><code>
-  These names are recognized:
+<pre><code class="language-txt">  These names are recognized:
 
   これらの名前は認識される。
 
@@ -196,7 +192,7 @@ See 'clipboard' for details and options.
       これを含むと、Vim は通常 unnamed レジスタに行くような yank, delete, change, put 操作に対して、
       クリップボードレジスタ '*' を使用する。
       レジスタが明示的に指定された場合、'clipboard' に unnamed が入っているかどうかに関わらず、
-      常にそのレジスタが使用される。 
+      常にそのレジスタが使用される。
       クリップボードレジスタは、常に「*」表記で明示的にアクセスすることができる。
 
 						                    clipboard-unnamedplus
@@ -239,7 +235,7 @@ See 'clipboard' for details and options.
 <p><a class="admonition-anchor-link" href="#admonition-h-vimoptappend"></a></p>
 </div>
 <div>
-<pre><code>  Append a value to string-style options. See |:set+=|
+<pre><code class="language-txt">  Append a value to string-style options. See |:set+=|
 
   文字列スタイルのオプションに値を追加する。参照: |:set+=|
 </code></pre>
@@ -290,7 +286,10 @@ See 'clipboard' for details and options.
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

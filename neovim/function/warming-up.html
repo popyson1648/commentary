@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -121,7 +118,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-keymapset"></a></p>
 </div>
 <div>
-<pre><code>set({mode}, {lhs}, {rhs}, {opts})                           vim.keymap.set()
+<pre><code class="language-txt">set({mode}, {lhs}, {rhs}, {opts})                           vim.keymap.set()
     Parameters:
       • {rhs}   string|function Right-hand side |{rhs}| of the mapping. Can
                 also be a Lua function.
@@ -151,7 +148,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-source"></a></p>
 </div>
 <div>
-<pre><code>            :so :source load-vim-script
+<pre><code class="language-txt">            :so :source load-vim-script
 :[range]so[urce] [file]	Runs |Ex| commands or Lua code (&quot;.lua&quot; files) from
                              |Ex|コマンドまたは Lua コード (&quot;.lua&quot; ファイル) を [file] から実行する。
 
@@ -259,7 +256,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

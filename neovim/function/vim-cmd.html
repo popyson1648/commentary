@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -119,7 +116,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-vimcmd"></a></p>
 </div>
 <div>
-<pre><code>cmd({command})                                                     vim.cmd()
+<pre><code class="language-txt">cmd({command})                                                     vim.cmd()
     Execute Vim script commands.
 
     Note that `vim.cmd` can be indexed with a command name to return a
@@ -153,7 +150,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-vimcmd-1"></a></p>
 </div>
 <div>
-<pre><code>    Example:
+<pre><code class="language-txt">    Example:
 
        vim.cmd('echo 42')
        vim.cmd([[
@@ -184,7 +181,7 @@
 </div>
 <p>これは単純に<code>:なんとか</code>をコードから実行できる関数ですね。</p>
 <p>こんなのを😮</p>
-<pre><code>:colorscheme blue
+<pre><code class="language-vim">:colorscheme blue
 </code></pre>
 <p>こんなのに😉</p>
 <pre><code class="language-lua">vim.cmd('colorscheme blue')
@@ -210,9 +207,9 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-colorscheme"></a></p>
 </div>
 <div>
-<pre><code>                          :colo :colorscheme E185
+<pre><code class="language-txt">                          :colo :colorscheme E185
 :colo[rscheme] {name}	Load color scheme {name}.
-      This searches 'runtimepath' for the file &quot;colors/{name}.(vim|lua)&quot;. 
+      This searches 'runtimepath' for the file &quot;colors/{name}.(vim|lua)&quot;.
 
       'runtimepath'を検索して、&quot;colors/{name}.(vim|lua) &quot;というファイルを探します。
 </code></pre>
@@ -297,7 +294,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

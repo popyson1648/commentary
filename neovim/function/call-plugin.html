@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -219,7 +216,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 <p><a class="admonition-anchor-link" href="#admonition-command"></a></p>
 </div>
 <div>
-<pre><code>mkdir -p plugin/lesson
+<pre><code class="language-sh">mkdir -p plugin/lesson
 </code></pre>
 </div>
 </div>
@@ -245,7 +242,7 @@ mkdir plugin/lesson
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_user_command"></a></p>
 </div>
 <div>
-<pre><code>nvim_create_user_command({name}, {command}, {*opts})
+<pre><code class="language-txt">nvim_create_user_command({name}, {command}, {*opts})
     Create a new user command |user-commands|
 
     {name} is the name of the new command. The name must begin with an
@@ -282,13 +279,13 @@ end, {})
 </div>
 <div>
 <p>コードは<code>:h input</code>の<code>Example</code>から持ってきて、<code>lua</code>で動くように書き換えました。</p>
-<pre><code>input({opts})
+<pre><code class="language-txt">input({opts})
 		The result is a String, which is whatever the user typed on
 		the command-line.
 
     結果は String で、ユーザーがコマンドラインで入力したもの。
 
-		Example:  
+		Example:
 			:if input &quot;Coffee or beer? &quot; == &quot;beer&quot;
 			:  echo &quot; Cheers!&quot;
 			:endif
@@ -306,7 +303,7 @@ end, {})
 </div>
 </div>
 <p>じゃあ、実際にオーダーしてみましょう。コマンドから<code>:Order</code>と入れてみてください。</p>
-<pre><code>:Order
+<pre><code class="language-vim">:Order
 </code></pre>
 <p>Coffee☕ もいいけど、今日はもう終わりだし beer🍺 でいいよね😆</p>
 <p><img src="img/beer.webp" alt="beer" /></p>
@@ -372,7 +369,10 @@ end, {})
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

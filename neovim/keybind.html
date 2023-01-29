@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../css/style.css" async>
 
@@ -133,7 +130,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-keybindsluaを作る"></a></p>
 </div>
 <div>
-<pre><code>nvim keybinds.lua
+<pre><code class="language-sh">nvim keybinds.lua
 </code></pre>
 </div>
 </div>
@@ -157,7 +154,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-keymapset"></a></p>
 </div>
 <div>
-<pre><code>set({mode}, {lhs}, {rhs}, {opts})                           vim.keymap.set()
+<pre><code class="language-txt">set({mode}, {lhs}, {rhs}, {opts})                           vim.keymap.set()
     Add a new |mapping|. Examples:
     新しい|mapping|を追加します。
 
@@ -212,7 +209,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_set_keymap"></a></p>
 </div>
 <div>
-<pre><code>    Parameters:
+<pre><code class="language-txt">    Parameters:
       • {mode}  Mode short-name (map command prefix: &quot;n&quot;, &quot;i&quot;, &quot;v&quot;, &quot;x&quot;, …) or
                 &quot;!&quot; for |:map!|, or empty string for |:map|.
 </code></pre>
@@ -243,7 +240,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-key-notation"></a></p>
 </div>
 <div>
-<pre><code>					                            key-notation key-codes keycodes
+<pre><code class="language-txt">					                            key-notation key-codes keycodes
 These names for keys are used in the documentation.
 They can also be used with the &quot;:map&quot; command.
 
@@ -259,7 +256,7 @@ They can also be used with the &quot;:map&quot; command.
 </div>
 <div>
 <p>上のヘルプの内容とは少し離れますが、<code>:map</code>コマンドを使用すると現在のキー設定が一覧できます。</p>
-<pre><code>:map
+<pre><code class="language-vim">:map
 </code></pre>
 <p><img src="img/keymap-before.webp" alt="keymap-before" /></p>
 </div>
@@ -334,7 +331,7 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 <p><a class="admonition-anchor-link" href="#admonition-h-key-notation-1"></a></p>
 </div>
 <div>
-<pre><code>&lt;NOP&gt;   no-op: do nothing (useful in mappings)	&lt;Nop&gt;
+<pre><code class="language-txt">&lt;NOP&gt;   no-op: do nothing (useful in mappings)	&lt;Nop&gt;
                何もしない（マッピングで有効）
 </code></pre>
 </div>
@@ -367,7 +364,7 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 <p><a class="admonition-anchor-link" href="#admonition-h-map-table"></a></p>
 </div>
 <div>
-<pre><code>              map-table
+<pre><code class="language-txt">              map-table
          Mode  | Norm | Ins | Cmd | Vis | Sel | Opr | Term | Lang |
 Command        +------+-----+-----+-----+-----+-----+------+------+
 [nore]map      | yes  |  -  |  -  | yes | yes | yes |  -   |  -   |
@@ -493,7 +490,10 @@ vim.keymap.set('n', 's', '&quot;_s')
         <script src="../searcher.js"></script>
 
         <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
+
+        <script src="../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->

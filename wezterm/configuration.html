@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../css/style.css" async>
 
@@ -171,7 +168,7 @@
 <pre><code class="language-sh">touch ~/.config/wezterm/wezterm.lua
 </code></pre>
 <p>ファイルを開く:</p>
-<pre><code>open ~/.config/wezterm/wezterm.lua
+<pre><code class="language-sh">open ~/.config/wezterm/wezterm.lua
 </code></pre>
 <p>これで<code>lua</code>ファイルに関連付けられたアプリケーションが起動するはずです。</p>
 <p>もし、こんなのが出てきたら</p>
@@ -220,7 +217,10 @@
         <script src="../searcher.js"></script>
 
         <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
+
+        <script src="../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->

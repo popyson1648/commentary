@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -172,7 +169,7 @@
 </div>
 <div>
 <p><code>packpath</code>については、ちょっと自信ないんですが、</p>
-<pre><code>:echo &amp;packpath
+<pre><code class="language-sh">:echo &amp;packpath
 </code></pre>
 <p>...と、することで確認できました。</p>
 <p><img src="img/packpath.webp" alt="packpath" /></p>
@@ -282,7 +279,7 @@ end)
 <p><a class="admonition-anchor-link" href="#admonition-h-packages"></a></p>
 </div>
 <div>
-<pre><code>On startup after processing your |config|, Nvim scans all directories in
+<pre><code class="language-txt">On startup after processing your |config|, Nvim scans all directories in
 
 'packpath' for plugins in &quot;pack/*/start/*&quot;, then loads the plugins.
 
@@ -324,28 +321,28 @@ details.
 <h2 id="command"><a class="header" href="#command">Command</a></h2>
 <p><code>packer.nvim</code>はプラグインのアップデートなども含めてマネージメントしてくれます☺️</p>
 <h3 id="packercompile"><a class="header" href="#packercompile">PackerCompile</a></h3>
-<pre><code>You must run this or `PackerSync` whenever you make changes to your plugin configuration regenerate compiled loader file
+<pre><code class="language-txt">You must run this or `PackerSync` whenever you make changes to your plugin configuration regenerate compiled loader file
 
 プラグインの設定を変更したときは、必ずこのコマンドか`PackerSync`を実行しなければなりません。
 コンパイル済みのローダーファイルを再生成します。
 </code></pre>
 <h3 id="packerclean"><a class="header" href="#packerclean">PackerClean</a></h3>
-<pre><code>Remove any disabled or unused plugins
+<pre><code class="language-txt">Remove any disabled or unused plugins
 無効または未使用のプラグインを削除します。
 </code></pre>
 <h3 id="packerinstall"><a class="header" href="#packerinstall">PackerInstall</a></h3>
-<pre><code>Clean, then install missing plugins
+<pre><code class="language-txt">Clean, then install missing plugins
 無効になっているプラグインを削除し、インストールします。
 </code></pre>
 <h3 id="packerupdate"><a class="header" href="#packerupdate">PackerUpdate</a></h3>
-<pre><code>Clean, then update and install plugins
+<pre><code class="language-txt">Clean, then update and install plugins
 supports the `--preview` flag as an optional first argument to preview updates
 
 クリーンアップの後、プラグインをアップデートしてインストールします。
 アップデートをプレビューするためのオプションの第一引数として `--preview` フラグをサポートします。
 </code></pre>
 <h3 id="packersync"><a class="header" href="#packersync">PackerSync</a></h3>
-<pre><code>Perform `PackerUpdate` and then `PackerCompile`
+<pre><code class="language-txt">Perform `PackerUpdate` and then `PackerCompile`
 supports the `--preview` flag as an optional first argument to preview updates
 
 `PackerUpdate`と`PackerCompile`を実行します。
@@ -362,11 +359,11 @@ supports the `--preview` flag as an optional first argument to preview updates
 </div>
 </div>
 <h3 id="packerstatus"><a class="header" href="#packerstatus">PackerStatus</a></h3>
-<pre><code>Show list of installed plugins
+<pre><code class="language-txt">Show list of installed plugins
 インストールされているプラグインのリストを表示します。
 </code></pre>
 <h3 id="packerload"><a class="header" href="#packerload">PackerLoad</a></h3>
-<pre><code>Loads opt plugin immediately
+<pre><code class="language-txt">Loads opt plugin immediately
 optプラグインをすぐにロードする
 </code></pre>
 <h2 id="help"><a class="header" href="#help">Help</a></h2>
@@ -378,7 +375,7 @@ optプラグインをすぐにロードする
 <p><a class="admonition-anchor-link" href="#admonition-quote"></a></p>
 </div>
 <div>
-<pre><code>:h packer.nvim
+<pre><code class="language-vim">:h packer.nvim
 </code></pre>
 </div>
 </div>
@@ -485,7 +482,10 @@ config = {
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

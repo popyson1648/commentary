@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -120,7 +117,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-signcolumn"></a></p>
 </div>
 <div>
-<pre><code>						            'signcolumn' 'scl'
+<pre><code class="language-txt">						            'signcolumn' 'scl'
 
 'signcolumn' 'scl'      string      (default &quot;auto&quot;)
 			            local to window
@@ -133,7 +130,7 @@
 
 	    &quot;auto:[1-9]&quot;    resize to accommodate multiple signs up to the
                         指定された数まで複数のサインを収容するためにリサイズする
-	                    
+
 	    &quot;auto:[1-8]-[2-9]&quot;
                         resize to accommodate multiple signs up to the
                         given maximum number (maximum 9) while keeping
@@ -244,7 +241,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

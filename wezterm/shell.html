@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../css/style.css" async>
 
@@ -128,7 +125,7 @@
 </div>
 ページ内の Get Started からインストール方法が確認できます。
 <p>覗いてみると</p>
-<pre><code>Prerequisites
+<pre><code class="language-txt">Prerequisites
 - A Nerd Font installed and enabled in your terminal.
 
 前提条件
@@ -252,7 +249,10 @@ special symbols are available even without requiring you to use a patched font.<
         <script src="../searcher.js"></script>
 
         <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
+
+        <script src="../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->

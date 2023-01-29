@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../css/style.css" async>
 
@@ -279,7 +276,10 @@ local index = tab.is_active and 1 or 2
         <script src="../searcher.js"></script>
 
         <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
+
+        <script src="../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->

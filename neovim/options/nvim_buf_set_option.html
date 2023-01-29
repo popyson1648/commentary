@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -149,14 +146,14 @@ APIを　つかいます❗</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_buf_set_option"></a></p>
 </div>
 <div>
-<pre><code>nvim_buf_set_option({buffer}, {name}, {value})          *nvim_buf_set_option()*
+<pre><code class="language-txt">nvim_buf_set_option({buffer}, {name}, {value})          *nvim_buf_set_option()*
     Sets a buffer option value. Passing `nil` as value deletes the option
     (only works if there's a global fallback)
 
     buffer のオプション値を設定する。value として `nil` を渡すと、そのオプションが削除される。
     (グローバルフォールバックがある場合のみ動作する)
 
-    Parameters:  
+    Parameters:
       • {buffer}  Buffer handle, or 0 for current buffer
                   バッファハンドル、またはカレントバッファの場合は0。
 
@@ -216,7 +213,10 @@ APIを　つかいます❗</p>
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

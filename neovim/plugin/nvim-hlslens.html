@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -207,7 +204,7 @@ end, {expr = true})
 <p><a class="admonition-anchor-link" href="#admonition-h-quickfix"></a></p>
 </div>
 <div>
-<pre><code>Vim has a special mode to speedup the edit-compile-edit cycle.  This is
+<pre><code class="language-txt">Vim has a special mode to speedup the edit-compile-edit cycle.  This is
 inspired by the quickfix option of the Manx's Aztec C compiler on the Amiga.
 The idea is to save the error messages from the compiler in a file and use Vim
 to jump to the errors one by one.  You can examine each problem and fix it,
@@ -259,7 +256,7 @@ Vim では、quickfix コマンドはより一般的に、ファイル内の位�
 <p><a class="admonition-anchor-link" href="#admonition-h-shortmess"></a></p>
 </div>
 <div>
-<pre><code>  S  do not show search count message when searching,
+<pre><code class="language-txt">  S  do not show search count message when searching,
      検索時に検索数を表示しない,
 
      e.g. &quot;[1/5]&quot;
@@ -272,7 +269,7 @@ Vim では、quickfix コマンドはより一般的に、ファイル内の位�
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-hlslenslua-1"></a></p>
 </div>
 <div>
-<pre><code>-- (省略)
+<pre><code class="language-lua">-- (省略)
 -- end, {expr = true})
 
 -- そう、ここだ...。
@@ -291,7 +288,7 @@ vim.opt.shortmess:append 'S'
 <p>これ、あんまり関係ないんですが...、なんかいつの間にか<code>nvim</code>起動時のイントロ出なくなってません❓</p>
 <p>(面倒なので犯人探しとかはしないんですけど😑)</p>
 <p>本来であれば、<code>shortmess</code>にこんなのがいるんです。</p>
-<pre><code>  I  don't give the intro message when starting Vim,
+<pre><code class="language-txt">  I  don't give the intro message when starting Vim,
      Vimの起動時にイントロメッセージを表示しない,
 
 	 see |:intro|.
@@ -321,7 +318,7 @@ vim.opt.shortmess:append 'S'
 <p><a class="admonition-anchor-link" href="#admonition-h-iccf"></a></p>
 </div>
 <div>
-<pre><code>Vim is Charityware.
+<pre><code class="language-txt">Vim is Charityware.
 You can use and copy it as much as you like,
 but you are encouraged to make a donation for needy children in Uganda.
 
@@ -389,7 +386,10 @@ Vim のスポンサーは機能に対して投票することができます。|
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

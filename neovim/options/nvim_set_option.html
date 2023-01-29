@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -127,15 +124,15 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_set_option"></a></p>
 </div>
 <div>
-<pre><code>nvim_set_option({name}, {value})            nvim_set_option()
+<pre><code class="language-txt">nvim_set_option({name}, {value})            nvim_set_option()
     Sets the global value of an option.
     オプションのグローバル値を設定する。
 
-    Parameters:  
+    Parameters:
       • {name}   Option name
       • {value}  New option value
 
-    パラメータ  
+    パラメータ
       • {name}   オプション名
       • {value}  新しいオプションの値
 </code></pre>
@@ -183,7 +180,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -121,11 +118,11 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_augroup"></a></p>
 </div>
 <div>
-<pre><code>nvim_create_augroup({name}, {*opts})                   *nvim_create_augroup()*
+<pre><code class="language-txt">nvim_create_augroup({name}, {*opts})                   *nvim_create_augroup()*
     Create or get an autocommand group |autocmd-groups|.
     オートコマンドグループを作成または取得する。
 
-    Parameters:  
+    Parameters:
       • {name}  String: The name of the group
                         グループの名前
 
@@ -135,11 +132,11 @@
 
                   デフォルトはtrue。グループが既に存在する場合、そのコマンドをクリアする。
 
-    Return:  
+    Return:
         Integer id of the created group.
         作成されたグループの整数値 ID
 
-    See also:  
+    See also:
         |autocmd-groups|
 </code></pre>
 </div>
@@ -151,7 +148,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-autocmd-groups"></a></p>
 </div>
 <div>
-<pre><code>Autocommands can be put together in a group. 
+<pre><code class="language-txt">Autocommands can be put together in a group.
 This is useful for removing or executing a group of autocommands.
 
 オートコマンドは、グループとしてまとめることができる。
@@ -167,10 +164,10 @@ This is useful for removing or executing a group of autocommands.
 <p><a class="admonition-anchor-link" href="#admonition-quote"></a></p>
 </div>
 <div>
-<pre><code>:aug
+<pre><code class="language-vim">:aug
 </code></pre>
 <p>または</p>
-<pre><code>:augroup
+<pre><code class="language-vim">:augroup
 </code></pre>
 </div>
 </div>
@@ -184,8 +181,8 @@ This is useful for removing or executing a group of autocommands.
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_augroup-1"></a></p>
 </div>
 <div>
-<pre><code>To get an existing group id, do:  
-既存のグループ ID を取得するには、次のようにする。 
+<pre><code class="language-txt">To get an existing group id, do:
+既存のグループ ID を取得するには、次のようにする。
 
     local id = vim.api.nvim_create_augroup(&quot;MyGroup&quot;, {
         clear = false
@@ -220,7 +217,7 @@ This is useful for removing or executing a group of autocommands.
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_autocmd"></a></p>
 </div>
 <div>
-<pre><code>  • {opts} Dictionary of autocommand options:
+<pre><code class="language-txt">  • {opts} Dictionary of autocommand options:
     • group (string|integer) optional: the autocommand group name or id to match against.
       マッチするオートコマンドグループ名または ID。
 </code></pre>
@@ -318,7 +315,10 @@ vim.opt.tabstop = 2
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

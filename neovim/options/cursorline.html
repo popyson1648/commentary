@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -119,7 +116,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-cursorline"></a></p>
 </div>
 <div>
-<pre><code>			            'cursorline' 'cul' 'nocursorline' 'nocul'
+<pre><code class="language-txt">			            'cursorline' 'cul' 'nocursorline' 'nocul'
 
 'cursorline' 'cul'  boolean     (default off)
                     local to window
@@ -201,7 +198,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

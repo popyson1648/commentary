@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -214,7 +211,7 @@ PCならブラウザのウィンドウを横に広げてみたり、タブレッ
 <p><a class="admonition-anchor-link" href="#admonition-h-lualine"></a></p>
 </div>
 <div>
-<pre><code>SEPARATORS
+<pre><code class="language-txt">SEPARATORS
 
 lualine defines two kinds of separators:
 
@@ -231,7 +228,7 @@ lualine は2種類のセパレータを定義しています。
     component_separators = { left = '', right = '' }
   }
 </code></pre>
-<pre><code>Here, left refers to the left-most sections (a, b, c), and right refers to the
+<pre><code class="language-txt">Here, left refers to the left-most sections (a, b, c), and right refers to the
 right-most sections (x, y, z).
 
 ここで、left は左端のセクション(a, b, c)を、right は右端のセクション(x, y, z)を意味します。
@@ -270,7 +267,7 @@ right-most sections (x, y, z).
 <p><a class="admonition-anchor-link" href="#admonition-h-lualine-1"></a></p>
 </div>
 <div>
-<pre><code>globalstatus = false,       -- enable global statusline (have a single statusline
+<pre><code class="language-txt">globalstatus = false,       -- enable global statusline (have a single statusline
                             -- at bottom of neovim instead of one for  every window).
                             -- This feature is only available in neovim 0.7 and higher.
 
@@ -307,7 +304,7 @@ right-most sections (x, y, z).
 なんだか無理やり押し込まれたような窮屈な表示も解消されていて、とってもいい感じですね😆</p>
 <h2 id="sections"><a class="header" href="#sections">Sections</a></h2>
 <p>さて、<code>separators</code>項で出てきたこれ。</p>
-<pre><code>Here, left refers to the left-most sections (a, b, c), and right refers to the
+<pre><code class="language-txt">Here, left refers to the left-most sections (a, b, c), and right refers to the
 right-most sections (x, y, z).
 </code></pre>
 <div id="admonition-h-lualine-usage-and-customization" class="admonition info">
@@ -316,7 +313,7 @@ right-most sections (x, y, z).
 <p><a class="admonition-anchor-link" href="#admonition-h-lualine-usage-and-customization"></a></p>
 </div>
 <div>
-<pre><code>Lualine has sections as shown below.
+<pre><code class="language-txt">Lualine has sections as shown below.
 Lualineには以下のようなセクションがあります。
 
     +-------------------------------------------------+
@@ -510,7 +507,10 @@ Microsoftが開発したものがオープンスタンダードになってい�
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

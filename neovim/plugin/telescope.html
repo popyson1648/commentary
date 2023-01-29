@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -449,23 +446,23 @@ vim.keymap.set('n', '&lt;leader&gt;fh', builtin.help_tags)
 </div>
 </div>
 <h2 id="checkhealth"><a class="header" href="#checkhealth">CheckHealth</a></h2>
-<div id="admonition-chechkhealth" class="admonition info">
+<div id="admonition-chechkhealthhttpsgithubcomnvim-telescopetelescopenvimcheckhealth" class="admonition info">
 <div class="admonition-title">
-<p>chechkhealth</p>
-<p><a class="admonition-anchor-link" href="#admonition-chechkhealth"></a></p>
+<p><a href="https://github.com/nvim-telescope/telescope.nvim#checkhealth">chechkhealth</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-chechkhealthhttpsgithubcomnvim-telescopetelescopenvimcheckhealth"></a></p>
 </div>
 <div>
 <p>Make sure you call <code>:checkhealth telescope</code> after installing
 telescope to ensure everything is set up correctly.</p>
-<p>After this setup you can continue reading here or switch to
-<code>:help</code> telescope to get an understanding of how to use Telescope and how to configure it.</p>
 <p>Telescope をインストールした後、必ず<code>:checkhealth telescope</code>を呼び出して、
 すべてが正しくセットアップされていることを確認してください。</p>
+<p>After this setup you can continue reading here or switch to
+<code>:help telescope</code> to get an understanding of how to use Telescope and how to configure it.</p>
 <p>このセットアップの後、ここを読み続けるか、<code>:help telescope</code> に切り替えて
 Telescope の使用方法と設定方法を理解することができます。</p>
 </div>
 </div>
-<p><code>telescope</code>さえインストールできれば、<a href="nvim-treesitter.html#checkhealth">checkhealth</a> が使えます。</p>
+<p><code>telescope.nvim</code>さえインストールできれば、<a href="nvim-treesitter.html#checkhealth">checkhealth</a> が使えます。</p>
 <div id="admonition-note-6" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -476,7 +473,7 @@ Telescope の使用方法と設定方法を理解することができます。<
 </div>
 </div>
 <p>まさかサボってたせいでエラーが出てるぅ❗な〜んてこと、あるはずはありませんが、一度確認のために動かしてみましょう😉</p>
-<pre><code>:che telescope
+<pre><code class="language-vim">:che telescope
 </code></pre>
 <p><img src="img/telescope-che-err.webp" alt="telescope-che-err" /></p>
 <p>...。😮</p>
@@ -545,7 +542,10 @@ search <code>g</code>lobally in the file / each lines to which the <code>r</code
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

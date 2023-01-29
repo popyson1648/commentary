@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -119,7 +116,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-ignorecase"></a></p>
 </div>
 <div>
-<pre><code>7. Ignoring case in a pattern					/ignorecase
+<pre><code class="language-txt">7. Ignoring case in a pattern					/ignorecase
 
 If the 'ignorecase' option is on, the case of normal letters is ignored.
 'smartcase' can be set to ignore case when the pattern contains lowercase
@@ -129,7 +126,7 @@ ignorecase' オプションがオンの場合、通常の文字の大文字小�
 smartcase' を指定すると、パターンが小文字のみである場合に大文字小文字を無視する。
 
 Examples:
-      pattern	'ignorecase'   'smartcase'   matches  
+      pattern	'ignorecase'   'smartcase'   matches
 
     	foo         off		    -	    foo
 	    foo	    on		    -	    foo Foo FOO
@@ -146,14 +143,14 @@ Examples:
 <p><a class="admonition-anchor-link" href="#admonition-h-smartcase"></a></p>
 </div>
 <div>
-<pre><code>'smartcase' 'scs' 'nosmartcase' 'noscs'
+<pre><code class="language-txt">'smartcase' 'scs' 'nosmartcase' 'noscs'
 
 'smartcase' 'scs' boolean (default off)
 			      global
 
     Override the 'ignorecase' option if the search pattern contains upper
     case characters.  Only used when the search pattern is typed and
-    'ignorecase' option is on. 
+    'ignorecase' option is on.
 
     検索パターンが大文字を含む場合、'ignorecase' オプションを無効にする。
     検索パターンが入力され、'ignorecase' が on の時のみ使用される。
@@ -187,12 +184,12 @@ vim.api.nvim_set_option('smartcase', true)
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup>
 それでは小文字だけの<code>she</code>を検索してみます。検索には<kbd>/</kbd>で入れます。</p>
-<pre><code>/she
+<pre><code class="language-vim">/she
 </code></pre>
 <p><img src="img/search-she1.webp" alt="search-she1" /></p>
 <p><code>She</code>と<code>she</code>の2つに反応しましたね。</p>
 <p>じゃあ、次は 「大文字を含む場合」の<code>She</code>でやってみましょう。</p>
-<pre><code>/She
+<pre><code class="language-vim">/She
 </code></pre>
 <p><img src="img/search-she2.webp" alt="search-she1" /></p>
 <p><code>She</code>だけに反応しましたね。</p>
@@ -249,7 +246,10 @@ vim.api.nvim_set_option('smartcase', true)
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

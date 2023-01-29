@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -251,10 +248,10 @@ Best kind of customize is the one where you have the power to customize but not 
 <pre><code class="language-lua">requires = { 'kyazdani42/nvim-web-devicons' },
 </code></pre>
 <p>として説明されているのですが、</p>
-<pre><code>https://github.com/kyazdani42/nvim-web-devicons
+<pre><code class="language-txt">https://github.com/kyazdani42/nvim-web-devicons
 </code></pre>
 <p>...に行こうとすると、</p>
-<pre><code>https://github.com/nvim-tree/nvim-web-devicons
+<pre><code class="language-txt">https://github.com/nvim-tree/nvim-web-devicons
 </code></pre>
 <p>...に飛ばされますよね。</p>
 <p>なので、<code>packer</code>への指定も、最初からこちらの URL を使用してます。</p>
@@ -280,7 +277,7 @@ Best kind of customize is the one where you have the power to customize but not 
 <p><a class="admonition-anchor-link" href="#admonition-h-packer-plugin-dependencies"></a></p>
 </div>
 <div>
-<pre><code>Plugins may specify dependencies via the `requires` key in their specification table.
+<pre><code class="language-txt">Plugins may specify dependencies via the `requires` key in their specification table.
 This key can be a string or a list (table).
 
 プラグインは、その仕様テーブルの `requires` キーで依存関係を指定することができます。このキーは文字列かリスト(テーブル)です。
@@ -297,7 +294,7 @@ If `ensure_dependencies` is true, the plugins specified in `requires` will be in
 <p><a class="admonition-anchor-link" href="#admonition-h-packer-configuration"></a></p>
 </div>
 <div>
-<pre><code>ensure_dependencies = true, -- Should packer install plugin dependencies?
+<pre><code class="language-txt">ensure_dependencies = true, -- Should packer install plugin dependencies?
 
                                packer はプラグインの依存関係をインストールするべき？
 </code></pre>
@@ -382,7 +379,7 @@ If `ensure_dependencies` is true, the plugins specified in `requires` will be in
 <p><a class="admonition-anchor-link" href="#admonition-h-showmode"></a></p>
 </div>
 <div>
-<pre><code>'showmode' 'smd'    boolean (default: on)
+<pre><code class="language-txt">'showmode' 'smd'    boolean (default: on)
                     global
 
 	If in Insert, Replace or Visual mode put a message on the last line.
@@ -465,7 +462,10 @@ vim.api.nvim_set_option('showmode', false)
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

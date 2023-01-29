@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -268,7 +265,7 @@ end,
 <p><a class="admonition-anchor-link" href="#admonition-h-packeruse"></a></p>
 </div>
 <div>
-<pre><code>config = string or function, -- Specifies code to run after this plugin is loaded.
+<pre><code class="language-txt">config = string or function, -- Specifies code to run after this plugin is loaded.
                                 このプラグインがロードされた後に実行するコードを指定します。
 </code></pre>
 </div>
@@ -317,7 +314,7 @@ end,
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim-treesitter-commands"></a></p>
 </div>
 <div>
-<pre><code>COMMANDS
+<pre><code class="language-txt">COMMANDS
 </code></pre>
 </div>
 </div>
@@ -330,14 +327,14 @@ end,
 <p><a class="admonition-anchor-link" href="#admonition-moduleshttpsgithubcomnvim-treesitternvim-treesittermodules"></a></p>
 </div>
 <div>
-<pre><code>By default, everything is disabled.
+<pre><code class="language-txt">By default, everything is disabled.
 
 デフォルトでは、すべて無効になっています。
 </code></pre>
 </div>
 </div>
 <h3 id="ensure_installed"><a class="header" href="#ensure_installed">ensure_installed</a></h3>
-<pre><code>A list of parser names, or &quot;all&quot;
+<pre><code class="language-txt">A list of parser names, or &quot;all&quot;
 
 パーサ名のリスト、または &quot;all&quot;を指定する。
 </code></pre>
@@ -355,7 +352,7 @@ end,
 </div>
 </div>
 <h3 id="sync_install"><a class="header" href="#sync_install">sync_install</a></h3>
-<pre><code>Install parsers synchronously. (only applied to `ensure_installed`)
+<pre><code class="language-txt">Install parsers synchronously. (only applied to `ensure_installed`)
 
 パーサを同期的にインストールする。 (`ensure_installed` にのみ適用される)
 </code></pre>
@@ -370,7 +367,7 @@ end,
 </div>
 </div>
 <h3 id="auto_install"><a class="header" href="#auto_install">auto_install</a></h3>
-<pre><code>Automatically install missing parsers when entering buffer.
+<pre><code class="language-txt">Automatically install missing parsers when entering buffer.
 
 バッファに入ったときに足りないパーサを自動的にインストールします。
 </code></pre>
@@ -384,7 +381,7 @@ end,
 </div>
 </div>
 <h3 id="highlight"><a class="header" href="#highlight">highlight</a></h3>
-<pre><code>`false` will disable the whole extension
+<pre><code class="language-txt">`false` will disable the whole extension
 
 false` を指定すると、拡張機能全体を無効にすることができます。
 </code></pre>
@@ -411,7 +408,7 @@ false` を指定すると、拡張機能全体を無効にすることができ�
 <div>
 <p>Incremental selection based on the named nodes from the grammar.</p>
 <p>文法からの名前付きノードに基づくインクリメンタルな選択。</p>
-<pre><code>- keymaps:
+<pre><code class="language-txt">- keymaps:
   - init_selection: in normal mode, start incremental selection.
                     ノーマルモードで、インクリメンタルな選択を開始します。
 
@@ -436,7 +433,7 @@ false` を指定すると、拡張機能全体を無効にすることができ�
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim-treesitter-indntation-mod"></a></p>
 </div>
 <div>
-<pre><code>Indentation based on treesitter for the |=| operator.
+<pre><code class="language-txt">Indentation based on treesitter for the |=| operator.
 
 |=| 演算子の treesitter に基づくインデント。
 
@@ -458,8 +455,8 @@ Supported options:
 <p><a class="admonition-anchor-link" href="#admonition-h-health"></a></p>
 </div>
 <div>
-<pre><code>health.vim is a minimal framework to help users troubleshoot configuration and
-any other environment conditions that a plugin might care about. 
+<pre><code class="language-txt">health.vim is a minimal framework to help users troubleshoot configuration and
+any other environment conditions that a plugin might care about.
 
 health.vim は、プラグイン設定やその他の環境条件の
 トラブルシューティングを支援するための最小限のフレームワークである。
@@ -471,10 +468,10 @@ Plugin authors are encouraged to write new healthchecks. |health-dev|
 </div>
 </div>
 <p>コマンドは<code>:h health-commands</code>にある通りです。試しに動かしてみましょう。</p>
-<pre><code>:che
+<pre><code class="language-vim">:che
 </code></pre>
 <p>または</p>
-<pre><code>:checkhealth
+<pre><code class="language-vim">:checkhealth
 </code></pre>
 <p><img src="img/checkhealth.webp" alt="checkhealth" /></p>
 <p>結果が表示されましたね☺️</p>
@@ -486,7 +483,7 @@ Plugin authors are encouraged to write new healthchecks. |health-dev|
 </div>
 <div>
 <p>これもヘルプそのままですが、指定したプラグインだけを診断することも可能です。</p>
-<pre><code>:che nvim-treesitter
+<pre><code class="language-vim">:che nvim-treesitter
 </code></pre>
 <p>とすると、<code>nvim-treesitter</code>のヘルスチェックのみを行えます。</p>
 </div>
@@ -542,7 +539,10 @@ Plugin authors are encouraged to write new healthchecks. |health-dev|
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

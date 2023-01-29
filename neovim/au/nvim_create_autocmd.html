@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -119,8 +116,8 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_autocmd"></a></p>
 </div>
 <div>
-<pre><code>nvim_create_autocmd({event}, {*opts})                   nvim_create_autocmd()
-                                        Create an |autocommand|
+<pre><code class="language-txt">nvim_create_autocmd({event}, {*opts})                 nvim_create_autocmd()
+                                                      Create an |autocommand|
 
     The API allows for two (mutually exclusive) types of actions to be
     executed when the autocommand triggers: a callback function (Lua or
@@ -150,10 +147,10 @@
 <p><a class="admonition-anchor-link" href="#admonition-quote"></a></p>
 </div>
 <div>
-<pre><code>:au
+<pre><code class="language-vim">:au
 </code></pre>
 <p>または</p>
-<pre><code>:autocmd
+<pre><code class="language-vim">:autocmd
 </code></pre>
 </div>
 </div>
@@ -182,7 +179,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-autocmd-events"></a></p>
 </div>
 <div>
-<pre><code>5. Events           autocmd-events E215 E216
+<pre><code class="language-txt">5. Events           autocmd-events E215 E216
 
 You can specify a comma-separated list of event names.  No white space can be
 used in this list.  The command applies to all the events in the list.
@@ -199,7 +196,7 @@ used in this list.  The command applies to all the events in the list.
 <p><a class="admonition-anchor-link" href="#admonition-h-bufenter"></a></p>
 </div>
 <div>
-<pre><code>BufEnter        After entering a buffer.  Useful for setting
+<pre><code class="language-txt">BufEnter        After entering a buffer.  Useful for setting
                 options for a file type.  Also executed when
                 starting to edit a buffer.
 
@@ -215,7 +212,7 @@ used in this list.  The command applies to all the events in the list.
 <p><a class="admonition-anchor-link" href="#admonition-h-bufwinenter"></a></p>
 </div>
 <div>
-<pre><code>BufWinEnter     After a buffer is displayed in a window.  This
+<pre><code class="language-txt">BufWinEnter     After a buffer is displayed in a window.  This
                 may be when the buffer is loaded (after
                 processing modelines) or when a hidden buffer
                 is displayed (and is no longer hidden).
@@ -244,7 +241,7 @@ used in this list.  The command applies to all the events in the list.
 <p><a class="admonition-anchor-link" href="#admonition-h-file-pattern"></a></p>
 </div>
 <div>
-<pre><code>The pattern is interpreted like mostly used in file names:
+<pre><code class="language-txt">The pattern is interpreted like mostly used in file names:
 このパターンは、ファイル名によく使われるものと同じように解釈される。
 
   *         matches any sequence of characters; Unusual: includes path separators
@@ -273,7 +270,7 @@ used in this list.  The command applies to all the events in the list.
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_autocmd-1"></a></p>
 </div>
 <div>
-<pre><code>Lua function which is called when this autocommand is triggered. Cannot be used with {command}.
+<pre><code class="language-txt">Lua function which is called when this autocommand is triggered. Cannot be used with {command}.
 
 このオートコマンドが起動した際に呼び出されるLua関数です。{コマンド}とは併用できない。
 </code></pre>
@@ -372,7 +369,10 @@ used in this list.  The command applies to all the events in the list.
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

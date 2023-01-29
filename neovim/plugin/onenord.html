@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -210,14 +207,14 @@ require('onenord').setup {
 </div>
 </div>
 <h3 id="theme"><a class="header" href="#theme">theme</a></h3>
-<pre><code>&quot;dark&quot; or &quot;light&quot;. Alternatively, remove the option and set vim.o.background instead
+<pre><code class="language-txt">&quot;dark&quot; or &quot;light&quot;. Alternatively, remove the option and set vim.o.background instead
 
 `dark`または`light`。もしくは、このオプションを削除して`vim.o.background`を設定します。
 </code></pre>
 <p><code>:h background</code>を見ると、<code>defalut &quot;dark&quot;</code>とあったので、<code>light</code>テーマを使う場合には変更が必要かもしれません。
 (ごめんなさい、確認してない...😅)</p>
 <h3 id="borders"><a class="header" href="#borders">borders</a></h3>
-<pre><code>Split window borders
+<pre><code class="language-txt">Split window borders
 
 ウィンドウの境界にボーダーを表示します。
 </code></pre>
@@ -226,7 +223,7 @@ require('onenord').setup {
 </tbody></table>
 </div>
 <h3 id="fade_nc"><a class="header" href="#fade_nc">fade_nc</a></h3>
-<pre><code>Fade non-current windows, making them more distinguishable
+<pre><code class="language-txt">Fade non-current windows, making them more distinguishable
 
 現在のウィンドウ以外をフェードさせ、区別しやすくする。
 </code></pre>
@@ -235,7 +232,7 @@ require('onenord').setup {
 </tbody></table>
 </div>
 <h3 id="styles"><a class="header" href="#styles">styles</a></h3>
-<pre><code>Style that is applied to various groups: see `highlight-args` for options
+<pre><code class="language-txt">Style that is applied to various groups: see `highlight-args` for options
 
 様々なグループに適用されるスタイル: オプションは `:h highlight-args` を参照してください。
 </code></pre>
@@ -264,7 +261,7 @@ styles = {
 </div>
 <h3 id="disable"><a class="header" href="#disable">disable</a></h3>
 <h4 id="background"><a class="header" href="#background">background</a></h4>
-<pre><code>Disable setting the background color
+<pre><code class="language-txt">Disable setting the background color
 
 背景色の設定を無効にします。
 </code></pre>
@@ -274,23 +271,23 @@ styles = {
 </tbody></table>
 </div>
 <h4 id="cursorline"><a class="header" href="#cursorline">cursorline</a></h4>
-<pre><code>Disable the cursorline
+<pre><code class="language-txt">Disable the cursorline
 
 カーソルラインを無効にします。
 </code></pre>
 <h4 id="eob_lines"><a class="header" href="#eob_lines">eob_lines</a></h4>
-<pre><code>Hide the end-of-buffer lines
+<pre><code class="language-txt">Hide the end-of-buffer lines
 
 バッファ終端行を隠します。
 </code></pre>
 <p>...これちょっと何かわからなかった...😿</p>
 <h3 id="inverse"><a class="header" href="#inverse">inverse</a></h3>
-<pre><code>Inverse highlight for different groups
+<pre><code class="language-txt">Inverse highlight for different groups
 
 グループごとにハイライトを反転させます。
 </code></pre>
 <h3 id="custom_highlights"><a class="header" href="#custom_highlights">custom_highlights</a></h3>
-<pre><code>Overwrite default highlight groups
+<pre><code class="language-txt">Overwrite default highlight groups
 
 デフォルトのハイライトグループを上書きします。
 </code></pre>
@@ -300,7 +297,7 @@ styles = {
 </div>
 <p>ちょっと見えにくいかな...。上の例では<code>}</code>です。</p>
 <h3 id="custom_colors"><a class="header" href="#custom_colors">custom_colors</a></h3>
-<pre><code>Overwrite default colors
+<pre><code class="language-txt">Overwrite default colors
 
 デフォルトの色を上書きします。
 </code></pre>
@@ -371,7 +368,10 @@ styles = {
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -119,7 +116,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-number"></a></p>
 </div>
 <div>
-<pre><code>				                        'number' 'nu' 'nonumber' 'nonu'
+<pre><code class="language-txt">				                        'number' 'nu' 'nonumber' 'nonu'
 
 'number' 'nu'	    boolean     (default off)
                     local to window
@@ -145,7 +142,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-optionslua"></a></p>
 </div>
 <div>
-<pre><code>vim.api.nvim_win_set_option(0, 'number', true)
+<pre><code class="language-lua">vim.api.nvim_win_set_option(0, 'number', true)
 </code></pre>
 </div>
 </div>
@@ -156,7 +153,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-relativenumber"></a></p>
 </div>
 <div>
-<pre><code>		                                'relativenumber' 'rnu' 'norelativenumber' 'nornu'
+<pre><code class="language-txt">		                                'relativenumber' 'rnu' 'norelativenumber' 'nornu'
 
 'relativenumber' 'rnu'  boolean     (default off)
                         local to window
@@ -164,7 +161,7 @@
     Show the line number relative to the line with the cursor in front of
     each line. Relative line numbers help you use the |count| you can
     precede some vertical motion commands (e.g. j k + -) with, without
-    having to calculate it yourself. 
+    having to calculate it yourself.
 
     各行の前にカーソルを置くと、その行からの相対行番号を表示する。
     相対的な行番号は、いくつかの垂直移動コマンド (例: j k + -) の前に付けることができる |count| を、
@@ -179,7 +176,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-number_relativenumber"></a></p>
 </div>
 <div>
-<pre><code>    The 'relativenumber' option changes the displayed number to be
+<pre><code class="language-txt">    The 'relativenumber' option changes the displayed number to be
     relative to the cursor.  Together with 'number' there are these
     four combinations (cursor in line 3):
 
@@ -204,12 +201,12 @@
 <div>
 <p><code>number</code>と<code>relativenumber</code>を一緒に使うと、なんかビッグウェーブ🌊が巻き起こるので、一度は乗るっきゃないです😆</p>
 <p><code>:set</code>コマンドで気軽に乗れます。</p>
-<pre><code>-- number と relativenumber を一度で on にする
+<pre><code class="language-vim">&quot; number と relativenumber を一度で on にする
 :set nu rnu
 </code></pre>
 <p><img src="img/relativenumber.webp" alt="relativenumber" /></p>
 <p>まあ、わたしにはクセが凄くて乗りこなせないんですけどね😉</p>
-<pre><code>-- relativenumber だけ切っちゃう...
+<pre><code class="language-vim">&quot; relativenumber だけ切っちゃう...
 :set nornu
 </code></pre>
 </div>
@@ -221,7 +218,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-numberwidth"></a></p>
 </div>
 <div>
-<pre><code>'numberwidth' 'nuw'     number      (default: 4)
+<pre><code class="language-txt">'numberwidth' 'nuw'     number      (default: 4)
                         local to window
 
 	Minimal number of columns to use for the line number.  Only relevant
@@ -287,7 +284,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

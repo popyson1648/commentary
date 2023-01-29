@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -315,7 +312,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-functions"></a></p>
 </div>
 <div>
-<pre><code>Note functions with the {async} attribute are run asynchronously and are
+<pre><code class="language-txt">Note functions with the {async} attribute are run asynchronously and are
 non-blocking (return immediately).
 
 {async} 属性を持つ関数は、非同期で実行され、ノンブロッキング（即座に戻る）であることに注意してください。
@@ -368,7 +365,7 @@ non-blocking (return immediately).
 <p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-config-word_diff"></a></p>
 </div>
 <div>
-<pre><code>word_diff                                          gitsigns-config-word_diff
+<pre><code class="language-txt">word_diff                                          gitsigns-config-word_diff
       Type: `boolean`, Default: `false`
 
       Highlight intra-line word differences in the buffer.
@@ -447,7 +444,7 @@ non-blocking (return immediately).
 <p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-config-attach_to_untracked"></a></p>
 </div>
 <div>
-<pre><code>attach_to_untracked                      *gitsigns-config-attach_to_untracked*
+<pre><code class="language-txt">attach_to_untracked                      *gitsigns-config-attach_to_untracked*
       Type: `boolean`, Default: `true`
 
       Attach to untracked files.
@@ -477,7 +474,7 @@ non-blocking (return immediately).
 <p><a class="admonition-anchor-link" href="#admonition-gitsigns-config-current_line_blame_formatter"></a></p>
 </div>
 <div>
-<pre><code>current_line_blame_formatter    gitsigns-config-current_line_blame_formatter
+<pre><code class="language-txt">current_line_blame_formatter    gitsigns-config-current_line_blame_formatter
       Type: `string|function`, Default: `' &lt;author&gt;, &lt;author_time&gt; - &lt;summary&gt;'`
 
       String or function used to format the virtual text of
@@ -498,7 +495,7 @@ non-blocking (return immediately).
 <p><a class="admonition-anchor-link" href="#admonition-gitsigns-config-current_line_blame"></a></p>
 </div>
 <div>
-<pre><code>current_line_blame                        gitsigns-config-current_line_blame
+<pre><code class="language-txt">current_line_blame                        gitsigns-config-current_line_blame
       Type: `boolean`, Default: `false`
 
       Adds an unobtrusive and customisable blame annotation at the end of
@@ -511,7 +508,7 @@ non-blocking (return immediately).
 </div>
 </div>
 <p>デフォルトでは有効になっていないのですが、キーマップをそのまま持ってきているなら以下のコードが入っているはずです。</p>
-<pre><code>map('n', '&lt;leader&gt;tb', gs.toggle_current_line_blame)
+<pre><code class="language-lua">map('n', '&lt;leader&gt;tb', gs.toggle_current_line_blame)
 </code></pre>
 <p><kbd>leader</kbd><kbd>t</kbd><kbd>b</kbd>としてみましょう。</p>
 <p>変更箇所に持っていくとあら不思議😮</p>
@@ -576,7 +573,10 @@ non-blocking (return immediately).
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

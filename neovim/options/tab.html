@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -120,7 +117,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-tabstop"></a></p>
 </div>
 <div>
-<pre><code>                                'tabstop' 'ts'
+<pre><code class="language-txt">                                'tabstop' 'ts'
 
 'tabstop' 'ts'              number (default 8)
                             local to buffer
@@ -150,10 +147,10 @@
 <p>わたしが採用しているのは、オーソドックスな<code>2.</code>です☺️</p>
 <div id="admonition-default" class="admonition info">
 <div>
-<pre><code>  2. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
+<pre><code class="language-txt">  2. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
   'expandtab'.  This way you will always insert spaces.  The
   formatting will never be messed up when 'tabstop' is changed.
-  
+
   'tabstop' と 'shiftwidth' を好きなように設定し、'expandtab'を使用する。
   これで、常にスペースを挿入することができる。'tabstop'を変更しても、書式が乱れることはない。
 </code></pre>
@@ -168,7 +165,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-shiftwidth"></a></p>
 </div>
 <div>
-<pre><code>'shiftwidth' 'sw'		  number (default 8)
+<pre><code class="language-txt">'shiftwidth' 'sw'		  number (default 8)
 			                      local to buffer
 
   Number of spaces to use for each step of (auto)indent.  Used for
@@ -232,7 +229,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p><a class="admonition-anchor-link" href="#admonition-h-expandtab"></a></p>
 </div>
 <div>
-<pre><code>                                        'expandtab' 'et' 'noexpandtab' 'noet'
+<pre><code class="language-txt">                                        'expandtab' 'et' 'noexpandtab' 'noet'
 
 'expandtab' 'et'                    boolean (default off)
                                     local to buffer
@@ -258,7 +255,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p><a class="admonition-anchor-link" href="#admonition-h-autoindent"></a></p>
 </div>
 <div>
-<pre><code>			                              'autoindent' 'ai' 'noautoindent' 'noai'
+<pre><code class="language-txt">			                              'autoindent' 'ai' 'noautoindent' 'noai'
 
 'autoindent' 'ai'                   boolean (default on)
 			                        local to buffer
@@ -350,7 +347,10 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

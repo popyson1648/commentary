@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -119,7 +116,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-inccommand"></a></p>
 </div>
 <div>
-<pre><code>'inccommand' 'icm'
+<pre><code class="language-txt">'inccommand' 'icm'
 
 'inccommand' 'icm'	    string	(default &quot;nosplit&quot;)
 			                global
@@ -162,7 +159,7 @@
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup></p>
 <p>置換操作は<code>:%s/{検索値}/{置換値}</code>とすると実行できます。</p>
-<pre><code>:%s/She/He
+<pre><code class="language-vim">:%s/She/He
 </code></pre>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
@@ -189,7 +186,7 @@
 <p>そうです。3行目に &quot;she&quot;は2つあるのに、1つ取りこぼししちゃってます😱</p>
 <p>実はこのやり方だと同じ行の中では最初にヒットしたところしか反応しません。</p>
 <p>こういう場合は、</p>
-<pre><code>:%s/she/he/g
+<pre><code class="language-vim">:%s/she/he/g
 </code></pre>
 <p>...と、<code>g</code>オプションを追加してあげると期待通りの結果が得られます。</p>
 <p><img src="img/replace4.webp" alt="replace4" /></p>
@@ -251,7 +248,10 @@ Richard が<code>vi</code>とかで歌詞置換してたらウケる〜🤣 と�
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

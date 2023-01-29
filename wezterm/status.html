@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../css/style.css" async>
 
@@ -163,7 +160,7 @@ return {
 <p><a class="admonition-anchor-link" href="#admonition-weztermlua-1"></a></p>
 </div>
 <div>
-<pre><code>return {
+<pre><code class="language-lua">return {
   status_update_interval = 1000,
 }
 </code></pre>
@@ -228,7 +225,10 @@ return {
         <script src="../searcher.js"></script>
 
         <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
+
+        <script src="../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->

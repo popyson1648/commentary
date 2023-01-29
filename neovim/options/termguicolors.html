@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -120,7 +117,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-termguicolors"></a></p>
 </div>
 <div>
-<pre><code>'termguicolors' 'tgc' 'notermguicolors' 'notgc'
+<pre><code class="language-txt">'termguicolors' 'tgc' 'notermguicolors' 'notgc'
 
 'termguicolors' 'tgc'	boolean (default off)
                         global
@@ -170,10 +167,10 @@
 <div>
 <p>ヘルプの1行目にあるのはコマンドですね。</p>
 <p>頭に<code>no</code>がついてるのとかはなんかすごい無効化されそうな趣ですが、これらは<code>:set</code>コマンドから使うことができます。</p>
-<pre><code># 無効化
+<pre><code class="language-vim">&quot; 無効化:
 :set notgc
-
-# 有効化
+</code></pre>
+<pre><code class="language-vim">&quot; 有効化:
 :set tgc
 </code></pre>
 <p>一時的に設定を変えたくなった時などに便利です。</p>
@@ -228,7 +225,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

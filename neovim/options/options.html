@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -141,10 +138,10 @@
 <p>心して...! <code>Neovim</code>のコマンドから打ってください...!!</p>
 <div id="admonition-default" class="admonition quote">
 <div>
-<pre><code>:h help
+<pre><code class="language-vim">:h help
 </code></pre>
 <p>もしくは</p>
-<pre><code>:help help
+<pre><code class="language-vim">:help help
 </code></pre>
 </div>
 </div>
@@ -166,7 +163,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-help"></a></p>
 </div>
 <div>
-<pre><code>:h[elp]                 Open a window and display the help file in read-only mode.
+<pre><code class="language-txt">:h[elp]                 Open a window and display the help file in read-only mode.
                         ウィンドウを開き、ヘルプファイルを読み込み専用で表示する。
 
                         Type |gO| to see the table of contents.
@@ -175,7 +172,7 @@
 :h[elp] {subject}	Like &quot;:help&quot;, additionally jump to the tag {subject}.
                         &quot;:help&quot; と同様だが、さらに {subject} というタグにジャンプする。
 
-                        For example:   
+                        For example:
                             :help options
 
                         If there is no full match for the pattern, or there
@@ -198,7 +195,7 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-helpc"></a></p>
 </div>
 <div>
-<pre><code>:helpc[lose]    Close one help window, if there is one.
+<pre><code class="language-txt">:helpc[lose]    Close one help window, if there is one.
 			    Vim will try to restore the window layout (including
 			    cursor position) to the same layout it was before
 			    opening the help window initially.
@@ -266,7 +263,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->

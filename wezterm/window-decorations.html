@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../css/style.css" async>
 
@@ -221,7 +218,7 @@ end)
 <p>例えば<code>Neovim</code>みたいな、マウス操作に対応しているアプリケーションを動かしてる時だと、
 そちらに操作を奪われてしまうようで、タイトルバーは現れません。</p>
 <p><code>Neovim</code>であれば、以下のようにすればマウス操作を無効化できるので、この状態ならバッチリです👍</p>
-<pre><code>vim.api.nvim_set_option('mouse', '')
+<pre><code class="language-lua">vim.api.nvim_set_option('mouse', '')
 </code></pre>
 <p>ただ、マウス操作で手軽に文章を拾いたいことがあるので、わたしは入れてません🥳</p>
 </div>
@@ -375,7 +372,10 @@ After that time period has elapsed, the script continues running at the next sta
         <script src="../searcher.js"></script>
 
         <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
+
+        <script src="../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->

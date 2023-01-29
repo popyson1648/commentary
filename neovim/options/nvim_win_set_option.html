@@ -24,9 +24,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="../../fonts/fonts.css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css" async>
-
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/style.css" async>
 
@@ -125,14 +122,14 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_win_set_option"></a></p>
 </div>
 <div>
-<pre><code>nvim_win_set_option({window}, {name}, {value})          *nvim_win_set_option()*
+<pre><code class="language-txt">nvim_win_set_option({window}, {name}, {value})          *nvim_win_set_option()*
     Sets a window option value. Passing `nil` as value deletes the option
     (only works if there's a global fallback)
 
     window のオプション値を設定する。value として `nil` を渡すと、そのオプションが削除される。
     (グローバルフォールバックがある場合のみ動作する)
 
-    Parameters:  
+    Parameters:
       • {window}  Window handle, or 0 for current window
       • {name}    Option name
       • {value}   Option value
@@ -188,7 +185,10 @@
         <script src="../../searcher.js"></script>
 
         <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
+
+        <script src="../../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
