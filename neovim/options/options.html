@@ -4,6 +4,7 @@
     <!-- Book generated using mdBook -->
     <meta charset="UTF-8">
     <title>Options - Commentary of Dotfiles</title>
+    <base href="https://coralpink.github.io/commentary/">
 
     <!-- Custom HTML head -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -13,8 +14,18 @@
     })(window,document,'script','dataLayer','GTM-WMN96QT');</script>
 
     <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+    <meta name="theme-color">
+
+    <meta name="format-detection" content="telephone=no,email=no,address=no"
+
+    <meta property="og:title" content="Options - Commentary of Dotfiles">
+    <meta property="og:description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta property="og:site_name" content="Commentary of Dotfiles">
+    <meta property="og:url" content="https://coralpink.github.io/commentary/">
+
+    <meta name="twitter:card" content="summary_image">
+    <link rel="apple-touch-icon" href="favicon.png" sizes="100x100">
 
     <link rel="icon" href="../../favicon.svg">
     <link rel="shortcut icon" href="../../favicon.png">
@@ -35,12 +46,6 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <!-- Provide site root to javascript -->
-    <script>
-      const path_to_root = "../../";
-      const default_theme = "latte";
-    </script>
 
     <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
 
@@ -256,15 +261,13 @@
 
     <script src="../../elasticlunr.min.js"></script>
     <script src="../../mark.es6.min.js"></script>-
-    <script src="../../searcher.js"></script>
+    <script src="../../searcher.js" id="searcher" data-path_to_root="../../"></script>
 
     <script src="../../clipboard.min.js"></script>
     <script>window.playground_copyable = true;</script>
 
     <script src="../../highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-
-    <script src="../../book.js"></script>
+    <script src="../../book.js" id="book" data-default_theme="latte"></script>
 
     <!-- Custom JS scripts -->
     <script src="../../js/dist/pagetoc.js"></script>
