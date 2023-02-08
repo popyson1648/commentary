@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="tab"><a class="header" href="#tab">Tab</a></h1>
 <p>さて、引き続き<code>format.lua</code>に追記していきましょう。今回はタブタイトルです。</p>
 <div id="admonition-formatlua" class="admonition example">
@@ -253,20 +249,24 @@ local index = tab.is_active and 1 or 2
 </div>
 </div>
 
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../wezterm/window-title.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../wezterm/status.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../wezterm/window-title.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../wezterm/status.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

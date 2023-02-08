@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="lualinenvim-part-Ⅲ"><a class="header" href="#lualinenvim-part-Ⅲ">lualine.nvim Part Ⅲ</a></h1>
 <p>2023年に帰る前に、<code>lualine.nvim</code>に関してもう一個だけやっておきたいことがあって、それが<code>TabLine</code>なんですね。</p>
 <p>...ややこしいですけど😮</p>
@@ -365,20 +361,24 @@ end
 </div>
 </div>
 
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../../neovim/plugin/lualine-part2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../../neovim/plugin/telescope.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../../neovim/plugin/lualine-part2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../../neovim/plugin/telescope.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

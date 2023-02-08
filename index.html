@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p>このサイトでは、わたしが普段使っている<code>WezTerm</code>と<code>Neovim</code>の設定例 (<code>dotfiles</code>) を紹介しています🤗</p>
 <p>全ての設定を網羅しているわけではなく、あくまで自分で使っている設定に対してのコメントです。</p>
@@ -187,17 +183,21 @@
 </div>
 </div>
 
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+
+                <a rel="next" href="wezterm/installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="wezterm/installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

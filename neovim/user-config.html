@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="user-config"><a class="header" href="#user-config">User Config</a></h1>
 <p>なんかもういつも通りですが、まずは設定ファイルを置くところから始めましょう。</p>
 <div id="admonition-load-user-confighttpsneovimiodocuserstartinghtmlconfig" class="admonition info">
@@ -227,20 +223,24 @@ nvim init.lua
 </div>
 </div>
 
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../neovim/installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../neovim/lua-module.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../neovim/installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../neovim/lua-module.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

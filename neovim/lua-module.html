@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="lua-module"><a class="header" href="#lua-module">Lua Module</a></h1>
 <p>なんと、これに関しては既に日本語に訳されたドキュメントが存在します。</p>
 <p>登っていきましょうとか言っておいてなんですが、まずは掘り下げちゃいます。どんまい😆</p>
@@ -249,20 +245,24 @@ require('other_modules/anothermodule')
 <p><a href="#to-footnote-1"><sup>1:</sup></a> <code>~/.config/nvim</code>ディレクトリが存在しないと<code>runtimepath</code>からもいなくなるようです。ディレクトリの存在を事前に確認してる?🤔</p>
 <p><img src="img/config-not.webp" alt="config-not" /></p>
 </div>
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../neovim/user-config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../neovim/options/options.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../neovim/user-config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../neovim/options/options.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

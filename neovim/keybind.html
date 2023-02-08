@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="key-binding"><a class="header" href="#key-binding">Key Binding</a></h1>
 <p>この章ではキーバインドに触れていきます。</p>
 <p>基本的には、やり方というか、テンプレートというか、そういうことだけ書いているつもりです😉</p>
@@ -467,20 +463,24 @@ vim.keymap.set('n', 's', '&quot;_s')
 <div class="footnote-definition" id=1>
 <p><a href="#to-footnote-1"><sup>1:</sup></a> <code>Syntactic sugar</code>については <a href="https://ja.wikipedia.org/wiki/%E7%B3%96%E8%A1%A3%E6%A7%8B%E6%96%87">https://ja.wikipedia.org/wiki/糖衣構文</a> に丸投げします😃</p>
 </div>
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../neovim/au/nvim_create_augroup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../neovim/leader.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../neovim/au/nvim_create_augroup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../neovim/leader.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

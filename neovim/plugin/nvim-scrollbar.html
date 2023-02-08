@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="nvim-scrollbar"><a class="header" href="#nvim-scrollbar">nvim-scrollbar</a></h1>
 <p>聖夜🌃は間近です。その前にスクロールバーを追加してみます🎄</p>
 <div id="admonition-nvim-scrollbarhttpsgithubcompetertrihonvim-scrollbar" class="admonition info">
@@ -239,20 +235,24 @@ IF YOU WANT IT
 改めて確認してみたら全く必要ありませんでした...。
 何も設定しなくても<code>onenord.nvim</code>の力は発揮されています❗これホントごめんなさい😿</p>
 </div>
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../../neovim/plugin/gitsigns.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../../neovim/plugin/lualine-part2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../../neovim/plugin/gitsigns.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../../neovim/plugin/lualine-part2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

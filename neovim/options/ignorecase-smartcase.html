@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="ignorecase--smartcase"><a class="header" href="#ignorecase--smartcase">ignorecase / smartcase</a></h1>
 <p>この2つは検索に関するオプションなのでまとめていっちゃいます😆</p>
 <div id="admonition-h-ignorecase" class="admonition info">
@@ -223,20 +219,24 @@ vim.api.nvim_set_option('smartcase', true)
 <p><a href="#to-footnote-1"><sup>1:</sup></a> あ❗これは <a href="https://en.wikipedia.org/wiki/Help!">HELP! - The Beatles</a> の収録曲ですね❗
 なんか help ばっかりじゃね⁉️ってなる、ウケる〜🤣 ...そうでもないかぁ😮</p>
 </div>
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../../neovim/options/scrolloff.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../../neovim/options/inccommand.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../../neovim/options/scrolloff.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../../neovim/options/inccommand.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>

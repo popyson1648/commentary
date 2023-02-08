@@ -110,10 +110,6 @@
 
         <div id="content" class="content">
           <main>
-            <div class="sidetoc">
-              <nav class="pagetoc"></nav>
-            </div>
-
             <h1 id="nvim-hlslens"><a class="header" href="#nvim-hlslens">nvim-hlslens</a></h1>
 <p>前回、少し取り乱してしまったので、今回はのんびり小休止です。<code>nvim-hlslens</code>なんてどうでしょう❓</p>
 <p>これでしたら簡単です。取り乱すなどあろうはずがありません。絶対に。<sup class="footnote-reference">
@@ -363,20 +359,24 @@ Vim のスポンサーは機能に対して投票することができます。|
 <div class="footnote-definition" id=1>
 <p><a href="#to-footnote-1"><sup>1:</sup></a> お笑いで言うところの &quot;フリ&quot; です。</p>
 </div>
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+              <!-- Mobile navigation buttons -->
+                <a rel="prev" href="../../neovim/plugin/lualine.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+                <a rel="next" href="../../neovim/plugin/gitsigns.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                  <i class="fa-angle-right"></i>
+                </a>
+            </nav>
+
           </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-              <a rel="prev" href="../../neovim/plugin/lualine.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa-angle-left"></i>
-              </a>
+          <div class="sidetoc">
+            <nav class="pagetoc"></nav>
+          </div>
 
-              <a rel="next" href="../../neovim/plugin/gitsigns.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                <i class="fa-angle-right"></i>
-              </a>
-
-            <div style="clear: both"></div>
-          </nav>
         </div>
       </div>
     </div>
