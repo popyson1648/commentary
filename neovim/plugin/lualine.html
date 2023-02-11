@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="ja" class="sidebar-visible no-js latte">
   <head>
@@ -33,14 +32,6 @@
     <link rel="stylesheet" href="../../css/general.css">
     <link rel="stylesheet" href="../../css/chrome.css">
 
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="../../fonts/fonts.css">
-
-    <!-- Custom theme stylesheets -->
-    <link rel="stylesheet" href="../../css/style.css" async>
-
-    <!-- MathJax -->
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -100,15 +91,6 @@
               </ul>
             </div>
           </div>
-
-          <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-          <script>
-            document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-            document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-            Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-              link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-            });
-          </script>
 
           <div id="content" class="content">
             <main>
@@ -461,7 +443,7 @@ vim.api.nvim_set_option('showmode', false)
     </div>
 
     <script src="../../elasticlunr.min.js"></script>
-    <script src="../../mark.es6.min.js"></script>-
+    <script src="../../mark.es6.min.js"></script>
     <script src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
 
     <script src="../../clipboard.min.js"></script>
@@ -470,8 +452,17 @@ vim.api.nvim_set_option('showmode', false)
     <script src="../../highlight.min.js"></script>
     <script src="../../book.js" id="book" data-defaulttheme="latte"></script>
 
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css" async>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../fonts/fonts.css" async>
+
+
+    <!-- MathJax -->
+
     <!-- Custom JS scripts -->
-    <script src="../../js/dist/pagetoc.js"></script>
+    <script async src="../../js/dist/pagetoc.js"></script>
 
   </body>
 </html>
