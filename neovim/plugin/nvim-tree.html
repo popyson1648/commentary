@@ -1,0 +1,714 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js latte">
+  <head>
+    <meta charset="UTF-8">
+    <title>nvim-tree.lua - Commentary of Dotfiles</title>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMN96QT');</script>
+
+    <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+    <meta name="theme-color">
+
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+
+    <meta property="og:title" content="nvim-tree.lua - Commentary of Dotfiles">
+    <meta property="og:description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta property="og:site_name" content="Commentary of Dotfiles">
+    <meta property="og:url" content="https://coralpink.github.io/commentary/">
+
+    <meta name="twitter:card" content="summary_image">
+    <link rel="apple-touch-icon" href="../../favicon.png" sizes="100x100">
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="shortcut icon" href="../../favicon.png">
+
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+
+  </head>
+  <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+      <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+              <i class="fa-list-ul"></i>
+            </button>
+            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+              <i class="fa-palette"></i>
+            </button>
+            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+              <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+              <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+              <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+              <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+            </ul>
+            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+              <i class="fa-magnifying-glass"></i>
+            </button>
+          </div>
+
+          <div class="menu-title">Commentary of Dotfiles</div>
+
+          <div class="right-buttons">
+            <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository">
+              <i id="git-repository-button" class="fa-github fa-github"></i>
+            </a>
+
+          </div>
+        </div>
+
+        <div id="search-wrapper" class="hidden">
+          <form id="searchbar-outer" class="searchbar-outer">
+            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book (English only) ..."
+              aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+          </form>
+          <div id="searchresults-outer" class="searchresults-outer hidden">
+            <div id="searchresults-header" class="searchresults-header"></div>
+            <ul id="searchresults"></ul>
+          </div>
+        </div>
+
+        <div id="content" class="content">
+          <div id="sidebar" class="sidebar" aria-label="Table of contents">
+            <nav class="sidebar-scrollbox">
+              <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../../wezterm/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item expanded "><a href="../../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item expanded "><a href="../../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item expanded "><a href="../../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item expanded "><a href="../../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item expanded "><a href="../../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item expanded "><a href="../../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../../neovim/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item expanded "><a href="../../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item expanded "><a href="../../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item expanded "><a href="../../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item expanded "><a href="../../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item expanded "><a href="../../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item expanded "><a href="../../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item expanded "><a href="../../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item expanded "><a href="../../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item expanded "><a href="../../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item expanded "><a href="../../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/packer.html"><strong aria-hidden="true">15.1.</strong> Packer.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine.html"><strong aria-hidden="true">15.4.</strong> lualine.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-hlslens.html"><strong aria-hidden="true">15.5.</strong> nvim-hlslens</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/gitsigns.html"><strong aria-hidden="true">15.6.</strong> gitsigns</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-scrollbar.html"><strong aria-hidden="true">15.7.</strong> nvim-scrollbar</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine-part2.html"><strong aria-hidden="true">15.8.</strong> lualine.nvim Part Ⅱ</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine-part3.html"><strong aria-hidden="true">15.9.</strong> lualine.nvim Part Ⅲ</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope.html"><strong aria-hidden="true">15.10.</strong> telescope.nvim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope-config.html"><strong aria-hidden="true">15.10.1.</strong> Config</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope-all-recent.html"><strong aria-hidden="true">15.10.2.</strong> telescope-all-recent</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-tree.html" class="active"><strong aria-hidden="true">15.11.</strong> nvim-tree.lua</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">... To Be Continued.</li></ol>
+            </nav>
+          </div>
+
+          <main>
+            <h1 id="nvim-treelua"><a class="header" href="#nvim-treelua">nvim-tree.lua</a></h1>
+<p>今回は<code>nvim-tree.lua</code>です。これもうまく活用できれば満足度は高いはずです☺️</p>
+<div id="admonition-nvim-treeluahttpsgithubcomnvim-treenvim-treelua" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-tree/nvim-tree.lua">nvim-tree.lua</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-nvim-treeluahttpsgithubcomnvim-treenvim-treelua"></a></p>
+</div>
+<div>
+<p>A File Explorer For Neovim Written In Lua</p>
+</div>
+</div>
+<p>これもまた、びっくりしちゃうほど機能満載でボリュームのあるプラグインなので、上下巻でお送りします✨</p>
+<div id="admonition-default" class="admonition failure">
+<div>
+<p>飛行機が着地を完了すると禁煙のサインが消え、天井のスピーカーから小さな音でBGMが流れはじめた。</p>
+<p>それはどこかのオーケストラが甘く演奏するビートルズの「ノルウェイの森」だった。</p>
+<p>そしてそのメロディーはいつものように僕を混乱させた。</p>
+</div>
+</div>
+<div id="admonition-default-1" class="admonition tip">
+<div>
+<p>I once had a girl</p>
+<p>Or should I say she once had me</p>
+<p>僕にはかつて彼女がいた</p>
+<p>いや 彼女には僕がいたと言うべきか <sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup></p>
+</div>
+</div>
+<div id="admonition-default-2" class="admonition tip">
+<div>
+<p>She showed me her room</p>
+<p>Isn’t it good Norwegian wood?</p>
+<p>僕は彼女の部屋に招かれた</p>
+<p>「綺麗でしょ？ ノルウェーの家具を置いているの」</p>
+</div>
+</div>
+<p>&quot;Beatle Mania&quot; や &quot;Harukists&quot; であれば「&quot;Drive My Car&quot;の次やから、どうせこんなん繋いでくんねやろー」なんて、容易く想像できましたね❗</p>
+<p>世間はと言えば、先日ついにタイトルが発表された、同じく村上春樹著の「街とその不確かな壁 (The City and Its Uncertain Walls)
+<sup class="footnote-reference">
+<a name="to-footnote-2"><a href="#2">2</a></a>
+</sup>
+」の話題で持ちきりですが、なんかもう逆に街から離れて森の中へ足を踏み入れていきます... 🌲</p>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<div id="admonition-requirementshttpsgithubcomnvim-treenvim-treeluarequirements" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-tree/nvim-tree.lua#requirements">Requirements</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-requirementshttpsgithubcomnvim-treenvim-treeluarequirements"></a></p>
+</div>
+<div>
+<p>neovim &gt;=0.8.0</p>
+<p><a href="https://github.com/nvim-tree/nvim-web-devicons">nvim-web-devicons</a> is optional and used to display file icons.</p>
+<p><a href="https://github.com/nvim-tree/nvim-web-devicons">nvim-web-devicons</a> はオプションで、ファイルアイコンを表示するために使用します。</p>
+<p>It requires a <a href="https://www.nerdfonts.com">patched font</a>.
+Your terminal emulator must be configured to use that font, usually &quot;Hack Nerd Font&quot;</p>
+<p><a href="https://www.nerdfonts.com">パッチを当てたフォント</a> が必要です。
+ターミナルエミュレータで &quot;Hack Nerd Font&quot; を使うように設定されている必要があります。</p>
+</div>
+</div>
+<p>ここまでの積み重ねがあれば、もうこんなの何も気にせず進めますね😤</p>
+<p>フォントに関しては「<code>Hack Nerd Font</code>でなければダメ」みたいにも読めますが、単に<code>Nerd Font</code>を含んだフォントセットを使用していればへーきです。</p>
+<p>これはターミナルのお話なので、もし<code>WezTerm</code>を使用しているのであれば以下の内容で通じます😉</p>
+<div id="admonition-33-fontweztermfonthtml" class="admonition info">
+<div class="admonition-title">
+<p><a href="../../wezterm/font.html">3.3 Font</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-33-fontweztermfonthtml"></a></p>
+</div>
+<div>
+<p>これはもう、ほんとに好きなフォントでいいです。</p>
+</div>
+</div>
+<p>...というか、<code>WezTerm</code>であれば、極論何もする必要がありませんね😮</p>
+<h2 id="first-of-all"><a class="header" href="#first-of-all">First Of All</a></h2>
+<p><code>nvim-tree.lua</code>のインストールより先にやっておきたいことがあって、それが<code>netrw</code>の無効化です。</p>
+<h3 id="netrw"><a class="header" href="#netrw">netrw</a></h3>
+<p><code>netrw</code>は <code>Vim</code>及び<code>Neovim</code>がデフォルトで持っている機能です。</p>
+<p><img src="img/netrw.png" alt="netrw" /></p>
+<p>コマンドモードから<code>Ex</code>で呼び出せます。</p>
+<p>この機能については、わたしもそこまで詳しくないので詳しい説明とかはできませんが、
+ぶっちゃけて言っちゃえば、<code>nvim-tree.lua</code>と &quot;もろ被り&quot; な機能です❗</p>
+<div id="admonition-h-pi_netrw" class="admonition info">
+<div class="admonition-title">
+<p>:h pi_netrw</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-pi_netrw"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">pi_netrw.txt  For Vim version 8.2.  Last change: 2020 Aug 15
+
+	    ------------------------------------------------
+	    NETRW REFERENCE MANUAL    by Charles E. Campbell
+	    ------------------------------------------------
+Author:  Charles E. Campbell  &lt;NcampObell@SdrPchip.AorgM-NOSPAM&gt;
+	  (remove NOSPAM from Campbell's email first)
+
+Copyright: Copyright (C) 2017 Charles E Campbell    netrw-copyright
+</code></pre>
+</div>
+</div>
+<p>...いや <code>nvim-tree.lua</code>が<code>netrw</code>に被せに行ったと言うべきか🤔</p>
+<p>まあ、どっちにしろ機能が重複しちゃうので「どっちかにしましょ」と言うことですね😆</p>
+<p>以下の設定によって、<code>netrw</code>が無効化されます。</p>
+<pre><code class="language-lua">vim.api.nvim_set_var('loaded_netrw', 1)
+vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+</code></pre>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>また改めて示すので、実際に記述するのは次節でも大丈夫です❗</p>
+</div>
+</div>
+<p>これを行うのは、<code>nvim-tree.lua</code>がオフィシャルに</p>
+<pre><code class="language-txt">disable netrw at the very start of your init.lua (strongly advised)
+init.luaの最初の部分でnetrwを無効にする (強く推奨)
+</code></pre>
+<p>...と、何やら強く推奨しているためです。</p>
+<div id="admonition-tip" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
+</div>
+<div>
+<p>実は、わたしが普段使用している環境では<code>extensions/nvim-tree.lua</code>の先頭に置いています。</p>
+<p>これは、<code>nvim-tree</code>の使用をやめた際に「<code>netrw</code>の &quot;無効化を無効化&quot; できる」という利便性が得られるためなのですが、
+本当にこれで問題が無いのかどうか、ちょっと不確かな壁がありました😅</p>
+<p>なので、このサイトでは素直に<code>nvim</code>ディレクトリ直下の<code>init.lua</code>の最初の部分に置くことをオススメする方向でいくことにします❗</p>
+</div>
+</div>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>ここで唐突に Captain Marvel<sup class="footnote-reference">
+<a name="to-footnote-3"><a href="#3">3</a></a>
+</sup>
+が登場してきましたね✨</p>
+<p>ここで出番があるなんて、わたしもうっかりさんでした😅</p>
+</div>
+</div>
+<h2 id="install--settings"><a class="header" href="#install--settings">Install &amp; Settings</a></h2>
+<p>それでは、インストールに進みましょう。
+今回はまず一度、デフォルト設定で動かしてみましょう。</p>
+<p>まずは、これを忘れずにね😉</p>
+<div id="admonition-initlua" class="admonition example">
+<div class="admonition-title">
+<p>../init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-initlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">vim.api.nvim_set_var('loaded_netrw', 1)
+vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+</code></pre>
+</div>
+</div>
+<p>で、いつものパターン。</p>
+<div id="admonition-extensionsnvim-treelua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/nvim-tree.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-treelua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require('nvim-tree').setup {
+  -- まずはからっぽ〜
+}
+
+vim.api.nvim_create_user_command('Ex', function() vim.cmd.NvimTreeToggle() end, {})
+</code></pre>
+</div>
+</div>
+<div id="admonition-extensionsnvim-treelua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/nvim-tree.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-treelua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  use {
+    'nvim-tree/nvim-tree.lua',
+    config = function() require 'extensions.nvim-tree' end,
+    requires = 'nvim-tree/nvim-web-devicons',
+  }
+</code></pre>
+</div>
+</div>
+<p>そしたら、コマンドから<code>Ex</code>を実行してみましょう。</p>
+<p><img src="img/nvim-tree-default.png" alt="nvim-tree-default" /></p>
+<p>うん、出ましたね☺️</p>
+<p>繰り返しになりますが、<code>Ex</code>コマンドは本来<code>netrw</code>のコマンドです。
+なんですが❗ 無効化したので乗っ取ってやろうっていう魂胆ですね😼</p>
+<p>で、ここで不意を突いてやってきた<code>nvim_create_user_command</code>については<code>14.4節</code>でしれっと触れてました、実は😆</p>
+<div id="admonition-144-call-the-pluginfunctioncall-pluginhtmlnvim_create_user_command" class="admonition info">
+<div class="admonition-title">
+<p><a href="../function/call-plugin.html#nvim_create_user_command">14.4 Call The Plugin</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-144-call-the-pluginfunctioncall-pluginhtmlnvim_create_user_command"></a></p>
+</div>
+<div>
+<p>もう一個だけやっておきたいのは、独自コマンドからプラグインを使うパターンです。</p>
+</div>
+</div>
+<p>そう❗今回帰ってくるのは Captain Marvel だけではなかったのです🤗 おかえり❗</p>
+<div id="admonition-tip-1" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip-1"></a></p>
+</div>
+<div>
+<p>再会に水を差すようですが、わざわざコマンド打つのはめんどくさいよーって場合はいつも通りキーマップを使うことも、もちろん可能です。</p>
+<pre><code class="language-lua">vim.keymap.set('n', '&lt;leader&gt;ex', vim.cmd.NvimTreeToggle)
+</code></pre>
+<p>...みたいな❓</p>
+<p>なんだったら別に両方入れちゃってもいいし 🦆🦆</p>
+</div>
+</div>
+<p>上の例では<code>NvimTreeToggle</code>だけを使用していますが、<code>NvimTree</code>の開き方 (と、閉じ方) はいくつかあります😌</p>
+<div id="admonition-h-nvim-tree-commands" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree-commands</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-tree-commands"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">3. COMMANDS                                              *nvim-tree-commands*
+
+:NvimTreeOpen
+
+    opens the tree. Takes an optional path argument.
+
+    ツリーを開く。オプションのpath引数を取ります。
+
+:NvimTreeClose
+
+    closes the tree
+
+    ツリーを閉じます。
+
+:NvimTreeToggle
+
+    open or close the tree. Takes an optional path argument.
+
+    ツリーを開く、または閉じます。オプションのpath引数を取ります。
+
+:NvimTreeFocus
+
+    open the tree if it is closed, and then focus on the tree
+
+    ツリーが閉じている場合は開き、ツリーにフォーカスします。
+</code></pre>
+</div>
+</div>
+<p>もしもう少し細かく制御したいと思ったら、この辺りを使用すれば良いはずです😉</p>
+<p>そりゃそうだと言われてしまいそうですが、閉じるときは<code>:q</code>や<code>:bd</code>なんかでもいけます。</p>
+<h2 id="customize"><a class="header" href="#customize">Customize</a></h2>
+<p>ってことで❗</p>
+<p>ある程度雰囲気がわかったら、ここからカスタマイズしてみましょう。</p>
+<div id="admonition-extensionsnvim-treelua-2" class="admonition example">
+<div class="admonition-title">
+<p>extensions/nvim-tree.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-treelua-2"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require('nvim-tree').setup {
+  sort_by = 'extension',
+
+  view = {
+    width = '20%',
+    side = 'right',
+    signcolumn = 'no',
+  },
+
+  renderer = {
+    highlight_git = true,
+    highlight_opened_files = 'name',
+    icons = {
+      glyphs = {
+        git = {
+          unstaged = '!', renamed = '»', untracked = '?', deleted = '✘',
+          staged = '✓', unmerged = '', ignored = '◌',
+        },
+      },
+    },
+  },
+
+  actions = {
+    expand_all = {
+      max_folder_discovery = 100,
+      exclude = { '.git', 'target', 'build' },
+    },
+  },
+  on_attach = &quot;default&quot;
+}
+
+vim.api.nvim_create_user_command('Ex', function() vim.cmd.NvimTreeToggle() end, {})
+</code></pre>
+</div>
+</div>
+<p>...ってやってみたら、こんな感じになりますよね🧐</p>
+<p><img src="img/nvim-tree-customize.png" alt="nvim-tree-customize" /></p>
+<p>いくつかはデフォルト設定のままだったり、記述を省いている項目も (あり得ないほど) たくさんあります。</p>
+<p>(これもやっぱり毎回同じ文言になっちゃうんですが...、) ぜひ色々試してみてください😆</p>
+<h2 id="setup"><a class="header" href="#setup">setup</a></h2>
+<div id="admonition-h-nvim-tree-setup" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree-setup</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-tree-setup"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">You must run setup() function to initialise nvim-tree.
+
+nvim-tree を初期化するには、setup() 関数を実行する必要があります。
+</code></pre>
+</div>
+</div>
+<p><code>:h nvim-tree-setup</code>を見てもらえれば分かる通り、
+これらのパラメータを全部ここに載せてるとほんとに何ヶ月かかるか分かりません...。</p>
+<p>なので、ちょこちょことわたしが使用しているパラメータ「だけ」フワ〜っと触れます。
+ただ、これもやっぱりある程度はパラメータの名前から推測できるはずです😆</p>
+<h3 id="sort_by"><a class="header" href="#sort_by">sort_by</a></h3>
+<div id="admonition-h-nvim-treesort_by" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.sort_by</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treesort_by"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">Changes how files within the same directory are sorted.
+Can be one of `name`, `case_sensitive`, `modification_time`, `extension` or a function.
+
+同じディレクトリにあるファイルのソート方法を変更します。
+`name`, `case_sensitive`, `modification_time`, `extension` あるいは関数のいずれかを指定することができます。
+
+  Type: `string` | `function(nodes)`, Default: `&quot;name&quot;`
+
+  Function is passed a table of nodes to be sorted, each node containing:
+  - `absolute_path`: `string`
+  - `executable`:    `boolean`
+  - `extension`:     `string`
+  - `link_to`:       `string`
+  - `name`:          `string`
+  - `type`:          `&quot;directory&quot;` | `&quot;file&quot;` | `&quot;link&quot;`
+
+  Example: sort by name length:
+    local sort_by = function(nodes)
+      table.sort(nodes, function(a, b)
+        return #a.name &lt; #b.name
+      end)
+    end
+</code></pre>
+</div>
+</div>
+<p>うん、もうそのままですね❗デフォルトは名前順ですが、わたしは種別順派です😤</p>
+<p>Example として示されているような<code>function</code>を使えば、オリジナルのソート順にすることもできます🐥</p>
+<h3 id="view"><a class="header" href="#view">view</a></h3>
+<pre><code class="language-txt">Window / buffer setup.
+
+ウィンドウ/バッファの設定。
+</code></pre>
+<h4 id="width"><a class="header" href="#width">width</a></h4>
+<div id="admonition-h-nvim-treeviewwidth" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.view.width</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treeviewwidth"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  nvim-tree.view.width
+  Width of the window: can be a `%` string, a number representing columns, a
+  function or a table.
+  A table indicates that the view should be dynamically sized based on the
+
+  ウィンドウの幅：`%`の文字列、列を表す数値、ウィンドウの幅を表す数値が指定できます。
+  関数またはテーブルを使用します。
+  表は、ビューの大きさを動的に調整することを示します。
+
+  longest line (previously `view.adaptive_size`).
+    Type: `string | number | function | table`, Default: `30`
+</code></pre>
+</div>
+</div>
+<h4 id="side"><a class="header" href="#side">side</a></h4>
+<div id="admonition-h-nvim-treeviewside" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.view.side</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treeviewside"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  nvim-tree.view.side
+  Side of the tree, can be &quot;left&quot;, &quot;right&quot;.
+
+  tree をどちら側に表示するか。&quot;left&quot;、&quot;right&quot; のいずれかを指定することができます。
+
+    Type: string, Default: &quot;left&quot;
+</code></pre>
+</div>
+</div>
+<p>わたしは<code>right</code>派ですね。当然ながら<code>left</code>だとぺこぱこするので❗</p>
+<h4 id="signcolumn"><a class="header" href="#signcolumn">signcolumn</a></h4>
+<div id="admonition-h-nvim-treeviewside-1" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.view.side</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treeviewside-1"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  nvim-tree.view.signcolumn
+  Show diagnostic sign column. Value can be &quot;yes&quot;, &quot;auto&quot;, &quot;no&quot;.
+
+  診断記号列を表示します。値は &quot;yes&quot;, &quot;auto&quot;, &quot;no&quot; のいずれかです。
+
+    Type: string, Default: &quot;yes&quot;
+</code></pre>
+</div>
+</div>
+<p>これは多分<code>LSP</code>とか<code>lint</code>関連の表示だと思うんですが、わたしは<code>no</code>にしてます。</p>
+<h3 id="renderer"><a class="header" href="#renderer">renderer</a></h3>
+<pre><code class="language-txt">UI rendering setup
+
+UIレンダリングの設定
+</code></pre>
+<h4 id="highlight_git"><a class="header" href="#highlight_git">highlight_git</a></h4>
+<div id="admonition-h-nvim-treerendererhighlight_git" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.renderer.highlight_git</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treerendererhighlight_git"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  nvim-tree.renderer.highlight_git
+  Enable file highlight for git attributes using `NvimTreeGit*` highlight groups.
+  Requires |nvim-tree.git.enable|
+  This can be used with or without the icons.
+
+  `NvimTreeGit*` ハイライトグループを使用した git 属性のファイルハイライトを有効にします。
+  |nvim-tree.git.enable| が必要です。
+  アイコンの有無にかかわらず使用可能です。
+
+    Type: `boolean`, Default: `false`
+</code></pre>
+</div>
+</div>
+<p>わたしとしては、<code>git</code>情報はある程度目立たせておいた方が安心かなーって思ってます❗</p>
+<h4 id="highlight_opened_files"><a class="header" href="#highlight_opened_files">highlight_opened_files</a></h4>
+<div id="admonition-h-nvim-treerendererhighlight_opened_files" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.renderer.highlight_opened_files</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treerendererhighlight_opened_files"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  nvim-tree.renderer.highlight_opened_files
+  Highlight icons and/or names for opened files using the
+  `NvimTreeOpenedFile` highlight group.
+  Value can be `&quot;none&quot;`, `&quot;icon&quot;`, `&quot;name&quot;` or `&quot;all&quot;`.
+
+  NvimTreeOpenedFile` ハイライトグループを使用して、
+  開いたファイルのアイコンや名前をハイライトします。
+  値は `&quot;none&quot;`, `&quot;icon&quot;`, `&quot;name&quot;` または `&quot;all&quot;` です。
+
+    Type: `string`, Default: `&quot;none&quot;`
+</code></pre>
+</div>
+</div>
+<h4 id="icons"><a class="header" href="#icons">icons</a></h4>
+<pre><code class="language-txt">Configuration options for icons.
+
+アイコンの設定オプション。
+</code></pre>
+<h5 id="glyphs"><a class="header" href="#glyphs">glyphs</a></h5>
+<pre><code class="language-txt">Configuration options for icon glyphs.
+
+アイコングリフの設定オプションです。
+
+NOTE: Do not set any glyphs to more than two characters if it's going
+to appear in the signcolumn.
+
+  サインカラムに表示される場合は、グリフを2文字以上に設定しないでください。
+</code></pre>
+<h6 id="git"><a class="header" href="#git">git</a></h6>
+<div id="admonition-h-nvim-treerendererhighlight_opened_files-1" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.renderer.highlight_opened_files</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treerendererhighlight_opened_files-1"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  nvim-tree.renderer.icons.glyphs.git
+  Glyphs for git status.
+
+  gitのステータスを表すグリフです。
+
+    Type: `table`, Default:
+      `{`
+        `unstaged = &quot;✗&quot;,`
+        `staged = &quot;✓&quot;,`
+        `unmerged = &quot;&quot;,`
+        `renamed = &quot;➜&quot;,`
+        `untracked = &quot;★&quot;,`
+        `deleted = &quot;&quot;,`
+        `ignored = &quot;◌&quot;,`
+      `}`
+</code></pre>
+</div>
+</div>
+<p>ちょっと前に「なんで &quot;決定&quot; が [×ボタン] なんだー⁉️ 」とかいうゲームコントローラーの話題があって、
+これと似てる気がするんですが、どうしても<code>unsgated</code>が<code>✗</code>って慣れない...。<code>deleted</code>じゃないの❓それ😮</p>
+<p>あと<code>untracked</code>⭐😋</p>
+<p>わたしの感覚が「古い」とか「ズレてる」ってだけかもしれないんですけどね❗</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p>ゆーてわたしも島の人間ってことです😣</p>
+<p>Culture ⭐ SHOCK❗</p>
+</div>
+</div>
+<h3 id="actions"><a class="header" href="#actions">actions</a></h3>
+<pre><code class="language-txt">Configuration for various actions.
+
+様々なアクションを行うための設定。
+</code></pre>
+<h3 id="on_attach"><a class="header" href="#on_attach">on_attach</a></h3>
+<div id="admonition-h-nvim-treeon_attach" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.on_attach</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treeon_attach"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">Runs when creating the nvim-tree buffer. Use this to set your nvim-tree
+specific mappings. See |nvim-tree-mappings|.
+When on_attach is not a function, |nvim-tree-mappings-default| will be called.
+
+nvim-tree バッファを作成するときに実行されます。これを使用して、nvim-tree 固有のマッピングを設定します。
+特有のマッピングを設定するために使用します。nvim-tree-mappings を参照してください。
+on_attachが関数でない場合、nvim-tree-mappings-default が呼び出される。
+
+  Type: `function(bufnr) | string`, Default: `&quot;default&quot;`
+</code></pre>
+</div>
+</div>
+<p>もう既にお気付きかもしれませんが、
+つい最近<code>nvim-tree.lua</code>で使用するキーマッピングの設定方法に変更が入りました。</p>
+<div id="admonition-new-mapping-method-2023-02-27httpsgithubcomnvim-treenvim-treeluanew-mapping-method-2023-02-27" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/nvim-tree/nvim-tree.lua#new-mapping-method-2023-02-27">New Mapping Method 2023-02-27</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-new-mapping-method-2023-02-27httpsgithubcomnvim-treenvim-treeluanew-mapping-method-2023-02-27"></a></p>
+</div>
+<div>
+<p>:help nvim-tree.view.mappings have been deprecated in favour of :help nvim-tree.on_attach. Please visit Migrating To on_attach to transition.</p>
+</div>
+</div>
+<p>このページを書き出したタイミングとちょうど重なったため、こっちの新しい方法で紹介します😉</p>
+<p>ただ、もうなんか長くなってきちゃったので、例によってここで一旦区切ります。</p>
+<div id="admonition-default-3" class="admonition failure">
+<div>
+<p>「あなたまさか直子のこと忘れちゃったんじゃないでしょうね？」</p>
+<p>「忘れやしませんよ」と笑って言った。「ただ話に引き込まれてたんです」</p>
+<p>「もし話のつづき聞きたいんなら明日話してあげるわよ。長い話だから一度には話せないのよ」</p>
+<p>「まるでシエラザードですね」</p>
+<p>「うん、東京に戻れなくなっちゃうわよ」と言ってレイコさんも笑った。</p>
+</div>
+</div>
+<h2 id="to-be-concluded"><a class="header" href="#to-be-concluded">To Be Concluded...</a></h2>
+<div id="admonition-default-4" class="admonition tip">
+<div>
+<p>We talked until two</p>
+<p>And then she said, &quot;It's time for bed&quot;</p>
+<p>２時まで話し込んでしまった</p>
+<p>&quot;もう寝る時間よ&quot; と彼女は言った</p>
+</div>
+</div>
+<div id="admonition-assemble" class="admonition success">
+<div class="admonition-title">
+<p>Assemble</p>
+<p><a class="admonition-anchor-link" href="#admonition-assemble"></a></p>
+</div>
+<div>
+<p>なんかもうこれだけで大ボリュームでしたね...。</p>
+<p>レイコさんは明日話してくれるそうですが、わたしは明日書けるのかな...😱</p>
+<p>...下巻に続く❗</p>
+</div>
+</div>
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> 歌詞は、冒頭でほのめかされているように、Lennon が当時の妻 Cynthia に気付かれないように、他の女性と関係を持っていたことを表している。
+<a href="https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%AB%E3%82%A6%E3%82%A7%E3%83%BC%E3%81%AE%E6%A3%AE">Wikipedia</a>より</p>
+</div><div class="footnote-definition" id=2>
+<p><a href="#to-footnote-2"><sup>2:</sup></a> <a href="https://www.shinchosha.co.jp/special/hm/">街とその不確かな壁</a>: わたしはそこまで熱狂的な Harukists ではありませんが、やっぱり楽しみにしてます☺️</div><div class="footnote-definition" id=3></p>
+<p><a href="#to-footnote-3"><sup>3:</sup></a> このサイトでは、<a href="../leader.html?highlight=nvim_set#nvim_set_var">nvim_set_var</a>をなんかたまに
+Captain Marvel と呼称することがあるんですよねー。</div></p>
+
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../../neovim/plugin/telescope-all-recent.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+            </nav>
+          </main>
+
+          <spacer></spacer>
+
+          <div class="righttoc">
+            <nav class="pagetoc"></nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../elasticlunr.min.js"></script>
+    <script src="../../mark.es6.min.js"></script>
+    <script src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
+
+    <script src="../../clipboard.min.js"></script>
+    <script>window.playground_copyable = true;</script>
+
+    <script src="../../highlight.min.js"></script>
+    <script src="../../book.js" id="book" data-defaulttheme="latte"></script>
+
+    <link rel="stylesheet" href="../../css/style.css" async>
+
+    <link rel="stylesheet" href="../../fonts/fonts.css" async>
+
+
+
+    <script async src="../../js/dist/pagetoc.js"></script>
+  </body>
+</html>
