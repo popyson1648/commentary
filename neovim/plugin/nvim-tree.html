@@ -166,9 +166,9 @@ Your terminal emulator must be configured to use that font, usually &quot;Hack N
 <h3 id="netrw"><a class="header" href="#netrw">netrw</a></h3>
 <p><code>netrw</code>は <code>Vim</code>及び<code>Neovim</code>がデフォルトで持っている機能です。</p>
 <p><img src="img/netrw.webp" alt="netrw" /></p>
-<p>コマンドモードから<code>Ex</code>で呼び出せます。</p>
-<p>この機能については、わたしもそこまで詳しくないのであまり説明とかはできませんが、
-ぶっちゃけて言っちゃえば、<code>nvim-tree.lua</code>と &quot;もろ被り&quot; な機能です❗</p>
+<p>コマンド<code>:Ex</code>で呼び出せます。</p>
+<p>この機能については、わたしもそこまで詳しくないのであまり説明できませんが、
+ぶっちゃけて言えば、<code>nvim-tree.lua</code>と &quot;もろ被り&quot; な機能です❗</p>
 <div id="admonition-h-pi_netrw" class="admonition info">
 <div class="admonition-title">
 <p>:h pi_netrw</p>
@@ -187,9 +187,9 @@ Copyright: Copyright (C) 2017 Charles E Campbell    netrw-copyright
 </code></pre>
 </div>
 </div>
-<p>...いや <code>nvim-tree.lua</code>が<code>netrw</code>に被せに行ったと言うべきか🤔</p>
+<p>...いや <code>nvim-tree.lua</code>が<code>netrw</code>にもろ被せに行ったと言うべきか🤔</p>
 <p>まあ、どっちにしろ機能が重複しちゃうので「どっちかにしましょ」と言うことですね😆</p>
-<p>以下の設定によって、<code>netrw</code>が無効化されます。</p>
+<p>以下のコードによって、<code>netrw</code>を無効化できます。</p>
 <pre><code class="language-lua">vim.api.nvim_set_var('loaded_netrw', 1)
 vim.api.nvim_set_var('loaded_netrwPlugin', 1)
 </code></pre>
@@ -199,24 +199,24 @@ vim.api.nvim_set_var('loaded_netrwPlugin', 1)
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
 </div>
 <div>
-<p>また改めて示すので、実際に記述するのは次節でも大丈夫です❗</p>
+<p>また改めてコードを示すので、実際に記述するのは次節でも大丈夫です❗</p>
 </div>
 </div>
 <p>これを行うのは、<code>nvim-tree.lua</code>がオフィシャルに</p>
 <pre><code class="language-txt">disable netrw at the very start of your init.lua (strongly advised)
 init.luaの最初の部分でnetrwを無効にする (強く推奨)
 </code></pre>
-<p>...と、何やら強く推奨しているためです。</p>
+<p>...と、何やら力強く推奨しているためです。</p>
 <div id="admonition-tip" class="admonition tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
 </div>
 <div>
-<p>実は、わたしが普段使用している環境では<code>extensions/nvim-tree.lua</code>の先頭に置いています。</p>
-<p>これは、<code>nvim-tree</code>の使用をやめた際に「<code>netrw</code>の &quot;無効化を無効化&quot; できる」という利便性が得られるためなのですが、
-本当にこれで問題が無いのかどうか、ちょっと不確かな壁がありました😅</p>
-<p>なので、このサイトでは素直に<code>nvim</code>ディレクトリ直下の<code>init.lua</code>の最初の部分に置くことをオススメする方向でいくことにします❗</p>
+<p>わたしが普段使用している環境では<code>extensions/nvim-tree.lua</code>の先頭に置いています。</p>
+<p>これは、<code>nvim-tree</code>の使用をやめた際に「<code>netrw</code>の &quot;無効化を無効化&quot; できる」という利便性を得るためですが、
+本当にこれで問題が無いのかどうかは、ちょっと不確かな壁です😅</p>
+<p>なので、このサイトでは素直に<code>nvim</code>ディレクトリ直下の<code>init.lua</code>の最初の部分に置くことをオススメしていきます❗</p>
 </div>
 </div>
 <div id="admonition-note-1" class="admonition note">
@@ -229,12 +229,11 @@ init.luaの最初の部分でnetrwを無効にする (強く推奨)
 <a name="to-footnote-3"><a href="#3">3</a></a>
 </sup>
 が登場してきましたね✨</p>
-<p>ここで出番があるなんて、わたしもうっかりさんでした😅</p>
+<p>ここで出番があるなんて、わたしもうっかりさんでした❗</p>
 </div>
 </div>
 <h2 id="install--settings"><a class="header" href="#install--settings">Install &amp; Settings</a></h2>
-<p>それでは、インストールに進みましょう。
-今回はまず一度、デフォルト設定で動かしてみましょう。</p>
+<p>それでは、インストールに進みましょう。今回は先にデフォルトで動かしてみることにします。</p>
 <p>まずは、これを忘れずにね😉</p>
 <div id="admonition-initlua" class="admonition example">
 <div class="admonition-title">
@@ -276,12 +275,12 @@ vim.api.nvim_create_user_command('Ex', function() vim.cmd.NvimTreeToggle() end, 
 </code></pre>
 </div>
 </div>
-<p>そしたら、コマンドから<code>Ex</code>を実行してみましょう。</p>
+<p>そしたら、コマンド<code>:Ex</code>を実行してみましょう。</p>
 <p><img src="img/nvim-tree-default.webp" alt="nvim-tree-default" /></p>
 <p>うん、出ましたね☺️</p>
 <p>繰り返しになりますが、<code>Ex</code>コマンドは本来<code>netrw</code>のコマンドです。
 なんですが❗ 無効化したので乗っ取ってやろうっていう魂胆ですね😼</p>
-<p>で、ここで不意を突いてやってきた<code>nvim_create_user_command</code>については<code>14.4節</code>でしれっと触れてました、実は😆</p>
+<p>ここで不意を突いて現れた<code>nvim_create_user_command</code>については<code>14.4節</code>にて、実はしれっと触れてました😆</p>
 <div id="admonition-144-call-the-pluginfunctioncall-pluginhtmlnvim_create_user_command" class="admonition info">
 <div class="admonition-title">
 <p><a href="../function/call-plugin.html#nvim_create_user_command">14.4 Call The Plugin</a></p>
@@ -291,7 +290,7 @@ vim.api.nvim_create_user_command('Ex', function() vim.cmd.NvimTreeToggle() end, 
 <p>もう一個だけやっておきたいのは、独自コマンドからプラグインを使うパターンです。</p>
 </div>
 </div>
-<p>そう❗今回帰ってくるのは Captain Marvel だけではなかったのです🤗 おかえり❗</p>
+<p>なんと今回、帰ってくるのは Captain Marvel だけではなかったのです❗おかえり🤗</p>
 <div id="admonition-tip-1" class="admonition tip">
 <div class="admonition-title">
 <p>Tip</p>
@@ -379,7 +378,7 @@ vim.api.nvim_create_user_command('Ex', function() vim.cmd.NvimTreeToggle() end, 
       exclude = { '.git', 'target', 'build' },
     },
   },
-  on_attach = &quot;default&quot;
+  on_attach = 'default'
 }
 
 vim.api.nvim_create_user_command('Ex', function() vim.cmd.NvimTreeToggle() end, {})
@@ -389,7 +388,7 @@ vim.api.nvim_create_user_command('Ex', function() vim.cmd.NvimTreeToggle() end, 
 <p>...ってやってみたら、こんな感じになりますよね🧐</p>
 <p><img src="img/nvim-tree-customize.webp" alt="nvim-tree-customize" /></p>
 <p>いくつかはデフォルト設定のままだったり、記述を省いている項目も (あり得ないほど) たくさんあります。</p>
-<p>(これもやっぱり毎回同じ文言になっちゃうんですが...、) ぜひ色々試してみてください😆</p>
+<p>これもやっぱり毎回同じ文言になっちゃうんですが... ぜひ色々試してみてください😆</p>
 <h2 id="setup"><a class="header" href="#setup">setup</a></h2>
 <div id="admonition-h-nvim-tree-setup" class="admonition info">
 <div class="admonition-title">
@@ -404,9 +403,9 @@ nvim-tree を初期化するには、setup() 関数を実行する必要があ�
 </div>
 </div>
 <p><code>:h nvim-tree-setup</code>を見てもらえれば分かる通り、
-これらのパラメータを全部ここに載せてるとほんとに何ヶ月かかるか分かりません...。</p>
-<p>なので、ちょこちょことわたしが使用しているパラメータ「だけ」フワ〜っと触れます。
-ただ、これもやっぱりある程度はパラメータの名前から推測できるはずです😆</p>
+これらを全部ここに載せてるとほんとに何ヶ月かかるか分かりません...。</p>
+<p>なので、ちょこちょことわたしが使用しているパラメータ &quot;だけ&quot; フワ〜っと触れます。
+と言っても、これもやっぱりある程度はパラメータの名前からイメージできるはずです😆</p>
 <h3 id="sort_by"><a class="header" href="#sort_by">sort_by</a></h3>
 <div id="admonition-h-nvim-treesort_by" class="admonition info">
 <div class="admonition-title">
@@ -444,7 +443,7 @@ Can be one of `name`, `case_sensitive`, `modification_time`, `extension` or a fu
 <h3 id="view"><a class="header" href="#view">view</a></h3>
 <pre><code class="language-txt">Window / buffer setup.
 
-ウィンドウ/バッファの設定。
+ウィンドウ / バッファの設定。
 </code></pre>
 <h4 id="width"><a class="header" href="#width">width</a></h4>
 <div id="admonition-h-nvim-treeviewwidth" class="admonition info">
@@ -467,6 +466,7 @@ Can be one of `name`, `case_sensitive`, `modification_time`, `extension` or a fu
 </code></pre>
 </div>
 </div>
+<p>説明不要ですね😉</p>
 <h4 id="side"><a class="header" href="#side">side</a></h4>
 <div id="admonition-h-nvim-treeviewside" class="admonition info">
 <div class="admonition-title">
@@ -500,11 +500,12 @@ Can be one of `name`, `case_sensitive`, `modification_time`, `extension` or a fu
 </code></pre>
 </div>
 </div>
-<p>これは多分<code>LSP</code>とか<code>lint</code>関連の表示だと思うんですが、わたしは<code>no</code>にしてます。</p>
+<p>多分<code>LSP</code>とか<code>lint</code>関連の表示だと思うんですが、
+これについては他の領域やプラグインの機能を使用して表示していることもあって、わたしは<code>no</code>で常用してます。</p>
 <h3 id="renderer"><a class="header" href="#renderer">renderer</a></h3>
 <pre><code class="language-txt">UI rendering setup
 
-UIレンダリングの設定
+UI レンダリングの設定
 </code></pre>
 <h4 id="highlight_git"><a class="header" href="#highlight_git">highlight_git</a></h4>
 <div id="admonition-h-nvim-treerendererhighlight_git" class="admonition info">
@@ -526,7 +527,7 @@ UIレンダリングの設定
 </code></pre>
 </div>
 </div>
-<p>わたしとしては、<code>git</code>情報はある程度目立たせておいた方が安心かなーって思ってます❗</p>
+<p>診断記号列とは逆に、<code>git</code>情報はある程度目立たせておいた方が安心かなーって思ってるので有効にしてます。❗</p>
 <h4 id="highlight_opened_files"><a class="header" href="#highlight_opened_files">highlight_opened_files</a></h4>
 <div id="admonition-h-nvim-treerendererhighlight_opened_files" class="admonition info">
 <div class="admonition-title">
@@ -547,6 +548,7 @@ UIレンダリングの設定
 </code></pre>
 </div>
 </div>
+<p>説明のままですが、現在開かれているファイルをハイライトして区別できます 🐵</p>
 <h4 id="icons"><a class="header" href="#icons">icons</a></h4>
 <pre><code class="language-txt">Configuration options for icons.
 
@@ -560,7 +562,7 @@ UIレンダリングの設定
 NOTE: Do not set any glyphs to more than two characters if it's going
 to appear in the signcolumn.
 
-  サインカラムに表示される場合は、グリフを2文字以上に設定しないでください。
+  サインカラムに表示される場合は、グリフを 2文字以上に設定しないでください。
 </code></pre>
 <h6 id="git"><a class="header" href="#git">git</a></h6>
 <div id="admonition-h-nvim-treerendererhighlight_opened_files-1" class="admonition info">
@@ -572,7 +574,7 @@ to appear in the signcolumn.
 <pre><code class="language-txt">  nvim-tree.renderer.icons.glyphs.git
   Glyphs for git status.
 
-  gitのステータスを表すグリフです。
+  git のステータスを表すグリフです。
 
     Type: `table`, Default:
       `{`
@@ -587,7 +589,7 @@ to appear in the signcolumn.
 </code></pre>
 </div>
 </div>
-<p>ちょっと前に「なんで &quot;決定&quot; が [×ボタン] なんだー⁉️ 」とかいうゲームコントローラーの話題があって、
+<p>だいぶ以前に「なんで &quot;決定&quot; が [×ボタン] なんだー⁉️ 」とかいうゲームコントローラーの話題があって、
 これと似てる気がするんですが、どうしても<code>unsgated</code>が<code>✗</code>って慣れない...。<code>deleted</code>じゃないの❓それ😮</p>
 <p>あと<code>untracked</code>⭐😋</p>
 <p>わたしの感覚が「古い」とか「ズレてる」ってだけかもしれないんですけどね❗</p>
@@ -606,6 +608,55 @@ to appear in the signcolumn.
 
 様々なアクションを行うための設定。
 </code></pre>
+<h4 id="expand_all"><a class="header" href="#expand_all">expand_all</a></h4>
+<div id="admonition-h-nvim-treeactionsexpand_all" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.actions.expand_all</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treeactionsexpand_all"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  Configuration for expand_all behaviour.
+
+  動作に関する設定
+</code></pre>
+</div>
+</div>
+<h5 id="max_folder_discovery"><a class="header" href="#max_folder_discovery">max_folder_discovery</a></h5>
+<div id="admonition-h-nvim-treeactionsexpand_allmax_folder_discovery" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.actions.expand_all.max_folder_discovery</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treeactionsexpand_allmax_folder_discovery"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  Limit the number of folders being explored when expanding every folders.
+  Avoids hanging neovim when running this action on very large folders.
+
+  すべてのフォルダーを展開する際に、探索されるフォルダーの数を制限します。
+  非常に大きなフォルダーに対してこのアクションを実行したときに、neovim がハングアップするのを防ぎます。
+
+    Type: `number`, Default: `300`
+</code></pre>
+</div>
+</div>
+<p>デフォルトは<code>300</code>ですが、わたしは<code>100</code>の弱気設定です 🐥</p>
+<h5 id="exclude"><a class="header" href="#exclude">exclude</a></h5>
+<div id="admonition-h-nvim-treeactionsexpand_all-1" class="admonition info">
+<div class="admonition-title">
+<p>:h nvim-tree.actions.expand_all</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-nvim-treeactionsexpand_all-1"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">  A list of directories that should not be expanded automatically.
+
+  自動的に展開されないようにするディレクトリのリストです。
+
+  E.g `{ &quot;.git&quot;, &quot;target&quot;, &quot;build&quot; }` etc.
+    Type: `table`, Default: `{}`
+</code></pre>
+</div>
+</div>
+<p>わたしの例では、デフォルト設定そのままで特に困っていないのですが、
+人によってはきっちり決めておきたい項目ではないでしょうか。</p>
 <h3 id="on_attach"><a class="header" href="#on_attach">on_attach</a></h3>
 <div id="admonition-h-nvim-treeon_attach" class="admonition info">
 <div class="admonition-title">
@@ -625,8 +676,7 @@ on_attachが関数でない場合、nvim-tree-mappings-default が呼び出さ�
 </code></pre>
 </div>
 </div>
-<p>もう既にお気付きかもしれませんが、
-つい最近<code>nvim-tree.lua</code>で使用するキーマッピングの設定方法に変更が入りました。</p>
+<p>既にお気付きかもしれませんが、つい最近<code>nvim-tree.lua</code>で使用するキーマッピングの設定方法に変更が入りました。</p>
 <div id="admonition-new-mapping-method-2023-02-27httpsgithubcomnvim-treenvim-treeluanew-mapping-method-2023-02-27" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/nvim-tree/nvim-tree.lua#new-mapping-method-2023-02-27">New Mapping Method 2023-02-27</a></p>
@@ -636,8 +686,8 @@ on_attachが関数でない場合、nvim-tree-mappings-default が呼び出さ�
 <p>:help nvim-tree.view.mappings have been deprecated in favour of :help nvim-tree.on_attach. Please visit Migrating To on_attach to transition.</p>
 </div>
 </div>
-<p>このページを書き出したタイミングとちょうど重なったため、こっちの新しい方法で紹介します😉</p>
-<p>ただ、もうなんか長くなってきちゃったので、例によってここで一旦区切ります。</p>
+<p>わたしがこのページを書き出したタイミング良く重なったため、こっちの新しい方法で紹介します😉</p>
+<p>...ただ、なんか長くなってきちゃったので、例によってここで一旦区切ります。</p>
 <div id="admonition-default-3" class="admonition failure">
 <div>
 <p>「あなたまさか直子のこと忘れちゃったんじゃないでしょうね？」</p>
