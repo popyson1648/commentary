@@ -145,8 +145,9 @@
 <p>しれっと流しましたが、ここでも<code>telescope.nvim</code>が登場します❗</p>
 </div>
 </div>
-<p>次節ですぐコードを載せますが、ちょっと大きいので別ファイルにしたいと思います。
+<p>次項ですぐコードを載せますが、ちょっと大きいので別ファイルにしたいと思います。
 無いものを<code>require</code>してエラーを出すのも面白くないので、読み込み先をあらかじめ用意しておきましょう。</p>
+<p>ファイル名は<code>nvim-tree-actions.lua</code>としました。</p>
 <div id="admonition-extensionsnvim-tree-actionslua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-tree-actions.lua</p>
@@ -391,7 +392,7 @@ end
 <p><code>Filter</code>を動かしてみましょう。<code>NvimTree</code>にフォーカスしている状態で<code>f</code>キーをぽちっと。😆</p>
 <p><img src="img/nvim-tree-filter.webp" alt="nvim-tree-filter" /></p>
 <p>&quot;FILTER&quot; の入力欄が現れましたね。ちゃんと動いてます😉</p>
-<p>じゃあ、次❗どんどん行かないとまた長くなっちゃうんで❗</p>
+<p>じゃあ次❗どんどん行かないとまた長くなっちゃうんで❗</p>
 <h3 id="recipes"><a class="header" href="#recipes">Recipes</a></h3>
 <p>これは<code>nvim-tree.lua</code>の<code>wiki</code>で公開されているコードを好き勝手やらせてもらってます😅</p>
 <div id="admonition-creating-an-actions-menu-using-telescopehttpsgithubcomnvim-treenvim-treeluawikirecipescreating-an-actions-menu-using-telescope" class="admonition info">
@@ -401,11 +402,11 @@ end
 </div>
 <div>
 <p>@Tolomeo</p>
-<p>It is possible to use Telescope as a menu, listing custom items and executing a callback on item selection.
-Telescopeをメニューとして使用し、カスタムアイテムをリストアップし、アイテム選択時にコールバックを実行することが可能です。</p>
+<p>It is possible to use Telescope as a menu, listing custom items and executing a callback on item selection.</p>
+<p>Telescopeをメニューとして使用し、カスタムアイテムをリストアップし、アイテム選択時にコールバックを実行することが可能です。</p>
 </div>
 </div>
-<p>コードは複雑なのでわたしが下手に説明するよりはコードを読み解いてもらった方が良いのですが、</p>
+<p>わたしが下手に説明するよりはコードを読み解いてもらった方が良いのですが、</p>
 <p>大まかには<code>command</code>の内容を利用して別で<code>menuCommand</code>を作って...</p>
 <pre><code class="language-lua">local menuCommand = {}
 
@@ -429,10 +430,10 @@ createTreeActions()
 
       -- (以下略)
 </code></pre>
-<p>前節と同じ要領で<code>NvimTree</code>にフォーカスしている状態で<code>Space</code>キーをぽちっと。😆</p>
+<p>前節と同じ要領で<code>NvimTree</code>にフォーカスしている状態で<code>Space</code>キーをぽちっと😆</p>
 <p>こんなん出ました❗</p>
 <p><img src="img/nvim-tree-menu-action.webp" alt="nvim-tree-menu-action" /></p>
-<p>操作は<code>telescope</code>と同じなので分かりますよね。項目を選べばちゃんと登録された内容が実行されます☺️</p>
+<p>操作は<code>telescope</code>と同じなのでもう説明不要ですね。項目を選べばちゃんと登録された内容が実行されます☺️</p>
 <h3 id="mouse-using"><a class="header" href="#mouse-using">Mouse Using</a></h3>
 <p>最後にもう一個だけ。<code>local command</code>の中にこんなのがいましたね。</p>
 <pre><code class="language-lua">--{ '&lt;2-LeftMouse&gt;',  node.open.edit,        'Open' },
@@ -486,8 +487,8 @@ Win32とxterm用です。 テキストを選択する場合、更にクリック
 <div>
 <p>So I lit a fire</p>
 <p>Isn’t it good Norwegian wood?</p>
-<p>だから僕は燃やしてやったんだ</p>
-<p>「綺麗だろ？ノルウェーの家具が燃えている」<sup class="footnote-reference">
+<p>だから僕は燃やしてやった</p>
+<p>「いいね これはノルウェーの木だもんな」<sup class="footnote-reference">
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup></p>
 </div>
