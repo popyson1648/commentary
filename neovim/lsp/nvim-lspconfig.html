@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible latte">
+  <head>
+    <meta charset="UTF-8">
+    <title>nvim-lspconfig - Commentary of Dotfiles</title>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMN96QT');</script>
+
+    <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+    <meta name="theme-color">
+
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+
+    <meta property="og:title" content="nvim-lspconfig - Commentary of Dotfiles">
+    <meta property="og:description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta property="og:site_name" content="Commentary of Dotfiles">
+    <meta property="og:url" content="https://coralpink.github.io/commentary/">
+
+    <meta name="twitter:card" content="summary_image">
+    <link rel="apple-touch-icon" href="../../favicon.png" sizes="100x100">
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="shortcut icon" href="../../favicon.png">
+
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+
+  </head>
+  <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+      <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+              <i class="fa-list-ul"></i>
+            </button>
+            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+              <i class="fa-palette"></i>
+            </button>
+            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+              <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+              <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+              <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+              <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+            </ul>
+            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+              <i class="fa-magnifying-glass"></i>
+            </button>
+          </div>
+
+          <div class="menu-title">Commentary of Dotfiles</div>
+
+          <div class="right-buttons">
+            <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository">
+              <i id="git-repository-button" class="fa-github fa-github"></i>
+            </a>
+
+          </div>
+        </div>
+
+        <div id="search-wrapper" class="hidden">
+          <form id="searchbar-outer" class="searchbar-outer">
+            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+              aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+          </form>
+          <div id="searchresults-outer" class="searchresults-outer hidden">
+            <div id="searchresults-header" class="searchresults-header"></div>
+            <ul id="searchresults"></ul>
+          </div>
+        </div>
+
+        <div id="content" class="content">
+          <div id="sidebar" class="sidebar" aria-label="Table of contents">
+            <nav class="sidebar-scrollbox">
+              <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../../wezterm/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item expanded "><a href="../../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item expanded "><a href="../../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item expanded "><a href="../../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item expanded "><a href="../../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item expanded "><a href="../../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item expanded "><a href="../../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../../neovim/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item expanded "><a href="../../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item expanded "><a href="../../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item expanded "><a href="../../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item expanded "><a href="../../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item expanded "><a href="../../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item expanded "><a href="../../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item expanded "><a href="../../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item expanded "><a href="../../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item expanded "><a href="../../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item expanded "><a href="../../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/packer.html"><strong aria-hidden="true">15.1.</strong> Packer.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine.html"><strong aria-hidden="true">15.4.</strong> lualine.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-hlslens.html"><strong aria-hidden="true">15.5.</strong> nvim-hlslens</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/gitsigns.html"><strong aria-hidden="true">15.6.</strong> gitsigns</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-scrollbar.html"><strong aria-hidden="true">15.7.</strong> nvim-scrollbar</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine-part2.html"><strong aria-hidden="true">15.8.</strong> lualine.nvim Part Ⅱ</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine-part3.html"><strong aria-hidden="true">15.9.</strong> lualine.nvim Part Ⅲ</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope.html"><strong aria-hidden="true">15.10.</strong> telescope.nvim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope-config.html"><strong aria-hidden="true">15.10.1.</strong> Config</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope-all-recent.html"><strong aria-hidden="true">15.10.2.</strong> telescope-all-recent</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-tree.html"><strong aria-hidden="true">15.11.</strong> nvim-tree.lua</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-tree-actions.html"><strong aria-hidden="true">15.11.1.</strong> Actions</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/lsp/language-server-protocol.html"><strong aria-hidden="true">16.</strong> Language Server Protocol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/lsp/nvim-lspconfig.html" class="active"><strong aria-hidden="true">16.1.</strong> nvim-lspconfig</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">... To Be Continued.</li></ol>
+            </nav>
+          </div>
+
+          <main>
+            <h1 id="nvim-lspconfig"><a class="header" href="#nvim-lspconfig">nvim-lspconfig</a></h1>
+<div id="admonition-nvim-lspconfighttpsgithubcomneovimnvim-lspconfig" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-nvim-lspconfighttpsgithubcomneovimnvim-lspconfig"></a></p>
+</div>
+<div>
+<p>Configs for the Nvim LSP client (:help lsp).</p>
+<p>Nvim LSP クライアント (:help lsp) のコンフィグです。</p>
+</div>
+</div>
+<p>さて、まずは<code>LSP</code>活用の基盤を築きましょう❗<code>nvim-lspconfig</code>の登場です😆</p>
+<div id="admonition-default" class="admonition quote">
+<div>
+<p>And now, the end is near</p>
+<p>And so I face the final curtain</p>
+<p>そして今、終わりが近づいている</p>
+<p>そして私は最後の幕に臨む</p>
+</div>
+</div>
+<div id="admonition-h-lsp" class="admonition info">
+<div class="admonition-title">
+<p>:h lsp</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-lsp"></a></p>
+</div>
+<div>
+<pre><code>LSP client/framework                                     lsp LSP
+
+Nvim supports the Language Server Protocol (LSP), which means it acts as
+a client to LSP servers and includes a Lua framework `vim.lsp` for building
+enhanced LSP tools.
+
+Nvim は Language Server Protocol (LSP) をサポートしており、
+LSP サーバーのクライアントとして動作し、
+拡張 LSP ツールを構築するための Lua フレームワーク `vim.lsp` を含んでいます。
+
+  https://microsoft.github.io/language-server-protocol/
+
+LSP facilitates features like go-to-definition, find-references, hover,
+completion, rename, format, refactor, etc., using semantic whole-project
+analysis (unlike ctags).
+
+LSPは、(ctags とは異なり) 意味論的なプロジェクト全体の分析を用いて、
+go-to-definition、find-references、hover、completion、rename、format、refactor、
+などの機能を容易にします。
+</code></pre>
+</div>
+</div>
+<p>本来ならここにある内容を自分で行っていく必要があるんですが、
+「<code>setup</code>を呼んでくれるだけでいいよー」ってしてくれるのが、この<code>nvim-lspconfig</code>です。</p>
+<div id="admonition-configurationshttpsgithubcomneovimnvim-lspconfigblobmasterdocserver_configurationsmd" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md">Configurations</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-configurationshttpsgithubcomneovimnvim-lspconfigblobmasterdocserver_configurationsmd"></a></p>
+</div>
+<div>
+<p>LSP configs provided by nvim-lspconfig are listed below.</p>
+<p>nvim-lspconfigが提供するLSPコンフィグを以下に示します。</p>
+</div>
+</div>
+<p>要するに便利ってことです❗❗</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>細かいカスタマイズをしたい場合は、デフォルト設定を選択的にオーバーライドして使うこともできます。</p>
+</div>
+</div>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<div id="admonition-installhttpsgithubcomneovimnvim-lspconfiginstall" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/neovim/nvim-lspconfig#install">Install</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-installhttpsgithubcomneovimnvim-lspconfiginstall"></a></p>
+</div>
+<div>
+<p>Requires neovim version 0.8 above.</p>
+<p>neovim version 0.8 以上が必要です。</p>
+<p>Install nvim-lspconfig like any other Vim plugin, e.g. with packer.nvim:</p>
+<p>nvim-lspconfig は他の Vim プラグインと同様に、例えば packer.nvim でインストールしてください</p>
+</div>
+</div>
+<p>なんかもう何を言ってるのか全然分かる😑</p>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<div id="admonition-suggested-configuration" class="admonition info">
+<div class="admonition-title">
+<p>Suggested configuration</p>
+<p><a class="admonition-anchor-link" href="#admonition-suggested-configuration"></a></p>
+</div>
+<div>
+<p>nvim-lspconfig does not set keybindings or enable completion by default.
+The following example configuration provides suggested keymaps for the most commonly used language server functions,
+and manually triggered completion with omnifunc (<c-x><c-o>).</p>
+<p>nvim-lspconfig はデフォルトでキーバインドを設定したり、補完を有効にしたりしません。
+次の設定例では、最もよく使われる言語サーバ機能のキーマップを提案し、
+omnifunc (<c-x><c-o>) による補完を手動でトリガしています。</p>
+</div>
+</div>
+<p>オフィシャルには、おっそろしく迅速に<code>pyright</code>、<code>tsserver</code>、<code>rust_analyzer</code>
+<sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup>
+のセットアップがされていますが、大胆にも、このサイトではこれらをスキップして、もっと汎用的な方法をとります❗</p>
+<div id="admonition-default-1" class="admonition quote">
+<div>
+<p>I traveled each and every highway</p>
+<p>And more, much more than this</p>
+<p>I did it my way.</p>
+<p>私は、あらゆるハイウェイを旅した</p>
+<p>そしてこれよりももっと、これ以上ないってくらい</p>
+<p>わたしの道を旅したんだ</p>
+</div>
+</div>
+<p>と、いうことで、ここではキーマップの設定だけしちゃいましょう😌</p>
+<div id="admonition-extensionsnvim-lspconfiglua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/nvim-lspconfig.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-lspconfiglua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.keymap.set('n', '&lt;space&gt;e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '&lt;space&gt;q', vim.diagnostic.setloclist)
+
+-- Use LspAttach autocommand to only map the following keys
+-- after the language server attaches to the current buffer
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by &lt;c-x&gt;&lt;c-o&gt;
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '&lt;C-k&gt;', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '&lt;space&gt;wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '&lt;space&gt;wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '&lt;space&gt;wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set('n', '&lt;space&gt;D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '&lt;space&gt;rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '&lt;space&gt;ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '&lt;space&gt;f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+  end,
+})
+</code></pre>
+</div>
+</div>
+<p>いやー、ほんとにキーマップの設定だけなので、サンプルそのままでしたね😅</p>
+<p>それだけ、面倒な設定をうまく包み込んでくれてるってことです。</p>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>っていうだけなのもつまんないので、ちょっとだけ...。</p>
+<p>わたしは以下のキーマップだけ外して使ってます。</p>
+<pre><code class="language-lua">vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+</code></pre>
+<p>これ、元の動作の方が使いやすいと思うのはわたしだけなのかな...。</p>
+</div>
+</div>
+<p>ただ、お話し相手がいない状態なので、まだ何にもできないんですけどね😅</p>
+<p>あとこれ、いつもの❗</p>
+<div id="admonition-extensionsinitlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">use {
+  'neovim/nvim-lspconfig',
+  config = function() require 'extensions.nvim-lspconfig' end,
+}
+</code></pre>
+</div>
+</div>
+<h3 id="lspattach"><a class="header" href="#lspattach">LspAttach</a></h3>
+<p><code>LspAttach</code>ってなんやねんってなりますが、これはもうそのままヘルプにあります。</p>
+<div id="admonition-h-lspattach" class="admonition info">
+<div class="admonition-title">
+<p>:h LspAttach</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-lspattach"></a></p>
+</div>
+<div>
+<pre><code>                                                                   LspAttach
+After an LSP client attaches to a buffer.
+
+LSPクライアントがバッファにアタッチした後 (に発生するイベント)。
+</code></pre>
+</div>
+</div>
+<p>久しぶりに現れた<code>Automatic Command</code>は、<a href="../au/automatic-commands.html">11章</a> に出てきたお話です。</p>
+<div id="admonition-nvim_create_autocmdaunvim_create_autocmdhtml" class="admonition info">
+<div class="admonition-title">
+<p><a href="../au/nvim_create_autocmd.html">nvim_create_autocmd</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-nvim_create_autocmdaunvim_create_autocmdhtml"></a></p>
+</div>
+<div>
+<p>いつだっておじさんは熱くアドバイスしてくれます☺️</p>
+</div>
+</div>
+<div id="admonition-nvim_create_augroupaunvim_create_augrouphtml" class="admonition info">
+<div class="admonition-title">
+<p><a href="../au/nvim_create_augroup.html">nvim_create_augroup</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-nvim_create_augroupaunvim_create_augrouphtml"></a></p>
+</div>
+<div>
+<p>うん。まず何よりもはっきりさせておきたいのは、auというのはautocmdの先頭2文字からきているようですね。</p>
+</div>
+</div>
+<p>ここはもう &quot;nvimトレーナー<sup class="footnote-reference">
+<a name="to-footnote-2"><a href="#2">2</a></a>
+</sup>&quot; に任せておけば安心ですね。</p>
+<h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
+<p>ここはこれだけです。もう簡単でしょう❓
+<img src="img/lspconfig.webp" alt="lspconfig" width="1512" height="1200" loading="lazy"></p>
+<p>繰り返しになりますが、これだけではまだ何もできません。</p>
+<p>大丈夫です、基盤なんで。どっしり構えましょう😤</p>
+<p>...ん❓😑</p>
+<p>え、ちょっと待って。</p>
+<p>nvimトレーナーは &quot;ｎｖｉｍチャンピオン&quot; なの⁉️ いつの間に⁉️</p>
+<p>わたしが遊んでだりサボってたり、
+amazonのセールに合わせて自分へのご褒美を買ってあげたり受け取ったり、
+なんか天気悪いなー🙄とか、
+さくら🌸 さくら〜🌸、とか、トリリオンゲーム6巻を読み耽っていた間にも</p>
+<p>nvimトレーナーは努力を続けていたってこと⁉️</p>
+<div id="admonition-default-2" class="admonition quote">
+<div>
+<p>Yes, it was my way
+<sup class="footnote-reference">
+<a name="to-footnote-3"><a href="#3">3</a></a>
+</sup></p>
+<p>そう、それが私の生きる道</p>
+</div>
+</div>
+<p>...。😮</p>
+<p>こうなったらお祝いだー❗❗🥳</p>
+<div id="admonition-default-3" class="admonition success">
+<div>
+<p>ライバルどうし おかしいね</p>
+<p>&quot;まだまだ育てが 足りないぜ！&quot;</p>
+<p>それでも ホラ</p>
+</div>
+</div>
+<div id="admonition-default-4" class="admonition success">
+<div>
+<p>選んだ道が 同じ道だから</p>
+<p>&quot;負けないぞ！&quot;って いいながら</p>
+<p>おなじ夢を 語り合う</p>
+</div>
+</div>
+<p>宴もたけなわではございますが、わたしから一言。</p>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>でんどう　いり　おめでとう❗</p>
+</div>
+</div>
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> それぞれ、<code>Python</code>、<code>TypeScript</code>、<code>Rust</code>の Language Server です。</div><div class="footnote-definition" id=2></p>
+<p><a href="#to-footnote-2"><sup>2:</sup></a> このサイトの<a href="../options/options.html">10章</a>・<a href="../au/automatic-commands.html">11章</a>の主人公。
+現チャンピオン❗</div><div class="footnote-definition" id=3></p>
+<p><a href="#to-footnote-3"><sup>3:</sup></a> My Way (by <a href="https://en.wikipedia.org/wiki/Frank_Sinatra">Frank Sinatra</a>): 主人公の男性が、自分の死が近付く中、自分の人生で起こったすべての苦難に対して行ったことについて、
+後悔せず自信を持っている、と語る内容である。
+<a href="https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%A4%E3%83%BB%E3%82%A6%E3%82%A7%E3%82%A4">Wikipedia</a>より (もちろん、nvimトレーナーは目の前が真っ暗になることはあっても死ぬことはないです😉)</p>
+</div>
+
+            <nav class="nav-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../../neovim/lsp/language-server-protocol.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                  <i class="fa-angle-left"></i>
+                </a>
+
+            </nav>
+          </main>
+
+          <spacer></spacer>
+
+          <div class="righttoc">
+            <nav class="pagetoc"></nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../elasticlunr.min.js"></script>
+    <script src="../../mark.es6.min.js"></script>
+    <script src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
+
+    <script src="../../clipboard.min.js"></script>
+    <script>window.playground_copyable = true;</script>
+
+    <script src="../../highlight.min.js"></script>
+    <script src="../../book.js" id="book" data-defaulttheme="latte"></script>
+
+    <link rel="stylesheet" href="../../css/style.css" async>
+
+    <link rel="stylesheet" href="../../fonts/fonts.css" async>
+
+
+
+    <script async src="../../js/dist/pagetoc.js"></script>
+    <script async src="../../js/assets/fzf.umd.js"></script>
+    <script async src="../../js/assets/elasticlunr.js"></script>
+  </body>
+</html>
