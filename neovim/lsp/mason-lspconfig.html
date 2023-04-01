@@ -122,11 +122,14 @@
 <pre><code class="language-diff">use {
   'williamboman/mason.nvim',
   config = function() require 'extensions.mason' end,
-+ requires = 'williamboman/mason-lspconfig.nvim',
++ requires = {
++   'williamboman/mason-lspconfig.nvim','neovim/nvim-lspconfig',
++ }
 }
 </code></pre>
 </div>
 </div>
+<p><code>nvim-lspconfig</code>も呼び出す必要があるので、これもプラスで❗</p>
 <h2 id="config"><a class="header" href="#config">Config</a></h2>
 <p>で、これに関するコンフィグも<code>mason.lua</code>にまとめちゃいます。</p>
 <div id="admonition-extensionsmasonlua-1" class="admonition example">
