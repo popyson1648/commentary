@@ -99,7 +99,7 @@
 <div>
 <p>A simple statusline/winbar component that uses LSP to show your current code context.</p>
 <p>Named after the Indian satellite navigation system.</p>
-<p>LSP を使用して現在のコードコンテキストを表示するシンプルなステータスライン/ウィンバーコンポーネントです。</p>
+<p>LSP を使用して現在のコードコンテキストを表示するシンプルな statusline/winbar コンポーネントです。</p>
 <p>インドの衛星ナビゲーションシステムにちなんで名付けられました。</p>
 </div>
 </div>
@@ -117,7 +117,7 @@
 </div>
 <h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
 <p><code>nvim-navic</code>の導入は、それはもうとても恐ろしく簡単です。インド人もびっくり❗</p>
-<p>...まあ、そもそも SmiteshP さんはインドの人なんだけど😮</p>
+<p>まあ、SmiteshP さんはインドの人なんだけど😮</p>
 <div id="admonition-extensionsnvim-naviclua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-navic.lua</p>
@@ -133,7 +133,16 @@
 </code></pre>
 </div>
 </div>
-<p>ご覧の通り、最低限これだけで飛べちゃいます。ニホン人もびっくり❗</p>
+<p>もうこれだけで飛びます。ニホン人もびっくり❗</p>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>本当に最低限で良ければ、<code>highlight</code>もなくて平気です😸</p>
+</div>
+</div>
 <h3 id="lsp"><a class="header" href="#lsp">lsp</a></h3>
 <div id="admonition-setuphttpsgithubcomsmiteshpnvim-navicefb88f-setup" class="admonition info">
 <div class="admonition-title">
@@ -147,7 +156,7 @@
 <p>lspサーバーのセットアップ時に、nvim-navicの<code>attach</code>関数を<code>on_attach</code>として渡すことができます。</p>
 </div>
 </div>
-<p>とのことなんですが、これはもはや過去のものとなっています...❗次項へ跨ぎます🐈</p>
+<p>とのことなんですが、これはもはや過去のものとなっています...❗次項へ🐈</p>
 <h4 id="auto_attach"><a class="header" href="#auto_attach">auto_attach</a></h4>
 <div id="admonition-setuphttpsgithubcomsmiteshpnvim-navicefb88f-setup-1" class="admonition info">
 <div class="admonition-title">
@@ -160,15 +169,16 @@
 </div>
 </div>
 <p><code>auto_attach</code>の登場によって、
-<code>on_attach</code>すらも、言語ごとに<code>documentSymbolProvider</code>に対応してますかー❓なんていう確認すらも
+<code>on_attach</code>すらも、言語ごとに<code>documentSymbolProvider</code>に対応してますかぁ❓な〜んていう確認すらも
 自分で書く必要がありません😊 のほほん。</p>
 <p>これ以上に &quot;auto&quot; なものがかつて他に存在したでしょうか⁉️</p>
 <h3 id="highlight"><a class="header" href="#highlight">highlight</a></h3>
-<p><code>highlight</code>については、<code>onenord.nvim</code>が対応してくれているので自分でコードを書く必要が全くありません😆</p>
-<div id="admonition-note" class="admonition note">
+<p><code>highlight</code>については、なんと<code>onenord.nvim</code>が対応してくれています❗</p>
+<p>なのでこれもやっぱり自分でコードを書く必要がありません😆</p>
+<div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
 </div>
 <div>
 <p>使用しているカラーテーマが<code>nvim-navic</code>の<code>highlight</code>に対応していない場合でも
@@ -177,6 +187,9 @@
 </div>
 </div>
 <p>なんだかもう至れり尽くせりです🐹 のほほん。</p>
+<h2 id="wrap-up"><a class="header" href="#wrap-up">Wrap Up</a></h2>
+<p>ということで、<code>packer</code>から呼び出します。</p>
+<p>もう馴染みすぎて安堵感すらあります😇</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -200,7 +213,7 @@
 <div>
 <p>nvim-navic does not alter your statusline or winbar on its own.
 Instead, you are provided with these two functions and its left up to you how you want to incorporate this into your setup.</p>
-<p>nvim-navicは、それ自体でステータスラインやwinbarを変更することはありません。
+<p>nvim-navicは、それ自体で statusline や winbar を変更することはありません。
 その代わり、この2つの機能が提供され、これをどのようにセットアップに取り入れるかはあなたに任されています。</p>
 </div>
 </div>
@@ -213,14 +226,13 @@ Instead, you are provided with these two functions and its left up to you how yo
 <pre><code class="language-txt">Returns boolean value indicating whether nvim-navic is able to provide
 output for current buffer.
 
-nvim-navic が提供可能かどうかを示すブール値を返します。
-現在のバッファに対する出力。
+nvim-navic が現在のバッファの出力を提供できるかどうかを示す boolean 値を返します。
 
 'bufnr' is optional argument. If bufnr is not provied, current open
 buffer is used.
 
-bufnr' はオプションの引数である。bufnrが提供されない場合，現在のオープンな
-バッファが使用されます。
+
+'bufnr' はオプションの引数です。bufnr が提供されない場合、現在のオープンバッファが使用されます。
 </code></pre>
 </div>
 </div>
@@ -233,13 +245,13 @@ bufnr' はオプションの引数である。bufnrが提供されない場合�
 <pre><code class="language-txt">Returns a pretty string that shows code context and can be used directly
 in statusline or winbar.
 
+コードコンテキストを示す整理された文字列を返し、statusline や winbar で直接使用することができます。
+opts テーブルは nvim-navic のオプションのいずれかを上書きするために渡すことができます。
+
 opts table can be passed to override any of |nvim-navic|'s options.
 Follows same table format as *navic-setup*|'s opts table. You can pass
 |bufnr| value to determine which buffer is used to get code context. If
 not provided, the current buffer will be used.
-
-コードコンテキストを示す整理された文字列を返し、statusline や winbar で直接使用することができます。
-opts テーブルは nvim-navic のオプションのいずれかを上書きするために渡すことができます。
 
 navic-setup の opts テーブルと同じテーブル形式に従います。
 bufnr 値を渡すと、コードコンテキストを取得するためにどのバッファを使用するかを決定することができます。
@@ -247,11 +259,12 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </code></pre>
 </div>
 </div>
-<p>ネイティブに表示する方法なども示されていますが、わたしはやっぱり<code>lualine</code>を選んでいきます。</p>
-<div id="admonition-note-1" class="admonition note">
+<p>ネイティブに表示する方法なども示されていますが、
+このサイトでは散々お世話になっている<code>lualine</code>を選んで進みます。</p>
+<div id="admonition-note-2" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
 </div>
 <div>
 <p>このサイトでは扱っていませんが、<code>feline</code>, <code>galaxyline</code>に表示する方法も示されています。</p>
@@ -305,7 +318,7 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </code></pre>
 </div>
 </div>
-<p>そしたらほらね、ニホン人もびっくり❗
+<p>そしたらほらね、<code>lualine</code>上に現在のコードコンテキストが示されました。
 <img src="img/nvim-navic.webp" alt="nvim-navic" width="1552" height="1050" loading="lazy"></p>
 <div id="admonition-default-2" class="admonition success">
 <div>
@@ -319,11 +332,12 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </div>
 </div>
 <h2 id="customise"><a class="header" href="#customise">Customise</a></h2>
-<p>これで終わっても全然いいんですけどね。もうちょっとのほほんとして行ってもバチは当たらないでしょ❓</p>
-<p>その他にもいくつかカスタマイズできるところがあるので、わたしが使用しているものだけ載せていきます😄</p>
+<p>これで終わっても全然いいんですけどね❗
+もうちょっとのほほんとして行ってもバチは当たらないでしょ😊</p>
+<p>他にもいくつかカスタマイズ項目があるので、わたしが使用しているものだけ載せていきます😄</p>
 <h3 id="icons"><a class="header" href="#icons">icons</a></h3>
 <p>オフィシャルに示されているものをそのまま持ってきちゃいますが、
-これを入れると<code>VSCode like</code>なアイコンになります。</p>
+これを<code>setup</code>に仕込んでおくと<code>VSCode like</code>なアイコンになります。</p>
 <div id="admonition-extensionsnvim-naviclua-1" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-navic.lua</p>
@@ -365,10 +379,10 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
 <p>これもやっぱり<code>Nerd Fonts</code>なので、このサイトでは横幅 680px あればブラウザ上でも確認できます。</p>
@@ -397,7 +411,23 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </code></pre>
 </div>
 </div>
-<p>強いんだか弱いんだか分かりませんが、こうしておけば上限の百とか千とか、変なのが来ても安心です。</p>
+<div id="admonition-h-depth" class="admonition info">
+<div class="admonition-title">
+<p>:h depth</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-depth"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">depth: integer
+  Maximum depth of context to be shown. If the context depth exceeds
+  this parameter, context information is truncated. default is infinite
+
+  表示するコンテキストの最大深度。コンテキストの深さがこのパラメータを超える場合、
+  コンテキスト情報は切り捨てられます。デフォルトはinfiniteです。
+</code></pre>
+</div>
+</div>
+<p>強いんだか弱いんだか、「っていうか、なんやねんそれ🤨」ってなりますが、
+こうしておけば百とか千とか、変なのとか来ても安心です。</p>
 <h3 id="line-count"><a class="header" href="#line-count">Line Count</a></h3>
 <div id="admonition-setuphttpsgithubcomsmiteshpnvim-navicefb88f-setup-2" class="admonition info">
 <div class="admonition-title">
@@ -421,7 +451,7 @@ It should help if you are facing performance issues in large files. Read the doc
 </div>
 <div>
 <p>Set it to true to update context only on CursorHold event.</p>
-<p>Trueに設定すると、CursorHoldイベント時にのみコンテキストを更新します。以下のような場合に有効です。</p>
+<p>true に設定すると、CursorHold イベント時にのみコンテキストを更新します。以下のような場合に有効です。</p>
 <p>Could be usefull if you are facing performance issues on large files. Example usage</p>
 <p>大容量のファイルでパフォーマンスの問題に直面している場合。</p>
 <pre><code class="language-lua">vim.api.nvim_create_autocmd(&quot;BufEnter&quot;, {
@@ -435,21 +465,50 @@ It should help if you are facing performance issues in large files. Read the doc
 </div>
 </div>
 <p>サンプルだと<code>group</code>がありませんが、のほほんと入れとくのもありだと思います😄</p>
-<pre><code class="language-diff">  vim.api.nvim_create_autocmd(&quot;BufEnter&quot;, {
-+   group = vim.api.nvim_create_augroup('nvim-navic', {}),
+<div id="admonition-extensionsnvim-naviclua-3" class="admonition example">
+<div class="admonition-title">
+<p>extensions/nvim-navic.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-naviclua-3"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">--require('nvim-navic').setup {
+
+  vim.api.nvim_create_autocmd(&quot;BufEnter&quot;, {
+    group = vim.api.nvim_create_augroup('nvim-navic', {}),
     callback = function()
       if vim.api.nvim_buf_line_count(0) &gt; 10000 then
         vim.b.navic_lazy_update_context = true
       end
     end,
   })
+
+--}
 </code></pre>
+</div>
+</div>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
 <p>のほほんとできましたね😊</p>
 <p>ちゃんと<code>LSP</code>をしっかり動かせるようになったことの賜物です。
 「胸を張っていい❗❗<sup class="footnote-reference">
 <a name="to-footnote-3"><a href="#3">3</a></a>
 </sup>」</p>
+<p>ところで〜...、<code>nvim-navic</code>のトップにこんな一文がありましたね。</p>
+<div id="admonition-nvim-navic" class="admonition info">
+<div class="admonition-title">
+<p>nvim-navic</p>
+<p><a class="admonition-anchor-link" href="#admonition-nvim-navic"></a></p>
+</div>
+<div>
+<p>You might also be interested in <a href="https://github.com/SmiteshP/nvim-navbuddy">nvim-navbuddy</a>.</p>
+<p>Paired with nvim-navic, it will give you complete breadcrumbs experience like in an IDE!</p>
+<p><a href="https://github.com/SmiteshP/nvim-navbuddy">nvim-navbuddy</a>に興味をお持ちの方もいらっしゃるかもしれません。</p>
+<p>nvim-navicと組み合わせることで、IDEのような完全なパンくず体験ができるようになります！</p>
+</div>
+</div>
+<p><code>nvim-navbuddy</code>の存在はつい最近知ったので、
+この章のロードマップには無かったし、わたし自身が超使いこなせているってこともないんですが...😟</p>
+<p>なんか面白かったので、このサイトでもちょこっとだけ触れたいと思います😆</p>
+<p>そんなこんなで次回に続く... 🪼</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
@@ -470,23 +529,6 @@ It should help if you are facing performance issues in large files. Read the doc
 <p>一緒に日々を生きていきましょう、 一緒に...</p>
 </div>
 </div>
-<p>ところで、<code>nvim-navic</code>のトップにこんな一文がありましたね。</p>
-<div id="admonition-nvim-navic" class="admonition info">
-<div class="admonition-title">
-<p>nvim-navic</p>
-<p><a class="admonition-anchor-link" href="#admonition-nvim-navic"></a></p>
-</div>
-<div>
-<p>You might also be interested in <a href="https://github.com/SmiteshP/nvim-navbuddy">nvim-navbuddy</a>.</p>
-<p>Paired with nvim-navic, it will give you complete breadcrumbs experience like in an IDE!</p>
-<p><a href="https://github.com/SmiteshP/nvim-navbuddy">nvim-navbuddy</a>に興味をお持ちの方もいらっしゃるかもしれません。</p>
-<p>nvim-navicと組み合わせることで、IDEのような完全なパンくず体験ができるようになります！</p>
-</div>
-</div>
-<p><code>nvim-navbuddy</code>の存在はつい最近知ったので、
-この章のロードマップには無かったし、わたし自身が超使いこなせているってこともないんですが...😟</p>
-<p>なんか面白かったので、このサイトでもちょこっとだけ触れたいと思います😆</p>
-<p>そんなこんなで次回に続く... 🪼</p>
 <div class="footnote-definition" id=1>
 <p><a href="#to-footnote-1"><sup>1:</sup></a> 当初、インド地域航法衛星システム(Indian Regional Navigation Satellite System/IRNSS)と呼称されていたが、
 2016年4月にモディ首相によって名称変更が行われ，「NavIC」（Navigation Indian Constellation）と呼ばれることになった。
