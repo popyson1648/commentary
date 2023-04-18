@@ -109,8 +109,8 @@ LSPサーバー、DAPサーバー、リンター、フォーマッターを簡�
 </code></pre>
 </div>
 </div>
-<p><code>LSP</code>関連のパッケージに特化した &quot;パッケージマネージャ&quot; です。</p>
-<p>これさえあれば、もうお友達なんて作り放題、彼氏彼女も作り放題です❗</p>
+<p>言語関連機能に特化した &quot;パッケージマネージャ&quot; です。</p>
+<p>これさえあれば、お友達だろうと彼氏彼女だろうと、もう作り放題です❗</p>
 <div id="admonition-default" class="admonition note">
 <div>
 <p>Tommy used to work on the docks</p>
@@ -139,14 +139,14 @@ LSPサーバー、DAPサーバー、リンター、フォーマッターを簡�
 linked to a single <code>bin/</code> directory, which <code>mason.nvim</code> will add to the
 Neovim's PATH during setup, allowing easy access for the builtin
 shell/terminal as well as other 3rd party plugins.</p>
-<p>パッケージはデフォルトでNeovimの<code>:h stdpath</code>にインストールされます。
-実行可能ファイルは は単一の <code>bin/</code> ディレクトリにリンクされ、
-<code>mason.nvim</code> はこのディレクトリに追加します。
-セットアップ時にNeovimのPATHにアクセスすることで、
-ビルトインされた shell/terminalやその他のサードパーティプラグインと同様に。</p>
+<p>パッケージは、デフォルトでNeovimの <code>:h stdpath</code> にインストールされます。
+実行可能ファイルは <code>bin/</code> ディレクトリにリンクされ、セットアップ時に <code>mason.nvim</code> が Neovim の PATH に追加するので、
+内蔵のシェル/ターミナルやその他のサードパーティプラグインに簡単にアクセスできるようになります。</p>
+<p>For a list of all available packages, see PACKAGES.md.</p>
+<p>利用可能なすべてのパッケージの一覧は、PACKAGES.mdを参照してください。</p>
 </div>
 </div>
-<p>こう言われてるんで、<code>stdpath</code>のヘルプも一応見てみましょう。</p>
+<p>こう言われてるんで、<code>stdpath</code>のヘルプと<code>PACKAGES.md</code>も見てみましょう。</p>
 <div id="admonition-h-stdpath" class="admonition info">
 <div class="admonition-title">
 <p>:h stdpath</p>
@@ -178,6 +178,15 @@ shell/terminal as well as other 3rd party plugins.</p>
 </code></pre>
 </div>
 </div>
+<div id="admonition-packagesmdhttpsgithubcomwilliambomanmasonnvimblobmainpackagesmd" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md">PACKAGES.md</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-packagesmdhttpsgithubcomwilliambomanmasonnvimblobmainpackagesmd"></a></p>
+</div>
+<div>
+<p>Mason Package Index</p>
+</div>
+</div>
 <p>まあ、言ってることはわかりますよね。わかるんですけど...。</p>
 <p>少しフライングしちゃうんですが、わたしの環境では、インストールしたパッケージは<code>~/.local/share/nvim/mason</code>に配置されていきます。
 <img src="img/mason-install-path.webp" alt="mason-install-path" width="1512" height="416" loading="lazy"></p>
@@ -187,7 +196,7 @@ shell/terminal as well as other 3rd party plugins.</p>
 <p><a class="admonition-anchor-link" href="#admonition-question"></a></p>
 </div>
 <div>
-<p>普段使いしている<code>macOS</code>でも同じなんですけど...、<code>stdpath</code>にある？これ😑</p>
+<p>普段使っている<code>macOS</code>でも同じなんですけど...、<code>stdpath</code>にある？これ😑</p>
 </div>
 </div>
 <div id="admonition-default-2" class="admonition failure">
@@ -242,7 +251,7 @@ Depending on your personal usage, some of these will also need to be installed. 
 <img src="img/mason-che.webp" alt="checkhealth" width="1512" height="1200" loading="lazy">
 </div>
 </div>
-<p>よほどの言語マニアでもない限り、たくさんの<code>WARNING</code>が出てきちゃうと思いますが、
+<p>よほどの言語プロフェッショナルでもない限り、たくさんの<code>WARNING</code>が出てきちゃうと思いますが、
 使っていない言語環境が入っていないのは「そりゃそうだー」としかならないので、気にしなくていいやつです😉</p>
 <p>ここでは、「全リストを見ておきたい」ってだけなので❗</p>
 <p><code>git</code>は<code>mason.nvim</code>が動いている時点で大丈夫だと思いますが、<code>curl</code>、<code>tar</code>あたりが<code>OK</code>になっていればひとまずは大丈夫...な、はず。</p>
@@ -254,6 +263,25 @@ Depending on your personal usage, some of these will also need to be installed. 
 </div>
 <div>
 <p>ごめんなさい、毎度のことながら<code>Windows</code>はわたしがわかってないので触れられません... 😿</p>
+</div>
+</div>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>例えば「<code>JavaScript</code>やりたいから<code>eslint-lsp</code>ほしいなー😆」ってなったとするじゃないですか。</p>
+<p><code>mason.nvim</code>は<code>eslint-lsp</code>のインストールに<code>npm</code>を使用するんですね。</p>
+<p>でも、もし<code>npm</code>がまだ無い状態でそれをやろうとしても、
+<img src="img/mason-failed.webp" alt="mason-failed" width="1552" height="1050" loading="lazy"></p>
+<pre><code class="language-txt">spawn: npm failed with exit code - and signal -. npm is not executable
+</code></pre>
+<p>って言われちゃいます。まあ、わかってる人からすればこれも「そりゃそうだー」ではあるんですが、</p>
+<p>「<code>npm</code>ってなんやねん❗」とか、
+「<code>node.js</code>をやろーゆーとんちゃうねん❗」ってなっちゃう人もいるかもしれません。</p>
+<p>この辺りはある程度の経験値が必要になって来ると思うので、
+躓いちゃったら周りの人に聞いてみましょう😉</p>
 </div>
 </div>
 <div id="admonition-default-4" class="admonition failure">
@@ -288,19 +316,22 @@ Depending on your personal usage, some of these will also need to be installed. 
 </code></pre>
 </div>
 </div>
-<p><code>check_outdated_packages_on_open</code>を<code>false</code>にしておくと、</p>
-<p><code>mason</code>のウィンドウを開いた時に自動でアップデートを確認しにいかなくなるっていうのと、</p>
-<p><code>border</code>を<code>single</code>にしておくと、<code>packer</code>と統一感が出ていいかもなーって程度です。</p>
+<p>簡単に書くと、</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">parameter</th><th style="text-align: left">description</th></tr></thead><tbody>
+<tr><td style="text-align: center">check_outdated_packages_on_open</td><td style="text-align: left"><code>false</code>にしておくと、<code>mason</code>のウィンドウを &quot;開いた時に&quot; アップデートを確認しなくなります。</td></tr>
+<tr><td style="text-align: center">border</td><td style="text-align: left"><code>single</code>にしておくと、<code>packer</code>と統一感が出ていいかも〜。</td></tr>
+</tbody></table>
+</div>
+<p>...というようなものです。</p>
 <div id="admonition-tip" class="admonition tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
 </div>
 <div>
-<p>特に設定を変更しない場合も、</p>
+<p>特に設定を変更しない場合も、以下の一文は必要になります。</p>
 <pre><code class="language-lua">require('mason').setup()
 </code></pre>
-<p>...という一文は必要になります。</p>
 </div>
 </div>
 <p>で、こっちもシンプルに。</p>
@@ -329,7 +360,7 @@ Depending on your personal usage, some of these will also need to be installed. 
 <p>ここまで出来れば、いつも通り<code>:PackerSync</code>とかした後に</p>
 <pre><code class="language-vim">:Mason
 </code></pre>
-<p>ってするだけです。
+<p>ってするだけですね😆
 <img src="img/mason-window.webp" alt="mason-window" width="1512" height="1200" loading="lazy"></p>
 <p>このウィンドウでの操作は、デフォルトで以下のようになっています。</p>
 <pre><code class="language-lua">keymaps = {
@@ -367,7 +398,7 @@ Depending on your personal usage, some of these will also need to be installed. 
 </tbody></table>
 </div>
 <p>基本的には<kbd>i</kbd>でインストールしたものを<kbd>C</kbd><kbd>U</kbd>で更新管理するっていう使い方でいいと思います。</p>
-<h2 id="server-protocol"><a class="header" href="#server-protocol">Server Protocol</a></h2>
+<h2 id="install-the-server-protocol"><a class="header" href="#install-the-server-protocol">Install the Server Protocol</a></h2>
 <p>お待たせしました。初めてのお友達作りです。</p>
 <p>初めてのお友達はやっぱり<code>lua</code>の Language Server❗キミに決めた😆</p>
 <p>やり方は色々あると思うんですが、わたしはとりあえず検索からジャンプしちゃいます。</p>
@@ -385,9 +416,9 @@ Depending on your personal usage, some of these will also need to be installed. 
 <p>なので、<code>→</code>にカーソルを合わせて<kbd>return</kbd>でさらに詳しい情報が見られます。
 <img src="img/install-ls4.webp" alt="install-4" width="1512" height="1200" loading="lazy"></p>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
-<p>これでようやく会話のできるお友達をゲットしたぜ❗😆</p>
-<p>...と、思いきや、まだ何も話してくれません。ちょっと捕まえ方が強引だったかな...🫨</p>
-<p>それとも照れ屋さんなのかな❓😮</p>
+<p>これでようやく会話のできるお友達をゲットだぜ❗😆
+...と思いきや、まだ何も話してくれません。</p>
+<p>ちょっと捕まえ方が強引だったかな...🫨 それとも照れ屋さんなのかな❓😮</p>
 <p>どうやら心を開いてもらって会話をするためには、もう1ステップ必要みたいですね。</p>
 <p>ってことで、次回に続く... 🦖</p>
 <div id="admonition-success" class="admonition success">

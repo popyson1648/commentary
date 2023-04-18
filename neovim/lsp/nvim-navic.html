@@ -173,8 +173,17 @@
 自分で書く必要がありません😊 のほほん。</p>
 <p>これ以上に &quot;auto&quot; なものがかつて他に存在したでしょうか⁉️</p>
 <h3 id="highlight"><a class="header" href="#highlight">highlight</a></h3>
-<p><code>highlight</code>については、なんと<code>onenord.nvim</code>が対応してくれています❗</p>
-<p>なのでこれもやっぱり自分でコードを書く必要がありません😆</p>
+<p><code>highlight</code>については、これはなんと<code>onenord.nvim</code>が対応してくれています❗</p>
+<div id="admonition-plugin-supporthttpsgithubcomrmehri01onenordnvimplugin-support" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/rmehri01/onenord.nvim#plugin-support">Plugin Support</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-plugin-supporthttpsgithubcomrmehri01onenordnvimplugin-support"></a></p>
+</div>
+<div>
+<p>Navic</p>
+</div>
+</div>
+<p>ってことは、これもやっぱりコードを自分で書く必要がありません😆</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -189,7 +198,7 @@
 <p>なんだかもう至れり尽くせりです🐹 のほほん。</p>
 <h3 id="wrap-up"><a class="header" href="#wrap-up">Wrap Up</a></h3>
 <p>ということで、<code>packer</code>から呼び出します。</p>
-<p>もう馴染みすぎて安堵感すらあります😇</p>
+<p>もう馴染みすぎてしまって、安堵感すら覚えますね😇</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -278,14 +287,19 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </div>
 <h3 id="lualine"><a class="header" href="#lualine">lualine</a></h3>
 <p>ということでやっていくんですが、これもやっぱり簡単です。のほほん。</p>
-<p><code>lualine_c</code>に、<code>diagnostics</code>と並べて表示しましょう。</p>
+<p><code>statusline</code> の<code>lualine_c</code>に、<code>diagnostics</code>と並べて表示しましょう。</p>
 <div id="admonition-extensionslualinelua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/lualine.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionslualinelua"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">    lualine_c = {
+<pre><code class="language-diff">require('lualine').setup {
+  sections = {
+
+    (中略)
+
+    lualine_c = {
       {
         'diagnostics',
         sources = { 'nvim_diagnostic', 'nvim_lsp' },
@@ -294,6 +308,8 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
       },
 +     { function() return navic.get_location() end, cond = function() return navic.is_available() end },
     },
+
+  (以下略)
 </code></pre>
 </div>
 </div>
@@ -319,7 +335,19 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </div>
 </div>
 <p>そしたらほらね、<code>lualine</code>上に現在のコードコンテキストが示されました。
-<img src="img/nvim-navic.webp" alt="nvim-navic" width="1552" height="1050" loading="lazy"></p>
+<img src="img/nvim-navic-statusline.webp" alt="nvim-navic-statusline" width="1552" height="1050" loading="lazy"></p>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p>例えば、<code>tabline</code>に表示してみるのもオシャレです😊 <code>VSCode</code>とかは上にあった気もするし❗
+<img src="img/nvim-navic-tabline.webp" alt="nvim-navic-tabline" width="1552" height="1050" loading="lazy"></p>
+<p>ちょっと上の情報が多すぎる気もするので、<code>git</code>関連の情報を下に移動した方が良いかもしれません🤔</p>
+<p>(<code>buffers</code>もだいぶ場所とるし...😅)</p>
+</div>
+</div>
 <div id="admonition-default-2" class="admonition success">
 <div>
 <p>We’ll start out walking and learn to run</p>
@@ -379,10 +407,10 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-4" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
 </div>
 <div>
 <p>これもやっぱり<code>Nerd Fonts</code>なので、このサイトでは横幅 680px あればブラウザ上でも確認できます。</p>
@@ -426,8 +454,9 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </code></pre>
 </div>
 </div>
-<p>強いんだか弱いんだか、「っていうか、なんやねんそれ🤨」ってなりますが、
-こうしておけば百とか千とか、変なのとか来ても安心です。</p>
+<p>強いんだか弱いんだか「っていうか、なんやねんそれ🤨」ってなりますが、
+こうしておけば百とか千とか、変なのとか来ても安心です❗</p>
+<p>しかも<code>9</code>にしておけば十の悪魔にも強く出れます❗🤣</p>
 <h3 id="line-count"><a class="header" href="#line-count">Line Count</a></h3>
 <div id="admonition-setuphttpsgithubcomsmiteshpnvim-navicefb88f-setup-2" class="admonition info">
 <div class="admonition-title">
