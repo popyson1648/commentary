@@ -439,13 +439,13 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </code></pre>
 </div>
 </div>
-<div id="admonition-h-depth" class="admonition info">
+<div id="admonition-h-navic-customise" class="admonition info">
 <div class="admonition-title">
-<p>:h depth</p>
-<p><a class="admonition-anchor-link" href="#admonition-h-depth"></a></p>
+<p>:h navic-customise</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-navic-customise"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">depth: integer
+<pre><code class="language-txt">depth_limit: integer
   Maximum depth of context to be shown. If the context depth exceeds
   this parameter, context information is truncated. default is infinite
 
@@ -500,19 +500,24 @@ It should help if you are facing performance issues in large files. Read the doc
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-naviclua-3"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">--require('nvim-navic').setup {
-
-  vim.api.nvim_create_autocmd(&quot;BufEnter&quot;, {
-    group = vim.api.nvim_create_augroup('nvim-navic', {}),
-    callback = function()
-      if vim.api.nvim_buf_line_count(0) &gt; 10000 then
-        vim.b.navic_lazy_update_context = true
-      end
-    end,
-  })
-
---}
+<pre><code class="language-lua">vim.api.nvim_create_autocmd(&quot;BufEnter&quot;, {
+  group = vim.api.nvim_create_augroup('nvim-navic', {}),
+  callback = function()
+    if vim.api.nvim_buf_line_count(0) &gt; 10000 then
+      vim.b.navic_lazy_update_context = true
+    end
+  end,
+})
 </code></pre>
+</div>
+</div>
+<div id="admonition-note-5" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-5"></a></p>
+</div>
+<div>
+<p>このコードは<code>setup()</code>の外に記述してください。(すみません...初掲時はうっかり中にいました...😭)</p>
 </div>
 </div>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
