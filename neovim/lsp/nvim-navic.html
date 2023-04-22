@@ -286,8 +286,8 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 </div>
 </div>
 <h3 id="lualine"><a class="header" href="#lualine">lualine</a></h3>
-<p>ということでやっていくんですが、これもやっぱり簡単です。のほほん。</p>
-<p><code>statusline</code> の<code>lualine_c</code>に、<code>diagnostics</code>と並べて表示しましょう。</p>
+<p>ということでやっていくんですが、これもやっぱり簡単です😉 のほほん。</p>
+<p><code>statusline</code> の<code>lualine_c</code>に、<code>diagnostics</code>と並べて表示してみます。</p>
 <div id="admonition-extensionslualinelua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/lualine.lua</p>
@@ -311,6 +311,20 @@ bufnr 値を渡すと、コードコンテキストを取得するためにど�
 
   (以下略)
 </code></pre>
+</div>
+</div>
+<div id="admonition-tip" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
+</div>
+<div>
+<p>このページ、出来てからまだ一週間も経ってないんですが、上に書いてあることは既に過去のものとなりました🌟</p>
+<p><a href="https://github.com/SmiteshP/nvim-navic#lualine">An example lualine setup</a></p>
+<pre><code class="language-diff">-     { function() return navic.get_location() end, cond = function() return navic.is_available() end },
++     { 'navic' }
+</code></pre>
+<p>どないなっとんねん🤯 強すぎるやろー🐎🐎🐎</p>
 </div>
 </div>
 <p>必須ではありませんが、<code>packer</code>にも<code>lualine.nvim</code>が<code>nvim-navic</code>を使用していることを教えておいてあげましょう。</p>
@@ -518,7 +532,7 @@ It should help if you are facing performance issues in large files. Read the doc
 </div>
 <div>
 <p>このコードは<code>setup()</code>の外に記述してください❗</p>
-<p>(すみません...初掲時はうっかり中にいました...😭)</p>
+<p>( すみません...初掲時はうっかり中にいました...😭 )</p>
 </div>
 </div>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
