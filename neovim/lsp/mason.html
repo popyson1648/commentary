@@ -316,13 +316,6 @@ Depending on your personal usage, some of these will also need to be installed. 
 </code></pre>
 </div>
 </div>
-<p>簡単に書くと、</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">parameter</th><th style="text-align: left">description</th></tr></thead><tbody>
-<tr><td style="text-align: center">check_outdated_packages_on_open</td><td style="text-align: left"><code>false</code>にしておくと、<code>mason</code>のウィンドウを &quot;開いた時に&quot; アップデートを確認しなくなります。</td></tr>
-<tr><td style="text-align: center">border</td><td style="text-align: left"><code>single</code>にしておくと、<code>packer</code>と統一感が出ていいかも〜。</td></tr>
-</tbody></table>
-</div>
-<p>...というようなものです。</p>
 <div id="admonition-tip" class="admonition tip">
 <div class="admonition-title">
 <p>Tip</p>
@@ -334,7 +327,15 @@ Depending on your personal usage, some of these will also need to be installed. 
 </code></pre>
 </div>
 </div>
-<p>で、こっちもシンプルに。</p>
+<p>簡単に書くと、以下のようなものです。</p>
+<h3 id="check_outdated_packages_on_open"><a class="header" href="#check_outdated_packages_on_open">check_outdated_packages_on_open</a></h3>
+<p><code>false</code>にしておくと、<code>mason</code>のウィンドウを開いた時に新しいバージョンを自動で確認しなくなります。</p>
+<h3 id="border"><a class="header" href="#border">border</a></h3>
+<p>UI ウィンドウに使用するボーダーを指定します。
+<code>nvim_open_win()</code> と同じボーダー値を使用することができます。</p>
+<p>なので、<code>single</code>にしておくと、<code>packer</code>と統一感が出ていいかも〜😆</p>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<p>そしたら、<code>packer</code>でのインストールもシンプル😉</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
