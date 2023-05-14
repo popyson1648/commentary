@@ -155,14 +155,31 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 </code></pre>
 </div>
 </div>
-<p>これだけやっておけば、あとは<code>mason-lspconfig</code>が全ての言語サーバーに適用してくれるはずです。</p>
-<h3 id="plugin-install"><a class="header" href="#plugin-install">Plugin Install</a></h3>
-<p>んで、いつもの<code>packer</code>。</p>
-<p><code>nvim-cmp</code>の<code>requires</code>に<code>cmp-nvim-lsp</code>を入れてあげるのが一番簡単でしょう😉</p>
+<p>併せてこれもやっておくと安心🐶</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
+</div>
+<div>
+<pre><code class="language-diff">  use {
+    'williamboman/mason.nvim',
+    config = function() require 'extensions.mason' end,
+    requires = {
+      'williamboman/mason-lspconfig.nvim', 'neovim/nvim-lspconfig',
++     'hrsh7th/cmp-nvim-lsp',
+    }
+  }
+</code></pre>
+</div>
+</div>
+<p>これだけやっておけば、あとは<code>mason-lspconfig</code>が全ての言語サーバーに適用してくれるはずです。</p>
+<h3 id="plugin-install"><a class="header" href="#plugin-install">Plugin Install</a></h3>
+<p>で、その流れのまま<code>nvim-cmp</code>の<code>requires</code>にも<code>cmp-nvim-lsp</code>を入れてあげましょう😉</p>
+<div id="admonition-extensionsinitlua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-1"></a></p>
 </div>
 <div>
 <pre><code class="language-diff">  use {
