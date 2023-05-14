@@ -193,7 +193,7 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 </div>
 </div>
 <h3 id="sources"><a class="header" href="#sources">Sources</a></h3>
-<p>んでもってさらに、補完ソースとして<code>cmp-nvim-lsp</code>を使用することを<code>nvim-cmp</code>に伝えておきましょう。</p>
+<p>んでもってさらに、 「補完ソースは<code>cmp-nvim-lsp</code>を通して取得するんだ🦜 」と、<code>nvim-cmp</code>に宣言しておきましょう😆</p>
 <div id="admonition-extensionsnvim-cmplua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-cmp.lua</p>
@@ -251,13 +251,13 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 </div>
 </div>
 <img src="img/cmp-nvim-lsp1.webp" alt="cmp-nvim-lsp 1" width="1552" height="1050" loading="lazy">
-<p>補完候補が出ましたね🤗
-操作について、わたしが分かる範囲だけ簡単に書くと、</p>
-<p>デフォルトでは<kbd>Ctrl-n</kbd>または<kbd>↓</kbd>で下、
-<kbd>Ctrl-p</kbd>または<kbd>↑</kbd>で上にメニュー内でカーソルが移動します。
+<p>補完候補が出ましたね🤗</p>
+<p>操作について、わたしが分かる範囲だけ簡単に書くと、
+デフォルトでは<kbd>Ctrl-n</kbd>または<kbd>↓</kbd>で下に、
+<kbd>Ctrl-p</kbd>または<kbd>↑</kbd>で上に、メニュー内でカーソルが移動します。
 <img src="img/cmp-nvim-lsp2.webp" alt="cmp-nvim-lsp 2" width="1552" height="1050" loading="lazy"></p>
 <p><code>Function</code>の項目にカーソルを合わせれば<code>help</code>も表示してくれるはずです🤓</p>
-<p>あ、あとはもちろん<code>mapping</code>に設定した操作も可能なはずです❗</p>
+<p>あ、あとはもちろん<code>mapping</code>に設定した操作も可能です❗</p>
 <div id="admonition-default-1" class="admonition success">
 <div>
 <p>Everybody is laughing</p>
@@ -273,8 +273,8 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 <div>
 <p>補完候補が上手く出てこない場合は<code>lua</code>ファイルを開いた状態で<code>:LspInfo</code>を確認してみてください。
 <img src="img/lspinfo.webp" alt="lsp-info" width="1512" height="1200" loading="lazy"></p>
-<p>こんな感じで<code>LSP</code>が認識されているのであれば、<code>nvim-cmp</code>もしくは<code>cmp-nvim-lsp</code>が上手く連携できていないと思われます🙀</p>
-<p>また、もし<code>lua_ls</code>が認識されていなければ、もう一度<code>nvim-lspconfig</code> / <code>mason.nvim</code> / <code>mason-lspconfig.nvim</code>まで戻って確認してみてください😉</p>
+<p><code>LSP</code>が認識されている状態であれば、<code>nvim-cmp</code>もしくは<code>cmp-nvim-lsp</code>が上手く連携できていないだけだと思われます😉</p>
+<p>また、もし<code>lua_ls</code>が認識されていなければ、もう一度<code>nvim-lspconfig</code> / <code>mason.nvim</code> / <code>mason-lspconfig.nvim</code>まで戻って確認してみてください🙀</p>
 </div>
 </div>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
