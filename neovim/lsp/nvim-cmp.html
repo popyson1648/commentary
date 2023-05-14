@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible latte">
+  <head>
+    <meta charset="UTF-8">
+    <title>nvim-cmp - Commentary of Dotfiles</title>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMN96QT');</script>
+
+    <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="theme-color">
+
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+
+    <meta property="og:title" content="nvim-cmp - Commentary of Dotfiles">
+    <meta property="og:description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta property="og:site_name" content="Commentary of Dotfiles">
+    <meta property="og:url" content="https://coralpink.github.io/commentary/">
+
+    <meta name="twitter:card" content="summary_image">
+    <link rel="apple-touch-icon" href="../../favicon.png" sizes="100x100">
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="shortcut icon" href="../../favicon.png">
+
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+
+  </head>
+  <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
+
+            <div id="menu-bar" class="menu-bar">
+        <div class="left-buttons">
+          <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+            <i class="fa-list-ul"></i>
+          </button>
+          <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+            <i class="fa-palette"></i>
+          </button>
+          <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+          </ul>
+
+          <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+            <i class="fa-magnifying-glass"></i>
+          </button>
+
+          <div id="search-wrapper" class="hidden">
+            <form id="searchbar-outer" class="searchbar-outer">
+              <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+            </form>
+            <div id="searchresults-outer" class="searchresults-outer hidden">
+              <div id="searchresults-header" class="searchresults-header"></div>
+              <ul id="searchresults"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-title">Commentary of Dotfiles</div>
+
+        <div class="right-buttons">
+          <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository" target="_blank" rel="noopener">
+            <i id="git-repository-button" class="fa-github fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+    <div class="page">
+      <div id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav class="sidebar-scrollbox">
+          <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../../wezterm/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item expanded "><a href="../../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item expanded "><a href="../../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item expanded "><a href="../../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item expanded "><a href="../../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item expanded "><a href="../../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item expanded "><a href="../../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item expanded "><a href="../../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../../neovim/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item expanded "><a href="../../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item expanded "><a href="../../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item expanded "><a href="../../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item expanded "><a href="../../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item expanded "><a href="../../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item expanded "><a href="../../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item expanded "><a href="../../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item expanded "><a href="../../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item expanded "><a href="../../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item expanded "><a href="../../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item expanded "><a href="../../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/packer.html"><strong aria-hidden="true">15.1.</strong> Packer.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine.html"><strong aria-hidden="true">15.4.</strong> lualine.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-hlslens.html"><strong aria-hidden="true">15.5.</strong> nvim-hlslens</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/gitsigns.html"><strong aria-hidden="true">15.6.</strong> gitsigns</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-scrollbar.html"><strong aria-hidden="true">15.7.</strong> nvim-scrollbar</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine-part2.html"><strong aria-hidden="true">15.8.</strong> lualine.nvim Part Ⅱ</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/lualine-part3.html"><strong aria-hidden="true">15.9.</strong> lualine.nvim Part Ⅲ</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope.html"><strong aria-hidden="true">15.10.</strong> telescope.nvim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope-config.html"><strong aria-hidden="true">15.10.1.</strong> Config</a></li><li class="chapter-item expanded "><a href="../../neovim/plugin/telescope-all-recent.html"><strong aria-hidden="true">15.10.2.</strong> telescope-all-recent</a></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-tree.html"><strong aria-hidden="true">15.11.</strong> nvim-tree.lua</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-tree-actions.html"><strong aria-hidden="true">15.11.1.</strong> Actions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/plugin/nvim-tree-actions-tip.html"><strong aria-hidden="true">15.11.1.1.</strong> for Nvim 0.10</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../neovim/lsp/language-server-protocol.html"><strong aria-hidden="true">16.</strong> Language Server Protocol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/lsp/nvim-lspconfig.html"><strong aria-hidden="true">16.1.</strong> nvim-lspconfig</a></li><li class="chapter-item expanded "><a href="../../neovim/lsp/mason.html"><strong aria-hidden="true">16.2.</strong> mason.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/lsp/mason-lspconfig.html"><strong aria-hidden="true">16.3.</strong> mason-lspconfig.nvim</a></li><li class="chapter-item expanded "><a href="../../neovim/lsp/nvim-navic.html"><strong aria-hidden="true">16.4.</strong> nvim-navic</a></li><li class="chapter-item expanded "><a href="../../neovim/lsp/nvim-navbuddy.html"><strong aria-hidden="true">16.5.</strong> nvim-navbuddy</a></li><li class="chapter-item expanded "><a href="../../neovim/lsp/nvim-cmp.html" class="active"><strong aria-hidden="true">16.6.</strong> nvim-cmp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../neovim/lsp/cmp-nvim-lsp.html"><strong aria-hidden="true">16.6.1.</strong> cmp-nvim-lsp</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">... To Be Continued.</li></ol>
+        </nav>
+      </div>
+
+      <div id="content" class="content">
+        <spacer class="left"></spacer>
+
+        <main>
+          <h1 id="nvim-cmp"><a class="header" href="#nvim-cmp">nvim-cmp</a></h1>
+<p><code>LSP</code>と言われて真っ先に &quot;コード補完&quot; を思い浮かべる人は多いでしょう。わたしがそうです😤</p>
+<div id="admonition-nvim-cmphttpsgithubcomhrsh7thnvim-cmp" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/hrsh7th/nvim-cmp">nvim-cmp</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-nvim-cmphttpsgithubcomhrsh7thnvim-cmp"></a></p>
+</div>
+<div>
+<p>A completion engine plugin for neovim written in Lua.
+Completion sources are installed from external repositories and &quot;sourced&quot;.</p>
+<p>Lua で書かれた neovim 用の補完エンジンプラグインです。
+補完ソースは外部リポジトリからインストールし、使用します。</p>
+</div>
+</div>
+<p><code>nvim-cmp</code>は補完ソースから候補を選び出して示してくれちゃうプラグインです。
+上にもあるように、補完に使用するソースは外部リポジトリからインストールする必要があります。</p>
+<p>なので「あっちこっち色々インストールしてこなきゃいけない❓🙄それはめんどくさい😮‍💨」な〜んて考えてしまうかもしれません。</p>
+<p>が❗❗</p>
+<p>安心してください。入ってますよ❗それを簡単にこなしてくれる<code>mason.nvim</code>が既に入ってますよー❗</p>
+<div id="admonition-default" class="admonition success">
+<div>
+<p>You never give me your money
+<sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup></p>
+<p>You only give me your funny paper</p>
+<p>きみは僕に金を渡さない</p>
+<p>きみは僕におかしな書類を渡すだけ</p>
+</div>
+</div>
+<div id="admonition-default-1" class="admonition success">
+<div>
+<p>And in the middle of negotiations</p>
+<p>You break down</p>
+<p>そして交渉中に</p>
+<p>きみは泣き崩れる</p>
+</div>
+</div>
+<p>あらぬ誤解を招きそうな詩で始まってしまいますが、ついに Abbey Road <sup class="footnote-reference">
+<a name="to-footnote-2"><a href="#2">2</a></a>
+</sup>
+へと辿り着きました🤗</p>
+<p>壮大なメドレー<sup class="footnote-reference">
+<a name="to-footnote-3"><a href="#3">3</a></a>
+</sup>はここから始まります❗
+楽しんでいきましょう😆</p>
+<h2 id="readme"><a class="header" href="#readme">Readme!</a></h2>
+<div id="admonition-nvim-cmphttpsgithubcomhrsh7thnvim-cmpreadme" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/hrsh7th/nvim-cmp#readme">nvim-cmp</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-nvim-cmphttpsgithubcomhrsh7thnvim-cmpreadme"></a></p>
+</div>
+<div>
+<ol>
+<li>
+<p>There is a GitHub issue that documents <a href="https://github.com/hrsh7th/nvim-cmp/issues/231">breaking changes</a> for nvim-cmp. Subscribe to the issue to be notified of upcoming breaking changes.</p>
+<p>nvim-cmpの変更点を記録したGitHub issueが存在します。この issue を購読すると、今後の速報を通知してくれます。</p>
+</li>
+<li>
+<p>This is my hobby project. You can support me via GitHub sponsors.</p>
+<p>これは私の趣味のプロジェクトです。GitHubのスポンサーを通じて私をサポートすることができます。</p>
+</li>
+<li>
+<p>Bug reports are welcome, but don't expect a fix unless you provide minimal configuration and steps to reproduce your issue.</p>
+<p>バグレポートは歓迎しますが、最小限の設定と問題を再現する手順を提供しない限り、修正を期待しないでください。</p>
+</li>
+<li>
+<p>The <code>cmp.mapping.preset.*</code> is pre-defined configuration that aims to mimic neovim's native like behavior. It can be changed without announcement. Please manage key-mapping by yourself.</p>
+<p>cmp.mapping.preset.* は、neovim のネイティブのような動作を模倣することを目的とした、あらかじめ定義された設定です。予告なく変更することが可能です。キーマッピングはご自身で管理してください。</p>
+</li>
+</ol>
+</div>
+</div>
+<p>これはもう「Readme❤️」とかそういうレベルじゃないです。「Readme❗」ですから。</p>
+<div id="admonition-default-2" class="admonition success">
+<div>
+<p>Monday morning, turning back</p>
+<p>Yellow lorry slow, nowhere to go</p>
+<p>月曜の朝、引き返す</p>
+<p>黄色いトラックはゆっくりと、行く当てがない</p>
+</div>
+</div>
+<h2 id="concept"><a class="header" href="#concept">Concept</a></h2>
+<div id="admonition-concepthttpsgithubcomhrsh7thnvim-cmpconcept" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/hrsh7th/nvim-cmp#concept">Concept</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-concepthttpsgithubcomhrsh7thnvim-cmpconcept"></a></p>
+</div>
+<div>
+<ul>
+<li>
+<p>Full support for LSP completion related capabilities</p>
+<p>LSP補完関連機能をフルサポート</p>
+</li>
+<li>
+<p>Powerful customizability via Lua functions</p>
+<p>Lua関数による強力なカスタマイズ性</p>
+</li>
+<li>
+<p>Smart handling of key mappings</p>
+<p>キーマッピングのスマートな操作性</p>
+</li>
+<li>
+<p>No flicker</p>
+<p>フリッカーなし</p>
+</li>
+</ul>
+</div>
+</div>
+<p><code>nvim-cmp</code>は機能がプラグイン単位で細分化されているので、
+必要な機能を持ったプラグインを選んで載っけていくことで、自分のニーズに合った補完魔法を習得し、詠唱・発現できるようになります。</p>
+<div id="admonition-default-3" class="admonition success">
+<div>
+<p>But oh, that magic feeling, nowhere to go</p>
+<p>だけど ああ、あの魔法のような感覚、行く当てがない</p>
+</div>
+</div>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<div id="admonition-setuphttpsgithubcomhrsh7thnvim-cmpsetup" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/hrsh7th/nvim-cmp#setup">Setup</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-setuphttpsgithubcomhrsh7thnvim-cmpsetup"></a></p>
+</div>
+<div>
+<p>Recommended Configuration</p>
+</div>
+</div>
+<p>...と、いうことで例が示されているんですが、
+いきなりこれをそのまま組み込んでしまうと、その物量に圧倒されてしまいます🥹</p>
+<p>なので、一歩ずつ確実に行きましょう。</p>
+<h3 id="mapping"><a class="header" href="#mapping">mapping</a></h3>
+<div id="admonition-extensionsinitlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local cmp = require 'cmp'
+local map = cmp.mapping
+
+cmp.setup {
+  mapping = map.preset.insert {
+    ['&lt;C-d&gt;'] = map.scroll_docs(-4),
+    ['&lt;C-f&gt;'] = map.scroll_docs(4),
+    ['&lt;C-Space&gt;'] = map.complete(),
+    ['&lt;C-e&gt;'] = map.abort(),
+    ['&lt;CR&gt;'] = map.confirm { select = false },
+  },
+}
+</code></pre>
+</div>
+</div>
+<p>オフィシャルに示されているコードより少し省略した書き方を示しますが、動作は全く同じです😉</p>
+<p>キーマップの設定については<code>:h cmp-mapping</code>の中で示されています。</p>
+<div id="admonition-h-cmp-mapping" class="admonition info">
+<div class="admonition-title">
+<p>:h cmp-mapping</p>
+<p><a class="admonition-anchor-link" href="#admonition-h-cmp-mapping"></a></p>
+</div>
+<div>
+<pre><code class="language-txt">Mapping                                                            cmp-mapping
+
+Nvim-cmp's mapping mechanism is complex but flexible and user-friendly.
+
+Nvim-cmpのマッピング機構は複雑ですが、柔軟でユーザーフレンドリーです。
+
+You can specify a mapping function that receives a `fallback` function as an argument.
+The `fallback` function can be used to call an existing mapping.
+
+引数として `fallback` 関数を受け取るマッピング関数を指定することができます。
+fallback` 関数は、既存のマッピングを呼び出すために使用することができます。
+
+There are also builtin mapping helper functions you can use:
+また、使用できるビルトインマッピングヘルパー関数があります：
+
+Built-in mapping helpers are only available as a configuration option.
+If you want to call nvim-cmp features directly, please use cmp-function instead.
+
+組み込みのマッピングヘルパーは、設定オプションとしてのみ利用可能です。
+nvim-cmp の機能を直接呼び出したい場合は、代わりに cmp-function を使用してください。
+</code></pre>
+</div>
+</div>
+<p>これもきっちり制御しようとすると色々苦労しちゃうんで、
+ビルトインマッピングヘルパー関数をあらかじめ用意してくれてるってことですね❗</p>
+<p>おかげでらくらく〜😽
+<img src="img/nvim-cmp.webp" alt="nvim-cmp" width="1552" height="1050" loading="lazy"></p>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<p>そしたらこっちも。</p>
+<div id="admonition-extensionsinitlua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  use {
+    'hrsh7th/nvim-cmp',
+    config = function() require 'extensions.nvim-cmp' end,
+  }
+</code></pre>
+</div>
+</div>
+<p>はい、らくらく〜😽</p>
+<div id="admonition-default-4" class="admonition success">
+<div>
+<p>Soon we'll be away from here</p>
+<p>Step on the gas and wipe that tear away</p>
+<p>すぐに発とう</p>
+<p>アクセルを踏んで 涙は拭こう</p>
+</div>
+</div>
+<h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
+<p>今回は<code>nvim-cmp</code>のインストールとキーマッピングだけなので何も変化ありませんが、
+これも慌てずどっしり構えておけば超だいじょうぶです😤</p>
+<p>そして次回、<code>Language Server</code>を使用した補完を行います。</p>
+<p>喰らえ❗いきなりメインディッシュだ❗❗</p>
+<p>Abbey Road メドレーのように、流れるように駆け抜けていきましょう❗</p>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>1, 2, 3, 4, 5, 6, 7</p>
+<p>All good children go to Heaven</p>
+<p>1, 2, 3, 4, 5, 6, 7</p>
+<p>よいこはみ〜んな天国に行くんだよ</p>
+</div>
+</div>
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> You Never Give Me Your Money (by <a href="https://en.wikipedia.org/wiki/The_Beatles">The Beatles</a>):
+本作は1969年初頭におけるバンドのビジネス的な取引をテーマとしており、
+McCartney は「ここでの僕は、Allen Klein の僕らに対する態度を正面から非難している。
+金は全然入ってこなくて、あるのはおかしな書類だけ。約束ばかりで何ひとつ実現しないというわけさ」と語っている。
+John Lennon と Paul McCartney が Lennon-McCartney 名義で制作した楽曲は Northen Songs が管理権を持っていたが、
+経営不振となったころに過半数の株式が &quot;Sony Music Publishing LLC&quot; によって買収された。
+McCartney は、マネージャーの Brian Epstein の死去以降、グループをまとめる立場にあった。
+それにより自身の会社 &quot;Apple Corps Ltd.&quot; を立ち上げ、財政面の整理を McCartney 以外の3人のマネージャーとなった Klein が担当していたが、
+会社は財政難に陥り亀裂が生じていた。<a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%83%BB%E3%83%8D%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%BB%E3%82%AE%E3%83%B4%E3%83%BB%E3%83%9F%E3%83%BC%E3%83%BB%E3%83%A6%E3%82%A2%E3%83%BB%E3%83%9E%E3%83%8D%E3%83%BC">Wikipedia</a>より</p>
+</div><div class="footnote-definition" id=2>
+<p><a href="#to-footnote-2"><sup>2:</sup></a> アルバムの評価としては、B面の大部分を占めるメドレーへの評価が非常に高い。
+このメドレーについて John Lennon は「A面は良いけどB面はちょっとね。あれはジャンク（ガラクタ）を集めただけだと思うよ」と述べているが、
+Paul McCartney と Ringo Starr は「B面のメドレーは僕らの最高傑作のひとつ」と発言している。<a href="https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%93%E3%82%A4%E3%83%BB%E3%83%AD%E3%83%BC%E3%83%89">Wikipedia</a>より</p>
+</div><div class="footnote-definition" id=3>
+<p><a href="#to-footnote-3"><sup>3:</sup></a> わたし自身は John Lennon が一番好きですが、Abbey Road はA面もB面も大好きです。アナログレコードで聴いたことはないんだけど😅</div></p>
+
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+              <a rel="prev" href="../../neovim/lsp/nvim-navbuddy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <i class="fa-angle-left"></i>
+              </a>
+
+              <a rel="next" href="../../neovim/lsp/cmp-nvim-lsp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                <i class="fa-angle-right"></i>
+              </a>
+          </nav>
+        </main>
+
+        <spacer class="right"></spacer>
+
+        <div class="righttoc">
+          <nav class="pagetoc"></nav>
+        </div>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="../../fonts/fonts.css" async>
+
+
+    <link rel="stylesheet" href="../../css/style.css" async>
+
+    <script src="../../elasticlunr.min.js"></script>
+    <script src="../../mark.es6.min.js"></script>
+    <script src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
+    <script src="../../fzf.umd.js" id="searcher" data-pathtoroot="../../"></script>
+
+    <script src="../../clipboard.min.js"></script>
+    <script>window.playground_copyable = true;</script>
+
+    <script src="../../highlight.min.js"></script>
+    <script src="../../book.js" id="book" data-defaulttheme="latte"></script>
+
+
+  </body>
+</html>
