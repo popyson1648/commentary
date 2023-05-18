@@ -38,45 +38,46 @@
 
     <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
 
-            <div id="menu-bar" class="menu-bar">
-        <div class="left-buttons">
-          <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-            <i class="fa-list-ul"></i>
-          </button>
-          <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-            <i class="fa-palette"></i>
-          </button>
-          <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
-            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
-            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
-            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
-          </ul>
+    
+    <div id="menu-bar" class="menu-bar">
+      <div class="left-buttons">
+        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+          <i class="fa-list-ul"></i>
+        </button>
+        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+          <i class="fa-palette"></i>
+        </button>
+        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+          <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+          <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+          <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+          <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+        </ul>
 
-          <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-            <i class="fa-magnifying-glass"></i>
-          </button>
+        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+          <i class="fa-magnifying-glass"></i>
+        </button>
 
-          <div id="search-wrapper" class="hidden">
-            <form id="searchbar-outer" class="searchbar-outer">
-              <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
-                aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-            </form>
-            <div id="searchresults-outer" class="searchresults-outer hidden">
-              <div id="searchresults-header" class="searchresults-header"></div>
-              <ul id="searchresults"></ul>
-            </div>
+        <div id="search-wrapper" class="hidden">
+          <form id="searchbar-outer" class="searchbar-outer">
+            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+              aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+          </form>
+          <div id="searchresults-outer" class="searchresults-outer hidden">
+            <div id="searchresults-header" class="searchresults-header"></div>
+            <ul id="searchresults"></ul>
           </div>
         </div>
-
-        <div class="menu-title">Commentary of Dotfiles</div>
-
-        <div class="right-buttons">
-          <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository" target="_blank" rel="noopener">
-            <i id="git-repository-button" class="fa-github fa-github"></i>
-          </a>
-        </div>
       </div>
+
+      <div class="menu-title">Commentary of Dotfiles</div>
+
+      <div class="right-buttons">
+        <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository" target="_blank" rel="noopener">
+          <i id="git-repository-button" class="fa-github fa-github"></i>
+        </a>
+      </div>
+    </div>
 
     <div class="page">
       <div id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -90,7 +91,7 @@
 
         <main>
           <h1 id="cmp-nvim-lsp"><a class="header" href="#cmp-nvim-lsp">cmp-nvim-lsp</a></h1>
-<p>今回でついに、コード補完を実現させます🤗</p>
+<p>今回は、いよいよコード補完を実現させます🤗</p>
 <div id="admonition-cmp-nvim-lsphttpsgithubcomhrsh7thcmp-nvim-lsp" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/hrsh7th/cmp-nvim-lsp">cmp-nvim-lsp</a></p>
@@ -119,25 +120,30 @@
 </div>
 <div>
 <p>Language servers provide different completion results depending on the capabilities of the client.
-Neovim's default omnifunc has basic support for serving completion candidates.
-nvim-cmp supports more types of completion candidates, so users must override the capabilities sent to the server such that it can provide these candidates during a completion request.
-These capabilities are provided via the helper function require('cmp_nvim_lsp').default_capabilities</p>
+Neovim's default omnifunc has basic support for serving completion candidates.</p>
 <p>言語サーバーは、クライアントの能力に応じて、異なる補完結果を提供します。
-Neovimのデフォルトのomnifuncは、補完候補を提供するための基本的なサポートを備えています。
-nvim-cmpはより多くの種類の補完候補をサポートしているため、補完要求時にこれらの候補を提供できるように、ユーザーがサーバーに送信する機能をオーバーライドする必要があります。
-この機能は、ヘルパー関数require('cmp_nvim_lsp').default_capabilitiesを使用して提供されます。</p>
+Neovimのデフォルトのomnifuncは、補完候補を提供するための基本的なサポートを備えています。</p>
+<p>nvim-cmp supports more types of completion candidates,
+so users must override the capabilities sent to the server such that it can provide these candidates during a completion request.
+These capabilities are provided via the helper function require('cmp_nvim_lsp').default_capabilities</p>
+<p>nvim-cmpはより多くの種類の補完候補をサポートしているため、補完要求時にこれらの候補を提供できるように、
+ユーザーがサーバーに送信する機能をオーバーライドする必要があります。
+この機能は、ヘルパー関数 require('cmp_nvim_lsp').default_capabilities を使用して提供されます。</p>
 <p>As these candidates are sent on each request, adding these capabilities will break the built-in omnifunc support for neovim's language server client.
 nvim-cmp provides manually triggered completion that can replace omnifunc. See :help cmp-faq for more details.</p>
-<p>これらの候補はリクエストごとに送信されるため、この機能を追加すると、neovimの言語サーバークライアントの組み込みのomnifuncサポートは切断されます。
+<p>これらの候補はリクエストごとに送信されるため、この機能を追加すると、neovim の言語サーバークライアントの組み込みの omnifunc サポートは切断されます。
 nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を提供します。詳しくは :help cmp-faq を参照してください。</p>
 </div>
 </div>
-<p><code>default_capabilities</code>については次でコードを組み込みます。</p>
+<p>最も重要なのは、&quot;サーバに送信する機能をオーバーライドする必要がある&quot; というところでしょうか。
+次項からやっていきましょう。</p>
 <h2 id="setup--install"><a class="header" href="#setup--install">Setup / Install</a></h2>
 <p>オフィシャルに示されているコードと順番が逆になってしまいますが、先に<code>Capabilities</code>からやっていきます。</p>
 <h3 id="capabilities-1"><a class="header" href="#capabilities-1">Capabilities</a></h3>
-<p>本来は使用する言語サーバーごとに<code>setup</code>を記述する必要がありますが、このサイトでは<code>mason-lspconfig</code>でまとめて行っちゃってますよね😸</p>
-<p>ってことで<code>mason.lua</code>を開いてこんなんしときましょう。🧚‍♀️🧚</p>
+<p>本来は使用する言語サーバーの<code>setup</code>ごとに<code>capabilities</code>をオーバーライドする必要がありますが、
+このサイトでは<code>mason-lspconfig</code>でまとめて行う方法をとってきました☀️</p>
+<p>なので、これもまとめて簡単にやっちゃいましょう😎</p>
+<p><code>mason.lua</code>を開いてこんなんしとけばOKです🧚‍♀️🧚</p>
 <div id="admonition-extensionsmasonlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/mason.lua</p>
@@ -155,7 +161,8 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 </code></pre>
 </div>
 </div>
-<p>併せてこれもやっておくと安心🐶</p>
+<p>一網打尽ですね🏝️</p>
+<p>併せて<code>packer</code>に「<code>mason-lspconfig</code>の設定に<code>cmp-nvim-lsp</code>を使用するよ❗」、と教えておいてあげるとさらに安心🐶</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -193,7 +200,7 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 </div>
 </div>
 <h3 id="sources"><a class="header" href="#sources">Sources</a></h3>
-<p>んでもってさらに、 「補完ソースは<code>cmp-nvim-lsp</code>を通して取得するんだ🦜 」と、<code>nvim-cmp</code>に宣言しておきましょう😆</p>
+<p>んでもってさらに、 「補完ソースは<code>cmp-nvim-lsp</code>を通して取得するんだよ🦜 」と、<code>nvim-cmp</code>に宣言しておきましょう😆</p>
 <div id="admonition-extensionsnvim-cmplua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-cmp.lua</p>
@@ -228,7 +235,7 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 </code></pre>
 </div>
 </div>
-<p><code>Capabilities</code>で示されているように、
+<p><code>Capabilities</code>の説明で示されているように、
 「<code>omnifunc</code>サポートが切断される」とのことなので、上記のコードを外しておいてもいいでしょう😉</p>
 <div id="admonition-question" class="admonition question">
 <div class="admonition-title">
@@ -236,11 +243,11 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 <p><a class="admonition-anchor-link" href="#admonition-question"></a></p>
 </div>
 <div>
-<p>「結局<code>omnifunc</code>ってなんやったん？」ってなるんですけど、わたしもよく知らないんですよねー😅</p>
+<p>「結局<code>omnifunc</code>ってなんやったん❓」ってなるんですけど、わたしもよく知らないんですよねー😅</p>
 </div>
 </div>
 <h2 id="completion"><a class="header" href="#completion">Completion</a></h2>
-<p>ってことで、<code>lua</code>ファイルを開いて、適当に入力してみましょう。</p>
+<p>ってことで、<code>lua</code>ファイルを開いて、なんか適当に入力してみましょう。</p>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
@@ -256,12 +263,12 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 デフォルトでは<kbd>Ctrl-n</kbd>または<kbd>↓</kbd>で下に、
 <kbd>Ctrl-p</kbd>または<kbd>↑</kbd>で上に、メニュー内でカーソルが移動します。
 <img src="img/cmp-nvim-lsp2.webp" alt="cmp-nvim-lsp 2" width="1552" height="1050" loading="lazy"></p>
-<p><code>Function</code>の項目にカーソルを合わせれば<code>help</code>も表示してくれるはずです🤓</p>
+<p><code>Function</code>の項目にカーソルを合わせれば<code>Document</code>も表示してくれるはずです🤓</p>
 <p>あ、あとはもちろん<code>mapping</code>に設定した操作も可能です❗</p>
 <div id="admonition-default-1" class="admonition success">
 <div>
 <p>Everybody is laughing</p>
-<p>誰もが嬉しそう</p>
+<p>みんな嬉しそう</p>
 </div>
 </div>
 <h3 id="-if-it-does-not-work-well-"><a class="header" href="#-if-it-does-not-work-well-">( If it does not work well... )</a></h3>
@@ -273,8 +280,9 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 <div>
 <p>補完候補が上手く出てこない場合は<code>lua</code>ファイルを開いた状態で<code>:LspInfo</code>を確認してみてください。
 <img src="img/lspinfo.webp" alt="lsp-info" width="1512" height="1200" loading="lazy"></p>
-<p><code>LSP</code>が認識されている状態であれば、<code>nvim-cmp</code>もしくは<code>cmp-nvim-lsp</code>が上手く連携できていないだけだと思われます😉</p>
-<p>また、もし<code>lua_ls</code>が認識されていなければ、もう一度<code>nvim-lspconfig</code> / <code>mason.nvim</code> / <code>mason-lspconfig.nvim</code>まで戻って確認してみてください🙀</p>
+<p><code>Client</code>に<code>lua_ls</code>が認識されている状態であれば、<code>nvim-cmp</code>と<code>cmp-nvim-lsp</code>が上手く連携できていないだけだと思われます😉</p>
+<p>...もし<code>lua_ls</code>が認識されていなければ、それは &quot;履 い て な い&quot; んです、PAAAANTS!! 🤷‍♀️</p>
+<p>急いで<code>nvim-lspconfig</code> / <code>mason.nvim</code> / <code>mason-lspconfig.nvim</code>まで戻って &quot;履 い て&quot; 来てください 👉🩲👈</p>
 </div>
 </div>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
@@ -288,7 +296,7 @@ nvim-cmp は、omnifunc に代わる手動トリガーによる補完機能を�
 </div>
 <div>
 <p>Everybody is happy</p>
-<p>誰もが幸せ</p>
+<p>みんな幸せ</p>
 </div>
 </div>
 <div class="footnote-definition" id=1>
