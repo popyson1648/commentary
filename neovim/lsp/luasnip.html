@@ -91,8 +91,9 @@
 
         <main>
           <h1 id="luasnip"><a class="header" href="#luasnip">LuaSnip</a></h1>
-<p>前回、<code>LSP</code>を使用した補完が動いて大満足でしたが、
-今回はさらに、スニペットによる鮮やかな華を添えていきましょう。<code>LuaSnip</code>の登場です❗</p>
+<p>前回は<code>LSP</code>を使用した補完が動いて大満足でしたね😊</p>
+<p>今回はこれに加えて、スニペットによる鮮やかな華🌻 を添えていきましょう😽</p>
+<p><code>LuaSnip</code>の登場です❗</p>
 <div id="admonition-luasniphttpsgithubcoml3mon4d3luasnip" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/L3MON4D3/LuaSnip">LuaSnip</a></p>
@@ -106,12 +107,23 @@
 <p>nvim-compe (または後継の nvim-cmp (cmp_luasnip)) を使って LSP-Snippets を拡張する。</p>
 </div>
 </div>
-<p><a href="https://en.wikipedia.org/wiki/Snippet_(programming)">Wikipedia</a>によれば、
-プログラミングの実践において「スニペット」とは、
-狭義にはエディタプログラムによって文字通りファイルに含まれるソースコードの一部を指し、
-コピーアンドペーストプログラミングの一形態である。</p>
+<p><code>Wikipedia</code>によれば、</p>
+<div id="admonition-スニペットhttpsjawikipediaorgwikiスニペット" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8B%E3%83%9A%E3%83%83%E3%83%88">スニペット</a></p>
+<p><a class="admonition-anchor-link" href="#admonition-スニペットhttpsjawikipediaorgwikiスニペット"></a></p>
+</div>
+<div>
+<p>スニペット(英語: snippet)とは、「断片」という意味で、
+再利用可能なソースコード、マシンコード、またはテキストの小さな領域を表すプログラミング用語である。
+通常、これらはより大きなプログラミングモジュールに組み込むために正式に定義された操作ユニットである。
+スニペット管理は、一部のテキストエディタ、ソースコードエディタ、統合開発環境、および関連ソフトウェアの機能である。
+これにより、ユーザーは日常の編集操作中に繰り返し入力する必要がなくなる。</p>
+</div>
+</div>
 <p>...とのことです。</p>
-<p>今のところ「なんのこっちゃ」ですが、動かして見てみれば至ってシンプルです 🐈</p>
+<p>ぶっちゃけ「なんのこっちゃ」ですが、実際に動かして見てみれば至ってシンプルです 🐈</p>
+<p>何よりも &quot;繰り返し入力する必要がなくなる&quot; という文言には魅力があります🤩</p>
 <div id="admonition-default" class="admonition success">
 <div>
 <p>Mean Mister Mustard<sup class="footnote-reference">
@@ -182,19 +194,19 @@ Fabrice Bellard 氏の <a href="https://bellard.org/quickjs/">QuickJS</a> にあ
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
 </div>
 <div>
-<p><code>tag</code>はあってもなくても平気ですが、オフィシャルに「入れとけ」と案内されています。
-入れといた方が安心ですね❗</p>
-<p>...わたしは入れずに使わせてもらってるんですけど😲</p>
+<p><code>tag</code>はあってもなくても平気ですが、オフィシャルに「入れてね」と案内されています。
+これはもう素直に入れておくべきですね❗</p>
+<p>...わたしは入れずに使わせてもらってる &quot;ひねくれ者&quot; なんですけど😲</p>
 </div>
 </div>
 <p>じゃあいつも通り、<code>PackerSync</code>や<code>PackerInstall</code>を行なってみましょう...。</p>
 <p>うまくいったかな❓</p>
 <h3 id="-in-case-of-installation-failure-"><a class="header" href="#-in-case-of-installation-failure-">( In case of installation failure )</a></h3>
-<p>これもなんか決まり文句みたいになってるんですけど、わたしの経験上<code>macOS</code>では問題になったことがありません。</p>
+<p>これもなんか決まり文句みたいになってるんですが、わたしの経験上<code>macOS</code>では問題になったことがありません。</p>
 <p>...ですが、このサイトで使用している<code>Fedora</code>系の環境では<code>jsregexp</code>のインストールがうまくいきませんでした...😫
 (ちょっと頑張ってはみたんですが😅)
 <img src="img/luasnip-error.webp" alt="luasnip-error" width="1552" height="1050" loading="lazy"></p>
-<p>幸いにも、これは<code>optional</code>という位置付けなので必須ではありません。</p>
+<p>ただ幸いにも、これは<code>optional</code>という位置付けなので必須ではありません。</p>
 <div id="admonition-transformationshttpsgithubcoml3mon4d3luasnipblobmasterdocmdtransformations" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#transformations">Transformations</a></p>
@@ -205,7 +217,7 @@ Fabrice Bellard 氏の <a href="https://bellard.org/quickjs/">QuickJS</a> にあ
 <p><code>jsregexp</code>が利用できない場合、変換は単純なコピーで置き換えられます。</p>
 </div>
 </div>
-<p>なので、ひとまずは安心してください😺</p>
+<p>なので、ひとまず安心してください😺</p>
 <p>ただ、これだと<code>packer</code>でアップデートを動かす度に<code>make</code>が走ってしまうので、<code>run</code>だけ外しておきましょう。</p>
 <div id="admonition-extensionsinitlua-1" class="admonition example">
 <div class="admonition-title">
@@ -230,7 +242,7 @@ Fabrice Bellard 氏の <a href="https://bellard.org/quickjs/">QuickJS</a> にあ
 </div>
 <p>まあなんか、そんなこともあるよね〜❗ってことで😆</p>
 <h2 id="add-snippets"><a class="header" href="#add-snippets">Add Snippets</a></h2>
-<p>なんだか順番というか、話の構成が難しくて てんやわんや してるんですが...、</p>
+<p>スニペットのフォーマットにはいくつかあるみたいで、<code>LuaSnip</code>は以下のフォーマットに対応しています。</p>
 <div id="admonition-add-snippetshttpsgithubcoml3mon4d3luasnipadd-snippets" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/L3MON4D3/LuaSnip#add-snippets">Add Snippets</a></p>
@@ -243,22 +255,45 @@ loaders and their benefits.</p>
 <a href="https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#loaders">ドキュメント</a>をチェックしてください。</p>
 <p>The following list serves only as a short overview.</p>
 <p>以下のリストは、簡単な概要としてのみ役立ちます。</p>
-<ul>
-<li>
-<p><strong>VS Code-like</strong>: To use existing VS Code style snippets from a plugin
+</div>
+</div>
+<div id="admonition-default-1" class="admonition info">
+<div>
+<p><strong>VS Code-like</strong>:</p>
+<p>To use existing VS Code style snippets from a plugin
 (eg. <a href="https://github.com/rafamadriz/friendly-snippets">rafamadriz/friendly-snippets</a>) simply install the plugin and then add</p>
-</li>
-<li>
-<p>プラグイン (例えば <a href="https://github.com/rafamadriz/friendly-snippets">rafamadriz/friendly-snippets</a>) から
+<p>(例えば <a href="https://github.com/rafamadriz/friendly-snippets">rafamadriz/friendly-snippets</a>) から
 既存のVS Codeスタイルのスニペットを使用するには、プラグインをインストールし、次のように追加します。</p>
-</li>
-</ul>
 <pre><code class="language-lua">require(&quot;luasnip.loaders.from_vscode&quot;).lazy_load()
 </code></pre>
 </div>
 </div>
-<p>最終的には今出てきた<code>Friendly Snippets</code>を使用できる状態を目標として進めます❗</p>
-<p><code>luasnip.lua</code>を作りましょう。</p>
+<div id="admonition-default-2" class="admonition info">
+<div>
+<p><strong>SnipMate-like</strong>:</p>
+<p>Very similar to VS Code packages; install a plugin that provides snippets and call the <code>load</code>-function:</p>
+<p>VS Codeのパッケージと非常に似ており、スニペットを提供するプラグインをインストールし、load-functionを呼び出します：</p>
+<pre><code class="language-lua">require(&quot;luasnip.loaders.from_snipmate&quot;).lazy_load()
+</code></pre>
+</div>
+</div>
+<div id="admonition-default-3" class="admonition info">
+<div>
+<p><strong>Lua</strong>:</p>
+<p>Add the snippets by calling <code>require(&quot;luasnip&quot;).add_snippets(filetype, snippets)</code>.
+An example for this can be found <a href="https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua#L190">here</a>.
+This can also be done much cleaner, with all the benefits that come with using a loader,
+by using the <a href="https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#lua">loader for lua</a></p>
+<p><code>require(&quot;luasnip&quot;).add_snippets(filetype, snippets)</code>でスニペットを追加します。
+この例は<a href="(https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua#L190).">ここ</a>で見ることができます。
+また、ローダーを使うことで得られる利点はそのままに、
+<a href="https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#lua">lua用のローダー</a>を使うことで、より簡単に行うことができます。</p>
+</div>
+</div>
+<p>わたしとしては<code>VS Code-like</code>の説明の中に出てきている<code>Friendly Snippets</code>がおすすめなので、
+これを使用できる状態を目標として進めていきます😉</p>
+<h2 id="config"><a class="header" href="#config">Config</a></h2>
+<p>いつものように<code>luasnip.lua</code>を作りましょう😺</p>
 <div id="admonition-extensionsluasniplua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/luasnip.lua</p>
@@ -269,7 +304,7 @@ loaders and their benefits.</p>
 </code></pre>
 </div>
 </div>
-<p>そして組み込みましょう。</p>
+<p>そしてこれも、いつものように組み込みましょう😆</p>
 <div id="admonition-extensionsinitlua-2" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -286,7 +321,7 @@ loaders and their benefits.</p>
 </code></pre>
 </div>
 </div>
-<div id="admonition-default-1" class="admonition success">
+<div id="admonition-default-4" class="admonition success">
 <div>
 <p>Keeps a ten-bob note up his nose</p>
 <p>Such a mean old man</p>
@@ -307,7 +342,7 @@ for setting up a super-tab-like mapping.</p>
 <a href="https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip">例</a>も紹介されています。</p>
 </div>
 </div>
-<p>ということなので、これを<code>nvim-cmp.lua</code>の<code>mapping</code>にそのまま入れちゃいましょう。</p>
+<p>...と、いうことなので、これを<code>nvim-cmp.lua</code>の<code>mapping</code>に入れちゃいましょう😉</p>
 <div id="admonition-extensionsnvim-cmplua" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-cmp.lua</p>
@@ -361,8 +396,8 @@ cmp.setup {
 </div>
 </div>
 <p><code>super-tab</code>については実際に動作を見た方が感覚が掴めると思うので、
-<a href="friendly_snippets.html">16.6.2.2. Friendly Snippets</a>で簡単に補足します😉</p>
-<div id="admonition-default-2" class="admonition success">
+この先の <a href="friendly_snippets.html">16.6.2.2. Friendly Snippets</a> で簡単に補足します😉</p>
+<div id="admonition-default-5" class="admonition success">
 <div>
 <p>His sister Pam works in a shop</p>
 <p>She never stops, she's a go-getter</p>
@@ -371,7 +406,7 @@ cmp.setup {
 </div>
 </div>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
-<p>結構色々組み込んできたんですが、まだ何も変化はありません。(びっくり❗❗)</p>
+<p>結構色々組み込んできたんですが、まだ何も変化はありません。(なかなかハードですね...😅)</p>
 <p>でもまあ、元気出していきましょう😆</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
@@ -379,7 +414,9 @@ cmp.setup {
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
 </div>
 <div>
-<p>Takes him out to look at the Queen</p>
+<p>Takes him out to look at the Queen<sup class="footnote-reference">
+<a name="to-footnote-2"><a href="#2">2</a></a>
+</sup></p>
 <p>Only place that he's ever been</p>
 <p>女王を見るために彼を連れ出すんだ</p>
 <p>彼が今まで行ったことのある唯一の場所だよ</p>
@@ -393,6 +430,8 @@ cmp.setup {
 歌詞のインスピレーションについて、Lennon は
 「どこかでしみったれた男の新聞記事を読んだ。そいつは5ポンド札を鼻の中ではなく、別のどこかに隠していた」と語っている。
 <a href="https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%BC%E3%83%B3%E3%83%BB%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%BB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%89">Wikipedia</a>より</p>
+</div><div class="footnote-definition" id=2>
+<p><a href="#to-footnote-2"><sup>2:</sup></a> これはもちろん<a href="https://en.wikipedia.org/wiki/Elizabeth_II">Elizabeth II</a> (エリザベス2世)のことですね。時代は変わる...。</p>
 </div>
 
           <nav class="nav-wrapper" aria-label="Page navigation">

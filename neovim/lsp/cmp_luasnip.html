@@ -218,9 +218,10 @@ cmp.setup {
 </code></pre>
 </div>
 </div>
-<p>まあサンプルなので<code>language</code>には<code>all</code>を指定していますが、例えば<code>lua</code>・<code>markdown</code>など、言語ごとに細かく指定することもできます。</p>
+<p>今回はサンプルなので<code>language</code>には<code>all</code>を指定していますが、
+例えば<code>lua</code>・<code>markdown</code>など、言語ごとに細かく指定することもできます😉</p>
 <h4 id="snippets-json-file"><a class="header" href="#snippets-json-file">Snippets Json File</a></h4>
-<p>続いて、言語に対して使用するスニペットを定義していきます。</p>
+<p>続いて、言語に対して使用するスニペットを定義していきます❗</p>
 <div id="admonition-confignvimsnippetsalljson" class="admonition example">
 <div class="admonition-title">
 <p>~/.config/nvim/snippets/all.json</p>
@@ -248,7 +249,7 @@ cmp.setup {
 </div>
 </div>
 <h3 id="paths"><a class="header" href="#paths">paths</a></h3>
-<p>そしたら、<code>luasnip</code>に「ぼくのスニペット、ここおいとくねー」...と、教えてあげましょう。</p>
+<p>そしたら、<code>luasnip</code>に「ぼくのスニペット、ここおいとくねー」...と、教えてあげましょう🦮</p>
 <div id="admonition-h-luasnip-loaders-vs-code" class="admonition info">
 <div class="admonition-title">
 <p>:h luasnip-loaders-vs-code</p>
@@ -275,6 +276,16 @@ cmp.setup {
 </div>
 <p>本当は<code>paths</code>を指定しなければ勝手に探してくれるんですが、
 わたしは<code>package.json</code>を<code>rtp</code>直下に置きたくなかったので、パスを指定する形をとってます😅</p>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p>突然<code>rtp</code>とか言い出しちゃったんですけど、これは<code>r</code>un<code>t</code>ime <code>p</code>ath の略でしょう (おそらく)。</p>
+<p>単純に<code>rtp</code>でweb検索すると<code>Real-time Transport Protocol</code>が出てくるんですが、これは関係無いはず🧐</p>
+</div>
+</div>
 <div id="admonition-confignvimsnippetsalljson-1" class="admonition example">
 <div class="admonition-title">
 <p>~/.config/nvim/snippets/all.json</p>
@@ -304,10 +315,10 @@ cmp.setup {
 </tbody></table>
 </div>
 <p>「これが<code>snippet</code>かぁ〜。」っていうのが伝わるといいな🥹 ...伝わったかな❓</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-3" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
 <p>今回は<code>prefix</code>に<code>test</code>と設定しているため、入力された &quot;t&quot; から<code>test</code>を候補に挙げてくれるんですね😆</p>
@@ -315,7 +326,7 @@ cmp.setup {
 </div>
 <h2 id="ill-take-you-all"><a class="header" href="#ill-take-you-all">I'll take you all.</a></h2>
 <p>ということで、ようやくスニペットが動きました。</p>
-<p>もし今までに手塩にかけて育ててきたスニペットがいるのであれば、それは即戦力として使えます❗</p>
+<p>もし今までに手塩にかけて育ててきたスニペットがいれば、それはもう即戦力❗</p>
 <div id="admonition-default-2" class="admonition success">
 <div>
 <p>She's the kind of a girl that makes &quot;The News of the World&quot;</p>
@@ -325,7 +336,7 @@ cmp.setup {
 </div>
 </div>
 <p>わたし自身はと言えば、自分のスニペットはほぼ育ててないんですよねー😅</p>
-<p>同じように「そんなもん育ててないよー」ってな人も (おそらく) いると思うので、
+<p>同じように「育ててないよー」ってな人も (おそらく) いると思うので、
 前回ぬるっと出ていた<code>Friendly snippets</code>に話が続いていくわけです😉</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
