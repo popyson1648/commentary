@@ -354,17 +354,6 @@ end, {})
 <p>...以上です、機長👩‍✈️</p>
 <h3 id="copilot_node_command"><a class="header" href="#copilot_node_command">copilot_node_command</a></h3>
 <p>もう一個大事なやつだけやっちゃいましょう❗</p>
-<div id="admonition-extensionscopilotlua-1" class="admonition example">
-<div class="admonition-title">
-<p>extensions/copilot.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionscopilotlua-1"></a></p>
-</div>
-<div>
-<pre><code class="language-lua">config = function() require 'extensions.copilot' end,
-</code></pre>
-</div>
-</div>
-<p>これがちょっと環境によっては大変かもしれないんですが...。</p>
 <div id="admonition-info" class="admonition info">
 <div class="admonition-title">
 <p>Info</p>
@@ -375,14 +364,28 @@ end, {})
 Node.js version must be 16.x or newer.</p>
 <p>このフィールドは、nvm によってインストールされたものなど、特定の node バージョンへのパスを提供するために使用します。
 Node.js のバージョンは 16.x 以降である必要があります。</p>
-<pre><code class="language-lua example">copilot_node_command = vim.fn.expand(&quot;$HOME&quot;) .. &quot;/.config/nvm/versions/node/v16.14.2/bin/node&quot;,
+<pre><code class="language-lua">copilot_node_command = vim.fn.expand(&quot;$HOME&quot;) .. &quot;/.config/nvm/versions/node/v16.14.2/bin/node&quot;,
+</code></pre>
+</div>
+</div>
+<p>ちょっと環境によっては大変かもしれないんですが...。</p>
+<div id="admonition-extensionscopilotlua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions.copilot.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionscopilotlua-1"></a></p>
+</div>
+<div>
+<pre><code class="language-diff">- require('copilot').setup {}
++ require('copilot').setup {
++   copilot_node_command = 'node', -- node のパスを指定する
++ }
 </code></pre>
 </div>
 </div>
 <h4 id="nodejs"><a class="header" href="#nodejs">Node.js</a></h4>
 <p>試しに<code>which node</code>ってやってみて、なんかそれっぽいパスが出てくるようなら大丈夫でしょう。</p>
 <p>もし何も出てこないようなら<code>node.js</code>をインストールしましょう❗</p>
-<p><code>node.js</code>はもはや超メジャー選手なので、方法はなんぼでもあります😆</p>
+<p><code>node.js</code>はもはや超メジャー選手なので、方法はなんぼでもありますからね😆</p>
 <div id="admonition-note-4" class="admonition note">
 <div class="admonition-title">
 <p>Note</p>
