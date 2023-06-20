@@ -3,36 +3,36 @@
   "name": "Commentary of Dotfiles",
   "icons": [
     {
-      "src": "/maskable_icon_x512.png",
+      "src": "commentary/maskable_icon_x512.png",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
     {
-      "src": "/maskable_icon_x192.png",
+      "src": "commentary/maskable_icon_x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     }
   ],
-  "id": "/index.html",
-  "start_url": "/index.html",
+  "id": "commentary/index.html",
+  "start_url": "commentary/index.html",
   "background_color": "#eff1f5",
   "display": "minimal-ui",
-  "scope": "/",
+  "scope": "commentary/",
   "theme_color": "#eff1f5",
   "shortcuts": [
     {
       "name": "Introduction",
       "short_name": "Introduction - Commentary of Dotfiles",
       "description": "This site introduces WezTerm and Neovim dotfiles.",
-      "url": "/index.html",
-      "icons": [{ "src": "/maskable_icon_x192.png", "sizes": "192x192" }]
+      "url": "commentary/index.html",
+      "icons": [{ "src": "commentary/maskable_icon_x192.png", "sizes": "192x192" }]
     }
   ],
   "description": "This site introduces WezTerm and Neovim dotfiles.",
   "screenshots": [
     {
-      "src": "/goal.webp",
+      "src": "commentary/goal.webp",
       "type": "image/webp",
       "sizes": "662x540",
       "form_factor": "narrow"
