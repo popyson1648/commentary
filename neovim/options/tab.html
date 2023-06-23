@@ -100,10 +100,8 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-tabstop"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">                                'tabstop' 'ts'
-
-'tabstop' 'ts'              number (default 8)
-                            local to buffer
+<pre><code class="language-txt">'tabstop' 'ts'  number (default 8)
+                local to buffer
 
   Number of spaces that a &lt;Tab&gt; in the file counts for.  Also see
   the |:retab| command, and the 'softtabstop' option.
@@ -130,12 +128,12 @@
 <p>わたしが採用しているのは、オーソドックスな<code>2.</code>です☺️</p>
 <div id="admonition-default" class="admonition info">
 <div>
-<pre><code class="language-txt">  2. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
-  'expandtab'.  This way you will always insert spaces.  The
-  formatting will never be messed up when 'tabstop' is changed.
+<pre><code class="language-txt">2. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
+'expandtab'.  This way you will always insert spaces.  The
+formatting will never be messed up when 'tabstop' is changed.
 
-  'tabstop' と 'shiftwidth' を好きなように設定し、'expandtab'を使用する。
-  これで、常にスペースを挿入することができる。'tabstop'を変更しても、書式が乱れることはない。
+'tabstop' と 'shiftwidth' を好きなように設定し、'expandtab'を使用する。
+これで、常にスペースを挿入することができる。'tabstop'を変更しても、書式が乱れることはない。
 </code></pre>
 </div>
 </div>
@@ -148,8 +146,8 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-shiftwidth"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">'shiftwidth' 'sw'		  number (default 8)
-			                      local to buffer
+<pre><code class="language-txt">'shiftwidth' 'sw'   number (default 8)
+                    local to buffer
 
   Number of spaces to use for each step of (auto)indent.  Used for
   |'cindent'|, |&gt;&gt;|, |&lt;&lt;|, etc.
@@ -212,10 +210,8 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p><a class="admonition-anchor-link" href="#admonition-h-expandtab"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">                                        'expandtab' 'et' 'noexpandtab' 'noet'
-
-'expandtab' 'et'                    boolean (default off)
-                                    local to buffer
+<pre><code class="language-txt">'expandtab' 'et'  boolean (default off)
+                  local to buffer
 
 	In Insert mode: Use the appropriate number of spaces to insert a
 	&lt;Tab&gt;.  Spaces are used in indents with the '&gt;' and '&lt;' commands and
@@ -238,13 +234,11 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p><a class="admonition-anchor-link" href="#admonition-h-autoindent"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">			                              'autoindent' 'ai' 'noautoindent' 'noai'
+<pre><code class="language-txt">'autoindent' 'ai'   boolean (default on)
+			              local to buffer
 
-'autoindent' 'ai'                   boolean (default on)
-			                        local to buffer
-
-	Copy indent from current line when starting a new line (typing &lt;CR&gt;
-	in Insert mode or when using the &quot;o&quot; or &quot;O&quot; command).
+  Copy indent from current line when starting a new line (typing &lt;CR&gt;
+  in Insert mode or when using the &quot;o&quot; or &quot;O&quot; command).
 
   改行時に現在行のインデントをコピーする
   （挿入モード、&lt;CR&gt;を入力したとき、または &quot;o&quot; や &quot;O&quot; コマンドを使用したとき）。

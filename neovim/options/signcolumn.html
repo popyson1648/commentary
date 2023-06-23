@@ -100,58 +100,50 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-signcolumn"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">						            'signcolumn' 'scl'
+<pre><code class="language-txt">'signcolumn' 'scl'  string (default &quot;auto&quot;)
+                    local to window
 
-'signcolumn' 'scl'      string      (default &quot;auto&quot;)
-			            local to window
+When and how to draw the signcolumn. Valid values are:
+記号列をどのように描画するか。有効な値は以下の通り。
 
-	When and how to draw the signcolumn. Valid values are:
-    記号列をどのように描画するか。有効な値は以下の通り。
+  &quot;auto&quot;   	        only when there is a sign to display
+                    表示する sign がある場合のみ表示する
 
-	    &quot;auto&quot;   	only when there is a sign to display
-                        表示する sign がある場合のみ表示する
+  &quot;auto:[1-9]&quot;      resize to accommodate multiple signs up to the
+                    指定された数まで複数のサインを収容するためにリサイズする
 
-	    &quot;auto:[1-9]&quot;    resize to accommodate multiple signs up to the
-                        指定された数まで複数のサインを収容するためにリサイズする
+  &quot;auto:[1-8]-[2-9]&quot;
+                    resize to accommodate multiple signs up to the
+                    given maximum number (maximum 9) while keeping
+                    at least the given minimum (maximum 8) fixed
+                    space. The minimum number should always be less
+                    than the maximum number.
 
-	    &quot;auto:[1-8]-[2-9]&quot;
-                        resize to accommodate multiple signs up to the
-                        given maximum number (maximum 9) while keeping
-                        at least the given minimum (maximum 8) fixed
-                        space. The minimum number should always be less
-                        than the maximum number.
+                    与えられた最小値（最大8）以上の固定スペースを維持しながら、
+                    与えられた最大数（最大9）までの複数のサインを収容するためにリサイズする。
+                    最小数は常に最大数より小さくなければならない。
 
-                        与えられた最小値（最大8）以上の固定スペースを維持しながら、
-                        与えられた最大数（最大9）までの複数のサインを収容するためにリサイズする。
-                        最小数は常に最大数より小さくなければならない。
+  &quot;no&quot;              never
+                    常に表示しない
 
-	    &quot;no&quot;	        never
-                        常に表示しない
+  &quot;yes&quot;             always
+                    常に表示する
 
-	    &quot;yes&quot;           always
-                        常に表示する
+  &quot;yes:[1-9]&quot;       always, with fixed space for signs up to the given number (maximum 9)
+                    常に、与えられた数（最大9）までの標識のための固定スペースを持つ
 
-	    &quot;yes:[1-9]&quot;     always, with fixed space for signs up to the given number (maximum 9)
-                        常に、与えられた数（最大9）までの標識のための固定スペースを持つ
-
-	    &quot;number&quot;        display signs in the 'number' column. If the number
-			            column is not present, then behaves like &quot;auto&quot;.
-                        &quot;番号&quot; の欄に column を表示する。
-                        番号列が存在しない場合は、&quot;auto&quot; と同じように動作する。
+  &quot;number&quot;          display signs in the 'number' column. If the number
+                    column is not present, then behaves like &quot;auto&quot;.
+                    &quot;番号&quot; の欄に column を表示する。
+                    番号列が存在しない場合は、&quot;auto&quot; と同じように動作する。
 </code></pre>
 </div>
 </div>
 <p>大まかにいえば3通りがあって、</p>
 <ul>
-<li>
-<p><code>auto</code>(デフォルト)にしておくか...、</p>
-</li>
-<li>
-<p><code>yes</code>か<code>no</code>で決め打つか...、</p>
-</li>
-<li>
-<p>何か独特の雰囲気を持つ<code>number</code>か...、</p>
-</li>
+<li><code>auto</code>(デフォルト)にしておくか...、</li>
+<li><code>yes</code>か<code>no</code>で決め打つか...、</li>
+<li>何か独特の雰囲気を持つ<code>number</code>か...、</li>
 </ul>
 <p>ですね。</p>
 <p><code>auto</code>は表示と非表示が動的に切り替わるので、編集中にぺこぱこすることがあります。</p>

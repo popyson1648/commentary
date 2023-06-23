@@ -101,14 +101,14 @@
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_set_var"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">nvim_set_var({name}, {value})               nvim_set_var()
-    Sets a global (g:) variable.
+<pre><code class="language-txt">nvim_set_var({name}, {value})       nvim_set_var()
+  Sets a global (g:) variable.
 
-    グローバル(g:)変数を設定する。
+  グローバル(g:)変数を設定する。
 
-    Parameters:
-      • {name}   Variable name
-      • {value}  Variable value
+  Parameters:
+    • {name}   Variable name
+    • {value}  Variable value
 </code></pre>
 </div>
 </div>
@@ -159,7 +159,7 @@ Disney+ の &quot;The Beatles: Get Back&quot; の中で発言してたりする�
 <p><a class="admonition-anchor-link" href="#admonition-h-mapleader"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">            &lt;Leader&gt; mapleader
+<pre><code class="language-txt">                  &lt;Leader&gt; mapleader
 To define a mapping which uses the &quot;g:mapleader&quot; variable, the special string
 &quot;&lt;Leader&gt;&quot; can be used.  It is replaced with the string value of
 &quot;g:mapleader&quot;.  If &quot;g:mapleader&quot; is not set or empty, a backslash is used
@@ -263,7 +263,8 @@ US配列であれば、ゆーて<kbd>Return</kbd>キーの上ってだけです�
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua-1"></a></p>
 </div>
 <div>
-<pre><code class="language-txt">              &lt;LocalLeader&gt; maplocalleader
+<pre><code class="language-txt">                    &lt;LocalLeader&gt; maplocalleader
+
 &lt;LocalLeader&gt; is just like &lt;Leader&gt;, except that it uses &quot;maplocalleader&quot;
 instead of &quot;mapleader&quot;.  &lt;LocalLeader&gt; is to be used for mappings which are
 local to a buffer.
