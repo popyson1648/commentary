@@ -34,12 +34,19 @@
   </head>
   <body>
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-
-    <script src="../../start.js" id="start" data-defaulttheme="latte"></script>
-
     
+    <script>
+    (()=>{const e=localStorage.getItem("mdbook-theme");if(!e)return;
+    void(document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor);
+    if(e=="latte")return;
+    setTimeout((()=>{document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor}),1);
+    const o=document.querySelector("html");o.classList.remove("latte"),o.classList.add(e)})();
+    </script>
+    
+<script>window.playground_copyable = true;</script>
+
     <div class="top-bar">
       <div id="menu-bar" class="menu-bar">
         <div class="left-buttons">
@@ -245,7 +252,6 @@
     <script src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
 
     <script src="../../clipboard.min.js"></script>
-    <script>window.playground_copyable = true;</script>
 
     <script src="../../highlight.min.js"></script>
     <script src="../../book.js" id="book" data-defaulttheme="latte"></script>
