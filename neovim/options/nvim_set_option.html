@@ -39,7 +39,7 @@
     
     <script>
     (()=>{const e=localStorage.getItem("mdbook-theme");
-    if(!e)document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor;return;
+    if(!e){document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor;return;}
     if(e=="latte")return;
     setTimeout((()=>{document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor}),1);
     const o=document.querySelector("html");o.classList.remove("latte"),o.classList.add(e)})();
