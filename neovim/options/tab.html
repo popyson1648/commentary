@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="latte">
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <title>tabstop / shiftwidth / expandtab - Commentary of Dotfiles</title>
@@ -38,11 +38,11 @@
     </noscript>
     
     <script>
-    (()=>{const e=localStorage.getItem("mdbook-theme");
-    if(!e){document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor;return;}
-    if(e=="latte")return;
-    setTimeout((()=>{document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor}),1);
-    const o=document.querySelector("html");o.classList.remove("latte"),o.classList.add(e)})();
+    (()=>{let e=localStorage.getItem("mdbook-theme");
+    e||(e=matchMedia("(prefers-color-scheme: dark)").matches?"macchiato":"latte"),
+    document.querySelector("html").classList.add(e),
+    setTimeout((()=>{document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor,
+    document.getElementById(e).classList.add("theme-selected")}),1)})();
     </script>
     
 <script>window.playground_copyable = true;</script>
@@ -339,7 +339,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
     <script src="../../clipboard.min.js"></script>
 
     <script src="../../highlight.min.js"></script>
-    <script src="../../book.js" id="book" data-defaulttheme="latte"></script>
+    <script src="../../book.js" id="book"></script>
 
 
   </body>
