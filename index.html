@@ -45,6 +45,20 @@
     document.getElementById(e).classList.add("theme-selected")}),1)})();
     </script>
     
+    <script>
+    (async () => {
+      if ("serviceWorker" in navigator) {
+        try {
+          await navigator.serviceWorker.register("serviceworker.js", {
+            scope: "",
+          });
+        } catch (error) {
+          console.error(`Registration failed with ${error}`);
+        }
+      }
+    })();
+    </script>
+    
 <script>window.playground_copyable = true;</script>
 
     <div class="top-bar">
