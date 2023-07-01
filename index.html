@@ -50,7 +50,7 @@
       if ("serviceWorker" in navigator) {
         try {
           await navigator.serviceWorker.register("serviceworker.js", {
-            scope: "",
+            scope: "/commentary/",
           });
         } catch (error) {
           console.error(`Registration failed with ${error}`);
