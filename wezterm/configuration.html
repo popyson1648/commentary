@@ -46,17 +46,9 @@
     </script>
     
     <script>
-    (async () => {
-      if ("serviceWorker" in navigator) {
-        try {
-          await navigator.serviceWorker.register("../serviceworker.js", {
-            scope: "/commentary/",
-          });
-        } catch (error) {
-          console.error(`Registration failed with ${error}`);
-        }
-      }
-    })();
+    (async()=>{if("serviceWorker"in navigator)
+    try{await navigator.serviceWorker.register("../serviceworker.js",{scope:"/commentary/"})}
+    catch(r){console.error(`Registration failed with ${r}`)}})();
     </script>
     
 <script>window.playground_copyable = true;</script>
