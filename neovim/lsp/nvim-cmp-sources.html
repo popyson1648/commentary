@@ -308,23 +308,22 @@ cmp.setup.cmdline({ '/', '?' }, {
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-3"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">  sources = {
+<pre><code class="language-diff">cmp.setup {
+
+  (中略)
+
+  sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'copilot' },
     { name = 'buffer' },
 +   { name = 'path' },
   },
-</code></pre>
-</div>
-</div>
-<div id="admonition-extensionsnvim-cmplua-4" class="admonition example">
-<div class="admonition-title">
-<p>extensions/nvim-cmp.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-4"></a></p>
-</div>
-<div>
-<pre><code class="language-diff">cmp.setup.cmdline(':', {
+
+  (中略)
+}
+
+cmp.setup.cmdline(':', {
   sources = cmp.config.sources {
     { name = 'cmdline' },
 +   { name = 'path' },
@@ -372,10 +371,10 @@ lspkind の copilot にアイコンを追加するには、lspkind のシンボ�
 <p>または、cmp フォーマット関数内で lspkind <code>symbol_map</code>に Copilot を追加することもできます。</p>
 </div>
 </div>
-<div id="admonition-extensionsnvim-cmplua-5" class="admonition example">
+<div id="admonition-extensionsnvim-cmplua-4" class="admonition example">
 <div class="admonition-title">
 <p>extensions/nvim-cmp.lua</p>
-<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-5"></a></p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-4"></a></p>
 </div>
 <div>
 <pre><code class="language-lua">  formatting = {
