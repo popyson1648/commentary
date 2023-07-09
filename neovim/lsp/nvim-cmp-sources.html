@@ -152,10 +152,16 @@
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">  requires = {
+<pre><code class="language-diff">use {
+  'hrsh7th/nvim-cmp',
+  config = function() require 'extensions.nvim-cmp' end,
+  requires = {
     'hrsh7th/cmp-nvim-lsp',
 +   'hrsh7th/cmp-buffer',
+
+    (中略)
   }
+}
 </code></pre>
 </div>
 </div>
@@ -239,10 +245,16 @@ Luaの<code>[[ ]]</code>文字列リテラルは、正規表現の記述に使�
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-1"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">  requires = {
+<pre><code class="language-diff">use {
+  'hrsh7th/nvim-cmp',
+  config = function() require 'extensions.nvim-cmp' end,
+  requires = {
     'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
 +   'hrsh7th/cmp-cmdline',
+
+    (中略)
   }
+}
 </code></pre>
 </div>
 </div>
@@ -295,10 +307,16 @@ cmp.setup.cmdline({ '/', '?' }, {
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-2"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">  requires = {
+<pre><code class="language-diff">use {
+  'hrsh7th/nvim-cmp',
+  config = function() require 'extensions.nvim-cmp' end,
+  requires = {
     'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-cmdline',
 +   'hrsh7th/cmp-path',
+
+    (中略)
   }
+}
 </code></pre>
 </div>
 </div>
@@ -341,7 +359,7 @@ cmp.setup.cmdline(':', {
 </div>
 <div>
 <p>This tiny plugin adds vscode-like pictograms to neovim built-in lsp:</p>
-<p>この小さなプラグインは、neovimの内蔵lspにvscodeのような絵文字を追加します：</p>
+<p>この小さなプラグインは、neovim の内蔵 lsp に vscode のような絵文字を追加します：</p>
 </div>
 </div>
 <div id="admonition-extensionsinitlua-3" class="admonition example">
@@ -350,10 +368,16 @@ cmp.setup.cmdline(':', {
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-3"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">  requires = {
+<pre><code class="language-diff">use {
+  'hrsh7th/nvim-cmp',
+  config = function() require 'extensions.nvim-cmp' end,
+  requires = {
     'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
 +   'onsails/lspkind-nvim',
+
+    (中略)
   }
+}
 </code></pre>
 </div>
 </div>
@@ -366,7 +390,7 @@ cmp.setup.cmdline(':', {
 <p>Copilot's cmp source now has a builtin highlight group <code>CmpItemKindCopilot</code>.
 To add an icon to copilot for lspkind, simply add copilot to your lspkind symbol map.</p>
 <p>Copilot の cmp ソースに、組み込みのハイライトグループ<code>CmpItemKindCopilot</code>が追加されました。
-lspkind の copilot にアイコンを追加するには、lspkind のシンボルマップにcopilotを追加するだけです。</p>
+lspkind の copilot にアイコンを追加するには、lspkind のシンボルマップに copilot を追加するだけです。</p>
 <p>Alternatively, you can add Copilot to the lspkind <code>symbol_map</code> within the cmp format function.</p>
 <p>または、cmp フォーマット関数内で lspkind <code>symbol_map</code>に Copilot を追加することもできます。</p>
 </div>
@@ -377,7 +401,11 @@ lspkind の copilot にアイコンを追加するには、lspkind のシンボ�
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-4"></a></p>
 </div>
 <div>
-<pre><code class="language-lua">  formatting = {
+<pre><code class="language-lua">cmp.setup {
+
+  -- (中略)
+
+  formatting = {
     format = require('lspkind').cmp_format {
       mode = 'symbol',
       maxwidth = 50,
@@ -385,6 +413,7 @@ lspkind の copilot にアイコンを追加するには、lspkind のシンボ�
       symbol_map = { Copilot = '' },
     },
   },
+}
 </code></pre>
 </div>
 </div>
@@ -479,8 +508,8 @@ Ringo Starr が録音した数少ないドラム・ソロをフィーチャー�
 「見ろ、Paul だって書こうと思えばこういう哲学的な歌詞が書けるんだ」と Lennon は皮肉混じりに称賛した。
 <a href="https://en.wikipedia.org/wiki/The_End_(Beatles_song)">Wikipedia</a>より</p>
 </div><div class="footnote-definition" id=5>
-<p><a href="#to-footnote-5"><sup>5:</sup></a> 歌詞を少しだけ改変してますが、これはもちろん HerMajesty です😅</p>
-<p>Her Majesty (by <a href="https://en.wikipedia.org/wiki/The_Beatles">The Beatles</a>): The End の14秒後に収録されているが、
+<p><a href="#to-footnote-5"><sup>5:</sup></a> 歌詞を少しだけ改変してますが、これはもちろん Her Majesty です😅
+Her Majesty (by <a href="https://en.wikipedia.org/wiki/The_Beatles">The Beatles</a>): The End の14秒後に収録されているが、
 オリジナルのスリーブには記載されていなかったため、隠しトラックの最初の例だとも考えられている。
 <a href="https://en.wikipedia.org/wiki/Her_Majesty_(song)">Wikipedia</a>より</p>
 </div>
