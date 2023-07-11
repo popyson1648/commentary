@@ -264,13 +264,12 @@ Luaの<code>[[ ]]</code>文字列リテラルは、正規表現の記述に使�
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-2"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">cmp.setup.cmdline(':', {
-+ mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources {
-    { name = 'path' },
-+   { name = 'cmdline' },
-  },
-})
+<pre><code class="language-diff">+cmp.setup.cmdline(':', {
++  mapping = cmp.mapping.preset.cmdline(),
++  sources = cmp.config.sources {
++    { name = 'cmdline' },
++  },
++})
 
 cmp.setup.cmdline({ '/', '?' }, {
 + mapping = map.preset.cmdline(),
