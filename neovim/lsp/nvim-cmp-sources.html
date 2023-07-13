@@ -272,7 +272,7 @@ Luaの<code>[[ ]]</code>文字列リテラルは、正規表現の記述に使�
 +})
 
 cmp.setup.cmdline({ '/', '?' }, {
-+ mapping = map.preset.cmdline(),
++ mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources {
     {
       name = 'buffer',
@@ -407,7 +407,6 @@ lspkind の copilot にアイコンを追加するには、lspkind のシンボ�
   formatting = {
     format = require('lspkind').cmp_format {
       mode = 'symbol',
-      maxwidth = 50,
       preset = 'codicons',
       symbol_map = { Copilot = '' },
     },
