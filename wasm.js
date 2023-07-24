@@ -101,6 +101,10 @@ function __wbg_get_imports() {
     imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
         takeObject(arg0);
     };
+    imports.wbg.__wbg_getElementById_cc0e0d931b0d9a28 = function(arg0, arg1, arg2) {
+        const ret = getObject(arg0).getElementById(getStringFromWasm0(arg1, arg2));
+        return isLikeNone(ret) ? 0 : addHeapObject(ret);
+    };
     imports.wbg.__wbg_instanceof_Window_9029196b662bc42a = function(arg0) {
         let result;
         try {
@@ -110,10 +114,6 @@ function __wbg_get_imports() {
         }
         const ret = result;
         return ret;
-    };
-    imports.wbg.__wbg_getElementById_cc0e0d931b0d9a28 = function(arg0, arg1, arg2) {
-        const ret = getObject(arg0).getElementById(getStringFromWasm0(arg1, arg2));
-        return isLikeNone(ret) ? 0 : addHeapObject(ret);
     };
     imports.wbg.__wbg_document_f7ace2b956f30a4f = function(arg0) {
         const ret = getObject(arg0).document;
