@@ -51,8 +51,6 @@
     try{await navigator.serviceWorker.register("../serviceworker.js",{scope:"/commentary/"})}
     catch(r){console.error(`Registration failed with ${r}`)}})();
     </script>
-    
-<script>window.playground_copyable = true;</script>
 
     <div class="top-bar">
       <div id="menu-bar" class="menu-bar">
@@ -296,7 +294,7 @@ local index = tab.is_active and 1 or 2
     <script src="../clipboard.min.js"></script>
 
     <script src="../highlight.min.js"></script>
-    <script src="../book.js" id="book"></script>
+    <script src="../book.js"></script>
 
 
   </body>

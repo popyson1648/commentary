@@ -51,8 +51,6 @@
     try{await navigator.serviceWorker.register("../../serviceworker.js",{scope:"/commentary/"})}
     catch(r){console.error(`Registration failed with ${r}`)}})();
     </script>
-    
-<script>window.playground_copyable = true;</script>
 
     <div class="top-bar">
       <div id="menu-bar" class="menu-bar">
@@ -156,7 +154,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 </code></pre>
 </div>
 </div>
-<p><code>copilot_cmp</code>単体では特にコンフィグも無いので<code>packer</code>からこのまま<code>setup()</code>しちゃっていいと思います。</p>
+<p><code>copilot-cmp</code>単体では特にコンフィグも無いので<code>packer</code>からこのまま<code>setup()</code>しちゃっていいと思います。</p>
 <h3 id="install"><a class="header" href="#install">Install</a></h3>
 <p>で、これをどこに入れようかちょっと考えちゃいますが、わたしは<code>cmp</code>一味に迎え入れることにしました😆</p>
 <div id="admonition-extensionsinitlua" class="admonition example">
@@ -456,8 +454,8 @@ cmp.setup {
 </div>
 </div>
 <img src="img/copilot-cmp.webp" alt="copilot-cmp" width="3104" height="2100" loading="lazy">
-<p>Nice Landing❗😭</p>
 <p>中身が的確かどうかは別として、ちゃんと<code>Copilot</code>からの提案が挙げられています😉</p>
+<p>Nice Landing❗😭</p>
 <div id="admonition-default-2" class="admonition success">
 <div>
 <p>And in the middle of the celebrations</p>
@@ -580,7 +578,7 @@ Lennon は、「Paul が僕たち全員について歌っていた」と語っ�
     <script src="../../clipboard.min.js"></script>
 
     <script src="../../highlight.min.js"></script>
-    <script src="../../book.js" id="book"></script>
+    <script src="../../book.js"></script>
 
 
   </body>
