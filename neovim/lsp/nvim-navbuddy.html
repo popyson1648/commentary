@@ -465,7 +465,9 @@ end, {})
 その場合は<code>nvim-navbuddy</code>の<code>setup</code>で、キーコンフィグを例えばこんなんとかするといいです🐱</p>
 <pre><code class="language-lua">local actions = require 'nvim-navbuddy.actions'
 
---require('nvim-navbuddy').setup {
+require('nvim-navbuddy').setup {
+
+  -- (中略)
 
   mappings = {
     ['t'] = actions.telescope {
@@ -479,7 +481,9 @@ end, {})
     },
   },
 
---}
+  -- (中略)
+
+}
 </code></pre>
 </div>
 </div>
@@ -578,16 +582,15 @@ Freddie Mercury と John Deacon が作曲し、1986年6月9日にアルバム『
 
     <link rel="stylesheet" href="../../css/style.css" async>
 
+    <script src="../../book.js"></script>
+
     <script src="../../elasticlunr.min.js"></script>
     <script src="../../mark.es6.min.js"></script>
     <script src="../../fzf.umd.js"></script>
     <script src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
 
     <script src="../../clipboard.min.js"></script>
-
     <script src="../../highlight.min.js"></script>
-    <script src="../../book.js"></script>
-
 
   </body>
 </html>
