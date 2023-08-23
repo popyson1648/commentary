@@ -379,6 +379,13 @@ Vim のスポンサーは機能に対して投票することができます。|
 
     <link rel="stylesheet" href="../../css/style.css" async>
 
+    <script type="module">
+      import init, { attribute_external_links } from './../../wasm.js';
+      init().then(() => {
+        attribute_external_links();
+      });
+    </script>
+
     <script src="../../book.js"></script>
 
     <script src="../../elasticlunr.min.js"></script>

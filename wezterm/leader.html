@@ -312,6 +312,13 @@ or until it has been active for the duration specified by <code>timeout_millisec
 
     <link rel="stylesheet" href="../css/style.css" async>
 
+    <script type="module">
+      import init, { attribute_external_links } from './../wasm.js';
+      init().then(() => {
+        attribute_external_links();
+      });
+    </script>
+
     <script src="../book.js"></script>
 
     <script src="../elasticlunr.min.js"></script>
