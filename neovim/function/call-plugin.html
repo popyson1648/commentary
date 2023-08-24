@@ -30,8 +30,8 @@
 
     <meta name="twitter:card" content="summary_image">
 
-    <link rel="stylesheet" href="../../css/general.css">
-    <link rel="stylesheet" href="../../css/chrome.css">
+    <link rel="stylesheet" href="../../css/general.css" async>
+    <link rel="stylesheet" href="../../css/chrome.css" async>
   </head>
   <body>
     <noscript>
@@ -357,27 +357,24 @@ end, {})
       </div>
     </div>
 
-    <link rel="stylesheet" href="../../fonts/fonts.css" async>
-
-
     <link rel="stylesheet" href="../../css/style.css" async>
+    <link rel="stylesheet" href="../../fonts/fonts.css" async>
+    
 
-    <script type="module">
+    <script async type="module">
       import init, { attribute_external_links } from './../../wasm.js';
       init().then(() => {
         attribute_external_links();
       });
     </script>
 
-    <script src="../../book.js"></script>
-
-    <script src="../../elasticlunr.min.js"></script>
-    <script src="../../mark.es6.min.js"></script>
-    <script src="../../fzf.umd.js"></script>
-    <script src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
-
-    <script src="../../clipboard.min.js"></script>
-    <script src="../../highlight.min.js"></script>
-
+    <script defer src="../../highlight.min.js"></script>
+    <script defer src="../../clipboard.min.js"></script>
+    <script defer src="../../book.js"></script>
+    <script defer src="../../mark.es6.min.js"></script>
+    <script defer src="../../elasticlunr.min.js"></script>
+    <script defer src="../../fzf.umd.js"></script>
+    <script defer src="../../searcher.js" id="searcher" data-pathtoroot="../../"></script>
+    
   </body>
 </html>
