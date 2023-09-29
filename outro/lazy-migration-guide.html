@@ -1,0 +1,721 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Migration Guide - Commentary of Dotfiles</title>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMN96QT');</script>
+
+    <meta name="description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=2.0">
+    <meta name="theme-color">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+
+    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+
+    <link rel="manifest" href="../manifest.json">
+
+    <meta property="og:title" content="Migration Guide - Commentary of Dotfiles">
+    <meta property="og:description" content="WezTerm と Neovim の設定例 (dotfiles) を紹介するサイトです🤗 - This site introduces WezTerm and Neovim dotfiles.">
+    <meta property="og:site_name" content="Commentary of Dotfiles">
+    <meta property="og:url" content="https://coralpink.github.io/commentary/">
+
+    <meta name="twitter:card" content="summary_image">
+
+    <link rel="stylesheet" href="../css/general.css" async>
+    <link rel="stylesheet" href="../css/chrome.css" async>
+  </head>
+  <body>
+    <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMN96QT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <script>
+    (()=>{let e=localStorage.getItem("mdbook-theme");
+    e||(e=matchMedia("(prefers-color-scheme: dark)").matches?"macchiato":"au-lait"),
+    document.querySelector("html").classList.add(e),
+    setTimeout((()=>{document.querySelector('meta[name="theme-color"]').content=window.getComputedStyle(document.body).backgroundColor,
+    document.getElementById(e).classList.add("theme-selected")}),1)})();
+    </script>
+    
+    <script>
+    (async()=>{if("serviceWorker"in navigator)
+    try{await navigator.serviceWorker.register("../serviceworker.js",{scope:"/commentary/"})}
+    catch(r){console.error(`Registration failed with ${r}`)}})();
+    </script>
+
+    <div class="top-bar">
+      <div id="menu-bar" class="menu-bar">
+        <div class="left-buttons">
+          <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents (Shortkey: T)" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+            <i class="fa-list-ul"></i>
+          </button>
+          <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+            <i class="fa-palette"></i>
+          </button>
+          <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+            <li role="none"><button role="menuitem" class="theme" id="au-lait">Au Lait</button></li>
+            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+          </ul>
+
+          <button id="search-toggle" class="icon-button" type="button" title="Toggle Search Box (Shortkey: S)"
+  aria-label="Toggle Search Box" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+            <i class="fa-magnifying-glass"></i>
+          </button>
+
+          <div id="search-wrapper" class="hidden">
+            <form id="searchbar-outer" class="searchbar-outer">
+              <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+            </form>
+            <div id="searchresults-outer" class="searchresults-outer hidden">
+              <div id="searchresults-header" class="searchresults-header"></div>
+              <ul id="searchresults"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-title">Commentary of Dotfiles</div>
+
+        <div class="right-buttons">
+          <a href="https://github.com/CoralPink/commentary" title="Git repository" aria-label="Git repository" target="_blank" rel="noopener">
+            <i id="git-repository-button" class="fa-github fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="page" class="page">
+      <div id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="side-scroll" class="sidebar-scrollbox">
+          <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">WezTerm</li><li class="chapter-item expanded "><a href="../wezterm/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../wezterm/configuration.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../wezterm/window.html"><strong aria-hidden="true">3.1.</strong> Window</a></li><li class="chapter-item expanded "><a href="../wezterm/shell.html"><strong aria-hidden="true">3.2.</strong> Shell Prompt</a></li><li class="chapter-item expanded "><a href="../wezterm/font.html"><strong aria-hidden="true">3.3.</strong> Font</a></li><li class="chapter-item expanded "><a href="../wezterm/frame.html"><strong aria-hidden="true">3.4.</strong> Window Frame</a></li><li class="chapter-item expanded "><a href="../wezterm/keybind.html"><strong aria-hidden="true">3.5.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../wezterm/leader.html"><strong aria-hidden="true">3.6.</strong> Leader Key</a></li></ol></li><li class="chapter-item expanded "><a href="../wezterm/format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../wezterm/window-title.html"><strong aria-hidden="true">4.1.</strong> Window Title</a></li><li class="chapter-item expanded "><a href="../wezterm/tab.html"><strong aria-hidden="true">4.2.</strong> Tab</a></li></ol></li><li class="chapter-item expanded "><a href="../wezterm/status.html"><strong aria-hidden="true">5.</strong> Status Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../wezterm/left-status.html"><strong aria-hidden="true">5.1.</strong> Left Status</a></li><li class="chapter-item expanded "><a href="../wezterm/right-status.html"><strong aria-hidden="true">5.2.</strong> Right Status</a></li></ol></li><li class="chapter-item expanded "><a href="../wezterm/custom.html"><strong aria-hidden="true">6.</strong> Custom Event</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../wezterm/toggle-font.html"><strong aria-hidden="true">6.1.</strong> Toggle Font</a></li><li class="chapter-item expanded "><a href="../wezterm/dpi-detection.html"><strong aria-hidden="true">6.2.</strong> DPI Detection</a></li><li class="chapter-item expanded "><a href="../wezterm/window-decorations.html"><strong aria-hidden="true">6.3.</strong> Window Decorations</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="../neovim/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../neovim/user-config.html"><strong aria-hidden="true">8.</strong> User Config</a></li><li class="chapter-item expanded "><a href="../neovim/lua-module.html"><strong aria-hidden="true">9.</strong> Lua Module</a></li><li class="chapter-item expanded "><a href="../neovim/options/options.html"><strong aria-hidden="true">10.</strong> Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/options/nvim_set_option.html"><strong aria-hidden="true">10.1.</strong> nvim_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/options/termguicolors.html"><strong aria-hidden="true">10.1.1.</strong> termguicolors</a></li><li class="chapter-item expanded "><a href="../neovim/options/scrolloff.html"><strong aria-hidden="true">10.1.2.</strong> scrolloff</a></li><li class="chapter-item expanded "><a href="../neovim/options/ignorecase-smartcase.html"><strong aria-hidden="true">10.1.3.</strong> ignorecase / smartcase</a></li><li class="chapter-item expanded "><a href="../neovim/options/inccommand.html"><strong aria-hidden="true">10.1.4.</strong> inccommand</a></li><li class="chapter-item expanded "><a href="../neovim/options/clipboard.html"><strong aria-hidden="true">10.1.5.</strong> clipboard</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/options/nvim_win_set_option.html"><strong aria-hidden="true">10.2.</strong> nvim_win_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/options/number.html"><strong aria-hidden="true">10.2.1.</strong> number</a></li><li class="chapter-item expanded "><a href="../neovim/options/cursorline.html"><strong aria-hidden="true">10.2.2.</strong> cusrorline</a></li><li class="chapter-item expanded "><a href="../neovim/options/signcolumn.html"><strong aria-hidden="true">10.2.3.</strong> signcolumn</a></li><li class="chapter-item expanded "><a href="../neovim/options/wrap-colorcolumn.html"><strong aria-hidden="true">10.2.4.</strong> wrap / colorcolumn</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/options/nvim_buf_set_option.html"><strong aria-hidden="true">10.3.</strong> nvim_buf_set_option</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/options/tab.html"><strong aria-hidden="true">10.3.1.</strong> tabstop / shiftwidth / expandtab</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../neovim/au/automatic-commands.html"><strong aria-hidden="true">11.</strong> Automatic Command</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/au/nvim_create_autocmd.html"><strong aria-hidden="true">11.1.</strong> nvim_create_autocmd</a></li><li class="chapter-item expanded "><a href="../neovim/au/nvim_create_augroup.html"><strong aria-hidden="true">11.2.</strong> nvim_create_augroup</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/keybind.html"><strong aria-hidden="true">12.</strong> Key Binding</a></li><li class="chapter-item expanded "><a href="../neovim/leader.html"><strong aria-hidden="true">13.</strong> Leader Key</a></li><li class="chapter-item expanded "><a href="../neovim/function/function.html"><strong aria-hidden="true">14.</strong> Function</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/function/warming-up.html"><strong aria-hidden="true">14.1.</strong> Warming Up</a></li><li class="chapter-item expanded "><a href="../neovim/function/param-return.html"><strong aria-hidden="true">14.2.</strong> Parameters / Return Values</a></li><li class="chapter-item expanded "><a href="../neovim/function/vim-cmd.html"><strong aria-hidden="true">14.3.</strong> vim.cmd</a></li><li class="chapter-item expanded "><a href="../neovim/function/call-plugin.html"><strong aria-hidden="true">14.4.</strong> Call The Plugin</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/plugin/plugin.html"><strong aria-hidden="true">15.</strong> Plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/plugin/packer.html"><strong aria-hidden="true">15.1.</strong> packer.nvim</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/nvim-treesitter.html"><strong aria-hidden="true">15.2.</strong> nvim-treesitter</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/onenord.html"><strong aria-hidden="true">15.3.</strong> onenord.nvim</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/lualine.html"><strong aria-hidden="true">15.4.</strong> lualine.nvim</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/nvim-hlslens.html"><strong aria-hidden="true">15.5.</strong> nvim-hlslens</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/gitsigns.html"><strong aria-hidden="true">15.6.</strong> gitsigns</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/nvim-scrollbar.html"><strong aria-hidden="true">15.7.</strong> nvim-scrollbar</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/lualine-part2.html"><strong aria-hidden="true">15.8.</strong> lualine.nvim Part Ⅱ</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/lualine-part3.html"><strong aria-hidden="true">15.9.</strong> lualine.nvim Part Ⅲ</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/telescope.html"><strong aria-hidden="true">15.10.</strong> telescope.nvim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/plugin/telescope-config.html"><strong aria-hidden="true">15.10.1.</strong> Config</a></li><li class="chapter-item expanded "><a href="../neovim/plugin/telescope-all-recent.html"><strong aria-hidden="true">15.10.2.</strong> telescope-all-recent</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/plugin/nvim-tree.html"><strong aria-hidden="true">15.11.</strong> nvim-tree.lua</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/plugin/nvim-tree-actions.html"><strong aria-hidden="true">15.11.1.</strong> Actions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/plugin/nvim-tree-actions-tip.html"><strong aria-hidden="true">15.11.1.1.</strong> (Extra) for Nvim 0.10</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../neovim/lsp/language-server-protocol.html"><strong aria-hidden="true">16.</strong> Language Server Protocol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/lsp/nvim-lspconfig.html"><strong aria-hidden="true">16.1.</strong> nvim-lspconfig</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/mason.html"><strong aria-hidden="true">16.2.</strong> mason.nvim</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/mason-lspconfig.html"><strong aria-hidden="true">16.3.</strong> mason-lspconfig.nvim</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/nvim-navic.html"><strong aria-hidden="true">16.4.</strong> nvim-navic</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/nvim-navbuddy.html"><strong aria-hidden="true">16.5.</strong> nvim-navbuddy</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/nvim-cmp.html"><strong aria-hidden="true">16.6.</strong> nvim-cmp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/lsp/cmp-nvim-lsp.html"><strong aria-hidden="true">16.6.1.</strong> cmp-nvim-lsp</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/lsp/luasnip.html"><strong aria-hidden="true">16.7.</strong> LuaSnip</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/lsp/cmp_luasnip.html"><strong aria-hidden="true">16.7.1.</strong> cmp_luasnip</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/friendly_snippets.html"><strong aria-hidden="true">16.7.2.</strong> Friendly Snippets</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/lsp/copilot.html"><strong aria-hidden="true">16.8.</strong> copilot.lua</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../neovim/lsp/github-copilot.html"><strong aria-hidden="true">16.8.1.</strong> (Extra) GitHub Copilot</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/copilot-cmp.html"><strong aria-hidden="true">16.8.2.</strong> copilot-cmp</a></li></ol></li><li class="chapter-item expanded "><a href="../neovim/lsp/nvim-cmp-sources.html"><strong aria-hidden="true">16.9.</strong> nvim-cmp-source(s)</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/fidget.html"><strong aria-hidden="true">16.10.</strong> fidget.nvim</a></li><li class="chapter-item expanded "><a href="../neovim/lsp/trouble.html"><strong aria-hidden="true">16.11.</strong> Trouble</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">... To Be Continued.</li><li class="chapter-item expanded "><a href="../outro/outroduction.html"><strong aria-hidden="true">17.</strong> Outroduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../outro/lazy.html"><strong aria-hidden="true">17.1.</strong> lazy.nvim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../outro/lazy-migration-guide.html" class="active"><strong aria-hidden="true">17.1.1.</strong> Migration Guide</a></li></ol></li></ol></li></ol>
+        </nav>
+      </div>
+
+      <div id="content" class="content">
+        <spacer></spacer>
+
+        <main>
+          <h1 id="-migration-from-packernvim-to--lazynvim"><a class="header" href="#-migration-from-packernvim-to--lazynvim">💝 Migration from packer.nvim to 💤 lazy.nvim</a></h1>
+<div id="admonition-default" class="admonition failure">
+<div>
+<p>Won't you come out tonight?</p>
+<p>今夜、一緒に行かない？</p>
+</div>
+</div>
+<p>今夜はハーベストムーン🌕 です。</p>
+<p>月にお願いしましょう😊</p>
+<p>「なんでも良いからなんか良い感じに実れぇ〜❗❗」</p>
+<p>...と、いうわけで<code>lazy.nvim</code>を本格的にセットアップします😆</p>
+<h2 id="-migration-guide"><a class="header" href="#-migration-guide">📦 Migration Guide</a></h2>
+<p><code>lazy.nvim</code>には、<code>packer.nvim</code>からの移行ガイドがちゃんと用意されています。</p>
+<div id="admonition--migration-guidehttpsgithubcomfolkelazynvim-migration-guide" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/folke/lazy.nvim#-migration-guide">📦 Migration Guide</a></p>
+<p><a class="admonition-anchor-link" href="#admonition--migration-guidehttpsgithubcomfolkelazynvim-migration-guide"></a></p>
+</div>
+<div>
+<p>packer.nvim</p>
+<ul>
+<li>setup ➡️ init</li>
+<li>requires ➡️ dependencies</li>
+<li>as ➡️ name</li>
+<li>opt ➡️ lazy</li>
+<li>run ➡️ build</li>
+<li>lock ➡️ pin</li>
+<li>disable=true ➡️ enabled = false</li>
+<li>tag='<em>' ➡️ version=&quot;</em>&quot;</li>
+<li>after ℹ️ not needed for most use-cases. Use dependencies otherwise.</li>
+<li>wants ℹ️ not needed for most use-cases. Use dependencies otherwise.</li>
+<li>config don't support string type, use fun(LazyPlugin) instead.</li>
+<li>module is auto-loaded. No need to specify</li>
+<li>keys spec is different</li>
+<li>rtp can be accomplished with:</li>
+</ul>
+</div>
+</div>
+<div id="admonition-default-1" class="admonition info">
+<div>
+<p>With packer <code>wants</code>, <code>requires</code> and <code>after</code> can be used to manage dependencies.
+With lazy, this isn't needed for most of the Lua dependencies.
+They can be installed just like normal plugins (even with <code>lazy=true</code>) and will be loaded when other plugins need them.</p>
+<p>packer <code>wants</code> では、<code>require</code> と <code>after</code> を使って依存関係を管理できます。
+lazyを使えば、Luaの依存関係のほとんどは必要ありません。
+これらは通常のプラグインと同じように（<code>lazy=true</code>でも）インストールすることができ、
+他のプラグインがそれらを必要とするときにロードされます。</p>
+</div>
+</div>
+<div id="admonition-default-2" class="admonition info">
+<div>
+<p>The <code>dependencies</code> key can be used to group those required plugins with the one that requires them.
+The plugins which are added as <code>dependencies</code> will always be lazy-loaded and loaded when the plugin is loaded.</p>
+<p><code>dependencies</code>キーは、それらのプラグインを必要とするプラグインをグループ化するために使用できます。
+<code>dependencies</code>として追加されたプラグインは常に遅延ロードされ、プラグインがロードされた時にロードされます。</p>
+</div>
+</div>
+<p>あら不思議😯</p>
+<p>これに従っていくだけでチャチャっと片付いていきます❗</p>
+<div id="admonition-default-3" class="admonition failure">
+<div>
+<p>When the time is right</p>
+<p>Oh, will you fight that feeling in your heart?</p>
+<p>その時が来たら</p>
+<p>ああ、君はハートの中のその気持ちと戦うことができる？</p>
+</div>
+</div>
+<h3 id="-setup--init"><a class="header" href="#-setup--init">🔸 setup ➡️ init</a></h3>
+<p>これまでの<code>packer</code>の設定に見慣れていると、
+いきなりちょっと捻くれたことしてるように見えるかもしれないんですが、わたしはこんな書き方にしてます。</p>
+<div id="admonition-extensionsinitlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
+</div>
+<div>
+<p>新しく<code>plugins</code>という local 変数を置きます。中身はまだからっぽでへーきです😉</p>
+<p>この節で示すコードは全部ここに入れていきます😌</p>
+<pre><code class="language-lua">local plugins = {
+  -- ...
+}
+</code></pre>
+<p>んで、ここは前回の <a href="./lazy.html#-configuration">17.1 lazy.nvim - Configuration</a> で書いたコードですね。</p>
+<pre><code class="language-lua">local opts = {
+  -- ...
+}
+</code></pre>
+<p>それから、<a href="./lazy.html#-installation">17.1 lazy.nvim - Installation</a> のコードがあって...。</p>
+<pre><code class="language-lua">local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable',
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require(&quot;lazy&quot;).setup()
+</code></pre>
+</div>
+</div>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p>この記述で言えば、<code>setup()</code>さえ一番下にいれば他のコードの順番は特に問題にならないはずです。</p>
+</div>
+</div>
+<div id="admonition-extensionsinitlua-1" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-1"></a></p>
+</div>
+<div>
+<p>そしたら、一番下にある<code>setup</code>を書き換えます。</p>
+<pre><code class="language-diff">- require(&quot;lazy&quot;).setup()
++ require('lazy').setup(plugins, opts)
+</code></pre>
+</div>
+</div>
+<img src="img/lazy-init.webp" alt="lazy-init" width="1552" height="1050" decoding="async">
+<h3 id="-evacuate-the-packernvim"><a class="header" href="#-evacuate-the-packernvim">🥁 Evacuate the packer.nvim</a></h3>
+<p>ここまでで問題が無いようであれば、退避しておいた<code>packer.lua</code>からプラグインのリストを
+local 変数<code>plugins</code>の中に「どかっ❗」と持ってきましょう。</p>
+<p>いよいよお引越しっぽくなってきました😆</p>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>当然このままでは動かないので、一旦コメントアウトしてから少しずつ進めるのもいいと思います。</p>
+</div>
+</div>
+<h3 id="-use--empty"><a class="header" href="#-use--empty">🔹 use ➡️ (empty)</a></h3>
+<p>基本的には、先頭にあった<code>use {</code>を<code>{</code>に、<code>}</code>を<code>},</code>にするだけで全体の8割ぐらいは片付くでしょう。</p>
+<pre><code class="language-diff">- use {
++ {
+     'nvim-treesitter/nvim-treesitter',
+     config = function() require 'extensions.nvim-treesitter' end,
+- }
++ },
+</code></pre>
+<div id="admonition-tip" class="admonition tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
+</div>
+<div>
+<p>大雑把ではあるものの、以下の置換構文を用いると楽です。</p>
+<pre><code class="language-vim">:%s/use {/{
+</code></pre>
+<p><code>Visual Mode</code>で plugins の中を<strong>範囲選択</strong>してから...</p>
+<pre><code class="language-vim">:s/}/},
+</code></pre>
+<img src="img/char-replace.webp" alt="char-replace" width="1552" height="1050" loading="lazy">
+<blockquote>
+<p><code>'&lt;,'&gt;</code>とかいう呪文は<code>:</code>を入力すれば勝手に詠唱されているはずです❗</p>
+</blockquote>
+<p>で、そうすると上にもある通り、<code>},,</code>っていう変なところができちゃうので...</p>
+<pre><code class="language-vim">:%s/},,/},
+</code></pre>
+<p>とか、すれば良いはず❗...と思ったんだけど、
+わたしが実際にこれでやってみたらこんなとこもありました。</p>
+<p>お手数ですが直してください...。</p>
+<pre><code class="language-diff">- config = function() require('telescope-all-recent').setup {}, end,
++ config = function() require('telescope-all-recent').setup {} end,
+</code></pre>
+<p>...もしかしたら一手で綺麗に置換できる方法もあるかもしれないんだけどね😅</p>
+</div>
+</div>
+<p><code>config</code>プロパティしか使っていないプラグインは、もうこれだけでオッケー❗</p>
+<h3 id="-requires--dependencies"><a class="header" href="#-requires--dependencies">🔹 requires ➡️ dependencies</a></h3>
+<p>これも簡単ですね。頭を使わなくても置換だけで終わります😆</p>
+<pre><code class="language-diff">  {
+    'williamboman/mason.nvim',
+    config = function() require 'extensions.mason' end,
+-   requires = {
++   dependencies = {
+      'williamboman/mason-lspconfig.nvim', 'neovim/nvim-lspconfig', 'hrsh7th/cmp-nvim-lsp',
+    }
+  }
+</code></pre>
+<h3 id="-run--build"><a class="header" href="#-run--build">🔹 run ➡️ build</a></h3>
+<p>置換❗以下略❗</p>
+<pre><code class="language-diff">{
+  'nvim-telescope/telescope-fzf-native.nvim',
+- run = 'make'
++ build = 'make'
+},
+</code></pre>
+<h3 id="-tag--version"><a class="header" href="#-tag--version">🔹 tag='' ➡️ version=&quot;&quot;</a></h3>
+<p>これも同じ❗</p>
+<pre><code class="language-diff">  {
+    'j-hui/fidget.nvim',
+-   tag = 'legacy',
++   version = 'legacy',
+    config = function() require 'extensions.fidget' end,
+    dependencies = 'neovim/nvim-lspconfig',
+  },
+</code></pre>
+<h3 id="-after-ℹ-not-needed"><a class="header" href="#-after-ℹ-not-needed">🔹 after ℹ️ not needed</a></h3>
+<div id="admonition-default-4" class="admonition info">
+<div>
+<p>not needed for most use-cases.
+Use dependencies otherwise.</p>
+<p>ほとんどのユースケースでは必要ありません。
+そうでない場合は dependencies を使用してください。</p>
+</div>
+</div>
+<p>もしかしたら必要ないかもしれませんが、
+<a href="../neovim/plugin/telescope-all-recent.html#installation">telescope-all-recent.nvim</a>にはこれに関して但し書きがあったので、
+<code>dependencies</code>に入れた上で<code>after</code>を消しておくのが良い...かも❓</p>
+<pre><code class="language-diff">  {
+    'prochri/telescope-all-recent.nvim',
+    config = function() require('telescope-all-recent').setup {} end,
+-   after = 'telescope.nvim',
+    dependencies = {
++     'prochri/telescope-all-recent.nvim',
+      'kkharji/sqlite.lua',
+    },
+  }
+</code></pre>
+<p>それと、こっちはもっと聡明な書き方があるのかもしれませんが...。</p>
+<pre><code class="language-diff">+ {
++   'zbirenbaum/copilot.lua',
++   cmd = 'Takeoff',
++   config = function() require 'extensions.copilot' end,
++ },
+  {
+    'zbirenbaum/copilot-cmp',
+-   after = { 'copilot.lua' }
++   cmd = 'Takeoff',
+    config = function() require('copilot_cmp').setup() end,
+  },
+</code></pre>
+<p>こうしておけば<code>after</code>を使わなくても<code>Takeoff</code>コマンドを契機に両方読み込まれます...よね❓</p>
+<h3 id="-remove-packer-command"><a class="header" href="#-remove-packer-command">🪭 Remove Packer Command</a></h3>
+<p><code>PackerLoad</code>コマンドは<code>packer.nvim</code>の機能なのでもう使えなくなっちゃいましたが、
+前項の変更をしておけば、これは消すだけで大丈夫です😉</p>
+<div id="admonition-extensionscopilotlua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/copilot.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionscopilotlua"></a></p>
+</div>
+<div>
+<pre><code class="language-diff">  vim.api.nvim_create_user_command('Takeoff', function()
+-   vim.cmd.PackerLoad 'copilot.lua'
+    vim.notify 'Cleared for Takeoff!'
+  end, {})
+</code></pre>
+</div>
+</div>
+<h3 id="-remove-the-hierarchy"><a class="header" href="#-remove-the-hierarchy">🥾 Remove the Hierarchy</a></h3>
+<p><code>packer</code>では通用していた「多層構造になっている書き方」は通用しないみたいなので、同列に並べておきましょう。</p>
+<pre><code class="language-diff">  {
+    'hrsh7th/nvim-cmp',
+    config = function() require 'extensions.nvim-cmp' end,
+    requires = {
+      'hrsh7th/cmp-nvim-lsp', 'onsails/lspkind-nvim',
+      'hrsh7th/cmp-cmdline', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
+-     {
+-       'L3MON4D3/LuaSnip',
+-       run = 'make install_jsregexp',
+-       config = function() require 'extensions.luasnip' end,
+-       requires = {
+-         'saadparwaiz1/cmp_luasnip',
+-         {'rafamadriz/friendly-snippets', opt = true },
+-       }
+-     },
+-   },
+-   {
+-     'zbirenbaum/copilot-cmp',
+-     after = { 'copilot.lua' },
+-     config = function() require('copilot_cmp').setup() end,
+-   }
+  },
++ {
++   'L3MON4D3/LuaSnip',
++   build = 'make install_jsregexp',
++   config = function() require 'extensions.luasnip' end,
++   dependencies = {
++     'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets',
++   }
++ },
++ {
++   'zbirenbaum/copilot-cmp',
++   after = { 'copilot.lua' },
++   config = function() require('copilot_cmp').setup() end,
++ },
+</code></pre>
+<div id="admonition-note-2" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
+</div>
+<div>
+<p><code>telescope</code>も同じように多層になってる気がする❗確認してみて❗</p>
+</div>
+</div>
+<p>...というか、これは<code>packer</code>が器用すぎますよね〜。今さらなんですけど😅</p>
+<h3 id="-friendly-snippets"><a class="header" href="#-friendly-snippets">🧙🏽‍♂️ Friendly Snippets</a></h3>
+<p>あと、<code>friendly-snippets.nvim</code>を管理下に置いている場合は、当然<code>path</code>も変わります。</p>
+<p>追っかけましょう。</p>
+<div id="admonition-luasniplua" class="admonition example">
+<div class="admonition-title">
+<p>luasnip.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-luasniplua"></a></p>
+</div>
+<div>
+<pre><code class="language-diff">  require('luasnip.loaders.from_vscode').lazy_load {
+    paths = {
+-     vim.fn.stdpath 'data' .. '/site/pack/packer/start/friendly-snippets',
++     vim.fn.stdpath 'data' .. '/lazy/friendly-snippets',
+      './snippets',
+    },
+  }
+</code></pre>
+</div>
+</div>
+<h2 id="-colorscheme"><a class="header" href="#-colorscheme">🌈 ColorScheme</a></h2>
+<div id="admonition--colorschemeshttpsgithubcomfolkelazynvim-colorschemes" class="admonition example">
+<div class="admonition-title">
+<p><a href="https://github.com/folke/lazy.nvim#-colorschemes">🌈 Colorschemes</a></p>
+<p><a class="admonition-anchor-link" href="#admonition--colorschemeshttpsgithubcomfolkelazynvim-colorschemes"></a></p>
+</div>
+<div>
+<p>Colorscheme plugins can be configured with <code>lazy=true</code>.
+The plugin will automagically load when doing <code>colorscheme foobar</code>.</p>
+<p>Colorscheme プラグインは<code>lazy=true</code>で設定できます。
+プラグインは<code>colorscheme foobar</code>を実行するときに自動的にロードされます。</p>
+<blockquote>
+<p><strong>NOTE:</strong> since <strong>start</strong> plugins can possibly change existing highlight groups,
+it's important to make sure that your main <strong>colorscheme</strong> is loaded first.
+To ensure this you can use the <code>priority=1000</code> field. <strong><em>(see the examples)</em></strong></p>
+<p>プラグインを<strong>起動</strong>すると、既存のハイライトグループが変更される可能性があります、
+メインの<strong>colorscheme</strong>が最初にロードされるようにすることが重要です。
+これを確実にするには、<code>priority=1000</code>フィールドを使用します。<strong><em>(例を参照してください)</em></strong></p>
+</blockquote>
+</div>
+</div>
+<p>これももう仰せの通りに❗</p>
+<div id="admonition-extensionsinitlua-2" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-2"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">  {
+    'rmehri01/onenord.nvim',
+    lazy = true,
+    priority = 1000,
+    config = function() require 'extensions.onenord' end,
+  },
+</code></pre>
+</div>
+</div>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p>それと、なんでかはよく分かんないんだけど、
+<code>onenord.nvim</code>を<code>dependencies</code>に入れてると、エラーになっちゃいます😨</p>
+<p>外しときましょう❗</p>
+</div>
+</div>
+<h2 id="-usage"><a class="header" href="#-usage">🚀 Usage</a></h2>
+<p>ここまでの間に、もう<code>lazy</code>が起動時に自発的にインストールを始めてくれていたかもしれないんですが、
+ここまでくれば、全てのプラグインが元通りに動くようになったはずです❗
+<img src="img/lazy-install.webp" alt="lazy-install" width="1552" height="1050" loading="lazy"></p>
+<div id="admonition--usagehttpsgithubcomfolkelazynvim-usage" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/folke/lazy.nvim#-usage">🚀 Usage</a></p>
+<p><a class="admonition-anchor-link" href="#admonition--usagehttpsgithubcomfolkelazynvim-usage"></a></p>
+</div>
+<div>
+<p>Plugins are managed with the ':Lazy' command. Open the help with '&lt;?&gt;' to see all the key mappings.</p>
+<p>プラグインは':Lazy'コマンドで管理します。help を'&lt;?&gt;'で開くと、すべてのキーマッピングを見ることができます。</p>
+<p>You can press <code>&lt;CR&gt;</code> on a plugin to show its details.
+Most properties can be hovered with <code>&lt;K&gt;</code> to open links, help files, readmes, git commits and git issues.</p>
+<p>プラグイン上で <code>&lt;CR&gt;</code> を押すとその詳細が表示されます。
+ほとんどのプロパティは<code>&lt;K&gt;</code>でカーソルを合わせるとリンク、ヘルプファイル、readme、git commits、git issues を開くことができます。</p>
+<p>Lazy can automatically check for updates in the background. This feature can be enabled with config.checker.enabled = true.</p>
+</div>
+</div>
+<p>例えば、わたしは<code>packer.nvim</code>で<code>:PackerSync</code>を多用していたんですが、<code>lazy.nvim</code>の場合は</p>
+<pre><code class="language-vim">:Lazy sync
+</code></pre>
+<p>...ってして、同じ感じで使えてます😊</p>
+<h3 id="-statusline"><a class="header" href="#-statusline">🛀🏽 statusline</a></h3>
+<p>これもなんか、組み込んでおくと楽しいかも😆</p>
+<div id="admonition-default-5" class="admonition info">
+<div>
+<p><strong>lazy.nvim</strong> provides a statusline component that you can use to show the number of pending updates.</p>
+<p>Make sure to enable <code>config.checker.enabled = true</code> to make this work.</p>
+<p><strong>lazy.nvim</strong> は、保留中の更新の数を表示するために使用できるstatuslineコンポーネントを提供します。</p>
+<p><code>config.checker.enabled=true</code>を有効にしてください。</p>
+</div>
+</div>
+<div id="admonition-extensionsinitlua-3" class="admonition example">
+<div class="admonition-title">
+<p>extensions/init.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua-3"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">local opts = {
+  checker = {
+    enabled = true,
+  },
+
+  -- ...
+}
+</code></pre>
+</div>
+</div>
+<p>で、<code>lualine.lua</code>に組み込みましょう。</p>
+<p>もちろん、<code>statusline</code>でも<code>tabline</code>でも、<code>a</code>だろうと<code>x</code>だろうと好きな場所に入れちゃいましょう❗</p>
+<div id="admonition-extensionslualinelua" class="admonition example">
+<div class="admonition-title">
+<p>extensions/lualine.lua</p>
+<p><a class="admonition-anchor-link" href="#admonition-extensionslualinelua"></a></p>
+</div>
+<div>
+<pre><code class="language-lua">require(&quot;lualine&quot;).setup({
+  sections = {
+    lualine_x = {
+      {
+        require(&quot;lazy.status&quot;).updates,
+        cond = require(&quot;lazy.status&quot;).has_updates,
+        color = { fg = &quot;#ff9e64&quot; },
+      },
+    },
+  },
+})
+</code></pre>
+</div>
+</div>
+<div id="admonition-note-4" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
+</div>
+<div>
+<p>わたしは<code>tabline</code>に入れてますが、その場合はこんな感じで出てきます😄
+<img src="img/lazy-checker.webp" alt="lazy-checker" width="492" height="146" loading="lazy"></p>
+<p>このスクリーンショットではうっかり<a href="https://github.com/rcarriga/nvim-notify">nvim-notify</a>を使ってるんですが、
+改めて見たらこれ、なんかすっごい綺麗じゃない...❓</p>
+<p>うっとりしちゃった😊 次回はこれやろうかな...。</p>
+<p>...あれ❓なんか全然おわんねぇな🙄</p>
+</div>
+</div>
+<div id="admonition-default-6" class="admonition failure">
+<div>
+<p>Don't you know that inside</p>
+<p>There's a love you can't hide</p>
+<p>君は知らないの？</p>
+<p>隠しきれない愛があること</p>
+</div>
+</div>
+<h2 id="-lockfile-lazy-lockjson"><a class="header" href="#-lockfile-lazy-lockjson">🔒 Lockfile lazy-lock.json</a></h2>
+<p><code>lockfile</code>は<code>git</code>などでバージョン管理を行っている場合や、
+複数のマシンでプラグインのバージョンを完全に同じにしたい場合に重宝する機能です。</p>
+<p><code>lazy.nvim</code>が更新してくれるので、基本的に、私たちが触る必要はありません😉</p>
+<div id="admonition--lockfile-lazy-lockjsonhttpsgithubcomfolkelazynvim-lockfile-lazy-lockjson" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/folke/lazy.nvim#-lockfile-lazy-lockjson">🔒 Lockfile lazy-lock.json</a></p>
+<p><a class="admonition-anchor-link" href="#admonition--lockfile-lazy-lockjsonhttpsgithubcomfolkelazynvim-lockfile-lazy-lockjson"></a></p>
+</div>
+<div>
+<p>After every <strong>update</strong>, the local lockfile is updated with the installed revisions.</p>
+<p>It is recommended to have this file under version control.</p>
+<p><strong>update</strong>のたびに、ローカルの lockfile はインストールされたリビジョンで更新されます。</p>
+<p>このファイルはバージョン管理下に置くことをお勧めします。</p>
+</div>
+</div>
+<div id="admonition-default-7" class="admonition info">
+<div>
+<p>If you use your Neovim config on multiple machines, using the lockfile,
+you can ensure that the same version of every plugin is installed.</p>
+<p>複数のマシンで Neovim の設定を使用する場合、lockfile を使用することで、
+すべてのプラグインが同じバージョンでインストールされるようになります。</p>
+</div>
+</div>
+<div id="admonition-default-8" class="admonition info">
+<div>
+<p>If you are on another machine, you can do <code>:Lazy restore</code>,
+to update all your plugins to the version from the lockfile.</p>
+<p>別のマシンにいる場合は、<code>:Lazy restore</code>を実行することで、
+すべてのプラグインを lockfile のバージョンに更新することができます。</p>
+</div>
+</div>
+<p>これは<code>nvim</code>ディレクトリに置かれるみたいですね🤔
+<img src="img/lazy-lock.webp" alt="lazy-lock" width="570" height="196" loading="lazy"></p>
+<h2 id="-performance"><a class="header" href="#-performance">⚡ Performance</a></h2>
+<p>だいぶ長くなってしまいました...😅</p>
+<p>最後にこれだけ試して終わりましょう。</p>
+<div id="admonition--performancehttpsgithubcomfolkelazynvim-performance" class="admonition info">
+<div class="admonition-title">
+<p><a href="https://github.com/folke/lazy.nvim#-performance">⚡ Performance</a></p>
+<p><a class="admonition-anchor-link" href="#admonition--performancehttpsgithubcomfolkelazynvim-performance"></a></p>
+</div>
+<div>
+<p>Great care has been taken to make the startup code (<code>lazy.core</code>) as efficient as possible.
+During startup, all Lua files used before <code>VimEnter</code> or <code>BufReadPre</code> are byte-compiled and cached,
+similar to what <a href="https://github.com/lewis6991/impatient.nvim">impatient.nvim</a> does.</p>
+<p>起動コード(lazy.core)を可能な限り効率的にするために細心の注意が払われています。
+起動中、<code>VimEnter</code>や<code>BufReadPre</code>の前に使用される全ての Lua ファイルはバイトコンパイルされ、
+<a href="https://github.com/lewis6991/impatient.nvim">impatient.nvim</a> と同様にキャッシュされます。</p>
+<p>My config for example loads in about <code>11ms</code> with <code>93</code> plugins. I do a lot of lazy-loading though :)</p>
+<p>例えば私の設定は約<code>11ms</code>で<code>93</code>のプラグインがロードされます。私は遅延ロードを多用していますが😃</p>
+<p><strong>lazy.nvim</strong> comes with an advanced profiler <code>:Lazy profile</code> to help you improve performance.
+The profiling view shows you why and how long it took to load your plugins.</p>
+<p><strong>lazy.nvim</strong> には高度なプロファイラ<code>:Lazy profile</code>がついていて、パフォーマンスを向上させるのに役立ちます。
+プロファイリングビューはプラグインのロードにかかった時間とその理由を表示します。</p>
+</div>
+</div>
+<img src="img/lazy-profile.webp" alt="lazy-profile" width="1194" height="1148" loading="lazy">
+<div id="admonition-quote" class="admonition quote">
+<div class="admonition-title">
+<p>Quote</p>
+<p><a class="admonition-anchor-link" href="#admonition-quote"></a></p>
+</div>
+<div>
+<pre><code class="language-vim">:Lazy profile
+</code></pre>
+</div>
+</div>
+<p>例えばわたしの設定は<code>33</code>のプラグインを使用して約<code>94ms</code>でロードされます。</p>
+<p>...。🙂</p>
+<p>いえ❗お引越し直後なんて大抵散らかってるもんですから⁉️</p>
+<p>なんかもう伸びしろと可能性しかないでしょう🤣</p>
+<div id="admonition-note-5" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-5"></a></p>
+</div>
+<div>
+<p>でも、このままでもなんだか<code>packer</code>より起動がワンテンポ早くなった気がしません❓...しますね⁉️</p>
+</div>
+</div>
+<p>ちゃんとお部屋をチューニングしていけばもっと早くなるはず❗</p>
+<p>ってことで、あとは任せたよ❗❗</p>
+<div id="admonition-default-9" class="admonition failure">
+<div>
+<p>So why do you fight that feeling in your heart?</p>
+<p>それなのに、なぜハートの中でその気持ちと戦うの？</p>
+</div>
+</div>
+<h2 id="-lazy-dynamite"><a class="header" href="#-lazy-dynamite">💣 Lazy Dynamite</a></h2>
+<div id="admonition-default-10" class="admonition failure">
+<div>
+<p>Oh, lazy dynamite
+<sup class="footnote-reference">
+<a name="to-footnote-1"><a href="#1">1</a></a>
+</sup></p>
+<p>ああ、怠惰なダイナマイト</p>
+</div>
+</div>
+<p>うん。まじで<code>lazy</code>はダイナマイトでしたね...😵‍💫</p>
+<p>でもまあ、達成感はあるよね❗</p>
+<p>乗り越えたんだもの。えらいぞ❗</p>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
+</div>
+<div>
+<p>ほらね、ちゃんと実るんだよ🤗</p>
+</div>
+</div>
+<div class="footnote-definition" id=1>
+<p><a href="#to-footnote-1"><sup>1:</sup></a> Lazy Dynamite(by <a href="https://en.wikipedia.org/wiki/Paul_McCartney_and_Wings">Paul McCartney and Wings</a>)
+The Beatles 解散後の Paul McCartney が、妻 Linda や Denny Laine らとともに結成したバンド、Wings の2作目のアルバムは
+Hold Me Tight、Lazy Dynamite、Hands of Love、Power Cut の11分のメドレーで終わる。
+The Beatles が Abbey Road のB面でとった、未完成の短い楽曲をつなげてメドレー形式にする手法を McCartney は1970年代以降も好んで使った。
+<a href="https://en.wikipedia.org/wiki/Red_Rose_Speedway">Wikipedia</a>より</p>
+</div>
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+              <a rel="prev" href="../outro/lazy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <i class="fa-angle-left"></i>
+              </a>
+
+          </nav>
+        </main>
+
+        <spacer></spacer>
+
+        <div class="righttoc">
+          <nav class="pagetoc"></nav>
+        </div>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="../css/style.css" async>
+    <link rel="stylesheet" href="../fonts/fonts.css" async>
+    
+
+    <script defer type="module" src="../book.js"></script>
+    <script defer src="../elasticlunr.min.js"></script>
+    <script defer type="module" src="../searcher.js" id="searcher" data-pathtoroot="../"></script>
+    
+  </body>
+</html>
