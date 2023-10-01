@@ -130,8 +130,8 @@
 </div>
 </div>
 <p>始めてしまえば難しいことは何一つありません😉</p>
-<p>ただ、それなりに物量はあるので、この節では<code>lazy.nvim</code>のセットアップまでを😌</p>
-<p>次の節で、<code>packer.nvim</code>から<code>lazy.nvim</code>への移行という二本立てでお送りします😪</p>
+<p>ただ、それなりに物量はあるので、この節では<code>lazy.nvim</code>の <strong>セットアップ</strong> までを😌</p>
+<p>そして次の節で、<code>packer.nvim</code>から<code>lazy.nvim</code>への <strong>移行</strong> という二本立てでお送りします😪</p>
 <h2 id="-features"><a class="header" href="#-features">✨ Features</a></h2>
 <p>新しいベッドは、とっても大きくて気持ちよさそうです🤗</p>
 <div id="admonition--featureshttpsgithubcomfolkelazynvim-features" class="admonition info">
@@ -161,7 +161,6 @@
 </ul>
 </div>
 </div>
-<p>おまけにふわふわ〜☁️</p>
 <div id="admonition-default-1" class="admonition note">
 <div>
 <ul>
@@ -185,6 +184,7 @@
 </ul>
 </div>
 </div>
+<p>おまけにふわふわ〜☁️</p>
 <div id="admonition-default-2" class="admonition success">
 <div>
 <p>When I’m in the middle of a dream</p>
@@ -233,19 +233,7 @@
 </div>
 <p>そのまま<code>extensions</code>ディレクトリに置いておいてもいいし、どこか他のディレクトリに逃がしてあげてもいいです。</p>
 <p>あとは、このままでは次回の<code>nvim</code>起動時に「<code>init.lua</code>が無いぞー❗」って怒られてしまうので、
-新しいからっぽの<code>init.lua</code>を作成しておきましょう😉</p>
-<div id="admonition-note-1" class="admonition note">
-<div class="admonition-title">
-<p>Note</p>
-<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
-</div>
-<div>
-<p><code>~/.config/nvim/init.lua</code>の</p>
-<pre><code class="language-lua">require('extensions')
-</code></pre>
-<p>...が、怒ってしまうわけですね。</p>
-</div>
-</div>
+新しくからっぽの<code>init.lua</code>を作成しておきましょう😉</p>
 <div id="admonition-extensions-1" class="admonition quote">
 <div class="admonition-title">
 <p>extensions</p>
@@ -254,6 +242,18 @@
 <div>
 <pre><code class="language-sh">touch init.lua
 </code></pre>
+</div>
+</div>
+<div id="admonition-note-1" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
+</div>
+<div>
+<p>これが無いと、<code>~/.config/nvim/init.lua</code>の</p>
+<pre><code class="language-lua">require('extensions')
+</code></pre>
+<p>...が、怒ってしまうわけですね。</p>
 </div>
 </div>
 <p>これでだいじょうぶ😆</p>
@@ -266,10 +266,10 @@
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
 </div>
 <div>
-<p>こっちは<code>extensions/packer.lua</code>があれば、すぐ復元できるので消しちゃっても支障ないはずです。</p>
+<p>こっちは<code>extensions/packer.lua</code>があれば、すぐに復元できるので支障は無いはずです。</p>
 </div>
 </div>
-<p><code>plugin</code>ディレクトリの中身が<code>packer_compiled.lua</code>のみであれば、ディレクトリごと削除しちゃても構いません😉</p>
+<p><code>plugin</code>ディレクトリの中身が<code>packer_compiled.lua</code>のみであれば、ディレクトリごと削除しちゃって構いません😉</p>
 <div id="admonition-quote" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -328,8 +328,8 @@
 </div>
 <div>
 <p>このディレクトリには<code>packer.nvim</code>本体も存在するので、
-このディレクトリを削除した後に<code>packer.nvim</code>を再度使用したい場合は<code>git clone</code>からやり直す必要があります。</p>
-<p>なので、慎重を期すのであればディレクトリ名を変えるだけでも良いです。
+削除後、再び<code>packer.nvim</code>を再度使用したい場合は、<code>git clone</code>からやり直す必要があります。</p>
+<p>慎重を期すのであれば、ディレクトリ名を変えるだけでも良いです。
 <img src="img/packer-temp.webp" alt="packer-temp" width="778" height="620" loading="lazy"></p>
 </div>
 </div>
@@ -346,8 +346,8 @@
 </div>
 <p>それでは次項から<code>lazy.nvim</code>をセットアップしていきましょう😆</p>
 <h2 id="-installation"><a class="header" href="#-installation">📦 Installation</a></h2>
-<p><code>packer.nvim</code>の時にはあらかじめ<code>git clone</code>での配置するよう促されていましたが、
-<code>lazy.nvim</code>は以下のコードを入れておくことによって、勝手にインストールしてくれます。</p>
+<p><code>packer.nvim</code>の時にはあらかじめ<code>git clone</code>で配置しておくように案内されていましたが、
+<code>lazy.nvim</code>は以下のコードを入れておいてくれれば勝手にインストールしとくよ〜、と案内されています。</p>
 <div id="admonition--installationhttpsgithubcomfolkelazynvim-installation" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/folke/lazy.nvim#-installation">📦 Installation</a></p>
@@ -393,7 +393,7 @@ vim.opt.rtp:prepend(lazypath)
 </div>
 </div>
 <p>そしたら<code>nvim</code> を一度終了して再度起動してみましょう😆</p>
-<p>そしたらもう、コマンドから<code>Lazy</code>を呼び出せるはずです❗
+<p>これだけでもう、コマンドから<code>Lazy</code>を呼び出せるはずです❗
 <img src="img/lazy-open.webp" alt="lazy-openn" width="3104" height="2100" loading="lazy"></p>
 <pre><code class="language-vi">:Lazy
 </code></pre>
@@ -423,7 +423,7 @@ vim.opt.rtp:prepend(lazypath)
 <p>インストール後、:checkhealth lazyを実行することを推奨します。</p>
 </div>
 </div>
-<p>とのことなのでやっておきましょう。<code>:che</code>でも同じです😋</p>
+<p>...とのことなのでやっておきましょう。<code>:che</code>でも同じです😋</p>
 <div id="admonition-quote-2" class="admonition quote">
 <div class="admonition-title">
 <p>Quote</p>
@@ -450,8 +450,8 @@ vim.opt.rtp:prepend(lazypath)
 </div></div>
 </div>
 <p>これまで<code>packer</code>で使っていたものをどうやって移行するかについては、
-<a href="https://github.com/folke/lazy.nvim#-migration-guide">📦 Migration Guide</a> がとうの昔から用意されています❗</p>
-<p>冒頭でも触れましたが、移行は次の節で触れることにして、まずは基盤を作っていく流れにします😴</p>
+<a href="https://github.com/folke/lazy.nvim#-migration-guide">📦 Migration Guide</a> が用意されています❗</p>
+<p>冒頭でも触れましたが、<strong>移行</strong>は次の節で触れることにして、まずは基盤を作っていく流れにします😴</p>
 <div id="admonition-default-6" class="admonition success">
 <div>
 <p>Running everywhere at such a speed</p>
@@ -471,10 +471,16 @@ vim.opt.rtp:prepend(lazypath)
 <p>lazy.nvim のデフォルトは以下の通りです：</p>
 </div>
 </div>
-<p>わたしもまだ使い始めて日が浅いので深く見つめたわけではありませんが、
-なんか一個、すごい興味惹かれるやつありますね🤩</p>
+<p>わたしもまだ使い始めて日が浅いので、深く見つめたわけではありません。</p>
+<p>ただ、なんか一個すごい興味惹かれるやつありますね🤩</p>
 <h3 id="-performance"><a class="header" href="#-performance">📊 performance</a></h3>
 <p>こういうの大好き❗</p>
+<div id="admonition-defaults" class="admonition info">
+<div class="admonition-title">
+<p>defaults</p>
+<p><a class="admonition-anchor-link" href="#admonition-defaults"></a></p>
+</div>
+<div>
 <pre><code class="language-lua">{
   performance = {
     cache = {
@@ -500,6 +506,8 @@ vim.opt.rtp:prepend(lazypath)
   },
 }
 </code></pre>
+</div>
+</div>
 <h4 id="-rtp"><a class="header" href="#-rtp">🔸 rtp</a></h4>
 <p>やあん🥱</p>
 <div id="admonition-default-7" class="admonition success">
@@ -524,7 +532,7 @@ vim.opt.rtp:prepend(lazypath)
 <p>無効にしたいプラグインをここに列挙する</p>
 </div>
 </div>
-<p>コメントアウトされているものを外してみましょう❗</p>
+<p>コメントアウトされているものをいくつか外してみましょう❗</p>
 <div id="admonition-extensionsinitlua-2" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -550,14 +558,24 @@ vim.opt.rtp:prepend(lazypath)
 </code></pre>
 </div>
 </div>
-<p>ただ、上にある通り、わたしは以下の2つをコメントアウトのままにしています。</p>
+<p>わたしは以下の2つをコメントアウトのままにしています。</p>
+<div id="admonition-note-3" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
+</div>
+<div>
+<p><code>disabled</code>をコメントアウトしたままにするので、<code>enabled</code>のままにするってことですね。</p>
+<p>...説明がややこしいですね😮</p>
+</div>
+</div>
 <h6 id="matchparen"><a class="header" href="#matchparen">◽matchparen</a></h6>
-<p>人によっては不要だと思うかもしれませんが、わたしはこれ好きなんですよねー😆</p>
+<p>人によっては不要だと思うかもしれませんが、わたしはこれ好きなんですよね〜😆</p>
 <p><a href="../neovim/plugin/onenord.html#custom_highlights">custom_highlights</a> でカスタマイズしているぐらいなので❗</p>
 <h6 id="netrwplugin"><a class="header" href="#netrwplugin">◽netrwPlugin</a></h6>
-<p>これは「<code>nvim-tree</code>を使う場合は無効化しといてね」でお馴染みの <a href="../neovim/plugin/nvim-tree.html#netrw">netrw</a> ですね😉</p>
-<p>もうすでに無効化するコードが入っているので、ここで改めて入れる必要はないなーって考えです。</p>
-<p>ただ、どっちで無効化してもへーきなんじゃないかな⁉️</p>
+<p>これは「<code>nvim-tree</code>を使う場合は無効化しといてね」でお馴染みの <a href="../neovim/plugin/nvim-tree.html#netrw">netrw</a> です😉</p>
+<p>もうすでに無効化するコードが入っているので、ここでは必要はないかな〜っていう考え方です。</p>
+<p>まあ、どっちで無効化してもへーきなんじゃないかな⁉️</p>
 <h2 id="-vimloader"><a class="header" href="#-vimloader">🧪 vim.loader</a></h2>
 <p>もう一個だけやっておきましょう🐱</p>
 <p>少し古いニュースを引っ張り出しますが😅</p>
@@ -575,7 +593,7 @@ To enable the new loader, add the following at the top of your <code>init.lua</c
 </code></pre>
 </div>
 </div>
-<p>これはもう素直にトップのトップに追加しておきましょう。</p>
+<p>これはもう素直に、トップのトップに追加しておきましょう😌</p>
 <div id="admonition-confignviminitlua" class="admonition example">
 <div class="admonition-title">
 <p>~/.config/nvim/init.lua</p>
@@ -594,7 +612,7 @@ To enable the new loader, add the following at the top of your <code>init.lua</c
 <div>
 <pre><code class="language-txt">vim.loader.enable()                                      vim.loader.enable()
   Enables the experimental Lua module loader:
-  実験的なLuaモジュールローダーを有効にする:
+  実験的な Lua モジュールローダーを有効にする:
 
   • overrides loadfile
     loadfile を上書きします。
@@ -630,7 +648,7 @@ To enable the new loader, add the following at the top of your <code>init.lua</c
 </div>
 </div>
 <h2 id="-waiting-for-a-sleepy-feeling"><a class="header" href="#-waiting-for-a-sleepy-feeling">😴 Waiting for a sleepy feeling</a></h2>
-<p>まあ、これだけやればぐっすり眠る準備はバッチリでしょう😉</p>
+<p>これだけやれば、ぐっすり眠る準備はバッチリでしょう😉</p>
 <p>次回は<code>Migration Guide</code>に従って<code>packer</code>からの完全移行を目指します❗</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">

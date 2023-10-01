@@ -151,7 +151,7 @@
 With lazy, this isn't needed for most of the Lua dependencies.
 They can be installed just like normal plugins (even with <code>lazy=true</code>) and will be loaded when other plugins need them.</p>
 <p>packer <code>wants</code> では、<code>require</code> と <code>after</code> を使って依存関係を管理できます。
-lazyを使えば、Luaの依存関係のほとんどは必要ありません。
+lazy を使えば、Lua の依存関係のほとんどは必要ありません。
 これらは通常のプラグインと同じように（<code>lazy=true</code>でも）インストールすることができ、
 他のプラグインがそれらを必要とするときにロードされます。</p>
 </div>
@@ -183,18 +183,18 @@ The plugins which are added as <code>dependencies</code> will always be lazy-loa
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
 </div>
 <div>
-<p>新しく<code>plugins</code>という local 変数を置きます。中身はまだからっぽでへーきです😉</p>
+<p>新しく<code>plugins</code>という <strong>local変数</strong> を置きます。中身はまだ、からっぽでへーきです😉</p>
 <p>この節で示すコードは全部ここに入れていきます😌</p>
 <pre><code class="language-lua">local plugins = {
-  -- ...
+
 }
 </code></pre>
-<p>んで、ここは前回の <a href="./lazy.html#-configuration">17.1 lazy.nvim - Configuration</a> で書いたコードですね。</p>
+<p>んで、ここは前回の <a href="./lazy.html#-configuration">17.1 lazy.nvim - Configuration</a> で書いたコードがあって...、</p>
 <pre><code class="language-lua">local opts = {
   -- ...
 }
 </code></pre>
-<p>それから、<a href="./lazy.html#-installation">17.1 lazy.nvim - Installation</a> のコードがあって...。</p>
+<p>あとは、<a href="./lazy.html#-installation">17.1 lazy.nvim - Installation</a> のコードです。</p>
 <pre><code class="language-lua">local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -236,7 +236,7 @@ require(&quot;lazy&quot;).setup()
 <img src="img/lazy-init.webp" alt="lazy-init" width="1552" height="1050" decoding="async">
 <h3 id="-evacuate-the-packernvim"><a class="header" href="#-evacuate-the-packernvim">🥁 Evacuate the packer.nvim</a></h3>
 <p>ここまでで問題が無いようであれば、退避しておいた<code>packer.lua</code>からプラグインのリストを
-local 変数<code>plugins</code>の中に「どかっ❗」と持ってきましょう。</p>
+<strong>local変数</strong> <code>plugins</code>の中に「どかっ❗」と持ってきましょう。</p>
 <p>いよいよお引越しっぽくなってきました😆</p>
 <div id="admonition-note-1" class="admonition note">
 <div class="admonition-title">
@@ -414,7 +414,7 @@ Use dependencies otherwise.</p>
 </div>
 </div>
 <p>...というか、これは<code>packer</code>が器用すぎますよね〜。今さらなんですけど😅</p>
-<h3 id="-friendly-snippets"><a class="header" href="#-friendly-snippets">🧙🏽‍♂️ Friendly Snippets</a></h3>
+<h3 id="-paths-friendly-snippets"><a class="header" href="#-paths-friendly-snippets">🧙🏽‍♂️ paths (Friendly Snippets)</a></h3>
 <p>あと、<code>friendly-snippets.nvim</code>を管理下に置いている場合は、当然<code>path</code>も変わります。</p>
 <p>追っかけましょう。</p>
 <div id="admonition-extensionsluasniplua" class="admonition example">
@@ -454,7 +454,7 @@ To ensure this you can use the <code>priority=1000</code> field. <strong><em>(se
 </blockquote>
 </div>
 </div>
-<p>これももう仰せの通りに❗</p>
+<p>仰せの通りに❗</p>
 <div id="admonition-extensionsinitlua-2" class="admonition example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
@@ -476,14 +476,14 @@ To ensure this you can use the <code>priority=1000</code> field. <strong><em>(se
 <p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
 </div>
 <div>
-<p>それと、なんでかはよく分かんないんだけど、
+<p>なんでかはよく分かんないんだけど、
 <code>onenord.nvim</code>を<code>dependencies</code>に入れてると、エラーになっちゃいます😨</p>
 <p>外しときましょう❗</p>
 </div>
 </div>
 <h2 id="-usage"><a class="header" href="#-usage">🚀 Usage</a></h2>
 <p>ここまでの間に、もう<code>lazy</code>が起動時に自発的にインストールを始めてくれていたかもしれないんですが、
-ここまでくれば、全てのプラグインが元通りに動くようになったはずです❗
+これでようやく全てのプラグインが元通りに動くようになったはずです❗
 <img src="img/lazy-install.webp" alt="lazy-install" width="1552" height="1050" loading="lazy"></p>
 <div id="admonition--usagehttpsgithubcomfolkelazynvim-usage" class="admonition info">
 <div class="admonition-title">
@@ -491,8 +491,8 @@ To ensure this you can use the <code>priority=1000</code> field. <strong><em>(se
 <p><a class="admonition-anchor-link" href="#admonition--usagehttpsgithubcomfolkelazynvim-usage"></a></p>
 </div>
 <div>
-<p>Plugins are managed with the ':Lazy' command. Open the help with '&lt;?&gt;' to see all the key mappings.</p>
-<p>プラグインは':Lazy'コマンドで管理します。help を'&lt;?&gt;'で開くと、すべてのキーマッピングを見ることができます。</p>
+<p>Plugins are managed with the <code>:Lazy</code> command. Open the help with <code>&lt;?&gt;</code> to see all the key mappings.</p>
+<p>プラグインは<code>:Lazy</code>コマンドで管理します。help を<code>&lt;?&gt;</code>で開くと、すべてのキーマッピングを見ることができます。</p>
 <p>You can press <code>&lt;CR&gt;</code> on a plugin to show its details.
 Most properties can be hovered with <code>&lt;K&gt;</code> to open links, help files, readmes, git commits and git issues.</p>
 <p>プラグイン上で <code>&lt;CR&gt;</code> を押すとその詳細が表示されます。
@@ -509,8 +509,8 @@ Most properties can be hovered with <code>&lt;K&gt;</code> to open links, help f
 <div id="admonition-default-5" class="admonition info">
 <div>
 <p><strong>lazy.nvim</strong> provides a statusline component that you can use to show the number of pending updates.</p>
-<p>Make sure to enable <code>config.checker.enabled = true</code> to make this work.</p>
 <p><strong>lazy.nvim</strong> は、保留中の更新の数を表示するために使用できるstatuslineコンポーネントを提供します。</p>
+<p>Make sure to enable <code>config.checker.enabled = true</code> to make this work.</p>
 <p><code>config.checker.enabled=true</code>を有効にしてください。</p>
 </div>
 </div>
@@ -560,7 +560,7 @@ Most properties can be hovered with <code>&lt;K&gt;</code> to open links, help f
 <div>
 <p>わたしは<code>tabline</code>に入れてますが、その場合はこんな感じで出てきます😄
 <img src="img/lazy-checker.webp" alt="lazy-checker" width="492" height="146" loading="lazy"></p>
-<p>このスクリーンショットではうっかり<a href="https://github.com/rcarriga/nvim-notify">nvim-notify</a>を使ってるんですが、
+<p>このスクリーンショットではうっかり <a href="https://github.com/rcarriga/nvim-notify">nvim-notify</a> を使ってるんですが、
 改めて見たらこれ、なんかすっごい綺麗じゃない...❓</p>
 <p>うっとりしちゃった😊 次回はこれやろうかな...。</p>
 <p>...あれ❓なんか全然おわんねぇな🙄</p>
@@ -577,7 +577,7 @@ Most properties can be hovered with <code>&lt;K&gt;</code> to open links, help f
 <h2 id="-lockfile-lazy-lockjson"><a class="header" href="#-lockfile-lazy-lockjson">🔒 Lockfile lazy-lock.json</a></h2>
 <p><code>lockfile</code>は<code>git</code>などでバージョン管理を行っている場合や、
 複数のマシンでプラグインのバージョンを完全に同じにしたい場合に重宝する機能です。</p>
-<p><code>lazy.nvim</code>が更新してくれるので、基本的に、私たちが触る必要はありません😉</p>
+<p>これは<code>lazy.nvim</code>が更新してくれるので、わたしたちが中身に触る必要はありません😉</p>
 <div id="admonition--lockfile-lazy-lockjsonhttpsgithubcomfolkelazynvim-lockfile-lazy-lockjson" class="admonition info">
 <div class="admonition-title">
 <p><a href="https://github.com/folke/lazy.nvim#-lockfile-lazy-lockjson">🔒 Lockfile lazy-lock.json</a></p>
@@ -620,11 +620,15 @@ to update all your plugins to the version from the lockfile.</p>
 <p>Great care has been taken to make the startup code (<code>lazy.core</code>) as efficient as possible.
 During startup, all Lua files used before <code>VimEnter</code> or <code>BufReadPre</code> are byte-compiled and cached,
 similar to what <a href="https://github.com/lewis6991/impatient.nvim">impatient.nvim</a> does.</p>
-<p>起動コード(lazy.core)を可能な限り効率的にするために細心の注意が払われています。
+<p>起動コード(<code>lazy.core</code>)を可能な限り効率的にするために細心の注意が払われています。
 起動中、<code>VimEnter</code>や<code>BufReadPre</code>の前に使用される全ての Lua ファイルはバイトコンパイルされ、
 <a href="https://github.com/lewis6991/impatient.nvim">impatient.nvim</a> と同様にキャッシュされます。</p>
 <p>My config for example loads in about <code>11ms</code> with <code>93</code> plugins. I do a lot of lazy-loading though :)</p>
 <p>例えば私の設定は約<code>11ms</code>で<code>93</code>のプラグインがロードされます。私は遅延ロードを多用していますが😃</p>
+</div>
+</div>
+<div id="admonition-default-9" class="admonition info">
+<div>
 <p><strong>lazy.nvim</strong> comes with an advanced profiler <code>:Lazy profile</code> to help you improve performance.
 The profiling view shows you why and how long it took to load your plugins.</p>
 <p><strong>lazy.nvim</strong> には高度なプロファイラ<code>:Lazy profile</code>がついていて、パフォーマンスを向上させるのに役立ちます。
@@ -642,7 +646,7 @@ The profiling view shows you why and how long it took to load your plugins.</p>
 </code></pre>
 </div>
 </div>
-<p>例えばわたしの設定は<code>33</code>のプラグインを使用して約<code>94ms</code>でロードされます。</p>
+<p>例えばわたしの設定は約<code>94ms</code>で<code>33</code>のプラグインがロードされます。</p>
 <p>...。🙂</p>
 <p>いえ❗お引越し直後なんて大抵散らかってるもんですから⁉️</p>
 <p>なんかもう伸びしろと可能性しかないでしょう🤣</p>
@@ -652,19 +656,20 @@ The profiling view shows you why and how long it took to load your plugins.</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-5"></a></p>
 </div>
 <div>
-<p>でも、このままでもなんだか<code>packer</code>より起動がワンテンポ早くなった気がしません❓...しますね⁉️</p>
+<p>でも、このままでも<code>packer</code>より起動がワンテンポ早くなった気がしません❓...しますね⁉️</p>
+<p>するする❗ぜったいするわ❗❗</p>
 </div>
 </div>
-<p>ちゃんとお部屋をチューニングしていけばもっと早くなるはず❗</p>
-<p>ってことで、あとは任せたよ❗❗</p>
-<div id="admonition-default-9" class="admonition failure">
+<p>あとはここから一個一個、丁寧にチューニングしていけばもっと早くなるはずです❗</p>
+<p>...ってことで、あとは任せたよ😆</p>
+<div id="admonition-default-10" class="admonition failure">
 <div>
 <p>So why do you fight that feeling in your heart?</p>
 <p>それなのに、なぜハートの中でその気持ちと戦うの？</p>
 </div>
 </div>
 <h2 id="-lazy-dynamite"><a class="header" href="#-lazy-dynamite">💣 Lazy Dynamite</a></h2>
-<div id="admonition-default-10" class="admonition failure">
+<div id="admonition-default-11" class="admonition failure">
 <div>
 <p>Oh, lazy dynamite
 <sup class="footnote-reference">
@@ -673,9 +678,9 @@ The profiling view shows you why and how long it took to load your plugins.</p>
 <p>ああ、怠惰なダイナマイト</p>
 </div>
 </div>
-<p>うん。まじで<code>lazy</code>はダイナマイトでしたね...😵‍💫</p>
-<p>でもまあ、達成感はあるよね❗</p>
-<p>乗り越えたんだもの。えらいぞ❗</p>
+<p><code>lazy</code>はとってもダイナマイトでしたね...😵‍💫</p>
+<p>もう達成感がハンパないです😽</p>
+<p>ちゃんと乗り越えたんだもの。えらいぞ❗</p>
 <div id="admonition-success" class="admonition success">
 <div class="admonition-title">
 <p>Success</p>
