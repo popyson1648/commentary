@@ -109,7 +109,7 @@
         <main>
           <h1 id="tab"><a class="header" href="#tab">Tab</a></h1>
 <p>さて、引き続き<code>format.lua</code>に追記していきましょう。今回はタブタイトルです。</p>
-<div id="admonition-formatlua" class="admonition example">
+<div id="admonition-formatlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>format.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-formatlua"></a></p>
@@ -141,7 +141,7 @@ end)
 </code></pre>
 </div>
 </div>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -158,7 +158,7 @@ PCならブラウザのウィンドウを横に広げてみたり、タブレッ
 </div>
 <p>これもウィンドウタイトルと同じように、<code>wezterm.on</code>を使って<code>format-tab-title</code>イベントの処理を書いています。</p>
 <p>色は適宜調整してください。</p>
-<div id="admonition-format-tab-titlehttpswezfurlongorgweztermconfigluawindow-eventsformat-tab-titlehtml" class="admonition info">
+<div id="admonition-format-tab-titlehttpswezfurlongorgweztermconfigluawindow-eventsformat-tab-titlehtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/format-tab-title.html">format-tab-title</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-format-tab-titlehttpswezfurlongorgweztermconfigluawindow-eventsformat-tab-titlehtml"></a></p>
@@ -172,7 +172,7 @@ PCならブラウザのウィンドウを横に広げてみたり、タブレッ
 <p>所々で状態によって表示するものを変えていますが、やっていることは<code>zoomed</code>と<code>hover</code>の可視化ですね🤩</p>
 <h2 id="タブタイトル"><a class="header" href="#タブタイトル">タブタイトル</a></h2>
 <p>上にある例では表示する内容は特に加工していませんが、前回作った<code>BaseName</code>に通すのもスッキリしてオススメです。</p>
-<div id="admonition-example" class="admonition example">
+<div id="admonition-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Example</p>
 <p><a class="admonition-anchor-link" href="#admonition-example"></a></p>
@@ -189,7 +189,7 @@ PCならブラウザのウィンドウを横に広げてみたり、タブレッ
 </div>
 <h2 id="zoomed"><a class="header" href="#zoomed">Zoomed</a></h2>
 <p>ズーム中はタブに 🔎 アイコンを表示してます。</p>
-<div id="admonition-togglepanezoomstatehttpswezfurlongorgweztermconfigluakeyassignmenttogglepanezoomstatehtml" class="admonition info">
+<div id="admonition-togglepanezoomstatehttpswezfurlongorgweztermconfigluakeyassignmenttogglepanezoomstatehtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/TogglePaneZoomState.html">TogglePaneZoomState</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-togglepanezoomstatehttpswezfurlongorgweztermconfigluakeyassignmenttogglepanezoomstatehtml"></a></p>
@@ -202,7 +202,7 @@ A Zoomed pane takes up all available space in the tab, hiding all other panes wh
 </div>
 </div>
 <p>デフォルトのキーバインドだとズーム機能が割り当てられていないと思うので、<code>keybinds.lua</code>に入れておきましょう。</p>
-<div id="admonition-keybindslua" class="admonition example">
+<div id="admonition-keybindslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua"></a></p>
@@ -222,7 +222,7 @@ A Zoomed pane takes up all available space in the tab, hiding all other panes wh
 <p>(ペイン操作については<code>3.6 Leader Key</code>でふわっと話題にしました。)</p>
 <h2 id="hover"><a class="header" href="#hover">Hover</a></h2>
 <p>ホバー中は該当のタブ背景色を少し変えてます。</p>
-<div id="admonition-hoverhttpswezfurlongorgweztermconfigluawindow-eventsformat-tab-titlehtml" class="admonition info">
+<div id="admonition-hoverhttpswezfurlongorgweztermconfigluawindow-eventsformat-tab-titlehtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/format-tab-title.html">hover</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-hoverhttpswezfurlongorgweztermconfigluawindow-eventsformat-tab-titlehtml"></a></p>
@@ -233,7 +233,7 @@ A Zoomed pane takes up all available space in the tab, hiding all other panes wh
 </div>
 </div>
 <h2 id="少しluaのお話"><a class="header" href="#少しluaのお話">少しluaのお話</a></h2>
-<div id="admonition-example-1" class="admonition example">
+<div id="admonition-example-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Example</p>
 <p><a class="admonition-anchor-link" href="#admonition-example-1"></a></p>
@@ -251,7 +251,7 @@ local index = tab.is_active and 1 or 2
 <p>lua の配列は<code>[1]</code>始まりなので、(Cとかは<code>[0]</code>から始まりますよね。)
 三項演算子<code>local index = tab.is_active and 1 or 2</code>によって<code>SYMBOL_COLOR</code>配列と<code>FONT_COLOR</code>配列それぞれから採用する色を切り替えます。</p>
 <p><code>else</code>節を消せるだけ消す書き方、わたしは好きなんですがどうでしょう😆</p>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>

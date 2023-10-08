@@ -115,7 +115,7 @@
 <p>だからなんだって言われるとキツイんですが、一番わかりやすいところでフォントサイズの問題があって、画面のスケールが違いすぎて大きすぎたり小さすぎたりしてしまう...😢
 <img src="img/img-4k.webp" alt="img-4k" width="768" height="432" decoding="async">
 <img src="img/img-mbp.webp" alt="img-mbp" width="540" height="351" loading="lazy"></p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -132,7 +132,7 @@
 <h2 id="フォントサイズ切り替え"><a class="header" href="#フォントサイズ切り替え">フォントサイズ切り替え</a></h2>
 <p>この例では<code>toggle-font-size</code>というイベントを独自に作っています。</p>
 <p><code>WezTerm</code>では、フォントサイズに限らず、元の設定を直接書き換えるのではなく、オーバーライドすることで変化させます。</p>
-<div id="admonition-windowget_config_overrideshttpswezfurlongorgweztermconfigluawindowget_config_overrideshtml" class="admonition info">
+<div id="admonition-windowget_config_overrideshttpswezfurlongorgweztermconfigluawindowget_config_overrideshtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window/get_config_overrides.html">window:get_config_overrides()</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-windowget_config_overrideshttpswezfurlongorgweztermconfigluawindowget_config_overrideshtml"></a></p>
@@ -142,7 +142,7 @@
 <p>ウィンドウに適用されている設定オーバーライドの現在のセットのコピーを返します。</p>
 </div>
 </div>
-<div id="admonition-eventlua" class="admonition example">
+<div id="admonition-eventlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>event.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-eventlua"></a></p>
@@ -165,7 +165,7 @@ end)
 <li>オーバーライドされているのであれば、<code>font_size</code>を<code>nil</code>としてオーバーライドを無効化 (素の状態に戻す)。</li>
 </ul>
 <p>これでフォントサイズの切り替えが実現できます。</p>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -176,7 +176,7 @@ end)
 </div>
 </div>
 <p>独自イベントが呼び出されるようにするには<code>EmitEvent</code>を用います。</p>
-<div id="admonition-emiteventhttpswezfurlongorgweztermconfigluakeyassignmentemiteventhtml" class="admonition info">
+<div id="admonition-emiteventhttpswezfurlongorgweztermconfigluakeyassignmentemiteventhtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/EmitEvent.html">EmitEvent</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-emiteventhttpswezfurlongorgweztermconfigluakeyassignmentemiteventhtml"></a></p>
@@ -187,7 +187,7 @@ end)
 </div>
 </div>
 <p>わたしはキーバインド<kbd>Ctrl-f</kbd>をトリガーとして呼び出しています。</p>
-<div id="admonition-keybindslua" class="admonition example">
+<div id="admonition-keybindslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua"></a></p>
@@ -198,7 +198,7 @@ end)
 </div>
 </div>
 <p>まあ、思いっきり手動なんですけどね😅 自動で出来たら面白いんですけどね。</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -211,7 +211,7 @@ end)
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">素の状態</th><th style="text-align: center">切り替えた状態</th></tr></thead><tbody>
 <tr><td style="text-align: center"><img src="img/font-big.webp" alt="font-big" /></td><td style="text-align: center"><img src="img/font-small.webp" alt="font-small" /></td></tr>
 </tbody></table>
-</div><div id="admonition-note-3" class="admonition note">
+</div><div id="admonition-note-3" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
@@ -220,7 +220,7 @@ end)
 <p>さらにフォントサイズを大きくして説明用に誇張しています。が、まだなんか中途半端でしたね...😿</p>
 </div>
 </div>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>

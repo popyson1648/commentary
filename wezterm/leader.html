@@ -109,7 +109,7 @@
         <main>
           <h1 id="leader-key"><a class="header" href="#leader-key">Leader Key</a></h1>
 <p>さて、前回はキーバインドを落とし込んだわけですが、今回は<code>Leader</code>キーです。</p>
-<div id="admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition info">
+<div id="admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/keys.html#leader-key">Key Binding - Wez's Terminal Emulator</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-key-binding---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigkeyshtmlleader-key"></a></p>
@@ -124,7 +124,7 @@
 <sup class="footnote-reference">
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup></p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -135,7 +135,7 @@
 </div>
 <p>ということで、わたしはもうそのまま<kbd>Ctrl-a</kbd>で設定しています。
 デフォルトのままでいいやー、って場合は書かなくてもOKです。</p>
-<div id="admonition-weztermlua" class="admonition example">
+<div id="admonition-weztermlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>wezterm.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-weztermlua"></a></p>
@@ -145,7 +145,7 @@
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -155,7 +155,7 @@
 </div>
 </div>
 <p><code>vim</code>や<code>tmux</code>等を使用する場合は、これとバッティングしていないかチェックしときましょう。</p>
-<div id="admonition-warning" class="admonition warning">
+<div id="admonition-warning" class="admonition admonish-warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
@@ -172,7 +172,7 @@
 </div>
 <h2 id="timeout_milliseconds"><a class="header" href="#timeout_milliseconds">timeout_milliseconds</a></h2>
 <p>これは前項で挙げたマニュアルの文章を引用しますが、</p>
-<div id="admonition-leader-keyhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition note">
+<div id="admonition-leader-keyhttpswezfurlongorgweztermconfigkeyshtmlleader-key" class="admonition admonish-note">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/keys.html#leader-key">Leader Key</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-leader-keyhttpswezfurlongorgweztermconfigkeyshtmlleader-key"></a></p>
@@ -186,7 +186,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </div>
 <p><code>Leader</code>キーが一回押されたら、とりあえず何か次のキーが押されるか、指定ミリ秒経過するまでは待つよ〜。ってことですね。</p>
 <p>例えば、</p>
-<div id="admonition-weztermlua-1" class="admonition example">
+<div id="admonition-weztermlua-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>wezterm.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-weztermlua-1"></a></p>
@@ -203,7 +203,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p>さて、皆さんはお気づきだろうか…。</p>
 <p>デフォルトのキー設定では<code>Leader</code>キーなんて一切使われていないことに…😱</p>
 <p>例えばこれ。</p>
-<div id="admonition-default-keybinds" class="admonition quote">
+<div id="admonition-default-keybinds" class="admonition admonish-quote">
 <div class="admonition-title">
 <p>Default KeyBinds</p>
 <p><a class="admonition-anchor-link" href="#admonition-default-keybinds"></a></p>
@@ -214,7 +214,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -228,7 +228,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </div>
 …なんか、難しくないですか？
 <p>それだったら、下のようにしたほうが楽じゃないですか？</p>
-<div id="admonition-keybindslua" class="admonition example">
+<div id="admonition-keybindslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua"></a></p>
@@ -242,7 +242,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p><code>tmux</code>と同じキーバインドですね。ペイン操作も<code>WezTerm</code>に一任しちゃいます。</p>
 <p><code>tmux</code>使ってないのに同等の機能が実現できちゃうんですよ⁉️ すごくないです❓☺️</p>
 <p>もしどこかで<code>tmux</code>を使うことがあっても同一操作なので迷わず使えます、たぶん❗</p>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-3" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
@@ -260,7 +260,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 </div>
 </div>
 <p>ということで、キーバインドは色々試してみてほしいです。</p>
-<div id="admonition-enum-keyassignment---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigluakeyassignmentindexhtml" class="admonition info">
+<div id="admonition-enum-keyassignment---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigluakeyassignmentindexhtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html">enum: KeyAssignment - Wez's Terminal Emulator</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-enum-keyassignment---wezs-terminal-emulatorhttpswezfurlongorgweztermconfigluakeyassignmentindexhtml"></a></p>
@@ -270,7 +270,7 @@ or until it has been active for the duration specified by <code>timeout_millisec
 <p>KeyAssignment は、キーまたはマウス イベントがトリガーされたときに、通常 Window、Tab、Pane の状態を制御するために適用できる事前定義された関数を表します。</p>
 </div>
 </div>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>

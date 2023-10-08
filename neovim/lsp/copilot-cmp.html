@@ -111,7 +111,7 @@
 <p>前回は<code>copilot.lua</code>のおかげで、無事に<code>GitHub Copilot</code>から飛び立ったわけなんですが、
 目的地である<code>nvim-cmp</code>は、まだ受け入れ態勢が整っていません。</p>
 <p>...急いで滑走路と管制塔を建設しましょう❗まじで👷‍♀️</p>
-<div id="admonition-copilot-cmphttpsgithubcomzbirenbaumcopilot-cmp" class="admonition info">
+<div id="admonition-copilot-cmphttpsgithubcomzbirenbaumcopilot-cmp" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/zbirenbaum/copilot-cmp">copilot-cmp</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-copilot-cmphttpsgithubcomzbirenbaumcopilot-cmp"></a></p>
@@ -126,7 +126,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 </div>
 </div>
 <p><code>copilot-cmp</code>を導入することで、<code>Copilot</code>の提案を<code>nvim-cmp</code>で扱うことができるようになります😆</p>
-<div id="admonition-default" class="admonition success">
+<div id="admonition-default" class="admonition admonish-success">
 <div>
 <p>Boy, you’re gonna carry that weight
 <sup class="footnote-reference">
@@ -138,7 +138,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 </div>
 </div>
 <h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
-<div id="admonition-setuphttpsgithubcomzbirenbaumcopilot-cmpsetup" class="admonition info">
+<div id="admonition-setuphttpsgithubcomzbirenbaumcopilot-cmpsetup" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/zbirenbaum/copilot-cmp#setup">Setup</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-setuphttpsgithubcomzbirenbaumcopilot-cmpsetup"></a></p>
@@ -159,7 +159,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 <p><code>copilot-cmp</code>単体では特にコンフィグも無いので<code>packer</code>からこのまま<code>setup()</code>しちゃっていいと思います。</p>
 <h3 id="install"><a class="header" href="#install">Install</a></h3>
 <p>で、これをどこに入れようかちょっと考えちゃいますが、わたしは<code>cmp</code>一味に迎え入れることにしました😆</p>
-<div id="admonition-extensionsinitlua" class="admonition example">
+<div id="admonition-extensionsinitlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
@@ -187,7 +187,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 </code></pre>
 </div>
 </div>
-<div id="admonition-default-1" class="admonition success">
+<div id="admonition-default-1" class="admonition admonish-success">
 <div>
 <p>I never give you my pillow<sup class="footnote-reference">
 <a name="to-footnote-2"><a href="#2">2</a></a>
@@ -201,7 +201,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 <p>ここでまた<code>packer</code>を少しだけ補足します。</p>
 <h3 id="after"><a class="header" href="#after">after</a></h3>
 <p><code>after</code>は以下のような説明がされています。</p>
-<div id="admonition-packeruse" class="admonition info">
+<div id="admonition-packeruse" class="admonition admonish-info">
 <div class="admonition-title">
 <p>packer.use()</p>
 <p><a class="admonition-anchor-link" href="#admonition-packeruse"></a></p>
@@ -213,7 +213,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 </div>
 </div>
 <p>この場合は<code>copilot.lua</code>がロード後、続いて<code>copilot-cmp</code>がロードされます。</p>
-<div id="admonition-tip" class="admonition tip">
+<div id="admonition-tip" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
@@ -225,7 +225,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 <h4 id="packerstatus"><a class="header" href="#packerstatus">PackerStatus</a></h4>
 <p><code>PackerStatus</code>を覗いてみるとわかるんですが、
 <code>copilot.lua</code>がロードされていない場合は<code>copilot-cmp</code>もロードされません。</p>
-<div id="admonition-quote" class="admonition quote">
+<div id="admonition-quote" class="admonition admonish-quote">
 <div class="admonition-title">
 <p>Quote</p>
 <p><a class="admonition-anchor-link" href="#admonition-quote"></a></p>
@@ -235,7 +235,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 </code></pre>
 </div>
 </div>
-<div id="admonition-packerstatus" class="admonition info">
+<div id="admonition-packerstatus" class="admonition admonish-info">
 <div class="admonition-title">
 <p>PackerStatus</p>
 <p><a class="admonition-anchor-link" href="#admonition-packerstatus"></a></p>
@@ -253,7 +253,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 <img src="img/packer-not-loaded.webp" alt="packer-not-loaded" width="3104" height="2100" decoding="async">
 <p>少し見えにくいかもしれませんが、<code>(not loaded)</code>と表示されていますね😉</p>
 <p>逆に、<code>copilot.lua</code>がロードされると、<code>copilot-cmp</code>もロードされます。</p>
-<div id="admonition-quote-1" class="admonition quote">
+<div id="admonition-quote-1" class="admonition admonish-quote">
 <div class="admonition-title">
 <p>Quote</p>
 <p><a class="admonition-anchor-link" href="#admonition-quote-1"></a></p>
@@ -266,7 +266,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 <p>ってしてからもう一回確認してみましょう。
 <img src="img/packer-loaded.webp" alt="packer-loaded" width="3104" height="2100" loading="lazy"></p>
 <p><code>(not loaded)</code>の表示が消えました😆</p>
-<div id="admonition-tip-1" class="admonition tip">
+<div id="admonition-tip-1" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip-1"></a></p>
@@ -278,7 +278,7 @@ copilot のサジェストにカーソルを合わせるとその全内容が表
 <h2 id="config"><a class="header" href="#config">Config</a></h2>
 <p>それではコンフィグを組み込んでいきましょう。</p>
 <h3 id="suggestion--panel"><a class="header" href="#suggestion--panel">suggestion / panel</a></h3>
-<div id="admonition-setuphttpsgithubcomzbirenbaumcopilot-cmpsetup-1" class="admonition info">
+<div id="admonition-setuphttpsgithubcomzbirenbaumcopilot-cmpsetup-1" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/zbirenbaum/copilot-cmp#setup">Setup</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-setuphttpsgithubcomzbirenbaumcopilot-cmpsetup-1"></a></p>
@@ -293,7 +293,7 @@ copilot-cmpで適切に表示される補完を妨害することがあるので
 </div>
 </div>
 <p>はい、入れましょう😉</p>
-<div id="admonition-extensionscopilotlua" class="admonition example">
+<div id="admonition-extensionscopilotlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/copilot.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionscopilotlua"></a></p>
@@ -312,7 +312,7 @@ copilot-cmpで適切に表示される補完を妨害することがあるので
 <p>そしたら<code>nvim-cmp</code>側の調整も行いましょう😆</p>
 <h4 id="tab-completion-configuration-highly-recommended"><a class="header" href="#tab-completion-configuration-highly-recommended">Tab Completion Configuration (Highly Recommended)</a></h4>
 <p>一個ほんとに自信のない項目があって、それがこれなんすわぁ😫</p>
-<div id="admonition-tab-completion-configuration-highly-recommendedhttpsgithubcomzbirenbaumcopilot-cmptab-completion-configuration-highly-recommended" class="admonition info">
+<div id="admonition-tab-completion-configuration-highly-recommendedhttpsgithubcomzbirenbaumcopilot-cmptab-completion-configuration-highly-recommended" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/zbirenbaum/copilot-cmp#tab-completion-configuration-highly-recommended">Tab Completion Configuration (Highly Recommended)</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-tab-completion-configuration-highly-recommendedhttpsgithubcomzbirenbaumcopilot-cmptab-completion-configuration-highly-recommended"></a></p>
@@ -330,7 +330,7 @@ but tab will fallback to indenting unless a non-whitespace character has actuall
 </div>
 <p>えっ...、ええっ...、なんですのん...❓</p>
 <p>とりあえずこれ、<code>Super-Tab</code>の処理が既にいることもあって複雑なので、ファイルを分けて書いてみます。</p>
-<div id="admonition-extensionsnvim-cmp-actionslua" class="admonition example">
+<div id="admonition-extensionsnvim-cmp-actionslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/nvim-cmp-actions.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmp-actionslua"></a></p>
@@ -392,7 +392,7 @@ return M
 </code></pre>
 </div>
 </div>
-<div id="admonition-extensionsnvim-cmplua" class="admonition example">
+<div id="admonition-extensionsnvim-cmplua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/nvim-cmp.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua"></a></p>
@@ -427,7 +427,7 @@ cmp.setup {
 <p>ま、まあおかしかったら直しておいてください😅</p>
 <h4 id="sources"><a class="header" href="#sources">sources</a></h4>
 <p><code>nvim-cmp</code>の<code>sources</code>に新人を紹介してあげましょう。はい、なかよし😆</p>
-<div id="admonition-extensionsnvim-cmplua-1" class="admonition example">
+<div id="admonition-extensionsnvim-cmplua-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/nvim-cmp.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-1"></a></p>
@@ -444,7 +444,7 @@ cmp.setup {
 <p>これで<code>Neovim</code>の空に<code>GitHub Copilot</code> 🛫 <code>copilot.lua</code> 🗺️ <code>copilot-cmp</code> 🛬 <code>nvim-cmp</code>という航路が完成しました❗</p>
 <h2 id="cleared-to-land"><a class="header" href="#cleared-to-land">Cleared to land.</a></h2>
 <p>まもなく着陸体制...😦</p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -458,7 +458,7 @@ cmp.setup {
 <img src="img/copilot-cmp.webp" alt="copilot-cmp" width="3104" height="2100" loading="lazy">
 <p>中身が的確かどうかは別として、ちゃんと<code>Copilot</code>からの提案が挙げられています😉</p>
 <p>Nice Landing❗😭</p>
-<div id="admonition-default-2" class="admonition success">
+<div id="admonition-default-2" class="admonition admonish-success">
 <div>
 <p>And in the middle of the celebrations</p>
 <p>I break down</p>
@@ -483,13 +483,13 @@ cmp.setup {
 <img src="img/copilot-cmp5.webp" alt="copilot-cmp5" width="1800" height="640" loading="lazy"></p>
 <p>なんかもうエレガントっていうか、怖いこの人たち...。
 <img src="img/copilot-cmp6.webp" alt="copilot-cmp6" width="1800" height="760" loading="lazy"></p>
-<div id="admonition-default-3" class="admonition info">
+<div id="admonition-default-3" class="admonition admonish-info">
 <div>
 <p>“It's kind of scary but exciting, because it's the future”</p>
 <p>&quot;一種の怖さはあるけどわくわくするね、なぜってこれが未来だから&quot;</p>
 </div>
 </div>
-<div id="admonition-warning" class="admonition warning">
+<div id="admonition-warning" class="admonition admonish-warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
@@ -503,7 +503,7 @@ cmp.setup {
 <p>えっ❗マイナス値⁉️ ...それは忘れよう。</p>
 </div>
 </div>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -519,7 +519,7 @@ cmp.setup {
 <p><code>Copilot</code>の実力は、なんだか測りきれない感もありますが、堪能はできましたね🤗</p>
 <p>間違った提案はしてくるけど、それはこっちが気づいてあげればいいだけなので、温かく見守ってあげましょう😽</p>
 <p>(逆に言うと、細かい誤りに自分で気付けないと...🙀)</p>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>

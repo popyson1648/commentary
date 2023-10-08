@@ -110,7 +110,7 @@
           <h1 id="gitsignsnvim"><a class="header" href="#gitsignsnvim">gitsigns.nvim</a></h1>
 <p>今回は<code>gitsigns.nvim</code>です。</p>
 <p>人によっては<code>git</code>を使っていないかもしれないんだけど、これをきっかけに挑戦してみると楽しいと思います。</p>
-<div id="admonition-gitsignsnvimhttpsgithubcomlewis6991gitsignsnvim" class="admonition info">
+<div id="admonition-gitsignsnvimhttpsgithubcomlewis6991gitsignsnvim" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/lewis6991/gitsigns.nvim">gitsigns.nvim</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-gitsignsnvimhttpsgithubcomlewis6991gitsignsnvim"></a></p>
@@ -121,7 +121,7 @@
 </div>
 </div>
 <p>だよねー。もう Christmas🎄 だもんねー😆 華やかな &quot;装飾&quot; を施していきましょう❗</p>
-<div id="admonition-requirements" class="admonition abstract">
+<div id="admonition-requirements" class="admonition admonish-abstract">
 <div class="admonition-title">
 <p>Requirements</p>
 <p><a class="admonition-anchor-link" href="#admonition-requirements"></a></p>
@@ -142,7 +142,7 @@
 <p>今回は色々カスタマイズしていきたいので、
 まずは<a href="https://github.com/lewis6991/gitsigns.nvim#usage">Usage</a>に示されているデフォルトセッティングを入れておくことにしましょう。</p>
 <p>これを基に、あとでカスタマイズしていきます。</p>
-<div id="admonition-extensionsgitsignslua" class="admonition example">
+<div id="admonition-extensionsgitsignslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/gitsigns.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua"></a></p>
@@ -193,7 +193,7 @@
 </code></pre>
 </div>
 </div>
-<div id="admonition-extensionsinitlua" class="admonition example">
+<div id="admonition-extensionsinitlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
@@ -210,7 +210,7 @@
 <p>ってことで、もうすっかりお馴染みの<code>:PackerSync</code>😆
 <img src="img/gitsigns-install.webp" alt="gitsigns-install" width="696" height="555" decoding="async"></p>
 <p>もし<code>git</code>の管理下に居たのなら、もうこの時点で<code>sigincolumn</code>に装飾🎄がされてますね❗yeah!! 🍾</p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -221,7 +221,7 @@
 <p>まあなんか、やってやったぜってな感じはあります☺️</p>
 </div>
 </div>
-<div id="admonition-warning" class="admonition warning">
+<div id="admonition-warning" class="admonition admonish-warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
@@ -239,7 +239,7 @@
 <p>カスタマイズに入る前に、キーマップも入れておきましょう。</p>
 <p>キーマップはデフォルトでは有効になっていないようなので、
 これも<a href="https://github.com/lewis6991/gitsigns.nvim#keymaps">Keymaps</a>からそのまま貼り付けちゃいます。</p>
-<div id="admonition-keymaps" class="admonition info">
+<div id="admonition-keymaps" class="admonition admonish-info">
 <div class="admonition-title">
 <p>Keymaps</p>
 <p><a class="admonition-anchor-link" href="#admonition-keymaps"></a></p>
@@ -249,7 +249,7 @@
 <p>Gitsigns は on_attach コールバックを提供し、buffer マッピングの設定に使用することができます。</p>
 </div>
 </div>
-<div id="admonition-extensionsgitsignslua-1" class="admonition example">
+<div id="admonition-extensionsgitsignslua-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/gitsigns.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-1"></a></p>
@@ -305,7 +305,7 @@
 <p>「<code>on_attach</code>と言われても...」、という感じには多少なるものの、<code>map()</code>が<code>vim.keymap.set()</code>に繋いでくれてるのは、まあなんか分かりますよね😉</p>
 <p>パラメータもほぼそのままなので、カスタマイズをしたい場合は<code>map()</code>を追加・変更していけば良さそうです。</p>
 <p>使用できる機能は以下で説明されています。</p>
-<div id="admonition-h-gitsigns-functions" class="admonition info">
+<div id="admonition-h-gitsigns-functions" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h gitsigns-functions</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-functions"></a></p>
@@ -327,7 +327,7 @@ non-blocking (return immediately).
 <h3 id="signs"><a class="header" href="#signs">signs</a></h3>
 <p>ここは表示する<code>text</code>だけ変えてます。</p>
 <p><code>untracked</code>については、後に出てくる<code>attach_to_untracked</code>を無効にすると使用されないので定義していません。</p>
-<div id="admonition-extensionsgitsignslua-2" class="admonition example">
+<div id="admonition-extensionsgitsignslua-2" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/gitsigns.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-2"></a></p>
@@ -348,7 +348,7 @@ non-blocking (return immediately).
 </tbody></table>
 </div>
 <h3 id="word_diff"><a class="header" href="#word_diff">word_diff</a></h3>
-<div id="admonition-extensionsgitsignslua-3" class="admonition example">
+<div id="admonition-extensionsgitsignslua-3" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/gitsigns.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-3"></a></p>
@@ -358,7 +358,7 @@ non-blocking (return immediately).
 </code></pre>
 </div>
 </div>
-<div id="admonition-h-gitsigns-config-word_diff" class="admonition info">
+<div id="admonition-h-gitsigns-config-word_diff" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h gitsigns-config-word_diff</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-config-word_diff"></a></p>
@@ -393,7 +393,7 @@ non-blocking (return immediately).
 <p>...ちょっと派手すぎません❗❓</p>
 <p>何十人も集まるようなパーティーであれば、このぐらい盛り上がってくれれば、それはもう大変に開き甲斐のあるパーティーです🥳</p>
 <p>でも、普段使いで❓これを❗❓いや〜...、それはなにかこう、特別な勇気が必要になってくるような...。</p>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -406,7 +406,7 @@ non-blocking (return immediately).
 <p>そういえば<code>:h gitsigns-config-word_diff</code>の中で、これに関して使用している<code>highlights</code>が示されてますよね。</p>
 <p><code>highlights</code>といえば心強い味方が既にいました❗<code>onenord.nvim</code>です😆</p>
 <p><code>extensions/onenord.lua</code>を引っ張り出してきて、以下を追記してみましょう。</p>
-<div id="admonition-extensionsonenordlua" class="admonition example">
+<div id="admonition-extensionsonenordlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/onenord.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsonenordlua"></a></p>
@@ -426,7 +426,7 @@ non-blocking (return immediately).
 <img src="img/custom_highlights_after.webp" alt="custom_highlights_before_after" width="1220" height="670" loading="lazy">
 <p>ありがとう...❗onenord...❗</p>
 <h3 id="attach_to_untracked"><a class="header" href="#attach_to_untracked">attach_to_untracked</a></h3>
-<div id="admonition-extensionsgitsignslua-4" class="admonition example">
+<div id="admonition-extensionsgitsignslua-4" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/gitsigns.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-4"></a></p>
@@ -437,7 +437,7 @@ non-blocking (return immediately).
 </div>
 </div>
 <p>これは、わたしが今の今まで気づいていなかったんですが...。</p>
-<div id="admonition-h-gitsigns-config-attach_to_untracked" class="admonition info">
+<div id="admonition-h-gitsigns-config-attach_to_untracked" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h gitsigns-config-attach_to_untracked</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-gitsigns-config-attach_to_untracked"></a></p>
@@ -456,7 +456,7 @@ non-blocking (return immediately).
 <code>number</code>オプションを&quot;クセつよ&quot;呼ばわりしてたんですが、わたしが無知なだけでした...。</p>
 <p>ほんとごめんなさい😭</p>
 <h3 id="current_line_blame_formatter"><a class="header" href="#current_line_blame_formatter">current_line_blame_formatter</a></h3>
-<div id="admonition-extensionsgitsignslua-5" class="admonition example">
+<div id="admonition-extensionsgitsignslua-5" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/gitsigns.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsgitsignslua-5"></a></p>
@@ -467,7 +467,7 @@ non-blocking (return immediately).
 </div>
 </div>
 <p>わたし自身はそんなにうまく活用できてないんですが、これはちょっと面白いやつです。</p>
-<div id="admonition-gitsigns-config-current_line_blame_formatter" class="admonition info">
+<div id="admonition-gitsigns-config-current_line_blame_formatter" class="admonition admonish-info">
 <div class="admonition-title">
 <p>gitsigns-config-current_line_blame_formatter</p>
 <p><a class="admonition-anchor-link" href="#admonition-gitsigns-config-current_line_blame_formatter"></a></p>
@@ -488,7 +488,7 @@ non-blocking (return immediately).
 </div>
 <p>フォーマット指定子については量が多いので手元で確認してもらうとして、
 デフォルトで<code>current_line_brame</code>を有効化するかどうかは、以下のパラメータです。</p>
-<div id="admonition-gitsigns-config-current_line_blame" class="admonition info">
+<div id="admonition-gitsigns-config-current_line_blame" class="admonition admonish-info">
 <div class="admonition-title">
 <p>gitsigns-config-current_line_blame</p>
 <p><a class="admonition-anchor-link" href="#admonition-gitsigns-config-current_line_blame"></a></p>
@@ -520,7 +520,7 @@ non-blocking (return immediately).
 </div>
 <p><code>summary</code>が表示されました😆</p>
 <p>これだとちょっと見にくいな〜と思ったら、また<code>onenord.lua</code>に<code>GitSignsCurrentLineBlame</code>を追加して好きなように変えられます。</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -531,7 +531,7 @@ non-blocking (return immediately).
 </div>
 <h2 id="wrap-up"><a class="header" href="#wrap-up">Wrap up</a></h2>
 <p>賑やかな装飾を施せましたね❗サンタさんも大喜びです🎅</p>
-<div id="admonition-assemble" class="admonition success">
+<div id="admonition-assemble" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Assemble</p>
 <p><a class="admonition-anchor-link" href="#admonition-assemble"></a></p>

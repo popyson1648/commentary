@@ -114,7 +114,7 @@
 <p>こんな感じで😉
 <img src="img/make-dir.webp" alt="make-dir" width="696" height="256" decoding="async"></p>
 <p>うん😄 そうしたら<code>lesson/init.lua</code>にコードを入れておきます。</p>
-<div id="admonition-lessoninitlua" class="admonition example">
+<div id="admonition-lessoninitlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>lesson/init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-lessoninitlua"></a></p>
@@ -130,7 +130,7 @@ return M
 </code></pre>
 </div>
 </div>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -140,7 +140,7 @@ return M
 </div>
 </div>
 <p>で、これを呼び出したいんですが、結局また<code>keybinds.lua</code>を使ってしまいます。</p>
-<div id="admonition-keybindslua" class="admonition example">
+<div id="admonition-keybindslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua"></a></p>
@@ -155,7 +155,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 <p>じゃあ、ぽちぽちっと<kbd>Leader</kbd><kbd>9</kbd>で呼んでみましょう...。動くかなぁ〜❓
 <img src="img/call-function5.webp" alt="call-function5" width="674" height="62" loading="lazy"></p>
 <p>動いたぁ〜❗😆</p>
-<div id="admonition-tip" class="admonition tip">
+<div id="admonition-tip" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
@@ -171,7 +171,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 <p><code>:source</code>について、<code>14.1 Warming Up</code>で触れたんですが、一個気にしたいことがあって、それが<code>require</code>です。</p>
 <p><code>require</code>には二度目以降の呼び出しはキャッシュを読みにいくっていう賢いとしか言いようがない仕様があるんですけど、
 例えば<code>require</code>の先をどんなに更新していようとも、<code>:so</code>だと更新前のキャッシュを実行するだけになるみたいなんですね。</p>
-<div id="admonition-the-require-functionhttpswwwluaorgpil81html" class="admonition info">
+<div id="admonition-the-require-functionhttpswwwluaorgpil81html" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://www.lua.org/pil/8.1.html">The require Function</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-the-require-functionhttpswwwluaorgpil81html"></a></p>
@@ -182,7 +182,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 </div>
 </div>
 <p>例えば、<code>Neovim</code>を終了させずに下の変更を反映させる方法が見つからない...。</p>
-<div id="admonition-question" class="admonition question">
+<div id="admonition-question" class="admonition admonish-question">
 <div class="admonition-title">
 <p>Question</p>
 <p><a class="admonition-anchor-link" href="#admonition-question"></a></p>
@@ -195,7 +195,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 </div>
 </div>
 <p>なので、なんか思った通りいかないー❗ってなっても慌てないで😉</p>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -209,7 +209,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 <h2 id="nvim_create_user_command"><a class="header" href="#nvim_create_user_command">nvim_create_user_command</a></h2>
 <p>もう一個だけやっておきたいのは、独自コマンドからプラグインを使うパターンです。</p>
 <p>今度は<code>nvim</code>ディレクトリまで上がって、<code>plugin/lesson</code>ディレクトリを作成してください。</p>
-<div id="admonition-command" class="admonition quote">
+<div id="admonition-command" class="admonition admonish-quote">
 <div class="admonition-title">
 <p>Command</p>
 <p><a class="admonition-anchor-link" href="#admonition-command"></a></p>
@@ -220,7 +220,7 @@ vim.keymap.set('n', '&lt;Leader&gt;9', lesson.myprint)
 </div>
 </div>
 <img src="img/make-dir2.webp" alt="make-dir2" width="696" height="265" loading="lazy">
-<div id="admonition-tip-1" class="admonition tip">
+<div id="admonition-tip-1" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip-1"></a></p>
@@ -235,7 +235,7 @@ mkdir plugin/lesson
 </div>
 </div>
 <p>これもあんまり深くは潜らず、さらっとだけやります。</p>
-<div id="admonition-h-nvim_create_user_command" class="admonition info">
+<div id="admonition-h-nvim_create_user_command" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h nvim_create_user_command</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_create_user_command"></a></p>
@@ -257,7 +257,7 @@ mkdir plugin/lesson
 </div>
 </div>
 <p>それでは、<code>nvim/plugin/lesson/init.lua</code>にコードを書きます。</p>
-<div id="admonition-nvimpluginlessoninitlua" class="admonition example">
+<div id="admonition-nvimpluginlessoninitlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>nvim/plugin/lesson/init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-nvimpluginlessoninitlua"></a></p>
@@ -271,7 +271,7 @@ end, {})
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -292,7 +292,7 @@ end, {})
 </div>
 </div>
 <p><code>plugin</code>ディレクトリに置いた<code>lua</code>ファイルは<code>require</code>などをしなくても自動で読み込まれます。</p>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-3" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
@@ -308,7 +308,7 @@ end, {})
 <img src="img/beer.webp" alt="beer" width="696" height="75" loading="lazy"></p>
 <p>乾杯❗🍻
 <img src="img/cheers.webp" alt="cheers" width="696" height="98" loading="lazy"></p>
-<div id="admonition-note-4" class="admonition note">
+<div id="admonition-note-4" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
@@ -321,7 +321,7 @@ end, {})
 <p>本当はもっと<code>:h packages</code>で説明されているような、本格的なものを作れたら良かったんだけど、
 わたしがその領域にまで達していないので、かなりチープな付け焼き刃になってしまっているんですが、雰囲気くらいは伝わったでしょうか...❓😅</p>
 <p>お互い、頑張りましょう🤗</p>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
@@ -330,7 +330,7 @@ end, {})
 <p>次の章で、ついに...⁉️</p>
 </div>
 </div>
-<div id="admonition-default" class="admonition success">
+<div id="admonition-default" class="admonition admonish-success">
 <div>
 <div style="text-align: center">
   PLUG-IN WILL RETURN

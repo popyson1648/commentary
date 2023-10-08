@@ -109,7 +109,7 @@
         <main>
           <h1 id="right-status"><a class="header" href="#right-status">Right Status</a></h1>
 <p>これはもう手厚いサンプルが既に用意されているので、この通りに書けばバッチリです😆 やったね❗️</p>
-<div id="admonition-windowset_right_statusstringhttpswezfurlongorgweztermconfigluawindowset_right_statushtml" class="admonition info">
+<div id="admonition-windowset_right_statusstringhttpswezfurlongorgweztermconfigluawindowset_right_statushtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window/set_right_status.html">window:set_right_status(string)</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-windowset_right_statusstringhttpswezfurlongorgweztermconfigluawindowset_right_statushtml"></a></p>
@@ -122,7 +122,7 @@
 ただ、わたしの設定例にお付き合いいただける方のために、もうちょっとだけ続きます。
 <h2 id="get-parameter"><a class="header" href="#get-parameter">Get Parameter</a></h2>
 <p>まずは wez さんのサンプルコードをほぼ丸写しですが、一つずつ機能を分けます。</p>
-<div id="admonition-warning" class="admonition warning">
+<div id="admonition-warning" class="admonition admonish-warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
@@ -131,7 +131,7 @@
 <p>先に下記のコードを載せていますが、いくつか未定義なものがあるので、これだけだとエラーになっちゃいます。</p>
 </div>
 </div>
-<div id="admonition-statuslua" class="admonition example">
+<div id="admonition-statuslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>status.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-statuslua"></a></p>
@@ -181,7 +181,7 @@ end
 <p>wez さんのサンプルでは一度に取得していた<code>date</code>と<code>time</code>も分けちゃってます。</p>
 <p>程度は分かりませんが、非効率ではあると思われるのでお好みで😉</p>
 <p>バッテリー表示については、わたしの場合はフルスクリーンの時だけ出しています。スクリーン状態は下記で取得できます。</p>
-<div id="admonition-windowget_dimensionshttpswezfurlongorgweztermconfigluawindowget_dimensionshtml" class="admonition info">
+<div id="admonition-windowget_dimensionshttpswezfurlongorgweztermconfigluawindowget_dimensionshtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window/get_dimensions.html">window:get_dimensions()</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-windowget_dimensionshttpswezfurlongorgweztermconfigluawindowget_dimensionshtml"></a></p>
@@ -204,7 +204,7 @@ end
 </div>
 </div>
 <p>ここでは<code>is_full_screen</code>を使います。フルスクリーン時は<code>true</code>が返ります。</p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -218,7 +218,7 @@ end
 </div>
 </div>
 <p>で、以下が足りていなかった定義です。</p>
-<div id="admonition-statuslua-1" class="admonition example">
+<div id="admonition-statuslua-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>status.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-statuslua-1"></a></p>
@@ -250,7 +250,7 @@ local SPACE_3 = '   '
 </div>
 </div>
 <p>引っ張った割には特にコメントするところもないですね...。そのまま完成させちゃいましょう😊</p>
-<div id="admonition-statuslua-2" class="admonition example">
+<div id="admonition-statuslua-2" class="admonition admonish-example">
 <div class="admonition-title">
 <p>status.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-statuslua-2"></a></p>
@@ -278,7 +278,7 @@ end)
 <img src="img/right-status.webp" alt="right-status" width="1041" height="50" loading="lazy"></p>
 <p>フルスクリーン時にはバッテリー表示がされていることも確認できます。
 <img src="img/right-status-full.webp" alt="right-status" width="1041" height="50" loading="lazy"></p>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>

@@ -110,7 +110,7 @@
           <h1 id="tabstop--shiftwidth--expandtab"><a class="header" href="#tabstop--shiftwidth--expandtab">tabstop / shiftwidth / expandtab</a></h1>
 <p>さすがは &quot;bufferリゾーン&quot; ですね😆 いきなり &quot;みつごどりモンスター&quot; が飛び出してきました❗</p>
 <h2 id="tabstop"><a class="header" href="#tabstop">tabstop</a></h2>
-<div id="admonition-h-tabstop" class="admonition info">
+<div id="admonition-h-tabstop" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h tabstop</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-tabstop"></a></p>
@@ -142,7 +142,7 @@
 <p>単純にタブ幅だけを設定して終わりなら話は簡単なのですが、<code>Neovim</code>の場合、この先に出てくるオプションとやや複雑に絡み合っています😓</p>
 <p>そのためなのか、ヘルプ (上の抜粋に含まない部分) ではこれらを適切に設定する4つの方法が示されています。</p>
 <p>わたしが採用しているのは、オーソドックスな<code>2.</code>です☺️</p>
-<div id="admonition-default" class="admonition info">
+<div id="admonition-default" class="admonition admonish-info">
 <div>
 <pre><code class="language-txt">2. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
 'expandtab'.  This way you will always insert spaces.  The
@@ -156,7 +156,7 @@ formatting will never be messed up when 'tabstop' is changed.
 <p>「<code>expandtab</code>を使用すれば、<code>tabstop</code>と<code>shiftwidth</code>は好きにしちゃっていいよー。」...と読めますね。</p>
 <p>一つずつ確認していきましょう😉</p>
 <h2 id="shiftwidth"><a class="header" href="#shiftwidth">shiftwidth</a></h2>
-<div id="admonition-h-shiftwidth" class="admonition info">
+<div id="admonition-h-shiftwidth" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h shiftwidth</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-shiftwidth"></a></p>
@@ -176,7 +176,7 @@ formatting will never be messed up when 'tabstop' is changed.
 </div>
 </div>
 <p><code>shiftwidth</code>を &quot;zero&quot; にすれば、<code>tabstop</code>と同じ値を使ってくれるそうです。</p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -188,7 +188,7 @@ formatting will never be messed up when 'tabstop' is changed.
 <h2 id="タブ幅を決める"><a class="header" href="#タブ幅を決める">タブ幅を決める</a></h2>
 <p>この2つを別の値に設定して活用するシチュエーション、ちょっとわたしでは想像が及ばないので、もう<code>0</code>にしちゃいます😅</p>
 <p><code>tabstop</code>の方は、&quot;好きなように設定し&quot;というお言葉に甘えて、お好みの数値を入れましょう😆</p>
-<div id="admonition-optionslua" class="admonition example">
+<div id="admonition-optionslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>options.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-optionslua"></a></p>
@@ -199,7 +199,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -210,7 +210,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </div>
 <h2 id="expandtab"><a class="header" href="#expandtab">expandtab</a></h2>
 <p>その上で、&quot;<code>expandtab</code>を使用する&quot;んでしたね。</p>
-<div id="admonition-optionslua-1" class="admonition example">
+<div id="admonition-optionslua-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>options.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-optionslua-1"></a></p>
@@ -220,7 +220,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </code></pre>
 </div>
 </div>
-<div id="admonition-h-expandtab" class="admonition info">
+<div id="admonition-h-expandtab" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h expandtab</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-expandtab"></a></p>
@@ -244,7 +244,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p>このオプションが、&quot;常にスペースを挿入することができる&quot; ...の、部分を担っているんですね☺️</p>
 <h3 id="autoindent"><a class="header" href="#autoindent">autoindent</a></h3>
 <p>ちなみに、<code>expandtab</code>のヘルプの中に出てきた<code>autoindent</code>を少し見てみると...、</p>
-<div id="admonition-h-autoindent" class="admonition info">
+<div id="admonition-h-autoindent" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h autoindent</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-autoindent"></a></p>
@@ -266,7 +266,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <h2 id="フィナーレ"><a class="header" href="#フィナーレ">フィナーレ...❓</a></h2>
 <p>...って思うじゃないですか😮</p>
 <p>実はこれだけだと、起動直後に開いたバッファでしか設定したオプションが有効になりません...。</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -276,19 +276,19 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 </div>
 </div>
 <p>どうしよー😭ってなるんですけど、泣かなくて大丈夫。解決策はちゃんとあるから🤗</p>
-<div id="admonition-default-1" class="admonition quote">
+<div id="admonition-default-1" class="admonition admonish-quote">
 <div>
 <p>アナウンス『ピンポーン❗
 じかんが　きました❗</p>
 </div>
 </div>
-<div id="admonition-default-2" class="admonition quote">
+<div id="admonition-default-2" class="admonition admonish-quote">
 <div>
 <p>アナウンス『bufferリ　ゲーム
 おわり　でーす❗</p>
 </div>
 </div>
-<div id="admonition-question" class="admonition question">
+<div id="admonition-question" class="admonition admonish-question">
 <div class="admonition-title">
 <p>Question</p>
 <p><a class="admonition-anchor-link" href="#admonition-question"></a></p>
@@ -297,7 +297,7 @@ vim.api.nvim_buf_set_option(0, 'shiftwidth', 0)
 <p>入り口のおじさん、メガホンで知らせるって言ってなかった❓メガホン...なのかぁ❓</p>
 </div>
 </div>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>

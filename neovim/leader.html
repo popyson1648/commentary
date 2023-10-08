@@ -111,7 +111,7 @@
 <p>前章でキーマップをやったので、この章では<code>Leader</code>キーを設定しておきましょう。</p>
 <h2 id="nvim_set_var"><a class="header" href="#nvim_set_var">nvim_set_var</a></h2>
 <p>突然ですが、ここでニューヒーローをお迎えします❗その名も<code>nvim_set_var</code>❗😆</p>
-<div id="admonition-h-nvim_set_var" class="admonition info">
+<div id="admonition-h-nvim_set_var" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h nvim_set_var</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_set_var"></a></p>
@@ -136,7 +136,7 @@
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup>
 みたいですね❗</p>
-<div id="admonition-tip" class="admonition tip">
+<div id="admonition-tip" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
@@ -152,7 +152,7 @@
 <p>ん⁉️ やっぱり、Endgame だろうがなんだろうが遅れてやってくる Captain Marvel みたいですね❗</p>
 </div>
 </div>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -169,7 +169,7 @@ Disney+ の &quot;The Beatles: Get Back&quot; の中で発言してたりする�
 </div>
 </div>
 <h2 id="mapleader"><a class="header" href="#mapleader">mapleader</a></h2>
-<div id="admonition-h-mapleader" class="admonition info">
+<div id="admonition-h-mapleader" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h mapleader</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-mapleader"></a></p>
@@ -190,7 +190,7 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 </div>
 <p>VimScriptの書き方だと思われますが、<code>g:</code>というのが<code>global</code>で、<code>mapleader</code>が変数名ですね 🤔</p>
 <p>これはなんかもう<code>nvim_set_var</code>が強すぎるので楽勝です❤️</p>
-<div id="admonition-keybindslua" class="admonition example">
+<div id="admonition-keybindslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua"></a></p>
@@ -200,7 +200,7 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 </code></pre>
 </div>
 </div>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -211,7 +211,7 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 </div>
 </div>
 <p>上の例はデフォルトと同じ<kbd>\</kbd>になっていますが、ここを好きなキーに変えることができます。</p>
-<div id="admonition-tip-1" class="admonition tip">
+<div id="admonition-tip-1" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip-1"></a></p>
@@ -220,14 +220,14 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 <p><code>WezTerm</code>の時にも挙げましたが、メジャーなのはこの辺でしょうか😌</p>
 </div>
 </div>
-<div id="admonition-default" class="admonition tip">
+<div id="admonition-default" class="admonition admonish-tip">
 <div>
 <p>スペースを入れてます。<code>:map</code>ではないからっていう理屈だと思うんだけど<code>&lt;Space&gt;</code>だとうまくいかない。</p>
 <pre><code class="language-lua">vim.api.nvim_set_var('mapleader', ' ')
 </code></pre>
 </div>
 </div>
-<div id="admonition-default-1" class="admonition tip">
+<div id="admonition-default-1" class="admonition admonish-tip">
 <div>
 <p>メジャーなんだけど、<code>,</code>は<code>Neovim</code>がデフォルトで機能を割り当てていることに注意。
 <code>vim.keymap.set</code>で他のキーに<code>,</code>を割り当てるなど、少し考慮が必要。</p>
@@ -235,7 +235,7 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 </code></pre>
 </div>
 </div>
-<div id="admonition-default-2" class="admonition tip">
+<div id="admonition-default-2" class="admonition admonish-tip">
 <div>
 <p>2文字以上を入れても良いみたいなので、何か可能性があるような無いような。</p>
 <pre><code class="language-lua">vim.api.nvim_set_var('mapleader', 'map')
@@ -248,7 +248,7 @@ g:mapleader &quot;が設定されていない場合や空の場合は、代わ�
 <p>わたしは最近まで<kbd>,</kbd>で使用していましたが、そこまで使用頻度が高いわけでもなかったので<kbd>\</kbd>に戻しました。
 US配列であれば、ゆーて<kbd>Return</kbd>キーの上ってだけですからね😅</p>
 <p>(配列は勿論、形状とかも含めて、使用するキーボードに依るので一概には言えないんですけどね。)</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -258,7 +258,7 @@ US配列であれば、ゆーて<kbd>Return</kbd>キーの上ってだけです�
 自由ってことです。</p>
 </div>
 </div>
-<div id="admonition-tip-2" class="admonition tip">
+<div id="admonition-tip-2" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip-2"></a></p>
@@ -273,7 +273,7 @@ US配列であれば、ゆーて<kbd>Return</kbd>キーの上ってだけです�
 </div>
 <h2 id="maplocalleader"><a class="header" href="#maplocalleader">maplocalleader</a></h2>
 <p><code>Neovim</code>には<code>Local Leader</code>というものもあります。</p>
-<div id="admonition-keybindslua-1" class="admonition example">
+<div id="admonition-keybindslua-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua-1"></a></p>
@@ -304,7 +304,7 @@ global プラグインでは &lt;Leader&gt; を、filetype プラグインでは
 </div>
 </div>
 <p>こっちはなんか<kbd>_</kbd>がメジャーらしい...🤔</p>
-<div id="admonition-keybindslua-2" class="admonition example">
+<div id="admonition-keybindslua-2" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua-2"></a></p>
@@ -318,7 +318,7 @@ global プラグインでは &lt;Leader&gt; を、filetype プラグインでは
 <p>プラグインを使い出すと爆発的に機能が増えるので、<code>mapleader</code>とは別のキーを設定しておくのが良いと思います。
 (単純に考えて、ショートカットの組み合わせが 2 倍に増えるので。)</p>
 <p>ただ、あくまでも必須ではないです。<code>mapleader</code>と違って、こちらはデフォルトでも設定されていません。</p>
-<div id="admonition-tip-3" class="admonition tip">
+<div id="admonition-tip-3" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip-3"></a></p>
@@ -330,7 +330,7 @@ global プラグインでは &lt;Leader&gt; を、filetype プラグインでは
 <p>これも設定前に実行するとエラーが出てしまいますが、やっぱり害はありません。</p>
 </div>
 </div>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
@@ -342,7 +342,7 @@ global プラグインでは &lt;Leader&gt; を、filetype プラグインでは
 <p>ドキドキ...❗</p>
 </div>
 </div>
-<div id="admonition-default-3" class="admonition success">
+<div id="admonition-default-3" class="admonition admonish-success">
 <div>
 <div style="text-align: center">
 <p>LEADER KEY AND CAPTAIN MARVEL WILL RETURN</p>

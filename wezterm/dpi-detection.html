@@ -109,7 +109,7 @@
         <main>
           <h1 id="dpi-detection"><a class="header" href="#dpi-detection">DPI Detection</a></h1>
 <p>前回は手動でフォントサイズの切り替えを行いましたが、今回はこれを<code>dpi</code>の変更を検知して自動で切り替わるようにします。</p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -122,7 +122,7 @@
 <p>ここでは、二つのプランとして紹介します。おすすめは Plan B です。</p>
 <h2 id="実装---plan-a"><a class="header" href="#実装---plan-a">実装 - Plan A</a></h2>
 <p>さて、これまでにも何度か出てきていた<code>wezterm.on</code>ですが、以下のような説明がありました。</p>
-<div id="admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml" class="admonition info">
+<div id="admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/wezterm/on.html">wezterm.on(event_name, callback)</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-weztermonevent_name-callbackhttpswezfurlongorgweztermconfigluaweztermonhtml"></a></p>
@@ -137,7 +137,7 @@ When the event is emitted, each of the registered callbacks is called in the ord
 <p>これを踏まえた上で、<code>update-status</code>をもう一個作ります。<sup class="footnote-reference">
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup></p>
-<div id="admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml" class="admonition info">
+<div id="admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/update-status.html">update-status</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-update-statushttpswezfurlongorgweztermconfigluawindow-eventsupdate-statushtml"></a></p>
@@ -150,7 +150,7 @@ When the event is emitted, each of the registered callbacks is called in the ord
 <p>説明にもある通り、「最終的に<code>window:set_right_status</code>または<code>window:set_left_status</code>を呼び出す目的」のものであるため、
 なんかコレじゃないとは思っていますが、他に方法が見つけられませんでした😢</p>
 <p>それでは<code>event.lua</code>に追記していきます。</p>
-<div id="admonition-eventlua" class="admonition example">
+<div id="admonition-eventlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>event.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-eventlua"></a></p>
@@ -185,7 +185,7 @@ end)
 <p><code>dpi</code>と<code>font_size</code>周辺の値はわたしの環境にあわせてぼや〜っと決め打ちにしてるので適宜調整してください。</p>
 <p>動作としては、<code>dpi</code>に変更があったらカスタムイベントの<code>trigger-dpi</code>を呼んでフォントサイズを切り替えます。
 <code>trigger-dpi</code>自体は手動でフォントサイズを切り替える処理とほぼ同じですね☺️</p>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -196,7 +196,7 @@ end)
 <code>wezterm.emit('trigger-dpi', window, dpi)</code>として<code>dpi</code>も渡しています。</p>
 </div>
 </div>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -208,7 +208,7 @@ end)
 </div>
 <h2 id="実装---plan-b"><a class="header" href="#実装---plan-b">実装 - Plan B</a></h2>
 <p>さて、Plan A よりも自然に目的を達成できそうな、これ。</p>
-<div id="admonition-window-focus-changedhttpswezfurlongorgweztermconfigluawindow-eventswindow-focus-changedhtml" class="admonition info">
+<div id="admonition-window-focus-changedhttpswezfurlongorgweztermconfigluawindow-eventswindow-focus-changedhtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://wezfurlong.org/wezterm/config/lua/window-events/window-focus-changed.html">window-focus-changed</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-window-focus-changedhttpswezfurlongorgweztermconfigluawindow-eventswindow-focus-changedhtml"></a></p>
@@ -221,7 +221,7 @@ end)
 </div>
 </div>
 <p>それでは満を持して😌</p>
-<div id="admonition-eventlua-1" class="admonition example">
+<div id="admonition-eventlua-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>event.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-eventlua-1"></a></p>
@@ -248,7 +248,7 @@ end)
 <p>Plan A との比較では<code>update-status</code>を使わなくて良くなったのと、カスタムイベントの呼び出しも無くなりました。</p>
 <p>ウィンドウをドラッグしたりウィンドウマネージャー等を使ってディスプレイを移した際に切り替わらないという欠点こそあるものの、
 とても綺麗な実装になりました😄</p>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-3" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
@@ -260,7 +260,7 @@ end)
 <h2 id="wrap-up"><a class="header" href="#wrap-up">Wrap up</a></h2>
 <p>ほとんど問題にならないと思われますが、
 頻繁にディスプレイを切り替えるような使い方をする場合は Plan A の方が有用かもしれないので、ひとまず Tips として残しておきます。</p>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>

@@ -110,7 +110,7 @@
           <h1 id="key-binding"><a class="header" href="#key-binding">Key Binding</a></h1>
 <p>この章ではキーバインドに触れていきます。</p>
 <p>基本的には、やり方というか、テンプレートというか、そういうことだけ書いているつもりです😉</p>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -123,7 +123,7 @@
 </div>
 <p>ってことで、まずはやっぱりいつも通りですが、
 <code>lua</code>ディレクトリに<code>keybinds.lua</code>とかなんとかでファイルを作成しておきましょう。</p>
-<div id="admonition-keybindsluaを作る" class="admonition quote">
+<div id="admonition-keybindsluaを作る" class="admonition admonish-quote">
 <div class="admonition-title">
 <p>keybinds.luaを作る</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindsluaを作る"></a></p>
@@ -134,7 +134,7 @@
 </div>
 </div>
 <p>で、もちろん<code>init.lua</code>から読み込むように以下を追記します。</p>
-<div id="admonition-initlua" class="admonition example">
+<div id="admonition-initlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>../init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-initlua"></a></p>
@@ -147,7 +147,7 @@
 <p>変わり映えのしないルーティンですが、これが基本なので...。</p>
 <p>まあ、のんびりいこーよ☺️</p>
 <h2 id="keymapset"><a class="header" href="#keymapset">keymap.set()</a></h2>
-<div id="admonition-h-keymapset" class="admonition info">
+<div id="admonition-h-keymapset" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h keymap.set</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-keymapset"></a></p>
@@ -202,7 +202,7 @@
 </div>
 </div>
 <p><code>{mode}</code>の<code>short names</code>はこっち。</p>
-<div id="admonition-h-nvim_set_keymap" class="admonition info">
+<div id="admonition-h-nvim_set_keymap" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h nvim_set_keymap</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-nvim_set_keymap"></a></p>
@@ -220,7 +220,7 @@
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup>
 だと思われます。</p>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -233,7 +233,7 @@
 <h2 id="customize"><a class="header" href="#customize">Customize</a></h2>
 <p>実際に動かしてみましょう☺️</p>
 <p>この先に出てくる、<code>&lt;Up&gt;</code>とか<code>&lt;C-…&gt;</code>だったりの表記が、どのキーを指しているのか❓などの一覧は<code>key-notation</code>として説明されています。</p>
-<div id="admonition-h-key-notation" class="admonition info">
+<div id="admonition-h-key-notation" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h key-notation</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-key-notation"></a></p>
@@ -248,7 +248,7 @@ They can also be used with the &quot;:map&quot; command.
 </code></pre>
 </div>
 </div>
-<div id="admonition-tip" class="admonition tip">
+<div id="admonition-tip" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
@@ -261,7 +261,7 @@ They can also be used with the &quot;:map&quot; command.
 </div>
 </div>
 <h3 id="割り当て"><a class="header" href="#割り当て">割り当て</a></h3>
-<div id="admonition-keybindslua" class="admonition example">
+<div id="admonition-keybindslua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>keybinds.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-keybindslua"></a></p>
@@ -275,7 +275,7 @@ vim.keymap.set('n', '&lt;Down&gt;', '&lt;C-e&gt;')
 <p>これを記述してから再起動すると、方向キーの上下でスクロールするようになっているはずです。
 (適当に2行以上入力してから試してください。)</p>
 <p>上のコードが何をしているかと言うと、</p>
-<div id="admonition-default" class="admonition quote">
+<div id="admonition-default" class="admonition admonish-quote">
 <div>
 <p>ノーマルモードの時に, <kbd>↑</kbd>キーが入力されたら, <kbd>Ctrl-y</kbd>キーの操作として受け付けるぞぉ❗</p>
 <p>ノーマルモードの時に, <kbd>↓</kbd>キーが入力されたら, <kbd>Ctrl-e</kbd>キーの操作として受け付けるぞぉ❗</p>
@@ -283,7 +283,7 @@ vim.keymap.set('n', '&lt;Down&gt;', '&lt;C-e&gt;')
 </div>
 <p>ってことですね。</p>
 <p>「<code>キー操作に機能</code>を割り当てる」と言うよりは、「<code>キー操作にリンク先のキー</code>を割り当てる 」というニュアンスかもしれません。</p>
-<div id="admonition-note-2" class="admonition note">
+<div id="admonition-note-2" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-2"></a></p>
@@ -295,7 +295,7 @@ vim.keymap.set('n', '&lt;Down&gt;', '&lt;C-e&gt;')
 <p>ここでは一度、実際に動くことを確認してもらいたかったので<code>keybinds.lua</code>のサンプルとして提示しましたが、</p>
 <p>「こんな感じね〜」を掴めたら削除してもらって構いません。</p>
 <p>この後は雰囲気だけ味わってもらえればいいかな〜、ぐらいで流します。軽〜く眺めてください😌</p>
-<div id="admonition-note-3" class="admonition note">
+<div id="admonition-note-3" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-3"></a></p>
@@ -306,7 +306,7 @@ vim.keymap.set('n', '&lt;Down&gt;', '&lt;C-e&gt;')
 </div>
 <h3 id="入れ替え"><a class="header" href="#入れ替え">入れ替え</a></h3>
 <p>「相互に操作を入れ替える」みたいなパターンも、たったこれだけ😸</p>
-<div id="admonition-default-1" class="admonition quote">
+<div id="admonition-default-1" class="admonition admonish-quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
@@ -316,7 +316,7 @@ vim.keymap.set('n', ':', ';')
 <p><kbd>:</kbd>は説明が長くなるので省略してしまうんですが、<kbd>;</kbd>でコマンドモードに入れるようになります。</p>
 <h3 id="無効化"><a class="header" href="#無効化">無効化</a></h3>
 <p>無効化するパターンもあります。</p>
-<div id="admonition-default-2" class="admonition quote">
+<div id="admonition-default-2" class="admonition admonish-quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set('n', 'ZZ', '&lt;NOP&gt;')
 vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
@@ -324,7 +324,7 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 </div>
 </div>
 <p><code>&lt;NOP&gt;</code>についてはヘルプに記載されていましたね。</p>
-<div id="admonition-h-key-notation-1" class="admonition info">
+<div id="admonition-h-key-notation-1" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h key-notation</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-key-notation-1"></a></p>
@@ -339,14 +339,14 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 <p>いや、なんか...、ノーマルモードから終了なんて、急すぎて怖くないですか...😱</p>
 <h3 id="モード"><a class="header" href="#モード">モード</a></h3>
 <p>ここまでは全てノーマルモードでの例でしたが、もちろん他のモードでのカスタマイズもできます。</p>
-<div id="admonition-default-3" class="admonition quote">
+<div id="admonition-default-3" class="admonition admonish-quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set('i', 'jj', '&lt;Esc&gt;')
 </code></pre>
 </div>
 </div>
 <p>これを入れると、<kbd>j</kbd><kbd>j</kbd>と連打するだけでインサートモードから抜けられるようになります。</p>
-<div id="admonition-warning" class="admonition warning">
+<div id="admonition-warning" class="admonition admonish-warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
@@ -357,7 +357,7 @@ vim.keymap.set('n', 'ZQ', '&lt;NOP&gt;')
 </div>
 </div>
 <p><code>{mode}</code>(第一パラメータ)をもう少し詳しく見ると、こんな感じです。</p>
-<div id="admonition-h-map-table" class="admonition info">
+<div id="admonition-h-map-table" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h map-table</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-map-table"></a></p>
@@ -383,14 +383,14 @@ l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 </div>
 <p>冒頭の例で言うと、<code>'i'</code>はインサートモードを指しています。</p>
 <p>また、複数のモードに対して適用するのであれば以下のようになります。</p>
-<div id="admonition-default-4" class="admonition quote">
+<div id="admonition-default-4" class="admonition admonish-quote">
 <div>
 <pre><code class="language-lua">vim.keymap.set({ 'n', 'v' }, 'p', 'p`]')
 </code></pre>
 </div>
 </div>
 <p><code>{ 'n', 'v' }</code>はノーマルモードとビジュアルモードに適用する、というものになっています。</p>
-<div id="admonition-note-4" class="admonition note">
+<div id="admonition-note-4" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-4"></a></p>
@@ -402,7 +402,7 @@ l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 <h2 id="wrap-up"><a class="header" href="#wrap-up">Wrap up</a></h2>
 <p>改めて<code>:map</code>で確認してみると、こんな感じで設定した内容が反映されていることが確認できます。
 <img src="img/keymap-after.webp" alt="keymap-after" width="696" height="555" loading="lazy"></p>
-<div id="admonition-question" class="admonition question">
+<div id="admonition-question" class="admonition admonish-question">
 <div class="admonition-title">
 <p>Question</p>
 <p><a class="admonition-anchor-link" href="#admonition-question"></a></p>
@@ -412,7 +412,7 @@ l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 </div>
 </div>
 <p>キーカスタマイズに関しては、Web上で色々な人が実用的なアイデアを公開しているので、色々試してみると良いです☺️</p>
-<div id="admonition-tip-1" class="admonition tip">
+<div id="admonition-tip-1" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Tip</p>
 <p><a class="admonition-anchor-link" href="#admonition-tip-1"></a></p>
@@ -427,7 +427,7 @@ vim.keymap.set('n', 's', '&quot;_s')
 <p>...って、ちょっと紹介したい欲が出てしまった🙀</p>
 </div>
 </div>
-<div id="admonition-warning-1" class="admonition warning">
+<div id="admonition-warning-1" class="admonition admonish-warning">
 <div class="admonition-title">
 <p>Warning</p>
 <p><a class="admonition-anchor-link" href="#admonition-warning-1"></a></p>
@@ -438,7 +438,7 @@ vim.keymap.set('n', 's', '&quot;_s')
 <p>「これはわたしが発案してます😆」みたいに見えちゃうのは絶対に望んでないです。</p>
 </div>
 </div>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
@@ -449,7 +449,7 @@ vim.keymap.set('n', 's', '&quot;_s')
 <p>ただ、もう少し進むと「もう嫌❗🙀」ってなるぐらい実用的なキーカスタマイズに触れて行くことになります。</p>
 </div>
 </div>
-<div id="admonition-default-5" class="admonition success">
+<div id="admonition-default-5" class="admonition admonish-success">
 <div>
 <div style="text-align: center">
 <p>KEYMAP WILL RETURN</p>

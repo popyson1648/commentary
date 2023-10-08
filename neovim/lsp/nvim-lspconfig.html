@@ -108,7 +108,7 @@
 
         <main>
           <h1 id="nvim-lspconfig"><a class="header" href="#nvim-lspconfig">nvim-lspconfig</a></h1>
-<div id="admonition-nvim-lspconfighttpsgithubcomneovimnvim-lspconfig" class="admonition info">
+<div id="admonition-nvim-lspconfighttpsgithubcomneovimnvim-lspconfig" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-nvim-lspconfighttpsgithubcomneovimnvim-lspconfig"></a></p>
@@ -119,7 +119,7 @@
 </div>
 </div>
 <p>さて、まずは<code>LSP</code>活用の基盤を築きましょう❗<code>nvim-lspconfig</code>の登場です😆</p>
-<div id="admonition-default" class="admonition quote">
+<div id="admonition-default" class="admonition admonish-quote">
 <div>
 <p>And now, the end is near</p>
 <p>And so I face the final curtain</p>
@@ -128,7 +128,7 @@
 </div>
 </div>
 <h2 id="lsp"><a class="header" href="#lsp">LSP</a></h2>
-<div id="admonition-h-lsp" class="admonition info">
+<div id="admonition-h-lsp" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h lsp</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-lsp"></a></p>
@@ -158,7 +158,7 @@ go-to-definition、find-references、hover、completion、rename、format、refa
 </div>
 <p>本来ならここにある内容を自分で行っていく必要があるんですが、
 「<code>setup</code>を呼んでくれるだけでいいよー」ってしてくれるのが、この<code>nvim-lspconfig</code>です。</p>
-<div id="admonition-configurationshttpsgithubcomneovimnvim-lspconfigblobmasterdocserver_configurationsmd" class="admonition info">
+<div id="admonition-configurationshttpsgithubcomneovimnvim-lspconfigblobmasterdocserver_configurationsmd" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md">Configurations</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-configurationshttpsgithubcomneovimnvim-lspconfigblobmasterdocserver_configurationsmd"></a></p>
@@ -168,7 +168,7 @@ go-to-definition、find-references、hover、completion、rename、format、refa
 <p>nvim-lspconfigが提供するLSPコンフィグを以下に示します。</p>
 </div>
 </div>
-<div id="admonition-note" class="admonition note">
+<div id="admonition-note" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
@@ -179,7 +179,7 @@ go-to-definition、find-references、hover、completion、rename、format、refa
 </div>
 <p>要するに便利ってことです❗❗</p>
 <h2 id="install"><a class="header" href="#install">Install</a></h2>
-<div id="admonition-installhttpsgithubcomneovimnvim-lspconfiginstall" class="admonition info">
+<div id="admonition-installhttpsgithubcomneovimnvim-lspconfiginstall" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/neovim/nvim-lspconfig#install">Install</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-installhttpsgithubcomneovimnvim-lspconfiginstall"></a></p>
@@ -193,7 +193,7 @@ go-to-definition、find-references、hover、completion、rename、format、refa
 </div>
 <p>なんかもう何を言ってるのか全然分かる😑</p>
 <h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
-<div id="admonition-suggested-configurationhttpsgithubcomneovimnvim-lspconfigsuggested-configuration" class="admonition info">
+<div id="admonition-suggested-configurationhttpsgithubcomneovimnvim-lspconfigsuggested-configuration" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="https://github.com/neovim/nvim-lspconfig#suggested-configuration">Suggested configuration</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-suggested-configurationhttpsgithubcomneovimnvim-lspconfigsuggested-configuration"></a></p>
@@ -212,7 +212,7 @@ omnifunc (<c-x><c-o>) による補完を手動でトリガしています。</p>
 <a name="to-footnote-1"><a href="#1">1</a></a>
 </sup>
 のセットアップがされていますが、大胆にも、このサイトではこれらをスキップして、もっと汎用的な方法をとります❗</p>
-<div id="admonition-default-1" class="admonition quote">
+<div id="admonition-default-1" class="admonition admonish-quote">
 <div>
 <p>I traveled each and every highway</p>
 <p>And more, much more than this</p>
@@ -223,7 +223,7 @@ omnifunc (<c-x><c-o>) による補完を手動でトリガしています。</p>
 </div>
 </div>
 <p>と、いうことで、ここではキーマップの設定だけしちゃいましょう😌</p>
-<div id="admonition-extensionsnvim-lspconfiglua" class="admonition example">
+<div id="admonition-extensionsnvim-lspconfiglua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/nvim-lspconfig.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-lspconfiglua"></a></p>
@@ -272,7 +272,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 </div>
 <p>いやー、ほんとにキーマップの設定だけなので、サンプルそのままでしたね😅</p>
 <p>それだけ、面倒な設定をうまく包み込んでくれてるってことです。</p>
-<div id="admonition-note-1" class="admonition note">
+<div id="admonition-note-1" class="admonition admonish-note">
 <div class="admonition-title">
 <p>Note</p>
 <p><a class="admonition-anchor-link" href="#admonition-note-1"></a></p>
@@ -287,7 +287,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 </div>
 <p>ただ、お話し相手がいない状態なので、まだ何にもできないんですけどね😅</p>
 <p>あとこれ、いつもの❗</p>
-<div id="admonition-extensionsinitlua" class="admonition example">
+<div id="admonition-extensionsinitlua" class="admonition admonish-example">
 <div class="admonition-title">
 <p>extensions/init.lua</p>
 <p><a class="admonition-anchor-link" href="#admonition-extensionsinitlua"></a></p>
@@ -302,7 +302,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 </div>
 <h3 id="lspattach"><a class="header" href="#lspattach">LspAttach</a></h3>
 <p><code>LspAttach</code>ってなんやねんってなりますが、これはもうそのままヘルプにあります。</p>
-<div id="admonition-h-lspattach" class="admonition info">
+<div id="admonition-h-lspattach" class="admonition admonish-info">
 <div class="admonition-title">
 <p>:h LspAttach</p>
 <p><a class="admonition-anchor-link" href="#admonition-h-lspattach"></a></p>
@@ -316,7 +316,7 @@ LSPクライアントがバッファにアタッチした後 (に発生するイ
 </div>
 </div>
 <p>久しぶりに現れた<code>Automatic Command</code>は、<a href="../au/automatic-commands.html">11章</a> に出てきたお話です。</p>
-<div id="admonition-nvim_create_autocmdaunvim_create_autocmdhtml" class="admonition info">
+<div id="admonition-nvim_create_autocmdaunvim_create_autocmdhtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="../au/nvim_create_autocmd.html">nvim_create_autocmd</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-nvim_create_autocmdaunvim_create_autocmdhtml"></a></p>
@@ -325,7 +325,7 @@ LSPクライアントがバッファにアタッチした後 (に発生するイ
 <p>いつだっておじさんは熱くアドバイスしてくれます☺️</p>
 </div>
 </div>
-<div id="admonition-nvim_create_augroupaunvim_create_augrouphtml" class="admonition info">
+<div id="admonition-nvim_create_augroupaunvim_create_augrouphtml" class="admonition admonish-info">
 <div class="admonition-title">
 <p><a href="../au/nvim_create_augroup.html">nvim_create_augroup</a></p>
 <p><a class="admonition-anchor-link" href="#admonition-nvim_create_augroupaunvim_create_augrouphtml"></a></p>
@@ -349,7 +349,7 @@ LSPクライアントがバッファにアタッチした後 (に発生するイ
 Amazonのセールに合わせて自分へのご褒美を送ってあげたり受け取ったり、
 なんか天気悪いなー🙄とか、さくらさくら〜🌸 とか、トリリオンゲーム6巻を読み耽っていた間にも</p>
 <p>nvimトレーナーは努力を続けていたってこと⁉️</p>
-<div id="admonition-default-2" class="admonition quote">
+<div id="admonition-default-2" class="admonition admonish-quote">
 <div>
 <p>Yes, it was my way
 <sup class="footnote-reference">
@@ -360,14 +360,14 @@ Amazonのセールに合わせて自分へのご褒美を送ってあげたり�
 </div>
 <p>...。😮</p>
 <p>こうなったらお祝いだー❗❗🥳</p>
-<div id="admonition-default-3" class="admonition success">
+<div id="admonition-default-3" class="admonition admonish-success">
 <div>
 <p>ライバルどうし おかしいね</p>
 <p>&quot;まだまだ育てが 足りないぜ！&quot;</p>
 <p>それでも ホラ</p>
 </div>
 </div>
-<div id="admonition-default-4" class="admonition success">
+<div id="admonition-default-4" class="admonition admonish-success">
 <div>
 <p>選んだ道が 同じ道だから</p>
 <p>&quot;負けないぞ！&quot;って いいながら</p>
@@ -375,7 +375,7 @@ Amazonのセールに合わせて自分へのご褒美を送ってあげたり�
 </div>
 </div>
 <p>宴もたけなわではございますが、わたしから一言。</p>
-<div id="admonition-success" class="admonition success">
+<div id="admonition-success" class="admonition admonish-success">
 <div class="admonition-title">
 <p>Success</p>
 <p><a class="admonition-anchor-link" href="#admonition-success"></a></p>
