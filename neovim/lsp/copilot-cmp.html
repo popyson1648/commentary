@@ -433,7 +433,7 @@ cmp.setup {
 <p><a class="admonition-anchor-link" href="#admonition-extensionsnvim-cmplua-1"></a></p>
 </div>
 <div>
-<pre><code class="language-diff">  sources = {
+<pre><code class="language-diff">  sources = cmp.config.sources {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
 +   { name = 'copilot' },
